@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>嘿毛寵物旅館 | 後台登入</title>
+    <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-a9b22856.js"></script>
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-1ed0e0f2.css">
+</head>
+
+<body>
+
+    <div class="d-flex justify-content-center">
+    <header class="topbar w-lg-75 w-xl-50 w-xxl-45 py-md-20 px-md-40  rounded-pill position-fixed z-2">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html"><img src="/HayMo-Hotel-JS/assets/Logo-0e921db4.png" alt="Logo" class="topbar-logo"></a>
+            <!-- table-menu -->
+            <div class="d-none d-md-block">
+                <ul class="table-menu d-flex">
+                    <li class="me-32">
+                        <a href="index.html" class="menu-link position-relative ">首頁</a>
+                    </li>
+                    <li class="me-32">
+                        <a href="about.html" class="menu-link position-relative ">關於我們</a>
+                    </li>
+                    <li class="me-32">
+                        <a href="service.html" class="menu-link position-relative ">服務項目</a>
+                    </li>
+                    <li>
+                        <a href="faq.html" class="menu-link position-relative ">常見問題</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="d-flex align-items-center">
+                <li>
+                    <a href="login.html" class="login-link d-flex align-items-center justify-content-center me-md-0 ">
+                        <p class="link-circle-txt mb-0">線上<span class="d-md-block">預約</span></p>
+                    </a>
+                </li>
+                <li class="d-md-none">
+                    <div class="ham position-relative">
+                        <div class="ham-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- mobile-menu -->
+    <div class="d-block d-md-none mobile-menu">
+        <ul class="menu bg-primary d-flex flex-column position-fixed top-0 start-0 w-100 overflow-hidden z-99">
+            <li class="d-flex justify-content-end pt-16 pe-12">
+                <div class="closedHam position-relative rounded-circle">
+                    <div class="closedHam-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                </div>
+            </li>
+            <li class="ms-12 mt-24 mb-32">
+                <a href="index.html" class="menu-link text-white fw-bold">首頁</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="about.html" class="menu-link text-white fw-bold">關於我們</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="service.html" class="menu-link text-white fw-bold">服務項目</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="faq.html" class="menu-link text-white fw-bold">常見問題</a>
+            </li>
+            <li class="ms-12 d-md-none">
+                <a href="login.html" class="menu-link text-white fw-bold">線上預約</a>
+            </li>
+        </ul>
+    </div>
+</div>
+        <main class="cms-login pt-md-200 pb-md-80 vh-100 overflow-y-auto">
+            <div class="container">
+                <h2 class="title-font text-center mb-48">後台管理系統</h2>
+                <div class="col-md-8 col-lg-5 mx-auto">
+                    <form class="bg-light border border-black-60 rounded-4 px-24 px-md-48 py-48 mb-48">
+                        <div class="text-center mb-16 mb-md-24">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAACh0lEQVR4AezBgQAAAACAoP2pF6kCAAAAAAAAgNm1B1i5wiCAwrVtO2rMBmVQ27YZ1LbdBg9RbdsIattug2dzeoqg3L363+5mTvLF3OuZ9ajqGIMjeI6En57jCEajOlxOq4pIZEJ8yEAEqsCFtI5IgFgUj7ZwkDYBWRCbsjAGNtI6IgviUCZaw0JaVcRDXBKLivAzLRLiso3Q/Kg6MiEuS0cFaD4aC/HIYNgpP7phM54h4adn2IxuyI+Q6BjEI3tgtU54DvHhOTog6HsC8cgt+FseLINYtAi5EbTFQzzyBf62HGLTQjhID0AniAPZ9r899BaUH88hDj1CXlhMH8LdIC5pC4vpa+gWiEsiYDH9EHvi5S3PdzqKiDf10NdhnPkDoOPogL4F6UJGH8LmV5LmX0N1Ka8fYoH/txTzowjN/DBOMz+O1gJ8IaPpSpJI0zRN08qgEYZhOfbjKl7jHeSnVLzGVRzCaoxGE5SCn2l10B/heARxwdn/j6K1+pjrwTI+GoPxl7QKmI4HEA88QT38llYLEUiBeOQiSsNp5dARkxCOy3959iThNS4jHJPQEeUQUJXAWqRBPHQbxWGnIuiBCDyGOPQYEeiBIsixWuA9xGMfbewA8qEzdiIJ4pEk7EQX5IexpiITYkBH+FsBjMBLiGEfMQlF4GkLIIYcgL/1xkdIDvuM3vCkARCDGsBXxbAXEmD2ohhcqwKiIYZch69K4RYkQN1CKbjSdIhBs/C/cuM0JMCdRm447gbEoGb4X30gQaIPHBcDMagy/tcFSJC4AMeJYQUNnBCmxATfAfCdBBXffW2PDmQAAAAABvlb3+MrhQQIECBAgAABAgQIECAAAAAAAAAAgIkA1zVgKDUWeRAAAAAASUVORK5CYII=" alt="後台管理員" class="img-fluid">
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-sm-9">
+                                <div class="position-relative mb-24">
+                                    <input type="text" class="form-control ps-48" placeholder="使用者代號">
+                                    <i class="bi bi-person position-absolute cms-login-icon fs-5"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="position-relative">
+                                    <input type="password" class="form-control ps-48" placeholder="使用者密碼">
+                                    <i class="bi bi-lock position-absolute cms-login-icon fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="cms.html"
+                                class="d-flex align-items-center justify-content-center link-slide-primary w-100 w-md-75 mt-48">登入<i
+                                    class="bi bi-arrow-right d-block fs-4 ms-16"></i></a>
+                        </div>
+                    </form>
+                    <div>
+                        <p class="d-flex mb-8"><i
+                                class="bi bi-brightness-high-fill text-danger me-8"></i><span>提醒您，若忘記或遺失帳號密碼，請電洽：<a
+                                    href="tel:+886-0800-888-8888"
+                                    class="d-inline link-black-60 me-4">08-888-8888</a>申報</span></p>
+                        <p class="d-flex mb-0"><i
+                                class="bi bi-brightness-high-fill text-danger me-8"></i>待確認身分後，會再email予您一組新的帳號密碼，請知悉
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        
+        <script>
+            const hamBtn = document.querySelector(".ham");
+            const mobileMenu = document.querySelector(".mobile-menu .menu");
+            const hamCloseBtn = document.querySelector(".closedHam");
+            const body = document.body;
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('open');
+                body.classList.toggle('hidden-y');
+            };
+
+            hamBtn.addEventListener('click', toggleMenu);
+            hamCloseBtn.addEventListener("click", toggleMenu);
+        </script>
+</body>
+
+</html>

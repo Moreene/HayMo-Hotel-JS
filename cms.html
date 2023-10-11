@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>嘿毛寵物旅館 | 後台管理系統</title>
+    <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-a9b22856.js"></script>
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-1ed0e0f2.css">
+</head>
+
+<body>
+
+    <nav class="offcanvas offcanvas-start show bg-dark" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="sidebar vh-100 d-flex flex-column justify-content-between text-white p-24">
+        <div>
+            <h2 class="fs-3 mb-48">嘿毛後台管理系統</h2>
+            <ul>
+                <li class="mb-24"><a href="cms.html" class="sidebar-link fs-4 active"><i
+                            class="bi bi-house me-8"></i>首頁</a></li>
+                <li class="mb-24"><a href="cms-order.html" class="sidebar-link fs-4 "><i class="bi bi-card-checklist me-8"></i>訂單管理</a>
+                </li>
+                <li><a href="cms-room.html" class="sidebar-link fs-4 "><i class="bi bi-calendar-week me-8"></i>房間查詢</a>
+                </li>
+            </ul>
+        </div>
+        <a href="cms-login.html" class="sidebar-link fs-4 mb-24"><i class="bi bi-power me-8"></i>登出</a>
+    </div>
+</nav>        <main class="main">
+            <div class="bg-white border-black-60 border-bottom sticky-top">
+                <a href="#" class="ps-24 py-16" id="toggle-btn" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
+                        class="bi bi-arrows-angle-expand"></i></a>
+                <span class="ms-16">嘿毛，歡迎登入</span>
+            </div>
+            <div class="p-24 p-lg-48">
+                <div class="col-xxl-10 mx-auto">
+                    <!-- 最新情況 -->
+                    <h2 class="fw-bold mb-24"><i class="bi bi-brightness-alt-high text-primary me-8"></i>最新情況</h2>
+                    <ul class="row justify-content-between gy-48 gy-lg-0 mb-80">
+                        <li class="col-md-4">
+                            <div class="card text-end d-flex justify-content-between p-24 shadow-sm h-100">
+                                <h2 class="mb-16">在線人數</h2>
+                                <p class="mb-0 display-5 fw-bold">66</p>
+                            </div>
+                        </li>
+                        <li class="col-md-4">
+                            <div class="card text-end d-flex justify-content-between p-24 shadow-sm h-100">
+                                <h2 class="mb-16">訂單總數</h2>
+                                <p class="mb-0 display-5 fw-bold">10,888</p>
+                            </div>
+                        </li>
+                        <li class="col-md-4">
+                            <div class="card text-end p-24 shadow-sm h-100">
+                                <h2 class="mb-16">營業總額</h2>
+                                <p class="mb-0 display-5 fw-bold text-success">
+                                    <span class="h5">NT$</span>
+                                    6,666,666
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- 本日營收 -->
+                    <h2 class="fw-bold mb-24"><i class="bi bi-brightness-alt-high text-primary me-8"></i>本日營收</h2>
+                    <ul class="row align-items-center gy-48 gy-lg-0 mb-80">
+                        <li class="col-lg-4">
+                            <h3 class="h4 text-center">應收款項(元)</h3>
+                            <div class="card shadow-sm p-16">
+                                <div class="profit-card d-flex justify-content-center align-items-center">
+                                    <canvas id="doughnut-chart" class="img-fluid h-100"></canvas>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-lg-4">
+                            <h3 class="h4 text-center">訂單比例(%)</h3>
+                            <div class="card shadow-sm p-16">
+                                <div class="profit-card d-flex justify-content-center align-items-center">
+                                    <canvas id="daily-pie-chart" class="img-fluid h-100"></canvas>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-lg-4">
+                            <h3 class="h4 text-center">與去年同日相比</h3>
+                            <div class="card shadow-sm p-16">
+                                <div class="profit-card d-flex justify-content-center align-items-center">
+                                    <p class="display-6 fw-bold mb-0">+ $9,982<i
+                                            class="bi bi-arrow-up text-success arror-jump position-relative"></i></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- 本年營收 -->
+                    <h2 class="fw-bold mb-24"><i class="bi bi-brightness-alt-high text-primary me-8"></i>本年營收</h2>
+                    <ul class="row align-items-center gy-48 gy-lg-0">
+                        <li class="col-lg-5">
+                            <h3 class="h4 text-center">訂單比例(%)</h3>
+                            <div class="card shadow-sm p-16">
+                                <div class="profit-card d-flex justify-content-center align-items-center">
+                                    <canvas id="pie-chart" class="img-fluid h-100"></canvas>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-lg-7">
+                            <h3 class="h4 text-center">營業額(萬)</h3>
+                            <div class="card shadow-sm p-16">
+                                <div class="profit-card d-flex justify-content-center align-items-center">
+                                    <canvas id="bar-chart" class="img-fluid h-100"></canvas>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            const toggleMenuBtn = document.querySelector('#toggle-btn');
+            const body = document.querySelector('body');
+            toggleMenuBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                body.classList.toggle('sidebar-toggled');
+            });
+
+            //Doughnut-chart
+            const x = ["今日未收款項$", "今日已收款項$"];
+            let y = [17360, 28240];
+            let doughnutColors = [
+                "#FFABAB",
+                "#00B200"
+            ];
+
+            new Chart("doughnut-chart", {
+                type: "doughnut",
+                data: {
+                    labels: x,
+                    datasets: [{
+                        backgroundColor: doughnutColors,
+                        data: y
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                }
+            });
+
+            // Daily-pie-chart
+            const X = ["樂園", "美容", "安親", "住宿"];
+            let Y = [20, 45, 15, 30];
+            let dailyBarColors = [
+                "#A3CF62",
+                "#FFE600",
+                "#FFC0CB",
+                "#F3715C"
+            ];
+            new Chart("daily-pie-chart", {
+                type: "pie",
+                data: {
+                    labels: X,
+                    datasets: [{
+                        backgroundColor: dailyBarColors,
+                        data: Y,
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                }
+            });
+
+            //Pie-chart
+            const xValues = ["樂園", "美容", "安親", "住宿"];
+            let yValues = [15, 23, 30, 42];
+            let barColors = [
+                "#A3CF62",
+                "#FFE600",
+                "#FFC0CB",
+                "#F3715C"
+            ];
+            new Chart("pie-chart", {
+                type: "pie",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues,
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                }
+            });
+
+            //Bar-chart
+            const chartElement = document.getElementById('bar-chart').getContext('2d');
+            new Chart(chartElement, {
+                type: 'bar',
+                data: {
+                    labels: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月'],
+                    datasets: [{
+                        label: '每月營業額',
+                        data: [325000, 485196, 655260, 432581, 619530, 552193, 731500, 661250],
+                        backgroundColor: [
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(255, 206, 86, 0.8)'
+                        ],
+                    }],
+                    options: {
+                        title: {
+                            display: true,
+                            responsive: true,
+                            maintainAspectRatio: false
+                        }
+                    }
+                }
+            });
+        </script>
+</body>
+
+</html>

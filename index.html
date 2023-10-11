@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>嘿毛寵物旅館</title>
+  <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-a9b22856.js"></script>
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-1ed0e0f2.css">
+</head>
+
+<body>
+
+  <div class="d-flex justify-content-center">
+    <header class="topbar w-lg-75 w-xl-50 w-xxl-45 py-md-20 px-md-40  rounded-pill position-fixed z-2">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html"><img src="/HayMo-Hotel-JS/assets/Logo-0e921db4.png" alt="Logo" class="topbar-logo"></a>
+            <!-- table-menu -->
+            <div class="d-none d-md-block">
+                <ul class="table-menu d-flex">
+                    <li class="me-32">
+                        <a href="index.html" class="menu-link position-relative active">首頁</a>
+                    </li>
+                    <li class="me-32">
+                        <a href="about.html" class="menu-link position-relative ">關於我們</a>
+                    </li>
+                    <li class="me-32">
+                        <a href="service.html" class="menu-link position-relative ">服務項目</a>
+                    </li>
+                    <li>
+                        <a href="faq.html" class="menu-link position-relative ">常見問題</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="d-flex align-items-center">
+                <li>
+                    <a href="login.html" class="login-link d-flex align-items-center justify-content-center me-md-0 ">
+                        <p class="link-circle-txt mb-0">線上<span class="d-md-block">預約</span></p>
+                    </a>
+                </li>
+                <li class="d-md-none">
+                    <div class="ham position-relative">
+                        <div class="ham-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- mobile-menu -->
+    <div class="d-block d-md-none mobile-menu">
+        <ul class="menu bg-primary d-flex flex-column position-fixed top-0 start-0 w-100 overflow-hidden z-99">
+            <li class="d-flex justify-content-end pt-16 pe-12">
+                <div class="closedHam position-relative rounded-circle">
+                    <div class="closedHam-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                </div>
+            </li>
+            <li class="ms-12 mt-24 mb-32">
+                <a href="index.html" class="menu-link text-white fw-bold">首頁</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="about.html" class="menu-link text-white fw-bold">關於我們</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="service.html" class="menu-link text-white fw-bold">服務項目</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="faq.html" class="menu-link text-white fw-bold">常見問題</a>
+            </li>
+            <li class="ms-12 d-md-none">
+                <a href="login.html" class="menu-link text-white fw-bold">線上預約</a>
+            </li>
+        </ul>
+    </div>
+</div>
+    <div class="position-fixed z-3 to-top-btn" id="back-to-top">
+    <a href="#" class="rounded-circle p-8 d-flex align-items-center justify-content-center"><i
+            class="fa-solid fa-angle-up text-white"></i></a>
+</div>
+      <!-- Banner -->
+      <div id="carousel" class="carousel slide mb-120 mb-lg-200" data-bs-ride="carousel" data-bs-pause="false">
+        <div class="carousel-inner">
+          <!-- 輪播第一頁 -->
+          <div class="carousel-item first bg-size-cover active" data-bs-interval="6000">
+            <div class="caption position-absolute">
+              <h2 class="caption-slogan lh-base mb-24">
+                <p class="fw-bold mb-0">嘿 , 讓我們提供您</p>
+                <p class="fw-bolder mb-0">最好的服務</p>
+                <div class="caption-slogan-hide">
+                  <p class="fw-bolder mb-0 text-primary">家長安心 , 毛小孩開心</p>
+                  <p class="fw-bolder mb-0 ">是我們的唯一宗旨</p>
+                </div>
+              </h2>
+              <div class="d-flex align-items-center">
+                <a href="#" data-bs-target="#carousel" data-bs-slide="prev"
+                  class="prev-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-left-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+                <a href="#" data-bs-target="#carousel" data-bs-slide="next"
+                  class="next-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-right-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- 輪播第二頁 -->
+          <div class="carousel-item second bg-size-cover" data-bs-interval="6000">
+            <div class="caption position-absolute common">
+              <h2 class="caption-slogan lh-base mb-24">
+                <p class="fw-bold mb-0">大狗友善，</p>
+                <p class="fw-bolder mb-0">多元環境。</p>
+              </h2>
+              <div class="d-flex align-items-center">
+                <a href="#" data-bs-target="#carousel" data-bs-slide="prev"
+                  class="prev-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-left-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+                <a href="#" data-bs-target="#carousel" data-bs-slide="next"
+                  class="next-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-right-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- 輪播第三頁 -->
+          <div class="carousel-item third bg-size-cover" data-bs-interval="6000">
+            <div class="caption position-absolute common">
+              <h2 class="caption-slogan lh-base mb-24">
+                <p class="fw-bold mb-0">專業照顧，</p>
+                <p class="fw-bolder mb-0">業界第一。</p>
+              </h2>
+              <div class="d-flex align-items-center">
+                <a href="#" data-bs-target="#carousel" data-bs-slide="prev"
+                  class="prev-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-left-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+                <a href="#" data-bs-target="#carousel" data-bs-slide="next"
+                  class="next-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-right-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 我們擁有 -->
+      <section class="weHave overflow-hidden mb-120 mb-lg-200">
+        <ul class="d-flex justify-content-around align-items-center weHave-content position-relative">
+          <li>
+            <div class="have-img bg-size-cover bg-p-center bg-repeat-no first mx-auto d-none d-md-block"></div>
+          </li>
+          <li>
+            <div class="have-img bg-size-cover bg-p-center bg-repeat-no second"></div>
+          </li>
+          <li class="d-none d-xl-block">
+            <div class="content-txt-xl">
+              <h2 class="d-inline-block fs-5 fw-bolder section-label py-12 px-20 mb-24">WE HAVE</h2>
+              <h2 class="fw-bold title-font mb-24">我們擁有</h2>
+              <p class="text-black-80 mb-0">專業的美容師、安親老師，並特別聘請獸醫師們駐館</p>
+              <p class="text-black-80 mb-0">館內擁有大片草地及水樂園供毛孩們玩耍</p>
+              <p class="text-black-80 mb-24">在這裡，我們盡全力讓他們得到最好的照顧</p>
+            </div>
+            <div class="d-flex flex-wrap justify-content-betwen">
+              <p class="w-50 fw-bold fs-4"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKlSURBVHgBxVVBbtpQEJ35NotKLMiuUkhLTwA9QIV9gjYnSHKCxqCsY9YtmBskOUHaE9hpD1BygiKVSFlaapb4T2f8wTbGBIpUdSRL9vef9978mfkD8I8Nd93YDAMHFLVB0wGAimauF+3it5XgZRi0bKWveKtTXCeAaaLRfXS96V8TGLXJB/7d5qfDSw1+YtJwI/+VgvdM0BISBJoy3f1cW+MqsjWC5vfRJWjwS8uTJ1Ybu14sH60waMwVhfzaWdmlwJ+96w02EhyGw1NUeJV+aBqwuom8/gYrWoIvTY6uBkmHgGICi/3gRNZJk/fg9sfVBHejnyihlzbtYgVx8azbO1gjOAyDDir6wQvTX93eG9jDcoH49sH10uhVgUkSKdURw55mEs4YFr1erqUEcp6kyJw90U4EciSs+KSSiGDc4ELICGoq8SU0Bo+eSB1vA5dKk/Nmn+viuq1T34lg1UGfZwQaVNeIV165WspKV8qYK624dyq+OvFSLIWpj52GJOrZlolZCXdRtgzcMqA5+Mzt++X9M/ciat6NMsxlkmOjNuiUHTKVArwFvIgh1ZgTLK4AVDpYJidXxEDFo3gGXHxxUSyaMMoIbEDfMKJTV/oW1sLu+9x8Z1zCp5vAxRa+HcFKCAYGG0xyjsLPHt9it9IIVcadfQ1bDU0v6eTs0b2YZhGkIYGVLhBiC/Y0yprVzipR5QrTCool+682NNBzxlX2UXzleIrVaK8okBtUYaC5gY6+DR1K1E3CqljZpHzXS0JfADjybtky6UyFsa9f3Lc+D8KhDwovS8sr80DA61XzoKLCKiea3E0W0DkitZFzkk8v/dXsUHKE6ZTj9p8Q4T1C8kWarIy100yusVpadGYxqrnG471mcpU1w08OK3fMl46q1P4X+wNUBElixvMBgAAAAABJRU5ErkJggg==" alt="打勾圖案"
+                  class="me-8 me-xl-16">專業美容</p>
+              <p class="w-50 fw-bold fs-4"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKlSURBVHgBxVVBbtpQEJ35NotKLMiuUkhLTwA9QIV9gjYnSHKCxqCsY9YtmBskOUHaE9hpD1BygiKVSFlaapb4T2f8wTbGBIpUdSRL9vef9978mfkD8I8Nd93YDAMHFLVB0wGAimauF+3it5XgZRi0bKWveKtTXCeAaaLRfXS96V8TGLXJB/7d5qfDSw1+YtJwI/+VgvdM0BISBJoy3f1cW+MqsjWC5vfRJWjwS8uTJ1Ybu14sH60waMwVhfzaWdmlwJ+96w02EhyGw1NUeJV+aBqwuom8/gYrWoIvTY6uBkmHgGICi/3gRNZJk/fg9sfVBHejnyihlzbtYgVx8azbO1gjOAyDDir6wQvTX93eG9jDcoH49sH10uhVgUkSKdURw55mEs4YFr1erqUEcp6kyJw90U4EciSs+KSSiGDc4ELICGoq8SU0Bo+eSB1vA5dKk/Nmn+viuq1T34lg1UGfZwQaVNeIV165WspKV8qYK624dyq+OvFSLIWpj52GJOrZlolZCXdRtgzcMqA5+Mzt++X9M/ciat6NMsxlkmOjNuiUHTKVArwFvIgh1ZgTLK4AVDpYJidXxEDFo3gGXHxxUSyaMMoIbEDfMKJTV/oW1sLu+9x8Z1zCp5vAxRa+HcFKCAYGG0xyjsLPHt9it9IIVcadfQ1bDU0v6eTs0b2YZhGkIYGVLhBiC/Y0yprVzipR5QrTCool+682NNBzxlX2UXzleIrVaK8okBtUYaC5gY6+DR1K1E3CqljZpHzXS0JfADjybtky6UyFsa9f3Lc+D8KhDwovS8sr80DA61XzoKLCKiea3E0W0DkitZFzkk8v/dXsUHKE6ZTj9p8Q4T1C8kWarIy100yusVpadGYxqrnG471mcpU1w08OK3fMl46q1P4X+wNUBElixvMBgAAAAABJRU5ErkJggg==" alt="打勾圖案"
+                  class="me-8 me-xl-16">優質照顧</p>
+              <p class="w-50 fw-bold fs-4"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKlSURBVHgBxVVBbtpQEJ35NotKLMiuUkhLTwA9QIV9gjYnSHKCxqCsY9YtmBskOUHaE9hpD1BygiKVSFlaapb4T2f8wTbGBIpUdSRL9vef9978mfkD8I8Nd93YDAMHFLVB0wGAimauF+3it5XgZRi0bKWveKtTXCeAaaLRfXS96V8TGLXJB/7d5qfDSw1+YtJwI/+VgvdM0BISBJoy3f1cW+MqsjWC5vfRJWjwS8uTJ1Ybu14sH60waMwVhfzaWdmlwJ+96w02EhyGw1NUeJV+aBqwuom8/gYrWoIvTY6uBkmHgGICi/3gRNZJk/fg9sfVBHejnyihlzbtYgVx8azbO1gjOAyDDir6wQvTX93eG9jDcoH49sH10uhVgUkSKdURw55mEs4YFr1erqUEcp6kyJw90U4EciSs+KSSiGDc4ELICGoq8SU0Bo+eSB1vA5dKk/Nmn+viuq1T34lg1UGfZwQaVNeIV165WspKV8qYK624dyq+OvFSLIWpj52GJOrZlolZCXdRtgzcMqA5+Mzt++X9M/ciat6NMsxlkmOjNuiUHTKVArwFvIgh1ZgTLK4AVDpYJidXxEDFo3gGXHxxUSyaMMoIbEDfMKJTV/oW1sLu+9x8Z1zCp5vAxRa+HcFKCAYGG0xyjsLPHt9it9IIVcadfQ1bDU0v6eTs0b2YZhGkIYGVLhBiC/Y0yprVzipR5QrTCool+682NNBzxlX2UXzleIrVaK8okBtUYaC5gY6+DR1K1E3CqljZpHzXS0JfADjybtky6UyFsa9f3Lc+D8KhDwovS8sr80DA61XzoKLCKiea3E0W0DkitZFzkk8v/dXsUHKE6ZTj9p8Q4T1C8kWarIy100yusVpadGYxqrnG471mcpU1w08OK3fMl46q1P4X+wNUBElixvMBgAAAAABJRU5ErkJggg==" alt="打勾圖案"
+                  class="me-8 me-xl-16">多元環境</p>
+              <p class="w-50 fw-bold fs-4"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKlSURBVHgBxVVBbtpQEJ35NotKLMiuUkhLTwA9QIV9gjYnSHKCxqCsY9YtmBskOUHaE9hpD1BygiKVSFlaapb4T2f8wTbGBIpUdSRL9vef9978mfkD8I8Nd93YDAMHFLVB0wGAimauF+3it5XgZRi0bKWveKtTXCeAaaLRfXS96V8TGLXJB/7d5qfDSw1+YtJwI/+VgvdM0BISBJoy3f1cW+MqsjWC5vfRJWjwS8uTJ1Ybu14sH60waMwVhfzaWdmlwJ+96w02EhyGw1NUeJV+aBqwuom8/gYrWoIvTY6uBkmHgGICi/3gRNZJk/fg9sfVBHejnyihlzbtYgVx8azbO1gjOAyDDir6wQvTX93eG9jDcoH49sH10uhVgUkSKdURw55mEs4YFr1erqUEcp6kyJw90U4EciSs+KSSiGDc4ELICGoq8SU0Bo+eSB1vA5dKk/Nmn+viuq1T34lg1UGfZwQaVNeIV165WspKV8qYK624dyq+OvFSLIWpj52GJOrZlolZCXdRtgzcMqA5+Mzt++X9M/ciat6NMsxlkmOjNuiUHTKVArwFvIgh1ZgTLK4AVDpYJidXxEDFo3gGXHxxUSyaMMoIbEDfMKJTV/oW1sLu+9x8Z1zCp5vAxRa+HcFKCAYGG0xyjsLPHt9it9IIVcadfQ1bDU0v6eTs0b2YZhGkIYGVLhBiC/Y0yprVzipR5QrTCool+682NNBzxlX2UXzleIrVaK8okBtUYaC5gY6+DR1K1E3CqljZpHzXS0JfADjybtky6UyFsa9f3Lc+D8KhDwovS8sr80DA61XzoKLCKiea3E0W0DkitZFzkk8v/dXsUHKE6ZTj9p8Q4T1C8kWarIy100yusVpadGYxqrnG471mcpU1w08OK3fMl46q1P4X+wNUBElixvMBgAAAAABJRU5ErkJggg==" alt="打勾圖案"
+                  class="me-8 me-xl-16">24hr錄影</p>
+            </div>
+          </li>
+          <li>
+            <div class="have-img bg-size-cover bg-p-center bg-repeat-no third"></div>
+          </li>
+          <li>
+            <div class="have-img bg-size-cover bg-p-center bg-repeat-no fourth d-none d-md-block"></div>
+          </li>
+          <!-- 1200px以下的content-txt -->
+          <li class="content-txt mb-0 d-xl-none w-md-75 pe-12 pe-md-0 position-absolute">
+            <div>
+              <h2 class="d-inline-block fs-5 fw-bolder section-label py-12 px-20 mb-24 bg-white">WE HAVE</h2>
+              <h2 class="fw-bold title-font mb-24">我們擁有</h2>
+              <p class="text-black-80 mb-0">專業的美容師、安親老師，並聘請獸醫師們駐館</p>
+              <p class="text-black-80 mb-0">館內擁有大片草地及水樂園供毛孩們玩耍</p>
+              <p class="text-black-80 mb-24">在這裡，我們盡全力讓他們得到最好的照顧</p>
+            </div>
+            <div class="d-flex flex-wrap justify-content-betwen">
+              <p class="w-50 fw-bold fs-5"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKlSURBVHgBxVVBbtpQEJ35NotKLMiuUkhLTwA9QIV9gjYnSHKCxqCsY9YtmBskOUHaE9hpD1BygiKVSFlaapb4T2f8wTbGBIpUdSRL9vef9978mfkD8I8Nd93YDAMHFLVB0wGAimauF+3it5XgZRi0bKWveKtTXCeAaaLRfXS96V8TGLXJB/7d5qfDSw1+YtJwI/+VgvdM0BISBJoy3f1cW+MqsjWC5vfRJWjwS8uTJ1Ybu14sH60waMwVhfzaWdmlwJ+96w02EhyGw1NUeJV+aBqwuom8/gYrWoIvTY6uBkmHgGICi/3gRNZJk/fg9sfVBHejnyihlzbtYgVx8azbO1gjOAyDDir6wQvTX93eG9jDcoH49sH10uhVgUkSKdURw55mEs4YFr1erqUEcp6kyJw90U4EciSs+KSSiGDc4ELICGoq8SU0Bo+eSB1vA5dKk/Nmn+viuq1T34lg1UGfZwQaVNeIV165WspKV8qYK624dyq+OvFSLIWpj52GJOrZlolZCXdRtgzcMqA5+Mzt++X9M/ciat6NMsxlkmOjNuiUHTKVArwFvIgh1ZgTLK4AVDpYJidXxEDFo3gGXHxxUSyaMMoIbEDfMKJTV/oW1sLu+9x8Z1zCp5vAxRa+HcFKCAYGG0xyjsLPHt9it9IIVcadfQ1bDU0v6eTs0b2YZhGkIYGVLhBiC/Y0yprVzipR5QrTCool+682NNBzxlX2UXzleIrVaK8okBtUYaC5gY6+DR1K1E3CqljZpHzXS0JfADjybtky6UyFsa9f3Lc+D8KhDwovS8sr80DA61XzoKLCKiea3E0W0DkitZFzkk8v/dXsUHKE6ZTj9p8Q4T1C8kWarIy100yusVpadGYxqrnG471mcpU1w08OK3fMl46q1P4X+wNUBElixvMBgAAAAABJRU5ErkJggg==" alt="打勾圖案"
+                  class="me-8 me-xl-16">專業美容</p>
+              <p class="w-50 fw-bold fs-5"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKlSURBVHgBxVVBbtpQEJ35NotKLMiuUkhLTwA9QIV9gjYnSHKCxqCsY9YtmBskOUHaE9hpD1BygiKVSFlaapb4T2f8wTbGBIpUdSRL9vef9978mfkD8I8Nd93YDAMHFLVB0wGAimauF+3it5XgZRi0bKWveKtTXCeAaaLRfXS96V8TGLXJB/7d5qfDSw1+YtJwI/+VgvdM0BISBJoy3f1cW+MqsjWC5vfRJWjwS8uTJ1Ybu14sH60waMwVhfzaWdmlwJ+96w02EhyGw1NUeJV+aBqwuom8/gYrWoIvTY6uBkmHgGICi/3gRNZJk/fg9sfVBHejnyihlzbtYgVx8azbO1gjOAyDDir6wQvTX93eG9jDcoH49sH10uhVgUkSKdURw55mEs4YFr1erqUEcp6kyJw90U4EciSs+KSSiGDc4ELICGoq8SU0Bo+eSB1vA5dKk/Nmn+viuq1T34lg1UGfZwQaVNeIV165WspKV8qYK624dyq+OvFSLIWpj52GJOrZlolZCXdRtgzcMqA5+Mzt++X9M/ciat6NMsxlkmOjNuiUHTKVArwFvIgh1ZgTLK4AVDpYJidXxEDFo3gGXHxxUSyaMMoIbEDfMKJTV/oW1sLu+9x8Z1zCp5vAxRa+HcFKCAYGG0xyjsLPHt9it9IIVcadfQ1bDU0v6eTs0b2YZhGkIYGVLhBiC/Y0yprVzipR5QrTCool+682NNBzxlX2UXzleIrVaK8okBtUYaC5gY6+DR1K1E3CqljZpHzXS0JfADjybtky6UyFsa9f3Lc+D8KhDwovS8sr80DA61XzoKLCKiea3E0W0DkitZFzkk8v/dXsUHKE6ZTj9p8Q4T1C8kWarIy100yusVpadGYxqrnG471mcpU1w08OK3fMl46q1P4X+wNUBElixvMBgAAAAABJRU5ErkJggg==" alt="打勾圖案"
+                  class="me-8 me-xl-16">優質照顧</p>
+              <p class="w-50 fw-bold fs-5"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKlSURBVHgBxVVBbtpQEJ35NotKLMiuUkhLTwA9QIV9gjYnSHKCxqCsY9YtmBskOUHaE9hpD1BygiKVSFlaapb4T2f8wTbGBIpUdSRL9vef9978mfkD8I8Nd93YDAMHFLVB0wGAimauF+3it5XgZRi0bKWveKtTXCeAaaLRfXS96V8TGLXJB/7d5qfDSw1+YtJwI/+VgvdM0BISBJoy3f1cW+MqsjWC5vfRJWjwS8uTJ1Ybu14sH60waMwVhfzaWdmlwJ+96w02EhyGw1NUeJV+aBqwuom8/gYrWoIvTY6uBkmHgGICi/3gRNZJk/fg9sfVBHejnyihlzbtYgVx8azbO1gjOAyDDir6wQvTX93eG9jDcoH49sH10uhVgUkSKdURw55mEs4YFr1erqUEcp6kyJw90U4EciSs+KSSiGDc4ELICGoq8SU0Bo+eSB1vA5dKk/Nmn+viuq1T34lg1UGfZwQaVNeIV165WspKV8qYK624dyq+OvFSLIWpj52GJOrZlolZCXdRtgzcMqA5+Mzt++X9M/ciat6NMsxlkmOjNuiUHTKVArwFvIgh1ZgTLK4AVDpYJidXxEDFo3gGXHxxUSyaMMoIbEDfMKJTV/oW1sLu+9x8Z1zCp5vAxRa+HcFKCAYGG0xyjsLPHt9it9IIVcadfQ1bDU0v6eTs0b2YZhGkIYGVLhBiC/Y0yprVzipR5QrTCool+682NNBzxlX2UXzleIrVaK8okBtUYaC5gY6+DR1K1E3CqljZpHzXS0JfADjybtky6UyFsa9f3Lc+D8KhDwovS8sr80DA61XzoKLCKiea3E0W0DkitZFzkk8v/dXsUHKE6ZTj9p8Q4T1C8kWarIy100yusVpadGYxqrnG471mcpU1w08OK3fMl46q1P4X+wNUBElixvMBgAAAAABJRU5ErkJggg==" alt="打勾圖案"
+                  class="me-8 me-xl-16">多元環境</p>
+              <p class="w-50 fw-bold fs-5"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKlSURBVHgBxVVBbtpQEJ35NotKLMiuUkhLTwA9QIV9gjYnSHKCxqCsY9YtmBskOUHaE9hpD1BygiKVSFlaapb4T2f8wTbGBIpUdSRL9vef9978mfkD8I8Nd93YDAMHFLVB0wGAimauF+3it5XgZRi0bKWveKtTXCeAaaLRfXS96V8TGLXJB/7d5qfDSw1+YtJwI/+VgvdM0BISBJoy3f1cW+MqsjWC5vfRJWjwS8uTJ1Ybu14sH60waMwVhfzaWdmlwJ+96w02EhyGw1NUeJV+aBqwuom8/gYrWoIvTY6uBkmHgGICi/3gRNZJk/fg9sfVBHejnyihlzbtYgVx8azbO1gjOAyDDir6wQvTX93eG9jDcoH49sH10uhVgUkSKdURw55mEs4YFr1erqUEcp6kyJw90U4EciSs+KSSiGDc4ELICGoq8SU0Bo+eSB1vA5dKk/Nmn+viuq1T34lg1UGfZwQaVNeIV165WspKV8qYK624dyq+OvFSLIWpj52GJOrZlolZCXdRtgzcMqA5+Mzt++X9M/ciat6NMsxlkmOjNuiUHTKVArwFvIgh1ZgTLK4AVDpYJidXxEDFo3gGXHxxUSyaMMoIbEDfMKJTV/oW1sLu+9x8Z1zCp5vAxRa+HcFKCAYGG0xyjsLPHt9it9IIVcadfQ1bDU0v6eTs0b2YZhGkIYGVLhBiC/Y0yprVzipR5QrTCool+682NNBzxlX2UXzleIrVaK8okBtUYaC5gY6+DR1K1E3CqljZpHzXS0JfADjybtky6UyFsa9f3Lc+D8KhDwovS8sr80DA61XzoKLCKiea3E0W0DkitZFzkk8v/dXsUHKE6ZTj9p8Q4T1C8kWarIy100yusVpadGYxqrnG471mcpU1w08OK3fMl46q1P4X+wNUBElixvMBgAAAAABJRU5ErkJggg==" alt="打勾圖案"
+                  class="me-8 me-xl-16">24hr錄影</p>
+            </div>
+          </li>
+      </section>
+
+      <!-- 服務項目 -->
+      <main class="serviceItem position-relative py-80 py-xl-160 mb-120 mb-lg-200">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="d-inline-block fs-5 fw-bolder section-label py-12 px-20 mb-24">SERVICE</h2>
+            <h2 class="fw-bold title-font mb-24 mb-xl-40">服務項目</h2>
+            <div class="py-24 py-xl-40">
+              <!-- 服務項目卡片 -->
+              <ul class="row row-cols-1 row-cols-md-2 row-cols-xl-4 gy-48 gy-xl-0">
+                <li class="col">
+                  <ul class="row row-cols-2 row-cols-md-1 align-items-center ps-0 mb-0">
+                    <li class="col">
+                      <div class="vector position-relative bg-size-cover dayCare z-n1 mx-auto mb-md-20 mb-lg-32">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJLSURBVHgB7ZkxctswEEW/kybpeIQ9gnID5gTxDcyU6XQD8wZxylRWTpDxCWSXrix37kifwHbnjl4MoRmYBMgFAWJc4M38kUQul/jAQgAlIJPJZDIBfEY8NqwvrGeEQawiQh4vSlbHanQDQtix9kiM6jHV+FATG51DqUJiCOEmjtd3Rp4SCSEsN1HhfeNNXSK8NMUQ/E2Y17ikzhdIBEFuwoydU4mEEOZNmDHBBn6znljniFdvhPcmXOeCDRQY19sZ4kCsO9YWYY3vdB7nPLiAfeJsEB/CMgMjEyeDxKfoS4kGx3esf1iO2hYc9PvjNoHQr7gEf1Sub1MBFZb3kE17I7fZgxRwn9mvVELf87ENdBFM1MdkJ5inRPjm6pr1Xb/v9OtBH3OVUwt72TbwLOdTxB8B24QkxNkQjtgCqxlwmfgBIZ8EMWvvP9TX9F7fp0VfVi/SiyUGUjA0cS298KMYUJgmxEgMtEiHtwmJgQPS4rV1kRpI+QuB1/2kc+AP0nGBFTB/LQhZB2gmroEn0hHYDj7bhlgdazGe9M9GfI3pPIQVHhttW4kz9L3qWm1tkDCPGoWoi2czuMF/fbx0NMjFDvZyIfSPstbdZigVxo2kiUaphhTCPKbZ2pKHEAhh3PuXg5gCst6T5JmL8WaH8ZCTJa7GdO+dY3oUj1SWuBIBSOvb1nu1cf4O8vreI+IomMmamdgSbrPDPLQwj5WpPzhu0D9y3rJ+YXp5b1mPOkatpOYj3xXrK+uB9RPTm0N17p71qnP8RSaTyWTW5A1VVbdIpLdJewAAAABJRU5ErkJggg==" alt="狗狗"
+                          class="vector-img d-block position-absolute top-50 start-50 translate-middle">
+                      </div>
+                    </li>
+                    <li class="col">
+                      <div class="text-start text-md-center">
+                        <h3 class="fw-bold subtitle mb-xl-32">安親</h3>
+                        <p class="text-black-80 d-md-inline mb-0">認識新朋友，</p>
+                        <p class="text-black-80 d-md-inline mb-0">增加社會化</p>
+                        <p class="text-black-80 mb-0">等待時間不無聊</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="col">
+                  <ul class="row row-cols-2 row-cols-md-1 align-items-center">
+                    <li class="col">
+                      <div class="vector position-relative bg-size-cover paradise z-n1 mx-auto mb-md-20 mb-lg-32">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMmSURBVHgB7VjRkdMwEH3D8I+pANFBqAB1wFFBTAVJBzEVJFRgd3ChAl8HOSqwqSDXweHF2pHsSLJsy1wCvJkdO8pK2n27WksC/uPvxaaRUskaN4Z9I8+NnJXQ+w43ghStwadGEiUn1bbFDaBSIow2coKjkeCKkaJl2pbzGW4gCpQqLpY5CiWuFAItw7lHp1A6ApHwCvEg1fPo0XlQzztcIe7RsutbpAmGo/RioMpzCtSrem2ikZXx3q9ii4OZPQboFriMFEWvUm0hkYwOifASuVW6zPid+k1SGu9BiLWIhXpWAbq1erIDG+M/abzTWIOLPbYDPwN0a6MPibToUCp+R5tOtIciZ60pFduBOkD3ST3fwW48gYgo1HsG/YE0U+03XiMO3qBrnA+1er6Fe5tN7R/hxg9EBjFyHqFPupTjzxNF8EAxv8Qh7Ju6AtPwDWGpOgq2j5MNopEDpjN/wEIYckCiW+PHCPWjUiswElSDd4EdbQ5ItIydgcmMF5gB3h6QATlah4RDtzQcSDHPaJ4z6ODjW8S00B6UIyn0foUGP8F92yAxfx/ziO52YzIk/ExlSo83YIQC89jvC5GWY8YZYusZPO8ZnUCffecY7Puv40jId4AW4vtGvsC9XeZvADlQYz7SRj408rmRr9AnOYGZh6EUlyWOwFH6hOG0GxOJtTG3GZlJSHAZXq48vKffQlevMRWnhLty7dUcfDkWcuqz4t4xARks0F0Tp0DDM3QrFlWdFJdEJYqkAybcK1Hn0mOIVHpcXgH3dqGCZnqo1JpzCkyEhL8qnKEdKHuGcWRYuD30cqvAjJynyfbwp8ABXRaZdekZd2X0HcJ2hG4HEvbF2jfe1o/+yzBslMRCyGFn2lzArioQcvfJR8NFkOKyxlPId+hGQnjG8KURp0+OhVBAGy5V2xjjAZ1GpWd8gYWwQpc5ZizUeAZXo7XRtsHC7NuQQbM5ZnssoBd9Bh3FMSREgYC/ogz1NSsXvc/e278EKuhL20UQ81rFhycshD/lwGKIcbUo4F6clDrEvnT8X2OBS6qxyDC8dXZJhpmIEYEjprP4iH8dvwAEINAs/tTN2gAAAABJRU5ErkJggg==" alt="狗狗"
+                          class="vector-img d-block position-absolute top-50 start-50 translate-middle">
+                      </div>
+                    </li>
+                    <li class="col">
+                      <div class="text-start text-md-center">
+                        <h3 class="fw-bold subtitle mb-xl-32">樂園</h3>
+                        <p class="text-black-80 mb-0">大草地、大泳池</p>
+                        <p class="text-black-80 mb-0">想去哪玩就去哪</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="col">
+                  <ul class="row row-cols-2 row-cols-md-1 align-items-center">
+                    <li class="col">
+                      <div class="vector position-relative bg-size-cover cosmetic z-n1 mx-auto mb-md-20 mb-lg-32">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJsSURBVHgB7ZmNbeMwDIUfcAtkBI6QDc4jdIN6g3SDcIN2g2SD3AYeISNkhN5N0DNhC3UoSpaNSJWBfADRwqajR/EHigM8+Vl+oR6a3n739q+3v9gYx96+Rrv1RqiQXW8vsMVd8R2AC2KHiqDePhHeYcZ9AF/jtWr4gL/DpHzOsAMgVFBSLfwd/mP4uUA7DKLfJ/6v+GEY9wF0M/6k/D9RMBOhhuWJmH3CZ7i+cfaBAtBkYUvokunSws9CdthYNLbbh9FHRikZ93UWCJlp4TdsqN4J89PphsIBCKwWvQb89vCD1UEUz4CDkVZCzs8Kgox7D0eaUqbDBfOTJQTDFyqf2WLZ6F3FGekNexx9boYf417sKwbB02tvyIBeJBQEJfgxhn6R3W/gZ4WQgTdjoZPhR4ZfLGN6Y7KUj4Phpz/FLxREa/g1yEyLoZEZw25LFjrM17rOmDx7w3xGs3LBfK2HmlOXTrbaxyhMduegrusdjDWs/HXnoyN88YxM7JTQK76FWI2dMmL1M1kbdz+zIMMOwsISL5tDyMwV8XplQ5TGEl/sywvBr3d93ueJqHZyXfze4YsXW3skWQVhOE7I5GkWPGNlTweZlQbD9DkgXbjsupSMPiKnNPnDINizOtZ0MeHFGhawa14LcRlpxv9PEeFiZxR6C0eIi19qEtQLCkEB8R38N2opwhkF330SbPHniU+VwgXCvPgj7MyInbBsSj0UwjrxJ1TCGvFF31/GaLBOfNEjQAzGvbjL5F714gX9gwSP1zchXrC+kIQOX9WJF6x385sR72ixYfGOBv447bAR8VOkpPao7LfbJ08ewH+7zdvnXAfacgAAAABJRU5ErkJggg==" alt="狗狗"
+                          class="vector-img d-block position-absolute top-50 brush">
+                      </div>
+                    </li>
+                    <li class="col">
+                      <div class="text-start text-md-center">
+                        <h3 class="fw-bold subtitle mb-xl-32">美容</h3>
+                        <p class="text-black-80 mb-0">我們絕對細心且耐心</p>
+                        <p class="text-black-80 mb-0">透明玻璃，家長放心</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="col">
+                  <ul class="row row-cols-2 row-cols-md-1 align-items-center">
+                    <li class="col">
+                      <div class="vector position-relative bg-size-cover sleeping z-n1 mx-auto mb-md-20 mb-lg-32">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI9SURBVHgB7ZntbcIwEIbfov4nG/TYJN2ATlA2KBuUDcoG0AnoBmGDdoOkE0AnoLGwFdfEn7FTiPJIJyu2c34P47MNwMiwodqK2g61nSLYjvvsTXws4bId0FMQOz7gtrYM3SHui/ks0APiEyPEI0MzC8kRAST1O8GNMwYQQIm/WaV0bGvl5mcgJaZF/AJ9Tje12fxGRTcQodnglh5tNr/R0Q3UdQ0MK42mZNzIXBhcAOyw9IomE5T8OYSj5DMWZOsgjsCqbZR+GXfGLJdsXtuCl6X0LqE7GffFfH60dZjDfpHoekFR0yLhMnUGX2hWHcW5Wqh4JryAYTZXCcTqAiBP8Ss4kEcUaTKC/9cmhyNrtE/drqNo2XTiN5q2NTwpFAfiULUNFOxiIqsslPo9LLhsZF+8fEB6jsrzyfZCWwAxNx5XxIdTKfUECy4BVK7OeN9ZbY/wQ4x5hCcxZ6DCWXiFJmhWhgQkIASgLjBdfVt6FIOW3OQ62/u28ZMHkBvElw7v28ZPHoCc58lT/NUEECo+agDqoKSpd1kHPrMm3vMK4B5xIV4WiHMHqGwd2gJQczGhSY0EMwXCqKSxTFoumBicCaa8/EY6fnip7kFBAahOZrycIh3iDwuCWYuVN1wuotjHaZ3t0H5l3cCRvAeRoZbrRE+UAK6VXNcwqB+29pa+FQKOuw4cYff7qWu4U54LtE/XO87XPUGmmAzBLLDS1G9re8Yl7Lr5BA/YJVpkA1Yu0R8rNEeQA3/+jxviiDO/yP1VMDlpq58AAAAASUVORK5CYII=" alt="狗狗"
+                          class="vector-img d-block position-absolute top-50 start-50 translate-middle">
+                      </div>
+                    </li>
+                    <li class="col">
+                      <div class="text-start text-md-center">
+                        <h3 class="fw-bold subtitle mb-xl-32">住宿</h3>
+                        <p class="text-black-80 mb-0">堅持一狗一室</p>
+                        <p class="text-black-80 mb-0">大家一起睡好好</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- 業界第一 -->
+      <section class="theBest mb-120 mb-lg-200">
+        <ul class="d-flex flex-column flex-md-row">
+          <li class="w-md-50">
+            <div class="best-img w-100 bg-repeat-no bg-size-cover"></div>
+          </li>
+          <li class="w-md-50">
+            <div class="best-content bg-primary-l">
+              <h2 class="d-inline-block fs-5 fw-bolder section-label py-12 px-20 mb-24">WE ARE BEST</h2>
+              <h2 class="fw-bold title-font mb-24">業界第一</h2>
+              <p class="text-black-80 mb-0">館內擁有大大的泳池及大片的草地</p>
+              <p class="text-black-80 mb-0">只要是前來住宿的毛孩皆可以免費使用</p>
+              <p class="text-black-80 mb-0">我們提供救生衣及配備專人在旁監督</p>
+              <p class="text-black-80 mb-24">確保毛孩開心的同時也安安全全</p>
+              <div class="d-flex">
+                <a href="service.html" class="bestBtn py-18 px-28 d-flex align-items-center fw-bold">查看更多<i
+                    class="bi bi-arrow-right d-block fs-4 ms-8 arr rounded-circle d-flex justify-content-center align-items-center"></i></a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="position-relative pt-120 pb-40 pb-xxl-120">
+    <div class="container">
+        <div class="row flex-column-reverse flex-xl-row w-100">
+            <div class="col-md-10 col-xl-7 col-xxl-6">
+                <div class="mb-40">
+                    <h2 class="fw-bold text-white slogan-text mb-8">嘿 , 我們用心，</h2>
+                    <h2 class="fw-bold text-white slogan-text mb-0">家長安心</h2>
+                </div>
+                <ul class="d-flex lh-1 mb-40">
+                    <li class="me-24"><a href="#" class="mr-24"><i class="bi bi-line footer-icon fs-4"></i></a></li>
+                    <li class="me-24"><a href="#"><i class="bi bi-facebook footer-icon fs-4"></i></a></li>
+                    <li><a href="#"><i class="bi bi-instagram footer-icon fs-4"></i></a></li>
+                </ul>
+                <div>
+                    <div class="d-flex justify-content-between align-items-center mb-16">
+                        <h3 class="h5 text-white fw-bold mb-0">聯絡資訊</h3>
+                        <h3 class="h5 fw-bold mb-0"><a href="cms-login.html" class="cms-link">後台管理<span><i
+                                        class="bi bi-arrow-right-short fs-4 ms-16"></i></span></a></h3>
+                    </div>
+                    <p class="text-white mb-4">電話<a href="tel:+886-2-2618-0000" class="contact-info link">02-2618-0000</a></p>
+                    <p class="text-white mb-4">地址<a href="#" class="contact-info link">新北市八里區星光里星光大道</a></p>
+                    <p class="text-white mb-0">時間<span class="contact-info">週一至週日 09：00 ~21：00</span></p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-xxl-6">
+                <div class="text-xl-center">
+                    <img src="/HayMo-Hotel-JS/assets/Logo-0e921db4.png" alt="logo" class="footer-logo img-fluid mb-40 mb-xl-0">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        
+        <script>
+          // 漢堡選單
+          const hamBtn = document.querySelector(".ham");
+          const mobileMenu = document.querySelector(".mobile-menu .menu");
+          const hamCloseBtn = document.querySelector(".closedHam");
+          const body = document.body;
+
+          function toggleMenu() {
+            mobileMenu.classList.toggle('open');
+            body.classList.toggle('hidden-y');
+          };
+
+          hamBtn.addEventListener('click', toggleMenu);
+          hamCloseBtn.addEventListener("click", toggleMenu);
+
+          // back to top
+          $(function () {
+            $(function () {
+              $(window).scroll(function () {
+                if ($(window).scrollTop() > 100) {
+                  $("#back-to-top").fadeIn(1000);
+                }
+                else {
+                  $("#back-to-top").fadeOut(1000);
+                }
+              });
+              $("#back-to-top").click(function () {
+                $('body,html').animate({ scrollTop: 0 }, 500);
+                return false;
+              });
+            });
+          });
+        </script>
+</body>
+
+</html>

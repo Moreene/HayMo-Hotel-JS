@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>嘿毛寵物旅館 | 會員中心</title>
+    <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-a9b22856.js"></script>
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-1ed0e0f2.css">
+</head>
+
+<body class="bg-secondary-l">
+
+    <div class="d-flex justify-content-center">
+    <header class="topbar w-lg-75 w-xl-50 w-xxl-45 py-md-20 px-md-40 rounded-pill position-fixed z-2">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html"><img src="/HayMo-Hotel-JS/assets/Logo-0e921db4.png" alt="Logo" class="topbar-logo"></a>
+            <!-- table-menu -->
+            <div class="d-none d-md-block">
+                <ul class="table-menu d-flex">
+                    <li class="me-32">
+                        <a href="memberCenter.html" class="menu-link position-relative active">會員中心</a>
+                    </li>
+                    <li class="me-32">
+                        <a href="article.html" class="menu-link position-relative ">毛孩專欄</a>
+                    </li>
+                    <li>
+                        <a href="reverse.html" class="menu-link position-relative ">線上預約</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="d-flex align-items-center">
+                <li>
+                    <a href="login.html" class="logOut-link d-flex align-items-center justify-content-center me-md-0">
+                        <p class="link-circle-txt mb-0">登出</p>
+                    </a>
+                </li>
+                <li class="d-md-none">
+                    <div class="ham position-relative">
+                        <div class="ham-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- mobile-menu -->
+    <div class="d-block d-md-none mobile-menu">
+        <ul class="menu bg-primary d-flex flex-column position-fixed top-0 start-0 w-100 overflow-hidden">
+            <li class="d-flex justify-content-end pt-16 pe-12">
+                <div class="closedHam position-relative rounded-circle">
+                    <div class="closedHam-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                </div>
+            </li>
+            <li class="ms-12 mt-24 mb-32">
+                <a href="memberCenter.html" class="menu-link text-white fw-bold">會員中心</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="article.html" class="menu-link text-white fw-bold">毛孩專欄</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="reverse.html" class="menu-link text-white fw-bold">線上預約</a>
+            </li>
+            <li class="ms-12">
+                <a href="login.html" class="menu-link text-white fw-bold">登出</a>
+            </li>
+        </ul>
+    </div>
+</div>
+        <div class="member-center bg-repeat-no">
+            <div class="container">
+                <div class="py-160">
+                    <h2 class="title-font text-center mt-lg-48 mb-48">會員中心</h2>
+                    <div class="col-lg-10 mx-auto">
+                        <!-- 基本資料 -->
+                        <h3 class="fw-bold mb-24"><i class="bi bi-cursor me-24"></i>基本資料</h3>
+                        <p class="d-flex mb-24"><i
+                                class="bi bi-brightness-high-fill text-danger me-8"></i>請先設定毛孩資訊，於線上預約時將可直接選擇毛孩姓名
+                        </p>
+                        <main class="row flex-md-row gy-24 mb-90 mb-md-160">
+                            <div class="col-md-6">
+                                <div class="card border-black py-24 py-xl-48 h-100">
+                                    <ul class="row flex-column align-items-center flex-xl-row gy-24 gy-xl-0">
+                                        <li class="col-md-6 col-xl-5">
+                                            <div class="text-center">
+                                                <img src="/HayMo-Hotel-JS/assets/member-img-2c2263d2.png" alt="會員照片"
+                                                    class="member-img img-fluid">
+                                            </div>
+                                        </li>
+                                        <li class="col-auto">
+                                            <div>
+                                                <p class="fs-4">會員資訊
+                                                    <a href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#memberInfoModal"><i
+                                                            class="bi bi-pencil-square link-primary fs-4 ms-4"></i></a>
+                                                </p>
+                                                <p>姓名：Moreene</p>
+                                                <p>手機：0987-878787</p>
+                                                <p>信箱：moreenewu@gmail.com</p>
+                                                <p class="mb-0">加入日期：2023/1/1</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- swiper -->
+                                <div class="swiper dogInfoSwiper h-100">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide card border-black py-24 py-xl-48 h-100">
+                                            <ul class="row flex-column align-items-center flex-xl-row gy-24 gy-xl-0">
+                                                <li class="col-md-5">
+                                                    <div class="text-center">
+                                                        <img src="/HayMo-Hotel-JS/assets/zhaMao-d016997d.jpg" alt="狗狗照片"
+                                                            class="member-img img-fluid rounded-circle border border-black-60">
+                                                    </div>
+                                                </li>
+                                                <li class="col-auto">
+                                                    <p class="fs-4">毛孩資訊
+                                                        <a href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#petInfoModal1"><i
+                                                                class="bi bi-pencil-square link-primary fs-4 ms-4"></i></a>
+                                                    </p>
+                                                    <p>姓名：炸毛</p>
+                                                    <p>品種：聖伯納犬</p>
+                                                    <p>年紀：2歲</p>
+                                                    <p class="mb-0">性別：公</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="swiper-slide card border-black py-24 py-xl-48 h-100">
+                                            <ul class="row flex-column align-items-center flex-xl-row gy-24 gy-xl-0">
+                                                <li class="col-md-5">
+                                                    <div class="text-center">
+                                                        <img src="/HayMo-Hotel-JS/assets/mimi-d7362175.jpeg" alt="狗狗照片"
+                                                            class="member-img img-fluid rounded-circle border border-black-60">
+                                                    </div>
+                                                </li>
+                                                <li class="col-auto">
+                                                    <p class="fs-4">毛孩資訊
+                                                        <a href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#petInfoModal2"><i
+                                                                class="bi bi-pencil-square link-primary fs-4 ms-4"></i></a>
+                                                    </p>
+                                                    <p>姓名：米米</p>
+                                                    <p>品種：米克斯</p>
+                                                    <p>年紀：3歲</p>
+                                                    <p class="mb-0">性別：母</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div
+                                            class="swiper-slide card border-black py-24 py-xl-48 d-flex justify-content-center align-items-center h-100">
+                                            <div class="text-center h-lg-100">
+                                                <h4 class="mb-48">增加毛孩資訊卡</h4>
+                                                <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                    data-bs-target="#petInfoModal3"><i
+                                                        class="bi bi-plus-lg display-1"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </main>
+                        <!-- 會員資訊modal -->
+                        <div class="modal fade" id="memberInfoModal" tabindex="-1" aria-labelledby="memberInfoModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="memberInfoModal">會員資訊 - 編輯
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row flex-column align-items-center">
+                                            <div class="col-4">
+                                                <div
+                                                    class="text-center mb-16 img-modify position-relative rounded-circle overflow-hidden">
+                                                    <img src="/HayMo-Hotel-JS/assets/member-img-2c2263d2.png" alt="會員照片"
+                                                        class="img-fluid member-modal-img">
+                                                    <div class="cam-bg position-absolute w-100">
+                                                        <i class="bi bi-camera fs-5 text-white"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto mx-auto">
+                                                <div>
+                                                    <p>姓名：Moreene</p>
+                                                    <p>手機：0987-878787</p>
+                                                    <p>信箱：moreenewu@gmail.com</p>
+                                                    <p class="mb-0">密碼：**********</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary px-24">編輯</button>
+                                        <button type="button"
+                                            class="btn btn-primary px-24 text-white info-store">儲存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 毛孩資訊modal-1 -->
+                        <div class="modal fade" id="petInfoModal1" tabindex="-1" aria-labelledby="petInfoModal1"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="petInfoModal1">毛孩資訊 - 編輯</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row flex-column align-items-center">
+                                            <div class="col-4">
+                                                <div
+                                                    class="text-center mb-16 img-modify position-relative rounded-circle overflow-hidden">
+                                                    <img src="/HayMo-Hotel-JS/assets/zhaMao-d016997d.jpg" alt="狗狗照片"
+                                                        class="img-fluid member-modal-img rounded-circle border border-black-60">
+                                                    <div class="cam-bg position-absolute w-100">
+                                                        <i class="bi bi-camera fs-5 text-white"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto mx-auto">
+                                                <p>姓名：炸毛</p>
+                                                <p>品種：聖伯納犬</p>
+                                                <p>年紀：2歲</p>
+                                                <p class="mb-0">性別：公</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary px-24">編輯</button>
+                                        <button type="button"
+                                            class="btn btn-primary px-24 text-white info-store">儲存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 毛孩資訊modal-2 -->
+                        <div class="modal fade" id="petInfoModal2" tabindex="-1" aria-labelledby="petInfoModal2"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="petInfoModal2">毛孩資訊 - 編輯</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row flex-column align-items-center">
+                                            <div class="col-4">
+                                                <div
+                                                    class="text-center mb-16 img-modify position-relative rounded-circle overflow-hidden">
+                                                    <img src="/HayMo-Hotel-JS/assets/mimi-d7362175.jpeg" alt="狗狗照片"
+                                                        class="img-fluid member-modal-img rounded-circle border border-black-60">
+                                                    <div class="cam-bg position-absolute w-100">
+                                                        <i class="bi bi-camera fs-5 text-white"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto mx-auto">
+                                                <p>姓名：米米</p>
+                                                <p>品種：米克斯</p>
+                                                <p>年紀：3歲</p>
+                                                <p class="mb-0">性別：母</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary px-24">編輯</button>
+                                        <button type="button"
+                                            class="btn btn-primary px-24 text-white info-store">儲存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 毛孩資訊modal-3 -->
+                        <div class="modal fade" id="petInfoModal3" tabindex="-1" aria-labelledby="petInfoModal3"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="petInfoModal3">毛孩資訊 - 編輯</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row flex-column align-items-center">
+                                            <div class="col-4">
+                                                <div
+                                                    class="text-center mb-16 img-modify position-relative rounded-circle overflow-hidden">
+                                                    <img src="/HayMo-Hotel-JS/assets/member-img-2c2263d2.png" alt="狗狗空白照片"
+                                                        class="img-fluid member-modal-img">
+                                                    <div class="cam-bg position-absolute w-100">
+                                                        <i class="bi bi-camera fs-5 text-white"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto mx-auto">
+                                                <p>姓名：</p>
+                                                <p>品種：</p>
+                                                <p>年紀：</p>
+                                                <p class="mb-0">性別：</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary px-24">編輯</button>
+                                        <button type="button"
+                                            class="btn btn-primary px-24 text-white info-store">儲存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 預約紀錄 -->
+                        <h3 class="fw-bold mb-24"><i class="bi bi-cursor me-1"></i>您的預約</h3>
+                        <p class="d-flex mb-8"><i
+                                class="bi bi-brightness-high-fill text-danger me-8"></i>若要修改預約日期，最慢請於原預約日的前三日修改</p>
+                        <p class="d-flex mb-8"><i
+                                class="bi bi-brightness-high-fill text-danger me-8"></i>若要取消訂單，最慢請於原預約日的前五日來電或用通訊軟體告知，並附上訂單編號
+                        </p>
+                        <p class="d-flex mb-24"><i
+                                class="bi bi-brightness-high-fill text-danger me-8"></i>若超過三次無法赴約卻未事先取消，嘿毛有權利拒絕您往後任何方式的預約
+                        </p>
+                        <label class="mb-24">
+                            <input type="month" class="rounded-pill p-8">
+                        </label>
+                        <section class="mb-90 mb-md-160">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active fs-5 border-bottom-0" id="dayCare-tab"
+                                        data-bs-toggle="tab" data-bs-target="#dayCare" type="button"
+                                        role="tab">安親服務</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fs-5 border-bottom-0" id="cosmetic-tab" data-bs-toggle="tab"
+                                        data-bs-target="#cosmetic" type="button" role="tab">美容服務</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fs-5 border-bottom-0" id="stay-tab" data-bs-toggle="tab"
+                                        data-bs-target="#stay" type="button" role="tab">住宿服務</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane active" id="dayCare" role="tabpanel" aria-labelledby="dayCare-tab">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap mb-0">
+                                            <thead class="text-center">
+                                                <tr>
+                                                    <th scope="col">訂單編號</th>
+                                                    <th scope="col">毛孩姓名</th>
+                                                    <th scope="col">安親日期</th>
+                                                    <th scope="col">樂園服務</th>
+                                                    <th scope="col">緊急聯絡人</th>
+                                                    <th scope="col">電話</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr>
+                                                    <th scope="row">
+                                                        <a href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#order1Modal">Z010790</a>
+                                                    </th>
+                                                    <td>炸毛</td>
+                                                    <td>2023/9/25</td>
+                                                    <td>否</td>
+                                                    <td>Moreene</td>
+                                                    <td>0987-878787</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <a href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#order2Modal">Z010814</a>
+                                                    </th>
+                                                    <td>米米</td>
+                                                    <td>2023/10/10</td>
+                                                    <td>是</td>
+                                                    <td>Moreene</td>
+                                                    <td>0987-878787</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Modal-1 -->
+                                <div class="modal fade" id="order1Modal" aria-labelledby="order1ModalLabel"
+                                    aria-hidden="true" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="order1ModalLabel">訂單編號：Z010790</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body py-24">
+                                                <ul class="d-md-flex justify-content-md-around">
+                                                    <li class="mb-16 mb-md-0">
+                                                        <p>毛孩姓名：炸毛</p>
+                                                        <p>安親日期：2023/9/25</p>
+                                                        <p>安親時間：9:30</p>
+                                                        <p>樂園服務：否</p>
+                                                        <p class="mb-0">其他備註：</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>緊急聯絡人：Moreene</p>
+                                                        <p class="mb-0">聯絡電話：0987-878787</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary w-25">編輯</button>
+                                                <button type="button"
+                                                    class="btn btn-primary text-white w-25 info-store">儲存</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal-2 -->
+                                <div class="modal fade" id="order2Modal" aria-labelledby="order2ModalLabel"
+                                    aria-hidden="true" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="order2ModalLabel">訂單編號：Z010814</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body py-24">
+                                                <ul class="d-md-flex justify-content-md-around">
+                                                    <li class="mb-16 mb-md-0">
+                                                        <p>毛孩姓名：米米</p>
+                                                        <p>安親日期：2023/10/10</p>
+                                                        <p>安親時間：12:00</p>
+                                                        <p>樂園服務：是</p>
+                                                        <p class="mb-0">其他備註：</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>緊急聯絡人：Moreene</p>
+                                                        <p class="mb-0">聯絡電話：0987-878787</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary w-25">編輯</button>
+                                                <button type="button"
+                                                    class="btn btn-primary text-white w-25 info-store">儲存</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="cosmetic" role="tabpanel" aria-labelledby="cosmetic-tab">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead class="text-center">
+                                                <tr>
+                                                    <th scope="col">訂單編號</th>
+                                                    <th scope="col">毛孩姓名</th>
+                                                    <th scope="col">美容日期</th>
+                                                    <th scope="col">樂園服務</th>
+                                                    <th scope="col">緊急聯絡人</th>
+                                                    <th scope="col">電話</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr>
+                                                    <td colspan="7">您目前沒有美容服務的預約</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="stay" role="tabpanel" aria-labelledby="stay-tab">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead class="text-center">
+                                                <tr>
+                                                    <th scope="col">訂單編號</th>
+                                                    <th scope="col">毛孩姓名</th>
+                                                    <th scope="col">住宿日期</th>
+                                                    <th scope="col">樂園服務</th>
+                                                    <th scope="col">緊急聯絡人</th>
+                                                    <th scope="col">電話</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr>
+                                                    <td colspan="7">您目前沒有住宿服務的預約</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 歷史紀錄 -->
+                        <h3 class="fw-bold mb-24"><i class="bi bi-cursor me-1"></i>歷史記錄</h3>
+                        <label class="mb-24">
+                            <input type="month" class="rounded-pill p-8">
+                        </label>
+                        <section>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active fs-5 border-bottom-0" id="history-dayCare-tab"
+                                        data-bs-toggle="tab" data-bs-target="#history-dayCare" type="button"
+                                        role="tab">安親服務</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fs-5 border-bottom-0" id="history-cosmetic-tab"
+                                        data-bs-toggle="tab" data-bs-target="#history-cosmetic" type="button"
+                                        role="tab">美容服務</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fs-5 border-bottom-0" id="history-stay-tab"
+                                        data-bs-toggle="tab" data-bs-target="#history-stay" type="button"
+                                        role="tab">住宿服務</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane active" id="history-dayCare" role="tabpanel"
+                                    aria-labelledby="history-dayCare-tab">
+                                    <div class="table-group table-responsive">
+                                        <table class="table text-nowrap mb-0">
+                                            <thead class="text-center position-sticky top-0">
+                                                <tr>
+                                                    <th scope="col">訂單編號</th>
+                                                    <th scope="col">毛孩姓名</th>
+                                                    <th scope="col">安親日期</th>
+                                                    <th scope="col">樂園服務</th>
+                                                    <th scope="col">緊急聯絡人</th>
+                                                    <th scope="col">電話</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr>
+                                                    <th scope="row">Z008192</th>
+                                                    <td>炸毛</td>
+                                                    <td>2023/1/24</td>
+                                                    <td>是</td>
+                                                    <td>Moreene</td>
+                                                    <td>0987-878787</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Z008305</th>
+                                                    <td>炸毛</td>
+                                                    <td>2023/2/15</td>
+                                                    <td>是</td>
+                                                    <td>Moreene</td>
+                                                    <td>0987-878787</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Z008411</th>
+                                                    <td>米米</td>
+                                                    <td>2023/3/24</td>
+                                                    <td>否</td>
+                                                    <td>Kevin</td>
+                                                    <td>0931-123456</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Z008496</th>
+                                                    <td>炸毛</td>
+                                                    <td>2023/4/04</td>
+                                                    <td>否</td>
+                                                    <td>Moreene</td>
+                                                    <td>0987-878787</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Z008621</th>
+                                                    <td>炸毛</td>
+                                                    <td>2023/5/30</td>
+                                                    <td>否</td>
+                                                    <td>Kevin</td>
+                                                    <td>0931-123456</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Z08788</th>
+                                                    <td>米米</td>
+                                                    <td>2023/6/08</td>
+                                                    <td>是</td>
+                                                    <td>Kevin</td>
+                                                    <td>0931-123456</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="history-cosmetic" role="tabpanel"
+                                    aria-labelledby="history-cosmetic-tab">
+                                    <div class="table-responsive rounded-bottom">
+                                        <table class="table text-nowrap mb-0">
+                                            <thead class="text-center position-sticky top-0">
+                                                <tr>
+                                                    <th scope="col">訂單編號</th>
+                                                    <th scope="col">毛孩姓名</th>
+                                                    <th scope="col">美容日期</th>
+                                                    <th scope="col">樂園服務</th>
+                                                    <th scope="col">緊急聯絡人</th>
+                                                    <th scope="col">電話</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr>
+                                                    <th scope="row">Z008362</th>
+                                                    <td>炸毛</td>
+                                                    <td>2023/3/15</td>
+                                                    <td>否</td>
+                                                    <td>Moreene</td>
+                                                    <td>0987-878787</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Z008551</th>
+                                                    <td>炸毛</td>
+                                                    <td>2023/4/22</td>
+                                                    <td>否</td>
+                                                    <td>Moreene</td>
+                                                    <td>0987-878787</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Z008574</th>
+                                                    <td>炸毛</td>
+                                                    <td>2023/5/18</td>
+                                                    <td>否</td>
+                                                    <td>Kevin</td>
+                                                    <td>0931-123456</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="history-stay" role="tabpanel"
+                                    aria-labelledby="history-stay-tab">
+                                    <div class="table-responsive rounded-bottom">
+                                        <table class="table text-nowrap mb-0">
+                                            <thead class="text-center position-sticky top-0">
+                                                <tr>
+                                                    <th scope="col">訂單編號</th>
+                                                    <th scope="col">毛孩姓名</th>
+                                                    <th scope="col">住宿日期</th>
+                                                    <th scope="col">樂園服務</th>
+                                                    <th scope="col">緊急聯絡人</th>
+                                                    <th scope="col">電話</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr>
+                                                    <th scope="row">Z008205</th>
+                                                    <td>炸毛</td>
+                                                    <td>2023/1/31</td>
+                                                    <td>是</td>
+                                                    <td>Moreene</td>
+                                                    <td>0987-878787</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Z008344</th>
+                                                    <td>米米</td>
+                                                    <td>2023/2/27</td>
+                                                    <td>是</td>
+                                                    <td>Moreene</td>
+                                                    <td>0987-878787</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="position-relative pt-120 pb-40 pb-xxl-120">
+    <div class="container">
+        <div class="row flex-column-reverse flex-xl-row w-100">
+            <div class="col-md-10 col-xl-7 col-xxl-6">
+                <div class="mb-40">
+                    <h2 class="fw-bold text-white slogan-text mb-8">嘿 , 我們用心，</h2>
+                    <h2 class="fw-bold text-white slogan-text mb-0">家長安心</h2>
+                </div>
+                <ul class="d-flex lh-1 mb-40">
+                    <li class="me-24"><a href="#" class="mr-24"><i class="bi bi-line footer-icon fs-4"></i></a></li>
+                    <li class="me-24"><a href="#"><i class="bi bi-facebook footer-icon fs-4"></i></a></li>
+                    <li><a href="#"><i class="bi bi-instagram footer-icon fs-4"></i></a></li>
+                </ul>
+                <div>
+                    <div class="d-flex justify-content-between align-items-center mb-16">
+                        <h3 class="h5 text-white fw-bold mb-0">聯絡資訊</h3>
+                        <h3 class="h5 fw-bold mb-0"><a href="cms-login.html" class="cms-link">後台管理<span><i
+                                        class="bi bi-arrow-right-short fs-4 ms-16"></i></span></a></h3>
+                    </div>
+                    <p class="text-white mb-4">電話<a href="tel:+886-2-2618-0000" class="contact-info link">02-2618-0000</a></p>
+                    <p class="text-white mb-4">地址<a href="#" class="contact-info link">新北市八里區星光里星光大道</a></p>
+                    <p class="text-white mb-0">時間<span class="contact-info">週一至週日 09：00 ~21：00</span></p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-xxl-6">
+                <div class="text-xl-center">
+                    <img src="/HayMo-Hotel-JS/assets/Logo-0e921db4.png" alt="logo" class="footer-logo img-fluid mb-40 mb-xl-0">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            
+            <script>
+                const hamBtn = document.querySelector(".ham");
+                const mobileMenu = document.querySelector(".mobile-menu .menu");
+                const hamCloseBtn = document.querySelector(".closedHam");
+                const body = document.body;
+
+                function toggleMenu() {
+                    mobileMenu.classList.toggle('open');
+                    body.classList.toggle('hidden-y');
+                };
+
+                hamBtn.addEventListener('click', toggleMenu);
+                hamCloseBtn.addEventListener("click", toggleMenu);
+
+                // Sweetalert
+                const infoStore = document.querySelectorAll(".info-store");
+
+                infoStore.forEach(function (item) {
+                    item.addEventListener("click", function () {
+                        Swal.fire({
+                            icon: "success",
+                            title: "儲存成功!",
+                            timer: 2000,
+                            timerProgressBar: true
+                        });
+                    });
+                });
+            </script>
+</body>
+
+</html>

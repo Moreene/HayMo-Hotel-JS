@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>嘿毛寵物旅館 | 登入</title>
+    <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-a9b22856.js"></script>
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-1ed0e0f2.css">
+</head>
+
+<body>
+
+    <div class="d-flex justify-content-center">
+    <header class="topbar w-lg-75 w-xl-50 w-xxl-45 py-md-20 px-md-40  rounded-pill position-fixed z-2">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html"><img src="/HayMo-Hotel-JS/assets/Logo-0e921db4.png" alt="Logo" class="topbar-logo"></a>
+            <!-- table-menu -->
+            <div class="d-none d-md-block">
+                <ul class="table-menu d-flex">
+                    <li class="me-32">
+                        <a href="index.html" class="menu-link position-relative ">首頁</a>
+                    </li>
+                    <li class="me-32">
+                        <a href="about.html" class="menu-link position-relative ">關於我們</a>
+                    </li>
+                    <li class="me-32">
+                        <a href="service.html" class="menu-link position-relative ">服務項目</a>
+                    </li>
+                    <li>
+                        <a href="faq.html" class="menu-link position-relative ">常見問題</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="d-flex align-items-center">
+                <li>
+                    <a href="login.html" class="login-link d-flex align-items-center justify-content-center me-md-0 active">
+                        <p class="link-circle-txt mb-0">線上<span class="d-md-block">預約</span></p>
+                    </a>
+                </li>
+                <li class="d-md-none">
+                    <div class="ham position-relative">
+                        <div class="ham-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- mobile-menu -->
+    <div class="d-block d-md-none mobile-menu">
+        <ul class="menu bg-primary d-flex flex-column position-fixed top-0 start-0 w-100 overflow-hidden z-99">
+            <li class="d-flex justify-content-end pt-16 pe-12">
+                <div class="closedHam position-relative rounded-circle">
+                    <div class="closedHam-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                </div>
+            </li>
+            <li class="ms-12 mt-24 mb-32">
+                <a href="index.html" class="menu-link text-white fw-bold">首頁</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="about.html" class="menu-link text-white fw-bold">關於我們</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="service.html" class="menu-link text-white fw-bold">服務項目</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="faq.html" class="menu-link text-white fw-bold">常見問題</a>
+            </li>
+            <li class="ms-12 d-md-none">
+                <a href="login.html" class="menu-link text-white fw-bold">線上預約</a>
+            </li>
+        </ul>
+    </div>
+</div>
+        <div class="position-fixed z-3 to-top-btn" id="back-to-top">
+    <a href="#" class="rounded-circle p-8 d-flex align-items-center justify-content-center"><i
+            class="fa-solid fa-angle-up text-white"></i></a>
+</div>
+            <!-- Banner -->
+            <div class="login-banner bg-size-cover bg-repeat-no d-flex justify-content-center align-items-center">
+                <h2 class="title-font fst-italic fw-bold text-white d-inline-block mb-0">線上預約專區</h2>
+            </div>
+
+            <!-- 預約登入頁面 -->
+            <div class="container">
+                <main class="login py-80 pt-lg-160">
+                    <h2 class="text-center border-bottom border-black pb-30 pb-md-48 mb-0">
+                        <span><i class="bi bi-emoji-smile"></i> 請先加入會員再登入預約 <i class="bi bi-emoji-smile"></i></span>
+                    </h2>
+                    <div class="py-48 py-md-80">
+                        <ul class="row row-cols-1 row-cols-lg-2">
+                            <!-- 登入 -->
+                            <li class="col line-right">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-9 col-xl-8">
+                                        <div class="pb-48 line-bottom">
+                                            <h3 class="fw-bold mb-24">會員登入</h3>
+                                            <form class="row row-cols-1 gy-16">
+                                                <div class="col">
+                                                    <input type="email" class="form-control-plaintext rounded-0 py-16"
+                                                        placeholder="請輸入您的電子信箱">
+                                                </div>
+                                                <div class="col">
+                                                    <input type="password"
+                                                        class="form-control-plaintext rounded-0 py-16"
+                                                        placeholder="請輸入您的密碼">
+                                                </div>
+                                                <div class="col">
+                                                    <div class="d-flex justify-content-end mb-48">
+                                                        <a href="#"
+                                                            class="fs-7 border-bottom border-primary">忘記密碼了嗎?</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="mb-24">
+                                                        <a href="memberCenter.html"
+                                                            class="d-flex align-items-center justify-content-center link-slide-primary w-100">登入會員<i
+                                                                class="bi bi-arrow-right d-block fs-4 ms-16"></i></a>
+                                                    </div>
+                                                    <p class="fs-7 text-black-80">
+                                                        歡迎登入會員專區，查詢最新預約情形！<br>如遇六、日或是國定連假要住宿，請記得提前預約唷~
+                                                    </p>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="text-center mb-24">快速註冊/登入</p>
+                                                    <div class="d-flex justify-content-between text-center">
+                                                        <a href="#" class="login-quick fs-7 w-30 py-8 text-white">
+                                                            <i class="bi bi-line me-8"></i>Line</a>
+                                                        <a href="#" class="login-quick fs-7 w-30 py-8 text-white">
+                                                            <i class="bi bi-facebook me-8"></i>Facebook</a>
+                                                        <a href="#" class="login-quick fs-7 w-30 py-8 text-white">
+                                                            <i class="bi bi-google me-8"></i>Google</a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- 註冊 -->
+                            <li class="col">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-9 col-xl-8">
+                                        <div class="pt-48 pt-lg-0">
+                                            <h3 class="fw-bold mb-24">註冊新會員</h3>
+                                            <p class="text-black-80 pt-16 mb-48">還不是會員嗎，立即註冊即可線上預約！</p>
+                                            <a href="signUp.html"
+                                                class="d-flex align-items-center justify-content-center link-slide-white w-100 mb-80 mb-lg-150">註冊新會員<i
+                                                    class="bi bi-arrow-right d-block fs-4 ms-16"></i></a>
+                                            <img src="/HayMo-Hotel-JS/assets/dogs-bf9f61b8.jpg" alt="狗狗們" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </main>
+            </div>
+
+            <footer class="position-relative pt-120 pb-40 pb-xxl-120">
+    <div class="container">
+        <div class="row flex-column-reverse flex-xl-row w-100">
+            <div class="col-md-10 col-xl-7 col-xxl-6">
+                <div class="mb-40">
+                    <h2 class="fw-bold text-white slogan-text mb-8">嘿 , 我們用心，</h2>
+                    <h2 class="fw-bold text-white slogan-text mb-0">家長安心</h2>
+                </div>
+                <ul class="d-flex lh-1 mb-40">
+                    <li class="me-24"><a href="#" class="mr-24"><i class="bi bi-line footer-icon fs-4"></i></a></li>
+                    <li class="me-24"><a href="#"><i class="bi bi-facebook footer-icon fs-4"></i></a></li>
+                    <li><a href="#"><i class="bi bi-instagram footer-icon fs-4"></i></a></li>
+                </ul>
+                <div>
+                    <div class="d-flex justify-content-between align-items-center mb-16">
+                        <h3 class="h5 text-white fw-bold mb-0">聯絡資訊</h3>
+                        <h3 class="h5 fw-bold mb-0"><a href="cms-login.html" class="cms-link">後台管理<span><i
+                                        class="bi bi-arrow-right-short fs-4 ms-16"></i></span></a></h3>
+                    </div>
+                    <p class="text-white mb-4">電話<a href="tel:+886-2-2618-0000" class="contact-info link">02-2618-0000</a></p>
+                    <p class="text-white mb-4">地址<a href="#" class="contact-info link">新北市八里區星光里星光大道</a></p>
+                    <p class="text-white mb-0">時間<span class="contact-info">週一至週日 09：00 ~21：00</span></p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-xxl-6">
+                <div class="text-xl-center">
+                    <img src="/HayMo-Hotel-JS/assets/Logo-0e921db4.png" alt="logo" class="footer-logo img-fluid mb-40 mb-xl-0">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+                <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+                
+                <script>
+                    // back to top
+                    $(function () {
+                        $(function () {
+                            $(window).scroll(function () {
+                                if ($(window).scrollTop() > 100) {
+                                    $("#back-to-top").fadeIn(1000);
+                                }
+                                else {
+                                    $("#back-to-top").fadeOut(1000);
+                                }
+                            });
+                            $("#back-to-top").click(function () {
+                                $('body,html').animate({ scrollTop: 0 }, 500);
+                                return false;
+                            });
+                        });
+                    });
+
+                    // 漢堡選單
+                    const hamBtn = document.querySelector(".ham");
+                    const mobileMenu = document.querySelector(".mobile-menu .menu");
+                    const hamCloseBtn = document.querySelector(".closedHam");
+                    const body = document.body;
+
+                    function toggleMenu() {
+                        mobileMenu.classList.toggle('open');
+                        body.classList.toggle('hidden-y');
+                    };
+
+                    hamBtn.addEventListener('click', toggleMenu);
+                    hamCloseBtn.addEventListener("click", toggleMenu);
+                </script>
+</body>
+
+</html>

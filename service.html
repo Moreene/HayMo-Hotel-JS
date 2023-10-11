@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>嘿毛寵物旅館 | 服務項目</title>
+    <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-a9b22856.js"></script>
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-1ed0e0f2.css">
+</head>
+
+<body class="bg-beige">
+
+    <div class="d-flex justify-content-center">
+    <header class="topbar w-lg-75 w-xl-50 w-xxl-45 py-md-20 px-md-40  rounded-pill position-fixed z-2">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html"><img src="/HayMo-Hotel-JS/assets/Logo-0e921db4.png" alt="Logo" class="topbar-logo"></a>
+            <!-- table-menu -->
+            <div class="d-none d-md-block">
+                <ul class="table-menu d-flex">
+                    <li class="me-32">
+                        <a href="index.html" class="menu-link position-relative ">首頁</a>
+                    </li>
+                    <li class="me-32">
+                        <a href="about.html" class="menu-link position-relative ">關於我們</a>
+                    </li>
+                    <li class="me-32">
+                        <a href="service.html" class="menu-link position-relative active">服務項目</a>
+                    </li>
+                    <li>
+                        <a href="faq.html" class="menu-link position-relative ">常見問題</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="d-flex align-items-center">
+                <li>
+                    <a href="login.html" class="login-link d-flex align-items-center justify-content-center me-md-0 ">
+                        <p class="link-circle-txt mb-0">線上<span class="d-md-block">預約</span></p>
+                    </a>
+                </li>
+                <li class="d-md-none">
+                    <div class="ham position-relative">
+                        <div class="ham-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- mobile-menu -->
+    <div class="d-block d-md-none mobile-menu">
+        <ul class="menu bg-primary d-flex flex-column position-fixed top-0 start-0 w-100 overflow-hidden z-99">
+            <li class="d-flex justify-content-end pt-16 pe-12">
+                <div class="closedHam position-relative rounded-circle">
+                    <div class="closedHam-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                </div>
+            </li>
+            <li class="ms-12 mt-24 mb-32">
+                <a href="index.html" class="menu-link text-white fw-bold">首頁</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="about.html" class="menu-link text-white fw-bold">關於我們</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="service.html" class="menu-link text-white fw-bold">服務項目</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="faq.html" class="menu-link text-white fw-bold">常見問題</a>
+            </li>
+            <li class="ms-12 d-md-none">
+                <a href="login.html" class="menu-link text-white fw-bold">線上預約</a>
+            </li>
+        </ul>
+    </div>
+</div>
+        <div class="position-fixed z-3 to-top-btn" id="back-to-top">
+    <a href="#" class="rounded-circle p-8 d-flex align-items-center justify-content-center"><i
+            class="fa-solid fa-angle-up text-white"></i></a>
+</div>
+            <!-- Banner -->
+            <div
+                class="service-banner bg-size-cover bg-repeat-no d-flex justify-content-center align-items-center mb-48">
+                <h2 class="title-font fst-italic text-white fw-bold d-inline-block mb-0">嘿毛的服務</h2>
+            </div>
+
+            <div class="container">
+                <!-- 服務選單 -->
+                <ul class="nav justify-content-center service-nav mb-24" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link fs-5 px-24 mb-24 mb-md-0 position-relative active" id="dog-dayCare-tab"
+                            data-bs-toggle="pill" data-bs-target="#dog-dayCare" type="button" role="tab"
+                            aria-controls="dog-dayCare" aria-selected="true">狗狗安親</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link fs-5 px-24 mb-24 mb-md-0 position-relative" id="dog-cosmetic-tab"
+                            data-bs-toggle="pill" data-bs-target="#dog-cosmetic" type="button" role="tab"
+                            aria-controls="dog-cosmetic" aria-selected="false">狗狗美容</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link fs-5 px-24 position-relative" id="dog-stay-tab" data-bs-toggle="pill"
+                            data-bs-target="#dog-stay" type="button" role="tab" aria-controls="dog-stay"
+                            aria-selected="false">狗狗住宿</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link fs-5 px-24 position-relative" id="dog-paradise-tab"
+                            data-bs-toggle="pill" data-bs-target="#dog-paradise" type="button" role="tab"
+                            aria-controls="dog-paradise" aria-selected="false">狗狗樂園</button>
+                    </li>
+                </ul>
+                <!-- 服務內容 -->
+                <div class="service">
+                    <main class="bg-white px-24 py-48 rounded-3">
+                        <div class="tab-content" id="pills-tabContent">
+                            <!-- 安親 -->
+                            <div class="tab-pane fade show active" id="dog-dayCare" role="tabpanel"
+                                aria-labelledby="dog-dayCare-tab">
+                                <h2 class="h3 p-16 bg-dark text-white mb-24"><i class="fa-solid fa-paw me-8"></i>安親服務
+                                </h2>
+                                <div class="py-16 mb-24">
+                                    <div class="ms-md-24">
+                                        <p>我們一次安親時間為8小時，安親時間為週一至週日 09：00 ~21：00</p>
+                                        <p>家長可以自行規劃將毛孩送來的時間，毛孩不分體型大小，一隻毛孩一次費用為NT$900</p>
+                                        <p class="mb-24">安親期間，我們提供兩次免費的外出散步服務!</p>
+                                    </div>
+                                    <ul class="remark-list ms-24 ms-md-48">
+                                        <li class="text-black-80 mb-8">若安親不滿8小時，也以8小時費用計費</li>
+                                        <li class="text-black-80">若超時需另按小時計費(每一小時NT$150，不滿一小時以一小時計費)</li>
+                                    </ul>
+                                </div>
+                                <ul class="row justify-content-between gy-16 gy-lg-0 mb-24">
+                                    <li class="col-lg-5">
+                                        <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                                class="fa-solid fa-paw me-8"></i>加購服務
+                                        </h2>
+                                        <div class="w-md-50 w-lg-75 ms-md-24 py-16">
+                                            <p class="d-flex justify-content-between"><span
+                                                    class="w-30">館內飼料</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$65/碗</span></p>
+                                            <p class="d-flex justify-content-between"><span
+                                                    class="w-30">館內罐頭</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$95/罐</span></p>
+                                            <p class="d-flex justify-content-between"><span
+                                                    class="w-30">館內鮮食</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$105/包</span></p>
+                                            <p class="d-flex justify-content-between"><span class="w-30">刷牙</span><span
+                                                    class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span class="w-30">$50/次</span></p>
+                                            <p class="d-flex justify-content-between"><span class="w-30">遛狗</span><span
+                                                    class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span class="w-30">$80/次</span></p>
+                                            <p class="d-flex justify-content-between mb-0"><span
+                                                    class="w-30">寵樂園</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$200/次</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-6">
+                                        <div class="feed-img h-400 bg-size-cover bg-repeat-no d-none d-lg-block"></div>
+                                    </li>
+                                </ul>
+                                <ul class="row justify-content-between gy-16 gy-lg-0 pt-16 mb-24">
+                                    <li class="col-lg-5">
+                                        <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                                class="fa-solid fa-paw me-8"></i>補充說明
+                                        </h2>
+                                        <ol class="num-list ms-24 py-16">
+                                            <li>
+                                                <p class="ms-4">
+                                                    遛狗服務一次外出20分鐘，皆會拍照記錄並用Line回傳給家長，但無法指定外出的時間，需視當日天氣及人力機動性安排（胸背、牽繩須由家長提供）
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="ms-4 mb-0">
+                                                    寵樂園包括水樂園和草樂園，家長可自行決定要讓毛孩參加哪一項（只能擇一，一次限時2小時），全程由安親老師陪同
+                                                </p>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li class="col-lg-6">
+                                        <div class=" bg-size-cover bg-repeat-no walk-img h-400 d-none d-lg-block"></div>
+                                    </li>
+                                </ul>
+                                <div class="pt-16">
+                                    <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                            class="fa-solid fa-paw me-8"></i>注意事項</h2>
+                                    <ul class="remark-list ms-24 pt-16">
+                                        <li>
+                                            <p>第一次光臨需預留約15分鐘進行資料確認：<br>飼主身分證須掃描留存建檔、出示獸醫蓋章疫苗手冊（正本），確認一年內施打過至少六合一及狂犬病疫苗、需於一個月內完成體內外驅蟲。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>本館提供的任何服務皆備有合約書，服務將比照合約書上所述之內容辦理，請家長務必閱讀了解其內容並簽署。</p>
+                                        </li>
+                                        <li>
+                                            <p>毛孩於入館前三天內需洗澡、若有清潔疑慮（由本館判斷）須於本館內進行沐浴、費用另計。</p>
+                                        </li>
+                                        <li>
+                                            <p>館內飼料品牌為梅亞奶奶（羊肉），罐頭品牌為Butcher's（牛肉/羊肉），鮮食品牌為汪事如意（豬肉），請確認毛孩是否會對該肉種過敏再行購買。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>本館配有獸醫師常駐，若有任何受傷、緊急狀況，皆會由第一線獸醫協助進行醫療處置;<br>若情狀已非第一線可以協助，將轉送本館配合的獸醫院 -
+                                                星光動物醫院進行醫療處理（因送至醫院所產生的醫療相關費用，皆由飼主負擔）。</p>
+                                        </li>
+                                        <li>
+                                            <p class="mb-0">若毛孩需要服藥或擦藥，請飼主自行準備藥品，本館獸醫師會依照指示協助投藥。</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 美容 -->
+                            <div class="tab-pane fade" id="dog-cosmetic" role="tabpanel"
+                                aria-labelledby="dog-cosmetic-tab">
+                                <h2 class="h3 p-16 bg-dark text-white mb-24"><i class="fa-solid fa-paw me-8"></i>美容服務
+                                </h2>
+                                <div class="py-16 mb-24">
+                                    <p class="ms-md-24 mb-24">美容服務依體型大小有不同的基本費用，再加上選擇的方案才會是一式完整的美容費用</p>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered border-black-60 w-md-75 mx-md-auto">
+                                            <thead class="text-center text-nowrap">
+                                                <tr>
+                                                    <th scope="col"></th>
+                                                    <th scope="col" class="text-black">&lt; 10kg</th>
+                                                    <th scope="col" class="text-black">10 - 20kg</th>
+                                                    <th scope="col" class="text-black">&gt; 20kg</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-center text-nowrap">
+                                                <tr>
+                                                    <th scope="row" class="text-black">基本費用</th>
+                                                    <td class="text-black">NT$ 200</td>
+                                                    <td class="text-black">NT$ 300</td>
+                                                    <td class="text-black">NT$ 450</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="mb-24">
+                                    <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                            class="fa-solid fa-paw me-8"></i>方案選擇</h2>
+                                    <div class="pt-16 mx-lg-24">
+                                        <ul class="row row-cols-1 row-cols-md-3 gy-24 gy-lg-0">
+                                            <li class="col">
+                                                <div class="card border-black-60 rounded-0 h-100">
+                                                    <h3
+                                                        class="h5 text-black text-center py-16 mb-0 border-bottom border-black-60">
+                                                        <span class="position-relative title z-1">基礎美容</span>
+                                                    </h3>
+                                                    <div class="card-body">
+                                                        <ul class="row row-cols-1 row-cols-xl-2 gy-16">
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>修剪指甲
+                                                            </li>
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>清潔耳朵
+                                                            </li>
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>整理腳底毛
+                                                            </li>
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>清理肛門腺
+                                                            </li>
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>全身剪毛
+                                                            </li>
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>草本養護洗
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="card-footer text-center border-top border-black-60">NT$
+                                                        550
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="col">
+                                                <div class="card border-black-60 rounded-0 h-100">
+                                                    <h3
+                                                        class="h5 text-black text-center py-16 mb-0 border-bottom border-black-60">
+                                                        <span class="position-relative title z-1">進階美容</span>
+                                                    </h3>
+                                                    <div class="card-body">
+                                                        <ul class="row row-cols-1 row-cols-xl-2 gy-16">
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>基礎美容項目
+                                                            </li>
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>香薰沐浴SPA
+                                                            </li>
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>寵物鮮食1碗
+                                                            </li>
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>寵樂園1小時
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div
+                                                        class="card-footer text-black text-center border-top border-black-60">
+                                                        NT$ 800
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="col">
+                                                <div class="card border-black-60 rounded-0 h-100">
+                                                    <h3
+                                                        class="h5 text-black text-center py-16 mb-0 border-bottom border-black-60">
+                                                        <span class="position-relative title z-1">高級美容</span>
+                                                    </h3>
+                                                    <div class="card-body">
+                                                        <ul class="row row-cols-1 row-cols-xl-2 gy-16">
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>基礎美容項目
+                                                            </li>
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>百草慕斯洗
+                                                            </li>
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>護理碳酸SPA
+                                                            </li>
+                                                            <li class="col text-black"><i
+                                                                    class="bi bi-check2-circle text-primary me-8"></i>寵樂園2小時
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div
+                                                        class="card-footer text-black text-center border-top border-black-60">
+                                                        NT$
+                                                        1,000</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ul class="row justify-content-between gy-16 gy-lg-0 pt-16 mb-24">
+                                    <li class="col-lg-5">
+                                        <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                                class="fa-solid fa-paw me-8"></i>加購服務
+                                        </h2>
+                                        <div class="w-md-50 w-lg-75 ms-md-24 py-16">
+                                            <p class="d-flex justify-content-between"><span class="w-30">刷牙</span><span
+                                                    class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span class="w-30">$50/次</span></p>
+                                            <p class="d-flex justify-content-between"><span
+                                                    class="w-30">香薰SPA</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$350/次</span></p>
+                                            <p class="d-flex justify-content-between"><span
+                                                    class="w-30">護理SPA</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$450/次</span></p>
+                                            <p class="d-flex justify-content-between"><span
+                                                    class="w-30">館內飼料</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$65/碗</span></p>
+                                            <p class="d-flex justify-content-between"><span
+                                                    class="w-30">館內罐頭</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$95/罐</span></p>
+                                            <p class="d-flex justify-content-between"><span
+                                                    class="w-30">館內鮮食</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$105/包</span></p>
+                                            <p class="d-flex justify-content-between mb-0"><span
+                                                    class="w-30">寵樂園</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$200/次</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-6">
+                                        <div class="bg-repeat-no combing-img h-400 d-none d-lg-block"></div>
+                                    </li>
+                                </ul>
+                                <div class="pt-16">
+                                    <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                            class="fa-solid fa-paw me-8"></i>注意事項</h2>
+                                    <ul class="remark-list ms-24 pt-16">
+                                        <li>
+                                            <p>第一次光臨需預留約15分鐘進行資料確認：<br>飼主身分證須掃描留存建檔、出示獸醫蓋章疫苗手冊（正本），確認一年內施打過至少六合一及狂犬病疫苗、需於一個月內完成體內外驅蟲。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>本館提供的任何服務皆備有合約書，服務將比照合約書上所述之內容辦理，請家長務必閱讀了解其內容並簽署。</p>
+                                        </li>
+                                        <li>
+                                            <p>美容完的毛孩需於通知後1小時內接回，超時需以安親的超時費用計費。</p>
+                                        </li>
+                                        <li>
+                                            <p>館內飼料品牌為梅亞奶奶（羊肉），罐頭品牌為Butcher's（牛肉/羊肉），鮮食品牌為汪事如意（豬肉），請確認毛孩是否會對該肉種過敏再行購買。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p class="mb-0">
+                                                本館配有獸醫師常駐，若有任何受傷、緊急狀況，皆會由第一線獸醫協助進行醫療處置;<br>若情狀已非第一線可以協助，將轉送本館配合的獸醫院 -
+                                                星光動物醫院進行醫療處理（因送至醫院所產生的醫療相關費用，皆由飼主負擔）。</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 住宿 -->
+                            <div class="tab-pane fade" id="dog-stay" role="tabpanel" aria-labelledby="dog-stay-tab">
+                                <h2 class="h3 p-16 bg-dark text-white mb-24"><i class="fa-solid fa-paw me-8"></i>住宿服務
+                                </h2>
+                                <div class="py-16 ms-md-24 mb-24">
+                                    <p>我們堅持一狗一籠，維持毛孩睡眠好品質!</p>
+                                    <p>前來住宿的毛孩每天皆可免費使用寵樂園（水樂園1.5小時，草樂園2小時）</p>
+                                    <p class="mb-0">另外，每一天我們提供外出散步3次，快樂無法擋 ~</p>
+                                </div>
+                                <ul class="row row-cols-1 row-cols-md-2 gy-16">
+                                    <li class="col">
+                                        <div class="mb-24">
+                                            <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                                    class="fa-solid fa-paw me-8"></i>小狗香香房</h2>
+                                            <img src="/HayMo-Hotel-JS/assets/puppy-76022520.jpeg" alt="小狗房"
+                                                class="stay-img img-fluid w-100 mb-16">
+                                            <p>適用體型：<span class="fw-bold">10kg以下</span></p>
+                                            <p>房間：寬120 cm、深130 cm、高119 cm</p>
+                                            <p class="d-flex"><span
+                                                    class="text-nowrap">設備：</span>全天候遠端監控、恆溫空調、除臭清淨機、殺菌便盆
+                                            </p>
+                                            <p class="d-flex"><span class="text-nowrap">其他：</span>24小時獸醫駐館、免費玩具（可帶回家）
+                                            </p>
+                                            <p class="mb-0">費用：NT$1,000 / 晚</p>
+                                        </div>
+                                    </li>
+                                    <li class="col">
+                                        <div class="mb-24">
+                                            <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                                    class="fa-solid fa-paw me-8"></i>忠犬呼嚕房</h2>
+                                            <img src="/HayMo-Hotel-JS/assets/medium-dog-5540f04b.png" alt="中型犬房"
+                                                class="stay-img img-fluid w-100 mb-16">
+                                            <p>適用體型：<span class="fw-bold">10kg - 20kg</span></p>
+                                            <p>房間：寬170 cm、深150 cm、高130 cm</p>
+                                            <p class="d-flex"><span
+                                                    class="text-nowrap">設備：</span>全天候遠端監控、恆溫空調、除臭清淨機、殺菌便盆
+                                            </p>
+                                            <p class="d-flex"><span class="text-nowrap">其他：</span>24小時獸醫駐館、免費玩具（可帶回家）
+                                            </p>
+                                            <p class="mb-0">費用：NT$1,350 / 晚</p>
+                                        </div>
+                                    </li>
+                                    <li class="col">
+                                        <div class="mb-24">
+                                            <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                                    class="fa-solid fa-paw me-8"></i>大狗好眠房</h2>
+                                            <img src="/HayMo-Hotel-JS/assets/big-dog-e112c478.png" alt="大狗房"
+                                                class="stay-img img-fluid w-100 mb-16">
+                                            <p>適用體型：<span class="fw-bold">20kg以上</span></p>
+                                            <p>房間：寬180 cm、深200 cm、高280 cm</p>
+                                            <p class="d-flex"><span
+                                                    class="text-nowrap">設備：</span>全天候遠端監控、恆溫空調、除臭清淨機、殺菌便盆
+                                            </p>
+                                            <p class="d-flex"><span class="text-nowrap">其他：</span>24小時獸醫駐館、免費玩具（可帶回家）
+                                            </p>
+                                            <p class="mb-0">費用：NT$1,600 / 晚</p>
+                                        </div>
+                                    </li>
+                                    <li class="col">
+                                        <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                                class="fa-solid fa-paw me-8"></i>加購服務
+                                        </h2>
+                                        <div class="w-lg-62 ms-md-24 py-16">
+                                            <p class="d-flex justify-content-between"><span
+                                                    class="w-30">館內飼料</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$65/碗</span></p>
+                                            <p class="d-flex justify-content-between"><span
+                                                    class="w-30">館內罐頭</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$95/罐</span></p>
+                                            <p class="d-flex justify-content-between"><span
+                                                    class="w-30">館內鮮食</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">$105/包</span></p>
+                                            <p class="d-flex justify-content-between"><span class="w-30">刷牙</span><span
+                                                    class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span class="w-30">$50/次</span></p>
+                                            <p class="d-flex justify-content-between"><span class="w-30">遛狗</span><span
+                                                    class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span class="w-30">$80/次</span></p>
+                                            <p class="d-flex justify-content-between mb-0"><span
+                                                    class="w-30">美容</span><span class="w-30">⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</span><span
+                                                    class="w-30">洽詢櫃台</span></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="pt-16">
+                                    <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                            class="fa-solid fa-paw me-8"></i>注意事項</h2>
+                                    <ul class="remark-list ms-24 pt-16">
+                                        <li>
+                                            <p>第一次光臨需預留約15分鐘進行資料確認：<br>飼主身分證須掃描留存建檔、出示獸醫蓋章疫苗手冊（正本），確認一年內施打過至少六合一及狂犬病疫苗、需於一個月內完成體內外驅蟲。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>本館提供的任何服務皆備有合約書，服務將比照合約書上所述之內容辦理，請家長務必閱讀了解其內容並簽署。</p>
+                                        </li>
+                                        <li>
+                                            <p>毛孩於入館前三天內需洗澡、若有清潔疑慮(由本館判斷)須於本館內進行沐浴、費用另計。</p>
+                                        </li>
+                                        <li>
+                                            <p>館內飼料品牌為梅亞奶奶（羊肉），罐頭品牌為Butcher's（牛肉/羊肉），鮮食品牌為汪事如意（豬肉），請確認毛孩是否會對該肉種過敏再行購買。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                本館配有獸醫師常駐，若有任何受傷、緊急狀況，皆會由第一線獸醫協助進行醫療處置;<br>若情狀已非第一線可以協助，將轉送本館配合的獸醫院 -
+                                                星光動物醫院進行醫療處理（因送至醫院所產生的醫療相關費用，皆由飼主負擔）。</p>
+                                        </li>
+                                        <li>
+                                            <p class="mb-0">若毛孩需要服藥或擦藥，請飼主自行準備藥品，本館獸醫師會依照指示協助投藥。</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 樂園 -->
+                            <div class="tab-pane fade" id="dog-paradise" role="tabpanel"
+                                aria-labelledby="dog-paradise-tab">
+                                <h2 class="h3 p-16 bg-dark text-white mb-24"><i class="fa-solid fa-paw me-8"></i>樂園服務
+                                </h2>
+                                <div class="py-16 mb-24">
+                                    <ul class="ms-md-24">
+                                        <li>
+                                            <p>前來住宿的毛孩皆可免費使用寵樂園，其他毛孩則可以透過加價200元體驗樂園2小時</p>
+                                        </li>
+                                        <li>
+                                            <p class="mb-0">寵樂園皆配有安親老師隨側在旁，館內也有獸醫師進駐，以避免意外的發生</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mb-24">
+                                    <ul class="row flex-lg-row-reverse gy-16 gy-lg-0 mb-24">
+                                        <li class="col-lg-6">
+                                            <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                                    class="fa-solid fa-paw me-8"></i>水樂園
+                                            </h2>
+                                            <div class="ms-md-24">
+                                                <p class="mb-8">游泳是極佳的毛孩保健運動，即使只是泡在水中，</p>
+                                                <p class="mb-24">都能鍛鍊核心肌群，加強呼吸與循環系統。</p>
+                                                <p class="mb-8">泳池水溫夏季固定在16-18°，冬季水溫調高至25-26°，</p>
+                                                <p class="mb-8">並採用德國NECON銅銀離子滅菌系統，</p>
+                                                <p class="mb-8">溫和有效清除水中病原體，不刺激皮膚、呼吸道、與眼睛。</p>
+                                                <p class="mb-24">另外還有緩坡設計，鋪設寵物泳池專用防滑馬賽克地磚，守護毛孩安全。</p>
+                                                <p class="mb-8">快樂玩完水後將會由安親師協助簡單洗澡並使用專業烘箱把毛烘乾乾，</p>
+                                                <p class="mb-0">毛孩的一切由我們來把關!</p>
+                                            </div>
+                                        </li>
+                                        <li class="col-lg-6">
+                                            <div class="bg-size-cover bg-repeat-no bg-p-center pool-img"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mb-24">
+                                    <ul class="row gy-16 gy-lg-0 pt-16 mb-24">
+                                        <li class="col-lg-6">
+                                            <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                                    class="fa-solid fa-paw me-8"></i>草樂園
+                                            </h2>
+                                            <div class="ms-md-24">
+                                                <p class="mb-8">館內草地占地150坪、不噴灑農藥!</p>
+                                                <p class="mb-24">狗狗們可以在大草地上一起跑跑，大小狗狗會分開出來活動。</p>
+                                                <p class="mb-8">出去跑跑前會先幫毛孩噴灑寵物專用的防蚤噴劑，</p>
+                                                <p class="mb-24">跑跑回來後會使用濕布擦拭軀幹和四肢，乾乾淨淨好健康!</p>
+                                                <p class="mb-8">另外，草地區也配有RO逆滲透淨水設備，</p>
+                                                <p class="mb-8">讓毛孩開心奔跑時也可以隨時的補水，</p>
+                                                <p class="mb-0">開心跑跑，快樂喝水!</p>
+                                            </div>
+                                        </li>
+                                        <li class="col-lg-6">
+                                            <div class="bg-size-cover bg-repeat-no grass-img"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pt-16 mb-24">
+                                    <div class="swiper mySwiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div>
+                                                    <img src="/HayMo-Hotel-JS/assets/swim-dog-c832989c.jpg" class="img-fluid rounded"
+                                                        alt="狗游泳">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div>
+                                                    <img src="/HayMo-Hotel-JS/assets/frisbee-dog-2b582f2e.jpg"
+                                                        class="img-fluid rounded" alt="狗玩飛盤">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div>
+                                                    <img src="/HayMo-Hotel-JS/assets/play-dog-5f02123f.jpg" class="img-fluid rounded"
+                                                        alt="狗游泳咬玩具">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div>
+                                                    <img src="/HayMo-Hotel-JS/assets/ball-dog-ea8c92c1.jpg" class="img-fluid rounded"
+                                                        alt="狗玩球">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div>
+                                                    <img src="/HayMo-Hotel-JS/assets/peace-dog-70291702.jpg" class="img-fluid rounded"
+                                                        alt="狗擦身體曬乾">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div>
+                                                    <img src="/HayMo-Hotel-JS/assets/swim-small-dog-bfa65959.jpg"
+                                                        class="img-fluid rounded" alt="游泳的小狗">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div>
+                                                    <img src="/HayMo-Hotel-JS/assets/shower-dog-84ac09ff.jpg" class="img-fluid rounded"
+                                                        alt="狗洗澡">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div>
+                                                    <img src="/HayMo-Hotel-JS/assets/comfort-dog-2b3c0b3a.jpg"
+                                                        class="img-fluid rounded" alt="狗慵懶">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-button-next swiper-btn d-none d-lg-block"></div>
+                                        <div class="swiper-button-prev swiper-btn d-none d-lg-block"></div>
+                                    </div>
+                                </div>
+                                <div class="pt-16">
+                                    <h2 class="h3 p-16 bg-dark text-white mb-24"><i
+                                            class="fa-solid fa-paw me-8"></i>注意事項</h2>
+                                    <ul class="remark-list ms-24 pt-16">
+                                        <li>
+                                            <p>使用樂園服務前，需請家長自行判斷毛孩的身體情況是否適合使用寵樂園之設施。</p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                本館配有獸醫師常駐，若有任何受傷、緊急狀況，皆會由第一線獸醫協助進行醫療處置;<br>若情狀已非第一線可以協助，將轉送本館配合的獸醫院 -
+                                                星光動物醫院進行醫療處理（因送至醫院所產生的醫療相關費用，皆由飼主負擔）。</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+
+            <footer class="position-relative pt-120 pb-40 pb-xxl-120">
+    <div class="container">
+        <div class="row flex-column-reverse flex-xl-row w-100">
+            <div class="col-md-10 col-xl-7 col-xxl-6">
+                <div class="mb-40">
+                    <h2 class="fw-bold text-white slogan-text mb-8">嘿 , 我們用心，</h2>
+                    <h2 class="fw-bold text-white slogan-text mb-0">家長安心</h2>
+                </div>
+                <ul class="d-flex lh-1 mb-40">
+                    <li class="me-24"><a href="#" class="mr-24"><i class="bi bi-line footer-icon fs-4"></i></a></li>
+                    <li class="me-24"><a href="#"><i class="bi bi-facebook footer-icon fs-4"></i></a></li>
+                    <li><a href="#"><i class="bi bi-instagram footer-icon fs-4"></i></a></li>
+                </ul>
+                <div>
+                    <div class="d-flex justify-content-between align-items-center mb-16">
+                        <h3 class="h5 text-white fw-bold mb-0">聯絡資訊</h3>
+                        <h3 class="h5 fw-bold mb-0"><a href="cms-login.html" class="cms-link">後台管理<span><i
+                                        class="bi bi-arrow-right-short fs-4 ms-16"></i></span></a></h3>
+                    </div>
+                    <p class="text-white mb-4">電話<a href="tel:+886-2-2618-0000" class="contact-info link">02-2618-0000</a></p>
+                    <p class="text-white mb-4">地址<a href="#" class="contact-info link">新北市八里區星光里星光大道</a></p>
+                    <p class="text-white mb-0">時間<span class="contact-info">週一至週日 09：00 ~21：00</span></p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-xxl-6">
+                <div class="text-xl-center">
+                    <img src="/HayMo-Hotel-JS/assets/Logo-0e921db4.png" alt="logo" class="footer-logo img-fluid mb-40 mb-xl-0">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+                <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+                
+                <script>
+                    // back to top
+                    $(function () {
+                        $(function () {
+                            $(window).scroll(function () {
+                                if ($(window).scrollTop() > 100) {
+                                    $("#back-to-top").fadeIn(1000);
+                                }
+                                else {
+                                    $("#back-to-top").fadeOut(1000);
+                                }
+                            });
+                            $("#back-to-top").click(function () {
+                                $('body,html').animate({ scrollTop: 0 }, 500);
+                                return false;
+                            });
+                        });
+                    });
+                    
+                    // 漢堡選單
+                    const hamBtn = document.querySelector(".ham");
+                    const mobileMenu = document.querySelector(".mobile-menu .menu");
+                    const hamCloseBtn = document.querySelector(".closedHam");
+                    const body = document.body;
+
+                    function toggleMenu() {
+                        mobileMenu.classList.toggle('open');
+                        body.classList.toggle('hidden-y');
+                    };
+
+                    hamBtn.addEventListener('click', toggleMenu);
+                    hamCloseBtn.addEventListener("click", toggleMenu);
+                </script>
+
+</body>
+
+</html>
