@@ -1,0 +1,26 @@
+.order {
+    .checkbox {
+        width: 18px;
+        height: 18px;
+    }
+
+    .nav-link:hover {
+        color: $white;
+        background-color: $primary;
+    }
+}
+
+.blacklist {
+    input,
+    textarea {
+        @extend %input-style;
+    }
+}
+
+.cms-btn {
+    color: $dark;
+
+    &:hover {
+        color: $primary;
+    }
+}

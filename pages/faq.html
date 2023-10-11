@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>嘿毛寵物旅館 | 常見問題</title>
+    <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <%- include('./layout/header', { currentPage: 'faq' }); -%>
+
+        <%- include('./layout/to-top-btn'); -%>
+
+            <!-- Banner -->
+            <div class="faq-banner bg-size-cover bg-repeat-no d-flex justify-content-center align-items-center">
+                <h2 class="title-font fst-italic text-white fw-bold d-inline-block mb-0">常見Q&A</h2>
+            </div>
+
+            <!-- QA -->
+            <div class="container">
+                <div class="faq py-80 py-lg-160">
+                    <h2 class="text-center mb-48">若有任何疑問，<span class="d-block d-lg-inline">請先參考以下常見的問題<i
+                                class="bi bi-arrow-down faq-arr position-relative"></i></span>
+                    </h2>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="accordion accordion-flush" id="questionOne">
+                                <div class="accordion-item border border-black-60 rounded-3 px-16 mb-16">
+                                    <h2 class="accordion-header border-bottom border-black-60 d-flex align-items-center"
+                                        id="questionOne">
+                                        <button class="accordion-button fs-5 px-0 px-md-16 collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            需要先安親才能入住嗎？
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse"
+                                        aria-labelledby="questionOne">
+                                        <div class="accordion-body text-black-80">
+                                            <p>我們不會強制一定要安親後才可以寄宿，但如果狗狗本身有分離焦慮症的情況，會建議先帶狗狗來安親個幾次之後，讓他熟悉這邊的環境，再來寄宿。</p>
+                                            <p>此作法目的是逐步降低狗狗到陌生環境的緊張/焦慮程度，<br>避免在極端壓力的情況下產生攻擊其他狗或是有自殘行為的發生。</p>
+                                            <p>嘿毛以狗為本，我們希望來住宿的狗狗都是快樂開心的!<br>
+                                                所以還是需要先請主人先行評估，或是致電洽詢我們，我們很樂意協助您!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border border-black-60 rounded-3 px-16 mb-16">
+                                    <h2 class="accordion-header border-bottom border-black-60 d-flex align-items-center"
+                                        id="questionTwo">
+                                        <button class="accordion-button fs-5 px-0 px-md-16 collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true"
+                                            aria-controls="collapseTwo">
+                                            為什麼來這裡都需要提供疫苗施打的證明？
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="questionTwo">
+                                        <div class="accordion-body text-black-80">
+                                            <p>為確保毛孩自己及其他同學的健康，所以皆需備有獸醫師蓋章的年度疫苗手冊以供檢查，<br>
+                                                若發現疫苗逾期未施打，我們很抱歉將無法為您提供相關服務。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border border-black-60 rounded-3 px-16 mb-16">
+                                    <h2 class="accordion-header border-bottom border-black-60 d-flex align-items-center"
+                                        id="questionThree">
+                                        <button class="accordion-button fs-5 px-0 px-md-16 collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="true" aria-controls="collapseThree">
+                                            請問有什麼狀況的毛孩是不能接受服務的嗎？
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="questionThree">
+                                        <div class="accordion-body text-black-80">
+                                            <ol class="remark-list ms-24">
+                                                <li>有攻擊性的</li>
+                                                <li>有皮膚疾病未痊癒的</li>
+                                                <li>有傳染性疾病未痊癒的</li>
+                                                <li>剛動完手術兩周內的</li>
+                                                <li>一周內剛施打完預防針的</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border border-black-60 rounded-3 px-16 mb-16">
+                                    <h2 class="accordion-header border-bottom border-black-60 d-flex align-items-center"
+                                        id="questionFour">
+                                        <button class="accordion-button fs-5 px-0 px-md-16 collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="true" aria-controls="collapseFour">
+                                            毛孩會不會受傷呢？在館內身體不舒服怎麼辦呢？
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="questionFour">
+                                        <div class="accordion-body text-black-80">
+                                            <p>若毛孩在館內有受傷或是不舒服，會由第一線駐館獸醫師協助處理（不收費）並通知家長，<br>
+                                                若情況已非第一線可以處理的話，將協助轉送至配合的星光動物醫院進行醫療處置（相關費用由家長負擔）。</p>
+                                            <p>若毛孩是因其他狗狗而導致受傷的話，後續我們會協助雙方家長開立協調會並協助調出監視錄影，<br>
+                                                嘿毛不會草草了事打發家長，請家長放心!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border border-black-60 rounded-3 px-16 mb-16">
+                                    <h2 class="accordion-header border-bottom border-black-60 d-flex align-items-center"
+                                        id="questionFive">
+                                        <button class="accordion-button fs-5 px-0 px-md-16 collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                            aria-expanded="true" aria-controls="collapseFive">
+                                            請問你們接受那些支付方式？
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse"
+                                        aria-labelledby="questionFive">
+                                        <div class="accordion-body text-black-80">
+                                            <p>目前我們僅提供現場現金付款或轉帳唷!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border border-black-60 rounded-3 px-16 mb-16">
+                                    <h2 class="accordion-header border-bottom border-black-60 d-flex align-items-center"
+                                        id="questionSix">
+                                        <button class="accordion-button fs-5 px-0 px-md-16 collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true"
+                                            aria-controls="collapseSix">
+                                            超過營業時間可以接狗狗回家嗎？
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSix" class="accordion-collapse collapse"
+                                        aria-labelledby="questionSix">
+                                        <div class="accordion-body text-black-80">
+                                            <p>若超過最後營業時間21:00之後將不再開放接毛孩回家，因為可能會影響其他同學，<br>
+                                                造成晚上群體吠叫的情況發生。
+                                            </p>
+                                            <p>所以請家長們準時於打烊前來接毛孩，若無法臨時無法於當天接回，<br>
+                                                毛孩過夜將以住宿的費用累加計費。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border border-black-60 rounded-3 px-16 mb-16">
+                                    <h2 class="accordion-header border-bottom border-black-60 d-flex align-items-center"
+                                        id="questionSeven">
+                                        <button class="accordion-button fs-5 px-0 px-md-16 collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseSeven"
+                                            aria-expanded="true" aria-controls="collapseSeven">
+                                            未來會提供貓咪美容、住宿的服務嗎？
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSeven" class="accordion-collapse collapse"
+                                        aria-labelledby="questionSeven">
+                                        <div class="accordion-body text-black-80">
+                                            <p>目前無打算規劃貓咪的相關服務，嘿毛致力於提供狗狗最好的環境及服務，<br>
+                                                若未來有一天真的有機會，會再跟大家分享這個好消息。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('./layout/footer'); -%>
+
+                <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+                <script type="module" src="../main.js"></script>
+                <script>
+                    // back to top
+                    $(function () {
+                        $(function () {
+                            $(window).scroll(function () {
+                                if ($(window).scrollTop() > 100) {
+                                    $("#back-to-top").fadeIn(1000);
+                                }
+                                else {
+                                    $("#back-to-top").fadeOut(1000);
+                                }
+                            });
+                            $("#back-to-top").click(function () {
+                                $('body,html').animate({ scrollTop: 0 }, 500);
+                                return false;
+                            });
+                        });
+                    });
+
+                    // 漢堡選單
+                    const hamBtn = document.querySelector(".ham");
+                    const mobileMenu = document.querySelector(".mobile-menu .menu");
+                    const hamCloseBtn = document.querySelector(".closedHam");
+                    const body = document.body;
+
+                    function toggleMenu() {
+                        mobileMenu.classList.toggle('open');
+                        body.classList.toggle('hidden-y');
+                    };
+
+                    hamBtn.addEventListener('click', toggleMenu);
+                    hamCloseBtn.addEventListener("click", toggleMenu);
+                </script>
+</body>
+
+</html>

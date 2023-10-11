@@ -1,0 +1,44 @@
+.faq {
+    &-banner {
+        @include banner("https://images.unsplash.com/photo-1537019575197-df34a13f342c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80", 60%, 42%);
+    }
+
+    &-arr {
+        animation-name: arr-jump;
+        animation-duration: 0.5s;
+        @extend %animation;
+    }
+
+    @keyframes arr-jump {
+        0% {
+            top: 0px;
+        }
+
+        100% {
+            top: -7px;
+        }
+    }
+}
+
+.accordion {
+    &-header {
+        margin-bottom: -1px;
+    }
+
+    &-button {
+        &::after {
+            font: var(--fa-font-solid);
+            content: '\f055';
+            color: $primary;
+            transform: rotate(0deg);
+            transition: 0.5s;
+        }
+
+        &:not(.collapsed) {
+            &::after {
+                transform: rotate(135deg);
+                color: $danger;
+            }
+        }
+    }
+}

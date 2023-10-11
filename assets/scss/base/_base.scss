@@ -1,0 +1,24 @@
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    display: inline-block;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+img {
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+textarea {
+    resize: none;
+}

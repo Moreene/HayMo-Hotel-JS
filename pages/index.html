@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>嘿毛寵物旅館</title>
+  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <%- include('./layout/header', { currentPage: 'index' }); -%>
+
+    <%- include('./layout/to-top-btn'); -%>
+
+      <!-- Banner -->
+      <div id="carousel" class="carousel slide mb-120 mb-lg-200" data-bs-ride="carousel" data-bs-pause="false">
+        <div class="carousel-inner">
+          <!-- 輪播第一頁 -->
+          <div class="carousel-item first bg-size-cover active" data-bs-interval="6000">
+            <div class="caption position-absolute">
+              <h2 class="caption-slogan lh-base mb-24">
+                <p class="fw-bold mb-0">嘿 , 讓我們提供您</p>
+                <p class="fw-bolder mb-0">最好的服務</p>
+                <div class="caption-slogan-hide">
+                  <p class="fw-bolder mb-0 text-primary">家長安心 , 毛小孩開心</p>
+                  <p class="fw-bolder mb-0 ">是我們的唯一宗旨</p>
+                </div>
+              </h2>
+              <div class="d-flex align-items-center">
+                <a href="#" data-bs-target="#carousel" data-bs-slide="prev"
+                  class="prev-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-left-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+                <a href="#" data-bs-target="#carousel" data-bs-slide="next"
+                  class="next-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-right-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- 輪播第二頁 -->
+          <div class="carousel-item second bg-size-cover" data-bs-interval="6000">
+            <div class="caption position-absolute common">
+              <h2 class="caption-slogan lh-base mb-24">
+                <p class="fw-bold mb-0">大狗友善，</p>
+                <p class="fw-bolder mb-0">多元環境。</p>
+              </h2>
+              <div class="d-flex align-items-center">
+                <a href="#" data-bs-target="#carousel" data-bs-slide="prev"
+                  class="prev-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-left-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+                <a href="#" data-bs-target="#carousel" data-bs-slide="next"
+                  class="next-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-right-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- 輪播第三頁 -->
+          <div class="carousel-item third bg-size-cover" data-bs-interval="6000">
+            <div class="caption position-absolute common">
+              <h2 class="caption-slogan lh-base mb-24">
+                <p class="fw-bold mb-0">專業照顧，</p>
+                <p class="fw-bolder mb-0">業界第一。</p>
+              </h2>
+              <div class="d-flex align-items-center">
+                <a href="#" data-bs-target="#carousel" data-bs-slide="prev"
+                  class="prev-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-left-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+                <a href="#" data-bs-target="#carousel" data-bs-slide="next"
+                  class="next-link direction-deco bg-black lh-1"><i
+                    class="bi bi-arrow-right-short d-block d-flex align-items-center justify-content-center fs-4"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 我們擁有 -->
+      <section class="weHave overflow-hidden mb-120 mb-lg-200">
+        <ul class="d-flex justify-content-around align-items-center weHave-content position-relative">
+          <li>
+            <div class="have-img bg-size-cover bg-p-center bg-repeat-no first mx-auto d-none d-md-block"></div>
+          </li>
+          <li>
+            <div class="have-img bg-size-cover bg-p-center bg-repeat-no second"></div>
+          </li>
+          <li class="d-none d-xl-block">
+            <div class="content-txt-xl">
+              <h2 class="d-inline-block fs-5 fw-bolder section-label py-12 px-20 mb-24">WE HAVE</h2>
+              <h2 class="fw-bold title-font mb-24">我們擁有</h2>
+              <p class="text-black-80 mb-0">專業的美容師、安親老師，並特別聘請獸醫師們駐館</p>
+              <p class="text-black-80 mb-0">館內擁有大片草地及水樂園供毛孩們玩耍</p>
+              <p class="text-black-80 mb-24">在這裡，我們盡全力讓他們得到最好的照顧</p>
+            </div>
+            <div class="d-flex flex-wrap justify-content-betwen">
+              <p class="w-50 fw-bold fs-4"><img src="../assets/images/badge-check.png" alt="打勾圖案"
+                  class="me-8 me-xl-16">專業美容</p>
+              <p class="w-50 fw-bold fs-4"><img src="../assets/images/badge-check.png" alt="打勾圖案"
+                  class="me-8 me-xl-16">優質照顧</p>
+              <p class="w-50 fw-bold fs-4"><img src="../assets/images/badge-check.png" alt="打勾圖案"
+                  class="me-8 me-xl-16">多元環境</p>
+              <p class="w-50 fw-bold fs-4"><img src="../assets/images/badge-check.png" alt="打勾圖案"
+                  class="me-8 me-xl-16">24hr錄影</p>
+            </div>
+          </li>
+          <li>
+            <div class="have-img bg-size-cover bg-p-center bg-repeat-no third"></div>
+          </li>
+          <li>
+            <div class="have-img bg-size-cover bg-p-center bg-repeat-no fourth d-none d-md-block"></div>
+          </li>
+          <!-- 1200px以下的content-txt -->
+          <li class="content-txt mb-0 d-xl-none w-md-75 pe-12 pe-md-0 position-absolute">
+            <div>
+              <h2 class="d-inline-block fs-5 fw-bolder section-label py-12 px-20 mb-24 bg-white">WE HAVE</h2>
+              <h2 class="fw-bold title-font mb-24">我們擁有</h2>
+              <p class="text-black-80 mb-0">專業的美容師、安親老師，並聘請獸醫師們駐館</p>
+              <p class="text-black-80 mb-0">館內擁有大片草地及水樂園供毛孩們玩耍</p>
+              <p class="text-black-80 mb-24">在這裡，我們盡全力讓他們得到最好的照顧</p>
+            </div>
+            <div class="d-flex flex-wrap justify-content-betwen">
+              <p class="w-50 fw-bold fs-5"><img src="../assets/images/badge-check.png" alt="打勾圖案"
+                  class="me-8 me-xl-16">專業美容</p>
+              <p class="w-50 fw-bold fs-5"><img src="../assets/images/badge-check.png" alt="打勾圖案"
+                  class="me-8 me-xl-16">優質照顧</p>
+              <p class="w-50 fw-bold fs-5"><img src="../assets/images/badge-check.png" alt="打勾圖案"
+                  class="me-8 me-xl-16">多元環境</p>
+              <p class="w-50 fw-bold fs-5"><img src="../assets/images/badge-check.png" alt="打勾圖案"
+                  class="me-8 me-xl-16">24hr錄影</p>
+            </div>
+          </li>
+      </section>
+
+      <!-- 服務項目 -->
+      <main class="serviceItem position-relative py-80 py-xl-160 mb-120 mb-lg-200">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="d-inline-block fs-5 fw-bolder section-label py-12 px-20 mb-24">SERVICE</h2>
+            <h2 class="fw-bold title-font mb-24 mb-xl-40">服務項目</h2>
+            <div class="py-24 py-xl-40">
+              <!-- 服務項目卡片 -->
+              <ul class="row row-cols-1 row-cols-md-2 row-cols-xl-4 gy-48 gy-xl-0">
+                <li class="col">
+                  <ul class="row row-cols-2 row-cols-md-1 align-items-center ps-0 mb-0">
+                    <li class="col">
+                      <div class="vector position-relative bg-size-cover dayCare z-n1 mx-auto mb-md-20 mb-lg-32">
+                        <img src="../assets/images/guide-dog.png" alt="狗狗"
+                          class="vector-img d-block position-absolute top-50 start-50 translate-middle">
+                      </div>
+                    </li>
+                    <li class="col">
+                      <div class="text-start text-md-center">
+                        <h3 class="fw-bold subtitle mb-xl-32">安親</h3>
+                        <p class="text-black-80 d-md-inline mb-0">認識新朋友，</p>
+                        <p class="text-black-80 d-md-inline mb-0">增加社會化</p>
+                        <p class="text-black-80 mb-0">等待時間不無聊</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="col">
+                  <ul class="row row-cols-2 row-cols-md-1 align-items-center">
+                    <li class="col">
+                      <div class="vector position-relative bg-size-cover paradise z-n1 mx-auto mb-md-20 mb-lg-32">
+                        <img src="../assets/images/jumping-dog.png" alt="狗狗"
+                          class="vector-img d-block position-absolute top-50 start-50 translate-middle">
+                      </div>
+                    </li>
+                    <li class="col">
+                      <div class="text-start text-md-center">
+                        <h3 class="fw-bold subtitle mb-xl-32">樂園</h3>
+                        <p class="text-black-80 mb-0">大草地、大泳池</p>
+                        <p class="text-black-80 mb-0">想去哪玩就去哪</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="col">
+                  <ul class="row row-cols-2 row-cols-md-1 align-items-center">
+                    <li class="col">
+                      <div class="vector position-relative bg-size-cover cosmetic z-n1 mx-auto mb-md-20 mb-lg-32">
+                        <img src="../assets/images/hair-brush.png" alt="狗狗"
+                          class="vector-img d-block position-absolute top-50 brush">
+                      </div>
+                    </li>
+                    <li class="col">
+                      <div class="text-start text-md-center">
+                        <h3 class="fw-bold subtitle mb-xl-32">美容</h3>
+                        <p class="text-black-80 mb-0">我們絕對細心且耐心</p>
+                        <p class="text-black-80 mb-0">透明玻璃，家長放心</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="col">
+                  <ul class="row row-cols-2 row-cols-md-1 align-items-center">
+                    <li class="col">
+                      <div class="vector position-relative bg-size-cover sleeping z-n1 mx-auto mb-md-20 mb-lg-32">
+                        <img src="../assets/images/Sleep.png" alt="狗狗"
+                          class="vector-img d-block position-absolute top-50 start-50 translate-middle">
+                      </div>
+                    </li>
+                    <li class="col">
+                      <div class="text-start text-md-center">
+                        <h3 class="fw-bold subtitle mb-xl-32">住宿</h3>
+                        <p class="text-black-80 mb-0">堅持一狗一室</p>
+                        <p class="text-black-80 mb-0">大家一起睡好好</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- 業界第一 -->
+      <section class="theBest mb-120 mb-lg-200">
+        <ul class="d-flex flex-column flex-md-row">
+          <li class="w-md-50">
+            <div class="best-img w-100 bg-repeat-no bg-size-cover"></div>
+          </li>
+          <li class="w-md-50">
+            <div class="best-content bg-primary-l">
+              <h2 class="d-inline-block fs-5 fw-bolder section-label py-12 px-20 mb-24">WE ARE BEST</h2>
+              <h2 class="fw-bold title-font mb-24">業界第一</h2>
+              <p class="text-black-80 mb-0">館內擁有大大的泳池及大片的草地</p>
+              <p class="text-black-80 mb-0">只要是前來住宿的毛孩皆可以免費使用</p>
+              <p class="text-black-80 mb-0">我們提供救生衣及配備專人在旁監督</p>
+              <p class="text-black-80 mb-24">確保毛孩開心的同時也安安全全</p>
+              <div class="d-flex">
+                <a href="service.html" class="bestBtn py-18 px-28 d-flex align-items-center fw-bold">查看更多<i
+                    class="bi bi-arrow-right d-block fs-4 ms-8 arr rounded-circle d-flex justify-content-center align-items-center"></i></a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <%- include('./layout/footer'); -%>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script type="module" src="../main.js"></script>
+        <script>
+          // 漢堡選單
+          const hamBtn = document.querySelector(".ham");
+          const mobileMenu = document.querySelector(".mobile-menu .menu");
+          const hamCloseBtn = document.querySelector(".closedHam");
+          const body = document.body;
+
+          function toggleMenu() {
+            mobileMenu.classList.toggle('open');
+            body.classList.toggle('hidden-y');
+          };
+
+          hamBtn.addEventListener('click', toggleMenu);
+          hamCloseBtn.addEventListener("click", toggleMenu);
+
+          // back to top
+          $(function () {
+            $(function () {
+              $(window).scroll(function () {
+                if ($(window).scrollTop() > 100) {
+                  $("#back-to-top").fadeIn(1000);
+                }
+                else {
+                  $("#back-to-top").fadeOut(1000);
+                }
+              });
+              $("#back-to-top").click(function () {
+                $('body,html').animate({ scrollTop: 0 }, 500);
+                return false;
+              });
+            });
+          });
+        </script>
+</body>
+
+</html>

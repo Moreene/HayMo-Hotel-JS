@@ -1,0 +1,64 @@
+.login {
+
+    &-banner {
+        @include banner("https://images.unsplash.com/photo-1510020553968-30f966e1ec9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", 50%, 30%);
+    }
+
+    &-quick {
+
+        &:nth-child(1) {
+            background-color: $success;
+        }
+    
+        &:nth-child(2) {
+            background-color: $blue;
+        }
+    
+        &:nth-child(3) {
+            background-color: $red;
+        }
+    
+        &:hover,
+        &:active {
+            box-shadow: inset 3px 3px 3px 0px rgba(255, 255, 255, .4);
+        }
+    
+        i {
+            display: block;
+    
+            @include mobile {
+                display: inline;
+            }
+        }
+    }
+}
+
+.line-right {
+    @include pc {
+        border-right: 1px solid $black;
+    }
+}
+
+.line-bottom {
+    border-bottom: 1px solid $black;
+
+    @include pad {
+        border-bottom: 0;
+    }
+}
+
+.form-control-plaintext {
+    border-top: 0;
+    border-right:0;
+    border-left:0;
+    border-bottom: 1px solid $black-60;
+    outline: 0;
+
+    &::placeholder {
+        color: $black-40;
+    }
+
+    &:focus {
+        border-bottom: 1px solid $primary;
+    }
+}

@@ -1,0 +1,33 @@
+// 線上預約<a>樣式
+.login-link {
+  @include link-circle(5px, 6px);
+
+  @include mobile {
+    padding: 8px 12px;
+  }
+}
+
+// mobile-menu樣式
+@media (max-width: 767px) {
+  .menu {
+    height: 0;
+  }
+
+  .menu-link {
+    font-size: 48px;
+  }
+}
+
+// 768px以下 - menu透過js點擊展開
+.menu.open {
+  height: 100%;
+
+  .menu-link {
+    line-height: 1.2;
+  }
+}
+
+// 控制768px以下的menu展開時，不要有y軸滾動
+body.hidden-y {
+  overflow-y: hidden;
+}

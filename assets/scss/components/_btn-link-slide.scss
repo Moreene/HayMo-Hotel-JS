@@ -1,0 +1,9 @@
+.link-slide-primary{
+    @include link-slide($white, $primary, $primary, $white);
+    border: 1px solid $primary;
+}
+
+.link-slide-white{
+    @include link-slide($primary, $white, $white, $primary);
+    border: 1px solid $primary;
+}

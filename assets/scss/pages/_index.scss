@@ -1,0 +1,351 @@
+/*-------------------------共同樣式-------------------------*/
+.section-label {
+    border: 3px solid $black;
+    border-radius: 0 20px 20px 20px;
+}
+
+/*--------------------------Banner--------------------------*/
+.carousel {
+
+    // 設定carousel-inner高度
+    // 讓caption的文字在手機板時可以定位在圖片下方
+    &-inner {
+        height: 820px;
+
+        @include pc {
+            height: 620px;
+        }
+
+        @include pc-lg {
+            height: 870px;
+        }
+
+        @include pc-xl {
+            height: 1080px;
+        }
+    }
+
+    &-item {
+        height: 620px;
+        border-radius: 0 0 120px 120px;
+
+        &.first {
+            background-image: url("../images/banner-1.png");
+            background-position: 83% center;
+        }
+
+        &.second {
+            background-image: url("../images/banner-2.png");
+            background-position: 75% center;
+        }
+
+        &.third {
+            background-image: url("../images/banner-3.png");
+            background-position: 75% center;
+        }
+
+        @include pc-lg {
+            height: 870px;
+        }
+
+        @include pc-xl {
+            height: 1080px;
+        }
+    }
+}
+
+.caption {
+    // 第一頁輪播-文字定位
+    left: 12px;
+    bottom: -32%;
+
+    @include pad {
+        left: 6.5%;
+    }
+
+    @include pc {
+        top: 32%;
+    }
+
+    @media (min-width:1600px) {
+        left: 16.5%;
+    }
+
+    // 第二、三頁輪播-文字定位
+    &.common {
+        @include pc {
+            top: 48%;
+            color: $white;
+        }
+
+        @media (min-width:1600px) {
+            top: 45.5%;
+        }
+    }
+
+    // banner文字
+    &-slogan {
+        font-size: 32px;
+
+        &-hide {
+            @media (max-width:374px) {
+                display: none;
+            }
+        }
+
+        @include pc-lg {
+            font-size: 40px;
+        }
+
+        @include pc-xl {
+            font-size: 48px;
+        }
+    }
+
+    // prev-link、next-link
+    a:hover,
+    a:active {
+        i {
+            background-color: $black-80;
+            color: $secondary;
+        }
+    }
+}
+
+.prev-link {
+    border-radius: 100px 0 0 100px;
+}
+
+.next-link {
+    border-radius: 0 100px 100px 0;
+}
+
+/*-------------------------我們擁有-------------------------*/
+.weHave {
+    height: 800px;
+
+    @include mobile {
+        height: 687px;
+    }
+
+    @include pc-lg {
+        height: 624px;
+    }
+}
+
+.weHave-content li {
+
+    // 手機-第二張圖間距設定
+    &:nth-child(2) {
+        margin-right: 24px;
+
+        @include pad {
+            margin-right: 40px;
+        }
+    }
+
+    // 768px-所有圖片的間距
+    @include pad {
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+
+    // 1200px-第一張圖及content-txt間距設定
+    @include pc-lg {
+        &:nth-child(1) {
+            margin-left: 144px;
+        }
+
+        &:nth-child(3) {
+            padding: 0 26px;
+        }
+    }
+}
+
+.have-img {
+    width: 257px;
+    height: 386px;
+
+    &.first {
+        background-image: url("../images/Rectangle-1.png");
+    }
+
+    &.second {
+        background-image: url("../images/Rectangle-2.png");
+    }
+
+    &.third {
+        background-image: url("../images/Rectangle-3.png");
+    }
+
+    &.fourth {
+        background-image: url("../images/Rectangle-4.png");
+    }
+
+    @media (min-width:1200px) {
+        width: 416px;
+        height: 624px;
+    }
+}
+
+.content-txt {
+    top: 92%;
+    left: 3.5%;
+    // z-index: 2;
+
+    @include pad {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+
+    // 1200px以上的content-txt寬度
+    &-xl {
+        width: 351px;
+
+        @include pc {
+            width: 417px;
+        }
+    }
+}
+
+/*-------------------------服務項目-------------------------*/
+.serviceItem::after {
+    position: absolute;
+    content: "";
+    background-color: $secondary-l;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    border-radius: 120px 0 120px 0;
+
+    @include pc-lg {
+        border-radius: 160px 0 160px 0;
+    }
+}
+
+.subtitle {
+    font-size: 28px;
+
+    @include pc-lg {
+        font-size: 32px;
+    }
+}
+
+// 向量圖大小+定位
+@mixin vector-size($width, $height) {
+    width: $width;
+    height: $height ;
+}
+
+.vector {
+
+    &.dayCare {
+        background-image: url("../images/Vector-1-sm.png");
+        @include vector-size(130px, 130px);
+
+        @include mobile {
+            @include vector-size(160px, 160px);
+        }
+
+        @include pc-lg {
+            background-image: url("../images/Vector-1.png");
+            @include vector-size(240px, 240px);
+        }
+    }
+
+    &.paradise {
+        background-image: url("../images/Vector-2-sm.png");
+        @include vector-size(139px, 160px);
+
+        @include pc-lg {
+            background-image: url("../images/Vector-2.png");
+            @include vector-size(208px, 240px);
+        }
+    }
+
+    &.cosmetic {
+        background-image: url("../images/Vector-3-sm.png");
+        @include vector-size(134px, 160px);
+
+        @include pc-lg {
+            background-image: url("../images/Vector-3.png");
+            @include vector-size(203px, 240px);
+        }
+    }
+
+    &.sleeping {
+        background-image: url("../images/Vector-4.png");
+        @include vector-size(160px, 148px);
+
+        @include pc-lg {
+            background-image: url("../images/Vector-4.png");
+            @include vector-size(240px, 222px);
+        }
+    }
+}
+
+// 向量圖icon
+.vector-img {
+    @include vector-size(64px, 64px);
+
+    &.brush {
+        left: 65%;
+        transform: translate(-65%, -50%);
+    }
+
+    @include pc-lg {
+        @include vector-size(80px, 80px);
+    }
+}
+
+/*-------------------------業界第一-------------------------*/
+.best-img {
+    height: 375px;
+    background-image: url("../images/happy-dog.png");
+    background-position: right center;
+
+    @include pad {
+        height: 100%;
+        background-position: 80% center;
+        border-bottom-left-radius: 120px;
+    }
+
+    @include pc-lg {
+        border-bottom-left-radius: 160px;
+    }
+}
+
+.best-content {
+    padding: 80px 24px 120px;
+    border-bottom-left-radius: 120px;
+
+    @include pad {
+        border-radius: 0;
+    }
+
+    @include pc-lg {
+        padding: 143px 134px;
+    }
+}
+
+.bestBtn {
+    border-radius: 100px;
+    color: #000;
+    background-color: #fff100;
+
+    .arr {
+        width: 40px;
+        height: 40px;
+    }
+
+    &:hover,
+    &:active {
+        .arr {
+            color: #fff;
+            background-color: #000;
+        }
+    }
+}

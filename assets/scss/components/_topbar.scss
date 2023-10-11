@@ -1,0 +1,26 @@
+.topbar {
+    width: 94%;
+    background-color: rgba($color: $white, $alpha: 0.8);
+    top: 16px;
+    padding: 8px 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    @include mobile {
+        padding: 8px 40px;
+    }
+
+    @include pad {
+        top: 20px;
+    }
+
+    &-logo {
+        width: 64px;
+        height: 64px;
+
+        @include pad {
+            width: 80px;
+            height: 80px;
+        }
+    }
+}

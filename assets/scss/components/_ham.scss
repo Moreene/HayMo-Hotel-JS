@@ -1,0 +1,25 @@
+.ham {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    &-line,
+    &-line::before,
+    &-line::after {
+        position: absolute;
+        content: "";
+        width: 18px;
+        height: 2px;
+        background-color: $black;
+    }
+
+    &-line {
+        &::before {
+            top: -6px;
+        }
+
+        &::after {
+            top: 6px;
+        }
+    }
+}

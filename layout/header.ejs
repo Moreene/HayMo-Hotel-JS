@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+    <header class="topbar w-lg-75 w-xl-50 w-xxl-45 py-md-20 px-md-40  rounded-pill position-fixed z-2">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html"><img src="../assets/images/Logo.png" alt="Logo" class="topbar-logo"></a>
+            <!-- table-menu -->
+            <div class="d-none d-md-block">
+                <ul class="table-menu d-flex">
+                    <li class="me-32">
+                        <a href="index.html" class="menu-link position-relative <%- currentPage === 'index' ? 'active' : '' %>">首頁</a>
+                    </li>
+                    <li class="me-32">
+                        <a href="about.html" class="menu-link position-relative <%- currentPage === 'about' ? 'active' : '' %>">關於我們</a>
+                    </li>
+                    <li class="me-32">
+                        <a href="service.html" class="menu-link position-relative <%- currentPage === 'service' ? 'active' : '' %>">服務項目</a>
+                    </li>
+                    <li>
+                        <a href="faq.html" class="menu-link position-relative <%- currentPage === 'faq' ? 'active' : '' %>">常見問題</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="d-flex align-items-center">
+                <li>
+                    <a href="login.html" class="login-link d-flex align-items-center justify-content-center me-md-0 <%- currentPage === 'login'|| currentPage === 'signUp' ? 'active' : '' %>">
+                        <p class="link-circle-txt mb-0">線上<span class="d-md-block">預約</span></p>
+                    </a>
+                </li>
+                <li class="d-md-none">
+                    <div class="ham position-relative">
+                        <div class="ham-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- mobile-menu -->
+    <div class="d-block d-md-none mobile-menu">
+        <ul class="menu bg-primary d-flex flex-column position-fixed top-0 start-0 w-100 overflow-hidden z-99">
+            <li class="d-flex justify-content-end pt-16 pe-12">
+                <div class="closedHam position-relative rounded-circle">
+                    <div class="closedHam-line position-absolute d-block top-50 start-50 translate-middle"></div>
+                </div>
+            </li>
+            <li class="ms-12 mt-24 mb-32">
+                <a href="index.html" class="menu-link text-white fw-bold">首頁</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="about.html" class="menu-link text-white fw-bold">關於我們</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="service.html" class="menu-link text-white fw-bold">服務項目</a>
+            </li>
+            <li class="ms-12 mb-32">
+                <a href="faq.html" class="menu-link text-white fw-bold">常見問題</a>
+            </li>
+            <li class="ms-12 d-md-none">
+                <a href="login.html" class="menu-link text-white fw-bold">線上預約</a>
+            </li>
+        </ul>
+    </div>
+</div>

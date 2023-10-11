@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>嘿毛寵物旅館 | 房間查詢</title>
+    <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <%- include('./layout/cms-sidebar', { currentPage: 'cms-room' }); -%>
+        <main class="main">
+            <div class="bg-white border-black-60 border-bottom sticky-top">
+                <a href="#" class="ps-24 py-16" id="toggle-btn" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
+                        class="bi bi-arrows-angle-expand"></i></a>
+                <span class="ms-16">嘿毛，歡迎登入</span>
+            </div>
+            <div class="p-24 p-lg-48">
+                <ul class="row gy-24 gy-lg-0 mb-80">
+                    <li class="col-md-4">
+                        <div class="card shadow-sm">
+                            <div class="p-16 text-center">
+                                <h2 class="mb-24">今日退房</h2>
+                                <p class="display-2 text-primary fw-bold">6</p>
+                                <p class="text-black-60 mb-0">筆訂單</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-4">
+                        <div class="card shadow-sm">
+                            <div class="p-16 text-center">
+                                <h2 class="mb-24">今日入住</h2>
+                                <p class="display-2 text-primary fw-bold">8</p>
+                                <p class="text-black-60 mb-0">筆訂單</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-4">
+                        <div class="card shadow-sm">
+                            <div class="p-16 text-center">
+                                <h2 class="mb-24">今日住房</h2>
+                                <p class="display-2 text-primary fw-bold">15</p>
+                                <p class="text-black-60 mb-0">筆訂單</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <h2 class="mb-24">近七日空房數</h2>
+                <ul class="d-flex flex-wrap justify-content-evenly room-wrapper py-md-24 rounded-2">
+                    <li class="w-50 w-md-14 border-bottom border-bottom-md-0">
+                        <div class="text-center px-16 py-48">
+                            <h3 class="mb-24">09/18</h3>
+                            <p class="fs-5 mb-48">一</p>
+                            <p class="d-inline-block date-deco weekday rounded-circle fs-5 text-white p-16 mb-0">6</p>
+                        </div>
+                    </li>
+                    <li class="w-50 w-md-14 border-bottom border-bottom-md-0">
+                        <div class="text-center px-16 py-48">
+                            <h3 class="mb-24">09/19</h3>
+                            <p class="fs-5 mb-48">二</p>
+                            <p class="d-inline-block date-deco weekday rounded-circle fs-5 text-white p-16 mb-0">5</p>
+                        </div>
+                    </li>
+                    <li class="w-50 w-md-14 border-bottom border-bottom-md-0">
+                        <div class="text-center px-16 py-48">
+                            <h3 class="mb-24">09/20</h3>
+                            <p class="fs-5 mb-48">三</p>
+                            <p class="d-inline-block date-deco weekday rounded-circle fs-5 text-white p-16 mb-0">9</p>
+                        </div>
+                    </li>
+                    <li class="w-50 w-md-14 border-bottom border-bottom-md-0">
+                        <div class="text-center px-16 py-48">
+                            <h3 class="mb-24">09/21</h3>
+                            <p class="fs-5 mb-48">四</p>
+                            <p class="d-inline-block date-deco weekday rounded-circle fs-5 text-white p-16 mb-0">7</p>
+                        </div>
+                    </li>
+                    <li class="w-33 w-md-14">
+                        <div class="text-center px-16 py-48">
+                            <h3 class="mb-24">09/22</h3>
+                            <p class="fs-5 mb-48">五</p>
+                            <p class="d-inline-block date-deco weekday rounded-circle fs-5 text-white p-16 mb-0">8</p>
+                        </div>
+                    </li>
+                    <li class="w-33 w-md-14">
+                        <div class="text-center px-16 py-48">
+                            <h3 class="weekend-date mb-24">09/23</h3>
+                            <p class="fs-5 weekend-date mb-48">六</p>
+                            <p class="d-inline-block date-deco weekend rounded-circle fs-5 text-white p-16 mb-0">2</p>
+                        </div>
+                    </li>
+                    <li class="w-33 w-md-14">
+                        <div class="text-center px-16 py-48">
+                            <h3 class="weekend-date mb-24">09/24</h3>
+                            <p class="fs-5 weekend-date mb-48">日</p>
+                            <p class="d-inline-block date-deco weekend rounded-circle fs-5 text-white p-16 mb-0">5</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <script type="module" src="../main.js"></script>
+        <script>
+            const toggleMenuBtn = document.querySelector('#toggle-btn');
+            const body = document.querySelector('body');
+            toggleMenuBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                body.classList.toggle('sidebar-toggled');
+            });
+        </script>
+</body>

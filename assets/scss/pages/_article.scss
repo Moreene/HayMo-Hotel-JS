@@ -1,0 +1,22 @@
+.column {
+
+    &-img {
+        height: 300px;
+    }
+
+    .card {
+        @include pad {
+            margin-left: -30px;
+        }
+    }
+
+    &-content {
+        @include pad {
+            height: 385px;
+        }
+    }
+
+    &-aside {
+        top: 180px;
+    }
+}

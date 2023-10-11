@@ -1,0 +1,46 @@
+.member-center {
+    @include pc-lg {
+        background-image: url("../images/paw-right.png");
+        background-position: 95% 25%;
+    }
+
+    input {
+        @extend %input-style;
+    }
+}
+
+.member {
+    &-img {
+        width: 120px;
+        height: 120px;
+
+        @include pc {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    &-modal-img {
+        height: 92px;
+
+        @include pad {
+            height: 139px;
+        }
+    }
+}
+
+.img-modify {
+    cursor: pointer;
+}
+
+.cam-bg {
+    bottom: 0;
+    left: 0;
+    height: 33%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.table-group {
+    height: 358px;
+    overflow-y: scroll;
+}

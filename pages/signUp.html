@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>嘿毛寵物旅館 | 註冊</title>
+    <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <%- include('./layout/header', { currentPage: 'signUp' }); -%>
+
+        <%- include('./layout/to-top-btn'); -%>
+
+            <!-- Banner -->
+            <div class="signUp-banner bg-size-cover bg-repeat-no d-flex justify-content-center align-items-center">
+                <h2 class="title-font fst-italic text-white fw-bold d-inline-block mb-0">成為我們的一員</h2>
+            </div>
+
+            <!-- 註冊 -->
+            <div class="container">
+                <div class="signUp py-80 py-lg-160">
+                    <h2 class="text-center mb-48">
+                        <span><i class="bi bi-emoji-smile"></i> 歡迎加入我們 <i class="bi bi-emoji-smile"></i></span>
+                    </h2>
+                    <div class="text-center">
+                        <img src="../assets/images/two-dogs.jpg" alt="兩隻狗狗" class="img-fluid dogs-deco">
+                        <img src="../assets/images/two-dogs.jpg" alt="兩隻狗狗"
+                            class="img-fluid dogs-deco d-none d-lg-inline-block">
+                    </div>
+                    <main class="col-md-8 col-xxl-6 mx-auto">
+                        <form class="singUp-form bg-secondary-l border border-black-60 rounded-4 px-24 px-md-48 py-48">
+                            <div class="row mb-24">
+                                <label for="name" class="col-sm-3 col-xxl-2 col-form-label text-black-80">名字</label>
+                                <div class="col-sm-9 col-xxl-10">
+                                    <input type="text" class="form-control" id="name" placeholder="請輸入您的真實姓名">
+                                </div>
+                            </div>
+                            <div class="row mb-24">
+                                <label for="phoneNum" class="col-sm-3 col-xxl-2 col-form-label text-black-80">手機</label>
+                                <div class="col-sm-9 col-xxl-10">
+                                    <input type="tel" class="form-control" id="phoneNum" placeholder="請輸入完整的手機號碼">
+                                </div>
+                            </div>
+                            <div class="row mb-24">
+                                <label for="Email" class="col-sm-3 col-xxl-2 col-form-label text-black-80">電子信箱</label>
+                                <div class="col-sm-9 col-xxl-10">
+                                    <input type="email" class="form-control" id="Email" placeholder="請輸入您的email">
+                                </div>
+                            </div>
+                            <div class="row mb-24">
+                                <label for="password" class="col-sm-3 col-xxl-2 col-form-label text-black-80">密碼</label>
+                                <div class="col-sm-9 col-xxl-10">
+                                    <input type="password" class="form-control" id="password" placeholder="請輸入6位數以上密碼">
+                                </div>
+                            </div>
+                            <div class="row mb-48">
+                                <label for="passwordCheck"
+                                    class="col-sm-3 col-xxl-2 col-form-label text-black-80">確認密碼</label>
+                                <div class="col-sm-9 col-xxl-10">
+                                    <input type="password" class="form-control" id="passwordCheck"
+                                        placeholder="請再次輸入密碼">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <a href="login.html"
+                                    class="d-flex align-items-center justify-content-center link-slide-primary w-100 w-md-75 w-lg-50 mt-32">註冊<i
+                                        class="bi bi-arrow-right d-block fs-4 ms-16"></i></a>
+                            </div>
+                        </form>
+                    </main>
+                </div>
+            </div>
+
+            <%- include('./layout/footer'); -%>
+
+                <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+                <script type="module" src="../main.js"></script>
+                <script>
+                    // back to top
+                    $(function () {
+                        $(function () {
+                            $(window).scroll(function () {
+                                if ($(window).scrollTop() > 100) {
+                                    $("#back-to-top").fadeIn(1000);
+                                }
+                                else {
+                                    $("#back-to-top").fadeOut(1000);
+                                }
+                            });
+                            $("#back-to-top").click(function () {
+                                $('body,html').animate({ scrollTop: 0 }, 500);
+                                return false;
+                            });
+                        });
+                    });
+
+                    // 漢堡選單
+                    const hamBtn = document.querySelector(".ham");
+                    const mobileMenu = document.querySelector(".mobile-menu .menu");
+                    const hamCloseBtn = document.querySelector(".closedHam");
+                    const body = document.body;
+
+                    function toggleMenu() {
+                        mobileMenu.classList.toggle('open');
+                        body.classList.toggle('hidden-y');
+                    };
+
+                    hamBtn.addEventListener('click', toggleMenu);
+                    hamCloseBtn.addEventListener("click", toggleMenu);
+                </script>
+</body>
+
+</html>

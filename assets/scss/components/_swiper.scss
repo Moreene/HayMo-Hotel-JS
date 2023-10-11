@@ -1,0 +1,19 @@
+//Service Swiper
+.mySwiper .swiper-btn {
+    color: $white;
+
+    &::before,
+    &::after {
+        font-size: 28px;
+    }
+}
+
+//memberCenter Swiper
+.dogInfoSwiper .swiper-pagination-bullet{
+    width: 20px;
+    border-radius: 50rem;
+
+    &-active{
+        background-color: $primary;
+    }
+}

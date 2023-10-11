@@ -1,0 +1,89 @@
+.about {
+    padding: 80px 0;
+
+    @include pc {
+        padding: 160px 0 320px 0;
+    }
+
+    &-banner {
+        @include banner("https://images.unsplash.com/photo-1515376318826-794748976251?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", 50%, 55%);
+    }
+
+    &-content {
+        @include pc {
+            left: 75%;
+            transform: translateX(-72.5%);
+        }
+
+        &-mb {
+            margin-bottom: 60px;
+
+            @include pc {
+                margin-bottom: 300px;
+            }
+        }
+    }
+}
+
+.content {
+    &-img {
+        height: 220px;
+
+        @include pad {
+            height: 340px;
+        }
+
+        @include pc-lg {
+            height: 420px;
+        }
+    }
+
+    &-position {
+        @include pc {
+            position: absolute;
+            top: 30%;
+            left: 45%;
+        }
+    }
+
+    &-title::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -15px;
+        background-color: $black-80;
+
+        @include pc {
+            width: 75%;
+        }
+    }
+
+    &-shadow {
+        @include pc {
+            box-shadow: 5px 5px 20px rgba($color: #000000, $alpha: 0.3);
+        }
+    }
+}
+
+.arr-img {
+    width: 200px;
+    height: 200px;
+
+    @include pc-lg {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+.arr-lower {
+    left: 55%;
+    top: 30%;
+}
+
+.arr-upper {
+    left: 25%;
+    top: 65%;
+}

@@ -1,0 +1,30 @@
+.closedHam {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    background-color: rgba($color: $white, $alpha: 0.7);
+
+    &-line,
+    &-line::before,
+    &-line::after {
+        position: absolute;
+        content: "";
+        width: 12px;
+        height: 2px;
+        background-color: $black;
+    }
+
+    &-line {
+        background-color: transparent;
+
+        &::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            top: 0;
+            transform: rotate(-45deg);
+        }
+    }
+}

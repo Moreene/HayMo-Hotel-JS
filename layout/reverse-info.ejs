@@ -1,0 +1,92 @@
+<div class="col-lg-10 py-48 px-25 px-md-35">
+    <div class="row mb-48">
+        <label class="col-form-label">
+            <div class="d-flex flex-column flex-md-row justify-content-md-between">
+                <div class="d-inline mb-16 mb-md-0">毛孩姓名 <span class="text-danger">*</span></div>
+                <div class="d-flex flex-column w-md-75">
+                    <select class="form-select">
+                        <option selected>請選擇毛孩姓名</option>
+                        <option value="大頭">炸毛</option>
+                        <option value="大耳">米米</option>
+                    </select>
+                    <!-- <div class="invalid-feedback">
+                        請輸入毛孩姓名
+                    </div> -->
+                </div>
+            </div>
+        </label>
+    </div>
+    <div class="row mb-48">
+        <div class="col-md-3">
+            <div class="mb-16 mb-md-0">樂園服務 <span class="text-danger">*</span></div>
+        </div>
+        <div class="col-md-9">
+            <div class="d-flex">
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="paradise" value="是" required>
+                        是（+200元）
+                        <div class="invalid-feedback ms-0">
+                            請選擇是否加購
+                        </div>
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="paradise" value="否" required>
+                        否
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-48">
+        <label class="col-form-label">
+            <div class="d-flex flex-column flex-md-row justify-content-md-between">
+                <div class="d-inline mb-16 mb-md-0">緊急聯絡人 <span class="text-danger">*</span></div>
+                <div class="d-flex flex-column w-md-75">
+                    <input class="form-control" list="emergencyContact" name="emergencyContact" placeholder="請輸入完整姓名"
+                        required>
+                    <datalist id="emergencyContact">
+                        <option value="Moreene">
+                    </datalist>
+                    <div class="invalid-feedback">
+                        請輸入緊急聯絡人姓名
+                    </div>
+                </div>
+            </div>
+        </label>
+    </div>
+    <div class="row mb-48">
+        <label class="col-form-label">
+            <div class="d-flex flex-column flex-md-row justify-content-md-between">
+                <div class="d-inline mb-16 mb-md-0">連絡電話 <span class="text-danger">*</span></div>
+                <div class="d-flex flex-column w-md-75">
+                    <input class="form-control" list="emergencyPhone" name="emergencyPhone" placeholder="請輸入手機號碼"
+                        required>
+                    <datalist id="emergencyPhone">
+                        <option value="0987-878787">
+                    </datalist>
+                    <div class="invalid-feedback">
+                        請輸入緊急聯絡人電話
+                    </div>
+                </div>
+            </div>
+        </label>
+    </div>
+    <div class="row mb-48">
+        <label class="col-form-label">
+            <div class="d-flex flex-column flex-md-row justify-content-md-between">
+                <div class="d-inline mb-16 mb-md-0">其他備註</div>
+                <textarea name="remark" id="remark" class="form-control w-md-75 rounded-1" style="height: 158px;"></textarea>
+            </div>
+        </label>
+    </div>
+    <div class="row justify-content-md-end">
+        <div class="col-md-9">
+            <button type="submit"
+                class="d-flex justify-content-center align-items-center btn btn-primary reverse-btn link-slide-primary rounded-0 w-100">送出<i
+                    class="bi bi-arrow-right d-block fs-4 ms-16"></i></button>
+        </div>
+    </div>
+</div>

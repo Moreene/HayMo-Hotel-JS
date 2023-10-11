@@ -1,0 +1,19 @@
+.profit-card {
+    height: 300px;
+}
+
+.arror-jump {
+    animation-name: arror-jump;
+    animation-duration: 0.7s;
+    @extend %animation;
+}
+
+@keyframes arror-jump {
+    0% {
+        top: 0px;
+    }
+
+    100% {
+        top: -20px;
+    }
+}

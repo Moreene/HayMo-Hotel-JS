@@ -1,0 +1,31 @@
+.sidebar-toggled {
+    .main {
+        width: 100%;
+        margin-left: 0px;
+        transition: margin-left .2s;
+    }
+}
+
+.sidebar{
+    width: 280px;
+}
+
+.main {
+    width: 100%;
+    margin-left: 280px;
+    transition: margin-left .2s;
+
+    @include pc {
+        width: calc(100% - 280px);
+    }
+}
+
+.sidebar-link {
+    color: $white;
+
+    &:hover,
+    &:active,
+    &.active {
+        color: $secondary;
+    }
+}

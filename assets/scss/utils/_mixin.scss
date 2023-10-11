@@ -1,0 +1,106 @@
+// breakpoint
+@mixin mobile {
+    @media (min-width:375px) {
+        @content;
+    }
+}
+
+@mixin pad {
+    @media (min-width:768px) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (min-width:992px) {
+        @content;
+    }
+}
+
+@mixin pc-lg {
+    @media (min-width:1200px) {
+        @content;
+    }
+}
+
+@mixin pc-xl {
+    @media (min-width:1400px) {
+        @content;
+    }
+}
+
+// topbar circle link
+@mixin link-circle($py, $px) {
+    padding: $py $px;
+    border: 2px solid $primary-l;
+    border-radius: 50rem;
+
+    &-txt {
+        color: $primary;
+    }
+
+    &:hover,
+    &.active {
+        border: 2px solid $primary;
+        background-color: $primary ;
+
+        .link-circle-txt {
+            color: $white;
+        }
+    }
+
+    @include mobile {
+        margin-right: 8px;
+    }
+
+    @include pad {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+// banner
+@mixin banner($url, $bg-p-x, $bg-p-y) {
+    background-image: url($url);
+    height: 500px;
+    border-radius: 0 0 120px 120px;
+    background-position: $bg-p-x $bg-p-y;
+
+    @media (min-width:992px) {
+        border-radius: 0 0 160px 160px;
+    }
+}
+
+// link/btn-hover-slide
+@mixin link-slide($color, $slideColor, $bgColor, $slideBgColor) {
+    padding: 11px 0;
+    position: relative;
+    color: $color;
+    background-color: $bgColor;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5);
+    transition: .4s;
+    z-index: 1;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        background-color: $slideBgColor;
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5);
+        z-index: -1;
+        transition: .4s;
+    }
+
+    &:hover {
+        color: $slideColor;
+    }
+
+    &:hover::after {
+        width: 100%;
+        left: 0;
+    }
+}
