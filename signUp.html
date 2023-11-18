@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>嘿毛寵物旅館 | 註冊</title>
     <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
-  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-a9b22856.js"></script>
-  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-1ed0e0f2.css">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/signUp-13cc065b.js"></script>
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/bootstrap-3dca8c45.js">
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/hamMenu-6b7faa69.js">
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/toTopBtn-95c6dae3.js">
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/config-e6f0afb8.js">
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-a605a855.css">
 </head>
 
 <body>
@@ -96,44 +100,66 @@
                             class="img-fluid dogs-deco d-none d-lg-inline-block">
                     </div>
                     <main class="col-md-8 col-xxl-6 mx-auto">
-                        <form class="singUp-form bg-secondary-l border border-black-60 rounded-4 px-24 px-md-48 py-48">
+                        <form
+                            class="singUp-form bg-secondary-l border border-black-60 rounded-4 px-24 px-md-48 py-48 needs-validation"
+                            novalidate>
                             <div class="row mb-24">
-                                <label for="name" class="col-sm-3 col-xxl-2 col-form-label text-black-80">名字</label>
+                                <label for="userName" class="col-sm-3 col-xxl-2 col-form-label text-black-80">名字</label>
                                 <div class="col-sm-9 col-xxl-10">
-                                    <input type="text" class="form-control" id="name" placeholder="請輸入您的真實姓名">
+                                    <input type="text" class="form-control" id="userName" placeholder="請輸入您的真實姓名"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        <i class="bi bi-exclamation-circle me-4"></i> 請輸入姓名
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mb-24">
-                                <label for="phoneNum" class="col-sm-3 col-xxl-2 col-form-label text-black-80">手機</label>
+                                <label for="userPhoneNum"
+                                    class="col-sm-3 col-xxl-2 col-form-label text-black-80">手機</label>
                                 <div class="col-sm-9 col-xxl-10">
-                                    <input type="tel" class="form-control" id="phoneNum" placeholder="請輸入完整的手機號碼">
+                                    <input type="tel" class="form-control" id="userPhoneNum" placeholder="09XXXXXXXX"
+                                        required>
+                                    <div class="invalid-feedback js-phoneError">
+                                        <i class="bi bi-exclamation-circle me-4"></i> 請輸入手機號碼
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mb-24">
-                                <label for="Email" class="col-sm-3 col-xxl-2 col-form-label text-black-80">電子信箱</label>
+                                <label for="userEmail"
+                                    class="col-sm-3 col-xxl-2 col-form-label text-black-80">電子信箱</label>
                                 <div class="col-sm-9 col-xxl-10">
-                                    <input type="email" class="form-control" id="Email" placeholder="請輸入您的email">
+                                    <input type="email" class="form-control" id="userEmail" placeholder="請輸入您的email"
+                                        required>
+                                    <div class="invalid-feedback js-emailError">
+                                        <i class="bi bi-exclamation-circle me-4"></i> 請輸入Email
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mb-24">
-                                <label for="password" class="col-sm-3 col-xxl-2 col-form-label text-black-80">密碼</label>
+                                <label for="userPassword"
+                                    class="col-sm-3 col-xxl-2 col-form-label text-black-80">密碼</label>
                                 <div class="col-sm-9 col-xxl-10">
-                                    <input type="password" class="form-control" id="password" placeholder="請輸入6位數以上密碼">
+                                    <input type="password" class="form-control" id="userPassword"
+                                        placeholder="請輸入6位數以上密碼" required>
+                                    <div class="invalid-feedback js-shortPassword">
+                                        <i class="bi bi-exclamation-circle me-4"></i> 請輸入密碼
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mb-48">
                                 <label for="passwordCheck"
                                     class="col-sm-3 col-xxl-2 col-form-label text-black-80">確認密碼</label>
                                 <div class="col-sm-9 col-xxl-10">
-                                    <input type="password" class="form-control" id="passwordCheck"
-                                        placeholder="請再次輸入密碼">
+                                    <input type="password" class="form-control" id="passwordCheck" placeholder="請再次輸入密碼"
+                                        required>
+                                    <div class="invalid-feedback js-checkPasswordError">
+                                        <i class="bi bi-exclamation-circle me-4"></i>請再次輸入密碼
+                                    </div>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-center">
-                                <a href="login.html"
-                                    class="d-flex align-items-center justify-content-center link-slide-primary w-100 w-md-75 w-lg-50 mt-32">註冊<i
-                                        class="bi bi-arrow-right d-block fs-4 ms-16"></i></a>
-                            </div>
+                            <button type="submit"
+                                class="mx-auto d-flex align-items-center justify-content-center link-slide-primary w-100 w-md-75 w-lg-50 mt-32">註冊<i
+                                    class="bi bi-arrow-right d-block fs-4 ms-16"></i></button>
                         </form>
                     </main>
                 </div>
@@ -173,39 +199,26 @@
 </footer>
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                
+                
+                
                 
                 <script>
-                    // back to top
-                    $(function () {
-                        $(function () {
-                            $(window).scroll(function () {
-                                if ($(window).scrollTop() > 100) {
-                                    $("#back-to-top").fadeIn(1000);
-                                }
-                                else {
-                                    $("#back-to-top").fadeOut(1000);
-                                }
+                    (function () {
+                        'use strict'
+                        var forms = document.querySelectorAll('.needs-validation')
+                        Array.prototype.slice.call(forms)
+                            .forEach(function (form) {
+                                form.addEventListener('submit', function (event) {
+                                    if (!form.checkValidity()) {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                    };
+                                    form.classList.add('was-validated')
+                                }, false)
                             });
-                            $("#back-to-top").click(function () {
-                                $('body,html').animate({ scrollTop: 0 }, 500);
-                                return false;
-                            });
-                        });
-                    });
-
-                    // 漢堡選單
-                    const hamBtn = document.querySelector(".ham");
-                    const mobileMenu = document.querySelector(".mobile-menu .menu");
-                    const hamCloseBtn = document.querySelector(".closedHam");
-                    const body = document.body;
-
-                    function toggleMenu() {
-                        mobileMenu.classList.toggle('open');
-                        body.classList.toggle('hidden-y');
-                    };
-
-                    hamBtn.addEventListener('click', toggleMenu);
-                    hamCloseBtn.addEventListener("click", toggleMenu);
+                    })();
                 </script>
 </body>
 

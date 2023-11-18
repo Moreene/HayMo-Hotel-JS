@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>嘿毛寵物旅館 | 狗狗知識</title>
     <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
-  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-a9b22856.js"></script>
-  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-1ed0e0f2.css">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-3dca8c45.js"></script>
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/centerHeader-436f0069.js"></script>
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/hamMenu-6b7faa69.js"></script>
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-a605a855.css">
 </head>
 
 <body class="bg-secondary-l">
@@ -21,13 +23,13 @@
             <div class="d-none d-md-block">
                 <ul class="table-menu d-flex">
                     <li class="me-32">
-                        <a href="memberCenter.html" class="menu-link position-relative ">會員中心</a>
+                        <a href="#" class="menu-link position-relative js-center ">會員中心</a>
                     </li>
                     <li class="me-32">
-                        <a href="article.html" class="menu-link position-relative active">毛孩專欄</a>
+                        <a href="#" class="menu-link position-relative js-article active">毛孩專欄</a>
                     </li>
                     <li>
-                        <a href="reverse.html" class="menu-link position-relative ">線上預約</a>
+                        <a href="#" class="menu-link position-relative js-reverse ">線上預約</a>
                     </li>
                 </ul>
             </div>
@@ -183,18 +185,6 @@
     </div>
 </footer>
             
-            <script>
-                const hamBtn = document.querySelector(".ham");
-                const mobileMenu = document.querySelector(".mobile-menu .menu");
-                const hamCloseBtn = document.querySelector(".closedHam");
-                const body = document.body;
-
-                function toggleMenu() {
-                    mobileMenu.classList.toggle('open');
-                    body.classList.toggle('hidden-y');
-                };
-
-                hamBtn.addEventListener('click', toggleMenu);
-                hamCloseBtn.addEventListener("click", toggleMenu);
-            </script>
+            
+            
 </body>

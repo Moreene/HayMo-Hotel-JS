@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>嘿毛寵物旅館 | 常見問題</title>
     <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
-  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-a9b22856.js"></script>
-  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-1ed0e0f2.css">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-3dca8c45.js"></script>
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/hamMenu-6b7faa69.js"></script>
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/toTopBtn-95c6dae3.js"></script>
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-a605a855.css">
 </head>
 
 <body>
@@ -267,39 +269,7 @@
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
                 
-                <script>
-                    // back to top
-                    $(function () {
-                        $(function () {
-                            $(window).scroll(function () {
-                                if ($(window).scrollTop() > 100) {
-                                    $("#back-to-top").fadeIn(1000);
-                                }
-                                else {
-                                    $("#back-to-top").fadeOut(1000);
-                                }
-                            });
-                            $("#back-to-top").click(function () {
-                                $('body,html').animate({ scrollTop: 0 }, 500);
-                                return false;
-                            });
-                        });
-                    });
-
-                    // 漢堡選單
-                    const hamBtn = document.querySelector(".ham");
-                    const mobileMenu = document.querySelector(".mobile-menu .menu");
-                    const hamCloseBtn = document.querySelector(".closedHam");
-                    const body = document.body;
-
-                    function toggleMenu() {
-                        mobileMenu.classList.toggle('open');
-                        body.classList.toggle('hidden-y');
-                    };
-
-                    hamBtn.addEventListener('click', toggleMenu);
-                    hamCloseBtn.addEventListener("click", toggleMenu);
-                </script>
-</body>
+                
+                
 
 </html>

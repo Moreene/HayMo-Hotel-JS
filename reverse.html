@@ -8,9 +8,13 @@
     <title>嘿毛寵物旅館 | 線上預約</title>
     <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.css">
-  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-a9b22856.js"></script>
-  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-1ed0e0f2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.1/jquery.timepicker.css">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/reverse-9bc58725.js"></script>
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/bootstrap-3dca8c45.js">
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/centerHeader-436f0069.js">
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/hamMenu-6b7faa69.js">
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/config-e6f0afb8.js">
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-a605a855.css">
 </head>
 
 <body class="bg-secondary-l">
@@ -22,13 +26,13 @@
             <div class="d-none d-md-block">
                 <ul class="table-menu d-flex">
                     <li class="me-32">
-                        <a href="memberCenter.html" class="menu-link position-relative ">會員中心</a>
+                        <a href="#" class="menu-link position-relative js-center ">會員中心</a>
                     </li>
                     <li class="me-32">
-                        <a href="article.html" class="menu-link position-relative ">毛孩專欄</a>
+                        <a href="#" class="menu-link position-relative js-article ">毛孩專欄</a>
                     </li>
                     <li>
-                        <a href="reverse.html" class="menu-link position-relative active">線上預約</a>
+                        <a href="#" class="menu-link position-relative js-reverse active">線上預約</a>
                     </li>
                 </ul>
             </div>
@@ -77,7 +81,7 @@
                         <h2 class="title-font text-center mt-lg-48 mb-48">服務預約</h2>
                         <p class="fs-5 text-center mb-lg-48">線上預約一單只能預約一位毛孩，若有多位需要預約，再煩請您逐一填寫表單</p>
                         <!-- 服務選擇 -->
-                        <div class="bg-white px-16 px-md-48 pt-48">
+                        <div class="bg-white px-16 px-md-48 pt-48 js-service">
                             <h3 class="title-line position-relative mb-16"><span class="fs-1 fw-bold me-8">1</span>選擇服務
                             </h3>
                             <ul class="nav justify-content-between py-48 px-md-35" id="pills-tab" role="tablist">
@@ -103,7 +107,7 @@
                             <!-- 安親 -->
                             <div class="tab-pane show active" id="dayCare" role="tabpanel"
                                 aria-labelledby="dayCare-tab">
-                                <form class="form-inline pb-48 px-8 px-md-48 bg-white rounded-1 needs-validation"
+                                <form class="form-inline pb-48 px-8 px-md-48 bg-white rounded-1 dayCareForm needs-validation"
                                     novalidate>
                                     <h3 class="title-line position-relative mb-16"><span
                                             class="fs-1 fw-bold me-8">2</span>選擇方案</h3>
@@ -125,9 +129,9 @@
                 <label class="col-auto col-form-label"><span class="me-8">日期</span>
                     <input type="text" name="date"
                         class="form-control d-inline datepicker py-4 px-24 rounded-pill w-75 text-center"
-                        placeholder="請點擊選擇日曆的日期" required>
+                        placeholder="請點擊選擇日曆" required>
                     <div class="invalid-feedback w-50 ms-50">
-                        請選擇預約日期
+                        <i class="bi bi-exclamation-circle me-4"></i>請選擇預約日期
                     </div>
                 </label>
             </div>
@@ -139,7 +143,7 @@
                         class="form-control d-inline timepicker py-4 px-24 rounded-pill w-75 text-center"
                         placeholder="請點擊選擇時間" required>
                     <div class="invalid-feedback w-50 ms-50">
-                        請選擇預約時間
+                        <i class="bi bi-exclamation-circle me-4"></i>請選擇預約時間
                     </div>
                 </label>
             </div>
@@ -154,14 +158,12 @@
             <div class="d-flex flex-column flex-md-row justify-content-md-between">
                 <div class="d-inline mb-16 mb-md-0">毛孩姓名 <span class="text-danger">*</span></div>
                 <div class="d-flex flex-column w-md-75">
-                    <select class="form-select">
-                        <option selected>請選擇毛孩姓名</option>
-                        <option value="大頭">炸毛</option>
-                        <option value="大耳">米米</option>
+                    <select class="form-select js-nameSelect" required>
+                        <option value="" selected disabled hidden>請選擇毛孩姓名</option>
                     </select>
-                    <!-- <div class="invalid-feedback">
-                        請輸入毛孩姓名
-                    </div> -->
+                    <div class="invalid-feedback">
+                        <i class="bi bi-exclamation-circle me-4"></i>請選擇一個毛孩姓名
+                    </div>
                 </div>
             </div>
         </label>
@@ -171,13 +173,13 @@
             <div class="mb-16 mb-md-0">樂園服務 <span class="text-danger">*</span></div>
         </div>
         <div class="col-md-9">
-            <div class="d-flex">
+            <div class="d-flex js-paradise">
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="paradise" value="是" required>
                         是（+200元）
                         <div class="invalid-feedback ms-0">
-                            請選擇是否加購
+                            <i class="bi bi-exclamation-circle me-4"></i>請選擇是否加購
                         </div>
                     </label>
                 </div>
@@ -195,13 +197,11 @@
             <div class="d-flex flex-column flex-md-row justify-content-md-between">
                 <div class="d-inline mb-16 mb-md-0">緊急聯絡人 <span class="text-danger">*</span></div>
                 <div class="d-flex flex-column w-md-75">
-                    <input class="form-control" list="emergencyContact" name="emergencyContact" placeholder="請輸入完整姓名"
-                        required>
-                    <datalist id="emergencyContact">
-                        <option value="Moreene">
-                    </datalist>
+                    <input class="form-control js-contact" list="emergencyContact" name="emergencyContact"
+                        placeholder="請輸入完整姓名" required>
+                    <datalist id="emergencyContact"></datalist>
                     <div class="invalid-feedback">
-                        請輸入緊急聯絡人姓名
+                        <i class="bi bi-exclamation-circle me-4"></i>請輸入緊急聯絡人姓名
                     </div>
                 </div>
             </div>
@@ -210,15 +210,13 @@
     <div class="row mb-48">
         <label class="col-form-label">
             <div class="d-flex flex-column flex-md-row justify-content-md-between">
-                <div class="d-inline mb-16 mb-md-0">連絡電話 <span class="text-danger">*</span></div>
+                <div class="d-inline mb-16 mb-md-0">聯絡手機 <span class="text-danger">*</span></div>
                 <div class="d-flex flex-column w-md-75">
-                    <input class="form-control" list="emergencyPhone" name="emergencyPhone" placeholder="請輸入手機號碼"
-                        required>
-                    <datalist id="emergencyPhone">
-                        <option value="0987-878787">
-                    </datalist>
-                    <div class="invalid-feedback">
-                        請輸入緊急聯絡人電話
+                    <input class="form-control js-phone" list="emergencyPhone" name="emergencyPhone"
+                        placeholder="請輸入手機號碼" required>
+                    <datalist id="emergencyPhone"></datalist>
+                    <div class="invalid-feedback js-phoneError">
+                        <i class="bi bi-exclamation-circle me-4"></i>請輸入緊急聯絡人手機號碼
                     </div>
                 </div>
             </div>
@@ -228,7 +226,8 @@
         <label class="col-form-label">
             <div class="d-flex flex-column flex-md-row justify-content-md-between">
                 <div class="d-inline mb-16 mb-md-0">其他備註</div>
-                <textarea name="remark" id="remark" class="form-control w-md-75 rounded-1" style="height: 158px;"></textarea>
+                <textarea name="remark" id="remark" class="form-control w-md-75 rounded-1"
+                    style="height: 158px;"></textarea>
             </div>
         </label>
     </div>
@@ -243,18 +242,17 @@
                             </div>
                             <!-- 美容 -->
                             <div class="tab-pane" id="cosmetic" role="tabpanel" aria-labelledby="cosmetic-tab">
-                                <form class="form-inline pb-48 px-8 px-md-48 bg-white rounded-1 needs-validation"
+                                <form class="form-inline pb-48 px-8 px-md-48 bg-white rounded-1 cosmeticForm needs-validation"
                                     novalidate>
                                     <h3 class="title-line position-relative mb-16"><span
                                             class="fs-1 fw-bold me-8">2</span>選擇體型</h3>
-                                    <ul class="d-flex justify-content-between py-48 px-md-35">
+                                    <ul class="d-flex justify-content-between py-48 px-md-35 js-size">
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="size" id="small"
-                                                value="&lt;10kg" required>
+                                                value="小於10kg" required>
                                             <label
                                                 class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
-                                                for="small"> &lt;
-                                                10kg</label>
+                                                for="small"> &lt;10kg</label>
                                         </li>
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="size" id="medium"
@@ -265,15 +263,15 @@
                                         </li>
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="size" id="large"
-                                                value="&gt;20kg" required>
+                                                value="大於20kg" required>
                                             <label
                                                 class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
-                                                for="large">&gt; 20kg</label>
+                                                for="large">&gt;20kg</label>
                                         </li>
                                     </ul>
                                     <h3 class="title-line position-relative mb-16"><span
                                             class="fs-1 fw-bold me-8">3</span>選擇方案</h3>
-                                    <ul class="d-flex justify-content-between py-48 px-md-35">
+                                    <ul class="d-flex justify-content-between py-48 px-md-35 js-plan">
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="level" id="basic"
                                                 value="基礎洗香香" required>
@@ -305,9 +303,9 @@
                 <label class="col-auto col-form-label"><span class="me-8">日期</span>
                     <input type="text" name="date"
                         class="form-control d-inline datepicker py-4 px-24 rounded-pill w-75 text-center"
-                        placeholder="請點擊選擇日曆的日期" required>
+                        placeholder="請點擊選擇日曆" required>
                     <div class="invalid-feedback w-50 ms-50">
-                        請選擇預約日期
+                        <i class="bi bi-exclamation-circle me-4"></i>請選擇預約日期
                     </div>
                 </label>
             </div>
@@ -319,7 +317,7 @@
                         class="form-control d-inline timepicker py-4 px-24 rounded-pill w-75 text-center"
                         placeholder="請點擊選擇時間" required>
                     <div class="invalid-feedback w-50 ms-50">
-                        請選擇預約時間
+                        <i class="bi bi-exclamation-circle me-4"></i>請選擇預約時間
                     </div>
                 </label>
             </div>
@@ -333,14 +331,12 @@
             <div class="d-flex flex-column flex-md-row justify-content-md-between">
                 <div class="d-inline mb-16 mb-md-0">毛孩姓名 <span class="text-danger">*</span></div>
                 <div class="d-flex flex-column w-md-75">
-                    <select class="form-select">
-                        <option selected>請選擇毛孩姓名</option>
-                        <option value="大頭">炸毛</option>
-                        <option value="大耳">米米</option>
+                    <select class="form-select js-nameSelect" required>
+                        <option value="" selected disabled hidden>請選擇毛孩姓名</option>
                     </select>
-                    <!-- <div class="invalid-feedback">
-                        請輸入毛孩姓名
-                    </div> -->
+                    <div class="invalid-feedback">
+                        <i class="bi bi-exclamation-circle me-4"></i>請選擇一個毛孩姓名
+                    </div>
                 </div>
             </div>
         </label>
@@ -350,13 +346,13 @@
             <div class="mb-16 mb-md-0">樂園服務 <span class="text-danger">*</span></div>
         </div>
         <div class="col-md-9">
-            <div class="d-flex">
+            <div class="d-flex js-paradise">
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="paradise" value="是" required>
                         是（+200元）
                         <div class="invalid-feedback ms-0">
-                            請選擇是否加購
+                            <i class="bi bi-exclamation-circle me-4"></i>請選擇是否加購
                         </div>
                     </label>
                 </div>
@@ -374,13 +370,11 @@
             <div class="d-flex flex-column flex-md-row justify-content-md-between">
                 <div class="d-inline mb-16 mb-md-0">緊急聯絡人 <span class="text-danger">*</span></div>
                 <div class="d-flex flex-column w-md-75">
-                    <input class="form-control" list="emergencyContact" name="emergencyContact" placeholder="請輸入完整姓名"
-                        required>
-                    <datalist id="emergencyContact">
-                        <option value="Moreene">
-                    </datalist>
+                    <input class="form-control js-contact" list="emergencyContact" name="emergencyContact"
+                        placeholder="請輸入完整姓名" required>
+                    <datalist id="emergencyContact"></datalist>
                     <div class="invalid-feedback">
-                        請輸入緊急聯絡人姓名
+                        <i class="bi bi-exclamation-circle me-4"></i>請輸入緊急聯絡人姓名
                     </div>
                 </div>
             </div>
@@ -389,15 +383,13 @@
     <div class="row mb-48">
         <label class="col-form-label">
             <div class="d-flex flex-column flex-md-row justify-content-md-between">
-                <div class="d-inline mb-16 mb-md-0">連絡電話 <span class="text-danger">*</span></div>
+                <div class="d-inline mb-16 mb-md-0">聯絡手機 <span class="text-danger">*</span></div>
                 <div class="d-flex flex-column w-md-75">
-                    <input class="form-control" list="emergencyPhone" name="emergencyPhone" placeholder="請輸入手機號碼"
-                        required>
-                    <datalist id="emergencyPhone">
-                        <option value="0987-878787">
-                    </datalist>
-                    <div class="invalid-feedback">
-                        請輸入緊急聯絡人電話
+                    <input class="form-control js-phone" list="emergencyPhone" name="emergencyPhone"
+                        placeholder="請輸入手機號碼" required>
+                    <datalist id="emergencyPhone"></datalist>
+                    <div class="invalid-feedback js-phoneError">
+                        <i class="bi bi-exclamation-circle me-4"></i>請輸入緊急聯絡人手機號碼
                     </div>
                 </div>
             </div>
@@ -407,7 +399,8 @@
         <label class="col-form-label">
             <div class="d-flex flex-column flex-md-row justify-content-md-between">
                 <div class="d-inline mb-16 mb-md-0">其他備註</div>
-                <textarea name="remark" id="remark" class="form-control w-md-75 rounded-1" style="height: 158px;"></textarea>
+                <textarea name="remark" id="remark" class="form-control w-md-75 rounded-1"
+                    style="height: 158px;"></textarea>
             </div>
         </label>
     </div>
@@ -422,11 +415,11 @@
                             </div>
                             <!-- 住宿 -->
                             <div class="tab-pane" id="stay" role="tabpanel" aria-labelledby="stay-tab">
-                                <form class="form-inline pb-48 px-16 px-md-48 bg-white rounded-1 needs-validation"
+                                <form class="form-inline pb-48 px-16 px-md-48 bg-white rounded-1 stayForm needs-validation"
                                     novalidate>
                                     <h3 class="title-line position-relative mb-16"><span
                                             class="fs-1 fw-bold me-8">2</span>選擇房型</h3>
-                                    <ul class="d-flex justify-content-between py-48 px-md-35">
+                                    <ul class="d-flex justify-content-between py-48 px-md-35 js-room">
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="room"
                                                 id="smallDog" value="小狗香香房" required>
@@ -436,7 +429,7 @@
                                         </li>
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="room"
-                                                id="mediumDog" value="中犬呼嚕房" required>
+                                                id="mediumDog" value="忠犬呼嚕房" required>
                                             <label
                                                 class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
                                                 for="mediumDog">忠犬<span class="d-block d-md-inline">呼嚕房</span></label>
@@ -451,35 +444,41 @@
                                     </ul>
                                     <h3 class="title-line position-relative mb-16"><span
                                             class="fs-1 fw-bold me-8">3</span>選擇日期</h3>
-                                    <div class="reverse-time py-48">
-                                        <div class="row align-items-center gy-24 gy-md-0 mb-16">
-                                            <label class="col-md-5 col-form-label">
-                                                <span class="me-24">從</span>
-                                                <input type="text" name="from"
-                                                    class="form-control d-inline datepicker py-4 px-16 rounded-pill w-75 text-center"
-                                                    placeholder="請點擊選擇日曆的日期" required>
-                                                <div class="invalid-feedback w-50 ms-50">
-                                                    請選擇入住日期
+                                    <div class="reverse-time py-48 ps-25 ps-md-35">
+                                        <div class="row row-cols-1 row-cols-md-2 gy-24 gy-md-0 mb-16">
+                                            <div class="col">
+                                                <div class="row">
+                                                    <label class="col-auto col-form-label"><span class="me-8">入住日</span>
+                                                        <input type="text" name="from"
+                                                            class="form-control d-inline startDate py-4 px-24 rounded-pill w-75 text-center"
+                                                            placeholder="請點擊選擇日曆" required>
+                                                        <div class="invalid-feedback w-50 ms-64">
+                                                            <i class="bi bi-exclamation-circle me-4"></i>請選擇入住日期
+                                                        </div>
+                                                    </label>
                                                 </div>
-                                            </label>
-                                            <label class="col-md-5 col-form-label">
-                                                <span class="me-24">到</span>
-                                                <input type="text" name="to"
-                                                    class="form-control d-inline datepicker py-4 px-16 rounded-pill w-75 text-center"
-                                                    placeholder="請點擊選擇日曆的日期" required>
-                                                <div class="invalid-feedback w-50 ms-50">
-                                                    請選擇退房日期
+                                            </div>
+                                            <div class="col">
+                                                <div class="row">
+                                                    <label class="col-auto col-form-label"><span class="me-8">退房日</span>
+                                                        <input type="text" name="to"
+                                                            class="form-control d-inline endDate py-4 px-24 rounded-pill w-75 text-center"
+                                                            placeholder="請點擊選擇日曆" required>
+                                                        <div class="invalid-feedback w-50 ms-64">
+                                                            <i class="bi bi-exclamation-circle me-4"></i>請選擇退房日期
+                                                        </div>
+                                                    </label>
                                                 </div>
-                                            </label>
+                                            </div>
                                         </div>
                                         <div class="row">
-                                            <label class="col-md-5 col-form-label">
-                                                <span class="me-8">時間</span>
+                                            <label class="col-auto col-md-6 col-xxl-auto col-form-label">
+                                                <span class="me-24">時間</span>
                                                 <input type="text" name="time"
                                                     class="timepicker form-control d-inline py-4 px-24 rounded-pill w-75 text-center"
                                                     placeholder="請點擊選擇時間" required>
-                                                <div class="invalid-feedback w-50 ms-50">
-                                                    請選擇預約時間
+                                                <div class="invalid-feedback w-50 ms-64">
+                                                    <i class="bi bi-exclamation-circle me-4"></i>請選擇預約時間
                                                 </div>
                                             </label>
                                         </div>
@@ -492,54 +491,11 @@
             <div class="d-flex flex-column flex-md-row justify-content-md-between">
                 <div class="d-inline mb-16 mb-md-0">毛孩姓名 <span class="text-danger">*</span></div>
                 <div class="d-flex flex-column w-md-75">
-                    <select class="form-select">
-                        <option selected>請選擇毛孩姓名</option>
-                        <option value="大頭">炸毛</option>
-                        <option value="大耳">米米</option>
+                    <select class="form-select js-nameSelect" required>
+                        <option class="js-select" value="" selected disabled hidden>請選擇毛孩姓名</option>
                     </select>
-                    <!-- <div class="invalid-feedback">
-                        請輸入毛孩姓名
-                    </div> -->
-                </div>
-            </div>
-        </label>
-    </div>
-    <div class="row mb-48">
-        <div class="col-md-3">
-            <div class="mb-16 mb-md-0">樂園服務 <span class="text-danger">*</span></div>
-        </div>
-        <div class="col-md-9">
-            <div class="d-flex">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="paradise" value="是" required>
-                        是（+200元）
-                        <div class="invalid-feedback ms-0">
-                            請選擇是否加購
-                        </div>
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="paradise" value="否" required>
-                        否
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row mb-48">
-        <label class="col-form-label">
-            <div class="d-flex flex-column flex-md-row justify-content-md-between">
-                <div class="d-inline mb-16 mb-md-0">緊急聯絡人 <span class="text-danger">*</span></div>
-                <div class="d-flex flex-column w-md-75">
-                    <input class="form-control" list="emergencyContact" name="emergencyContact" placeholder="請輸入完整姓名"
-                        required>
-                    <datalist id="emergencyContact">
-                        <option value="Moreene">
-                    </datalist>
                     <div class="invalid-feedback">
-                        請輸入緊急聯絡人姓名
+                        <i class="bi bi-exclamation-circle me-4"></i>請選擇一個毛孩姓名
                     </div>
                 </div>
             </div>
@@ -548,15 +504,28 @@
     <div class="row mb-48">
         <label class="col-form-label">
             <div class="d-flex flex-column flex-md-row justify-content-md-between">
-                <div class="d-inline mb-16 mb-md-0">連絡電話 <span class="text-danger">*</span></div>
+                <div class="d-inline mb-16 mb-md-0">緊急聯絡人 <span class="text-danger">*</span></div>
                 <div class="d-flex flex-column w-md-75">
-                    <input class="form-control" list="emergencyPhone" name="emergencyPhone" placeholder="請輸入手機號碼"
-                        required>
-                    <datalist id="emergencyPhone">
-                        <option value="0987-878787">
-                    </datalist>
+                    <input class="form-control js-contact" list="emergencyContact" name="emergencyContact"
+                        placeholder="請輸入完整姓名" required>
+                    <datalist id="emergencyContact"></datalist>
                     <div class="invalid-feedback">
-                        請輸入緊急聯絡人電話
+                        <i class="bi bi-exclamation-circle me-4"></i>請輸入緊急聯絡人姓名
+                    </div>
+                </div>
+            </div>
+        </label>
+    </div>
+    <div class="row mb-48">
+        <label class="col-form-label">
+            <div class="d-flex flex-column flex-md-row justify-content-md-between">
+                <div class="d-inline mb-16 mb-md-0">聯絡手機 <span class="text-danger">*</span></div>
+                <div class="d-flex flex-column w-md-75">
+                    <input class="form-control js-phone" list="emergencyPhone" name="emergencyPhone"
+                        placeholder="請輸入手機號碼" required>
+                    <datalist id="emergencyPhone"></datalist>
+                    <div class="invalid-feedback js-phoneError">
+                        <i class="bi bi-exclamation-circle me-4"></i>請輸入緊急聯絡人手機號碼
                     </div>
                 </div>
             </div>
@@ -566,14 +535,15 @@
         <label class="col-form-label">
             <div class="d-flex flex-column flex-md-row justify-content-md-between">
                 <div class="d-inline mb-16 mb-md-0">其他備註</div>
-                <textarea name="remark" id="remark" class="form-control w-md-75 rounded-1" style="height: 158px;"></textarea>
+                <textarea name="remark" id="remark" class="form-control w-md-75 rounded-1"
+                    style="height: 158px;"></textarea>
             </div>
         </label>
     </div>
     <div class="row justify-content-md-end">
         <div class="col-md-9">
             <button type="submit"
-                class="d-flex justify-content-center align-items-center btn btn-primary reverse-btn link-slide-primary rounded-0 w-100">送出<i
+                class="d-flex justify-content-center align-items-center btn btn-primary reverse-btn link-slide-primary rounded-0 w-100 js-submitBtn">送出<i
                     class="bi bi-arrow-right d-block fs-4 ms-16"></i></button>
         </div>
     </div>
@@ -619,79 +589,13 @@
 </footer>
             <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
             <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.1/jquery.timepicker.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             
-            <script>
-                const hamBtn = document.querySelector(".ham");
-                const mobileMenu = document.querySelector(".mobile-menu .menu");
-                const hamCloseBtn = document.querySelector(".closedHam");
-                const body = document.body;
-
-                function toggleMenu() {
-                    mobileMenu.classList.toggle('open');
-                    body.classList.toggle('hidden-y');
-                };
-
-                hamBtn.addEventListener('click', toggleMenu);
-                hamCloseBtn.addEventListener("click", toggleMenu);
-
-
-                // 日期選擇
-                $(function () {
-                    //設定中文語系
-                    $.datepicker.regional['zh-TW'] = {
-                        dayNames: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
-                        dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"],
-                        monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
-                        monthNamesShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
-                        prevText: "上月",
-                        nextText: "次月",
-                        weekHeader: "週"
-                    };
-                    //將預設語系設定為中文
-                    $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
-                    $(function () {
-                        $(".datepicker").datepicker({
-                            beforeShow: function (input, inst) {
-                                inst.dpDiv.addClass("custom-datepicker");
-                            },
-                            dateFormat: "yy-mm-dd",
-                            minDate: 1,
-                            maxDate: "+3M",
-                        });
-                    });
-                });
-
-                // 時間選擇
-                $('.timepicker').timepicker({
-                    timeFormat: 'h:mm p',// 時間隔式
-                    interval: 30,//時間間隔
-                    minTime: '9',//最小時間
-                    maxTime: '21:00pm',//最大時間
-                    //defaultTime: '9',//預設起始時間
-                    startTime: '9:00',//開始時間
-                    dynamic: true,//是否顯示項目，使第一個項目按時間順序緊接在所選時間之後
-                    dropdown: true,//是否顯示時間條目的下拉列表
-                    scrollbar: true//是否顯示捲軸
-                });
-
-                // Validation
-                (function () {
-                    'use strict'
-                    var forms = document.querySelectorAll('.needs-validation')
-                    Array.prototype.slice.call(forms)
-                        .forEach(function (form) {
-                            form.addEventListener('submit', function (event) {
-                                if (!form.checkValidity()) {
-                                    event.preventDefault()
-                                    event.stopPropagation()
-                                }
-
-                                form.classList.add('was-validated')
-                            }, false)
-                        })
-                })();
-            </script>
+            
+            
+            
 </body>
 
 </html>

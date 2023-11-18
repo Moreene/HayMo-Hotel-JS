@@ -1,0 +1,1 @@
+const t=document.querySelector(".ham"),n=document.querySelector(".mobile-menu .menu"),o=document.querySelector(".closedHam"),c=document.body;function e(){n.classList.toggle("open"),c.classList.toggle("hidden-y")}t.addEventListener("click",e);o.addEventListener("click",e);
