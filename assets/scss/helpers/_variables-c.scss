@@ -302,7 +302,7 @@ $primary:       #1cc18E;//$blue !default; customer
 $primary-l:     #E9F7F6;//customer
 $secondary:     #FFF100;//$gray-600 !default; customer
 $secondary-l:   #FCF5F0;//customer
-$success:       #15c906;//$green !default; customer
+$success:       #25B800;//$green !default; customer
 $info:          $cyan !default;
 $warning:       $yellow-100;//$yellow !default; customer
 $danger:        #dc4a38;//$red !default; customer
@@ -393,7 +393,7 @@ $enable-container-classes:    true !default;
 $enable-cssgrid:              false !default;
 $enable-button-pointers:      true !default;
 $enable-rfs:                  true !default;
-$enable-validation-icons:     true !default;
+$enable-validation-icons:     false;//true !default; customer
 $enable-negative-margins:     false !default;
 $enable-deprecation-messages: true !default;
 $enable-important-utilities:  true !default;
@@ -432,6 +432,9 @@ $spacers: (
   // 改用px
   0: 0,
   4: $spacer * .25,
+  5: $spacer * .3125,
+  6: $spacer *.375,
+  7: $spacer *.4375,
   8: $spacer * .5,
   12: $spacer * .75,
   14: $spacer * .875,
@@ -1132,9 +1135,9 @@ $form-feedback-icon-invalid:        url("data:image/svg+xml,<svg xmlns='http://w
 
 // scss-docs-start form-validation-colors
 $form-valid-color:                  $form-feedback-valid-color !default;
-$form-valid-border-color:           $form-feedback-valid-color !default;
+$form-valid-border-color:           $black-80;//$form-feedback-valid-color !default; customer
 $form-invalid-color:                $form-feedback-invalid-color !default;
-$form-invalid-border-color:         $form-feedback-invalid-color !default;
+$form-invalid-border-color:         $black-80;//$form-feedback-invalid-color !default; customer
 // scss-docs-end form-validation-colors
 
 // scss-docs-start form-validation-states
@@ -1342,8 +1345,8 @@ $pagination-border-width:           var(--#{$prefix}border-width) !default;
 $pagination-margin-start:           calc(#{$pagination-border-width} * -1) !default; // stylelint-disable-line function-disallowed-list
 $pagination-border-color:           none;//var(--#{$prefix}border-color) !default; customer
 
-$pagination-focus-color:            var(--#{$prefix}link-hover-color) !default;
-$pagination-focus-bg:               var(--#{$prefix}secondary-bg) !default;
+$pagination-focus-color:            $dark;//var(--#{$prefix}link-hover-color) !default; customer
+$pagination-focus-bg:               $white;//var(--#{$prefix}secondary-bg) !default; customer
 $pagination-focus-box-shadow:       none;//$focus-ring-box-shadow !default; customer
 $pagination-focus-outline:          0 !default;
 

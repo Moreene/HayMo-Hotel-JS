@@ -9,11 +9,16 @@
 }
 
 //memberCenter Swiper
-.dogInfoSwiper .swiper-pagination-bullet{
+.dogInfoSwiper .swiper-pagination-bullet {
     width: 20px;
+    height: 4px;
     border-radius: 50rem;
 
-    &-active{
+    @include pc-lg {
+        height: 8px;
+    }
+
+    &-active {
         background-color: $primary;
     }
 }

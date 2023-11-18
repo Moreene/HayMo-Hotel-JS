@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>嘿毛寵物旅館 | 會員中心</title>
     <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.1/jquery.timepicker.css">
 </head>
 
 <body class="bg-secondary-l">
@@ -24,83 +26,33 @@
                                 class="bi bi-brightness-high-fill text-danger me-8"></i>請先設定毛孩資訊，於線上預約時將可直接選擇毛孩姓名
                         </p>
                         <main class="row flex-md-row gy-24 mb-90 mb-md-160">
+                            <!-- 會員資訊 -->
                             <div class="col-md-6">
                                 <div class="card border-black py-24 py-xl-48 h-100">
-                                    <ul class="row flex-column align-items-center flex-xl-row gy-24 gy-xl-0">
+                                    <ul class="row flex-column align-items-center flex-xl-row gy-24 gy-xl-0 my-auto">
                                         <li class="col-md-6 col-xl-5">
-                                            <div class="text-center">
-                                                <img src="../assets/images/member-img.png" alt="會員照片"
-                                                    class="member-img img-fluid">
+                                            <div class="d-flex">
+                                                <div
+                                                    class="member-img mx-auto bg-size-cover bg-repeat-no default-photo js-headImg">
+                                                </div>
                                             </div>
                                         </li>
                                         <li class="col-auto">
-                                            <div>
-                                                <p class="fs-4">會員資訊
-                                                    <a href="#" data-bs-toggle="modal"
-                                                        data-bs-target="#memberInfoModal"><i
-                                                            class="bi bi-pencil-square link-primary fs-4 ms-4"></i></a>
-                                                </p>
-                                                <p>姓名：Moreene</p>
-                                                <p>手機：0987-878787</p>
-                                                <p>信箱：moreenewu@gmail.com</p>
-                                                <p class="mb-0">加入日期：2023/1/1</p>
-                                            </div>
+                                            <div class="js-memberInfo"></div>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <!-- swiper -->
+                                <!-- 建立毛孩資訊swiper -->
                                 <div class="swiper dogInfoSwiper h-100">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide card border-black py-24 py-xl-48 h-100">
-                                            <ul class="row flex-column align-items-center flex-xl-row gy-24 gy-xl-0">
-                                                <li class="col-md-5">
-                                                    <div class="text-center">
-                                                        <img src="../assets/images/zhaMao.jpg" alt="狗狗照片"
-                                                            class="member-img img-fluid rounded-circle border border-black-60">
-                                                    </div>
-                                                </li>
-                                                <li class="col-auto">
-                                                    <p class="fs-4">毛孩資訊
-                                                        <a href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#petInfoModal1"><i
-                                                                class="bi bi-pencil-square link-primary fs-4 ms-4"></i></a>
-                                                    </p>
-                                                    <p>姓名：炸毛</p>
-                                                    <p>品種：聖伯納犬</p>
-                                                    <p>年紀：2歲</p>
-                                                    <p class="mb-0">性別：公</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="swiper-slide card border-black py-24 py-xl-48 h-100">
-                                            <ul class="row flex-column align-items-center flex-xl-row gy-24 gy-xl-0">
-                                                <li class="col-md-5">
-                                                    <div class="text-center">
-                                                        <img src="../assets/images/mimi.jpeg" alt="狗狗照片"
-                                                            class="member-img img-fluid rounded-circle border border-black-60">
-                                                    </div>
-                                                </li>
-                                                <li class="col-auto">
-                                                    <p class="fs-4">毛孩資訊
-                                                        <a href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#petInfoModal2"><i
-                                                                class="bi bi-pencil-square link-primary fs-4 ms-4"></i></a>
-                                                    </p>
-                                                    <p>姓名：米米</p>
-                                                    <p>品種：米克斯</p>
-                                                    <p>年紀：3歲</p>
-                                                    <p class="mb-0">性別：母</p>
-                                                </li>
-                                            </ul>
-                                        </div>
                                         <div
-                                            class="swiper-slide card border-black py-24 py-xl-48 d-flex justify-content-center align-items-center h-100">
-                                            <div class="text-center h-lg-100">
-                                                <h4 class="mb-48">增加毛孩資訊卡</h4>
+                                            class="swiper-slide card border-black py-24 py-xl-48 d-flex justify-content-center align-items-center h-100 my-auto js-swiperEnd">
+                                            <div class="text-center h-xl-100">
+                                                <h4 class="mb-16">建立毛孩資訊卡</h4>
                                                 <a href="#" class="stretched-link" data-bs-toggle="modal"
-                                                    data-bs-target="#petInfoModal3"><i
+                                                    data-bs-target="#dogInfoModal"><i
                                                         class="bi bi-plus-lg display-1"></i></a>
                                             </div>
                                         </div>
@@ -115,169 +67,161 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="memberInfoModal">會員資訊 - 編輯
-                                        </h5>
+                                        <h5 class="modal-title" id="memberInfoModal">編輯 - 會員資訊</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="row flex-column align-items-center">
-                                            <div class="col-4">
-                                                <div
-                                                    class="text-center mb-16 img-modify position-relative rounded-circle overflow-hidden">
-                                                    <img src="../assets/images/member-img.png" alt="會員照片"
-                                                        class="img-fluid member-modal-img">
-                                                    <div class="cam-bg position-absolute w-100">
-                                                        <i class="bi bi-camera fs-5 text-white"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto mx-auto">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <form method="post" enctype="multipart/form-data">
                                                 <div>
-                                                    <p>姓名：Moreene</p>
-                                                    <p>手機：0987-878787</p>
-                                                    <p>信箱：moreenewu@gmail.com</p>
-                                                    <p class="mb-0">密碼：**********</p>
+                                                    <div class="overflow-hidden">
+                                                        <input type="file" id="img_uploads"
+                                                            class="position-absolute img-cursor rounded-circle member-img opacity-0"
+                                                            name="image_uploads" accept=".jpg, .jpeg, .png">
+                                                    </div>
+                                                    <div
+                                                        class="member-img d-flex justify-content-center align-items-center bg-black-40 rounded-circle mb-8 js-headImgView">
+                                                        <p class="mb-0">請選擇照片</p>
+                                                    </div>
+                                                    <div class="text-center mb-32">
+                                                        <a href="#" class="link-danger js-clearImgBtn">移除照片</a>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </form>
+                                            <form class="w-75 needs-validation memberForm" novalidate>
+                                                <div class="mx-auto mb-16 mb-md-32">
+                                                    <div class="form-floating mb-16">
+                                                        <input type="text" class="form-control js-editName"
+                                                            id="floatingName" placeholder="name" required>
+                                                        <label for="floatingName">姓名</label>
+                                                        <div class="invalid-feedback">
+                                                            <i class="bi bi-exclamation-circle me-4"></i> 請輸入姓名
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-floating mb-16">
+                                                        <input type="tel" class="form-control js-editPhone"
+                                                            id="floatingPhone" placeholder="phone" required>
+                                                        <label for="floatingPhone">手機</label>
+                                                        <div class="invalid-feedback js-errorPhone">
+                                                            <i class="bi bi-exclamation-circle me-4"></i> 請輸入手機號碼
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-floating mb-16">
+                                                        <input type="email" class="form-control js-editEmail"
+                                                            id="floatingEmail" placeholder="email" required>
+                                                        <label for="floatingEmail">信箱</label>
+                                                        <div class="invalid-feedback js-emailError">
+                                                            <i class="bi bi-exclamation-circle me-4"></i> 請輸入Email
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-floating mb-0">
+                                                        <input type="password" class="form-control js-editPassword"
+                                                            id="floatingPassword" placeholder="password">
+                                                        <label for="floatingPassword">重新設定密碼</label>
+                                                        <div class="invalid-feedback js-passwordError">
+                                                            <i class="bi bi-exclamation-circle me-4"></i> 請輸入Email
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-center">
+                                                    <button type="submit"
+                                                        class="btn btn-primary w-100 py-14 text-white">送出</button>
+                                                </div>
+                                            </form>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary px-24">編輯</button>
-                                        <button type="button"
-                                            class="btn btn-primary px-24 text-white info-store">儲存</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- 毛孩資訊modal-1 -->
-                        <div class="modal fade" id="petInfoModal1" tabindex="-1" aria-labelledby="petInfoModal1"
+                        <!-- 建立毛孩資訊modal -->
+                        <div class="modal fade" id="dogInfoModal" tabindex="-1" aria-labelledby="dogInfoModal"
                             aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="petInfoModal1">毛孩資訊 - 編輯</h5>
+                                        <h5 class="modal-title" id="dogInfoModal">毛孩資訊卡</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="row flex-column align-items-center">
-                                            <div class="col-4">
-                                                <div
-                                                    class="text-center mb-16 img-modify position-relative rounded-circle overflow-hidden">
-                                                    <img src="../assets/images/zhaMao.jpg" alt="狗狗照片"
-                                                        class="img-fluid member-modal-img rounded-circle border border-black-60">
-                                                    <div class="cam-bg position-absolute w-100">
-                                                        <i class="bi bi-camera fs-5 text-white"></i>
+                                        <div class="text-center mb-32">
+                                            <img src="../assets/images/Logo.png" alt="logo" class="logo-img">
+                                        </div>
+                                        <form class="needs-validation addDogForm" novalidate>
+                                            <div class="d-flex flex-column align-items-center">
+                                                <div class="w-75 mx-auto mb-16 mb-md-32">
+                                                    <div class="mb-16">
+                                                        <div class="form-floating">
+                                                            <input type="text" class="form-control js-dogName"
+                                                                id="floatingDogName" placeholder="name" required>
+                                                            <label for="floatingDogName">姓名</label>
+                                                            <div class="invalid-feedback">
+                                                                <i class="bi bi-exclamation-circle me-4"></i> 請輸入狗狗姓名
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-16">
+                                                        <div class="form-floating">
+                                                            <input type="text" class="form-control js-dogBreed"
+                                                                id="floatingDogBreed" placeholder="breed" required>
+                                                            <label for="floatingDogBreed">品種</label>
+                                                            <div class="invalid-feedback">
+                                                                <i class="bi bi-exclamation-circle me-4"></i> 請輸入狗狗品種
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-16">
+                                                        <div class="form-floating">
+                                                            <input type="number" min="1" max="30"
+                                                                class="form-control js-dogAge" id="floatingDogAge"
+                                                                placeholder="age" required>
+                                                            <label for="floatingDogAge">年齡</label>
+                                                            <div class="invalid-feedback">
+                                                                <i class="bi bi-exclamation-circle me-4"></i> 請輸入狗狗年齡
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-auto mx-auto">
-                                                <p>姓名：炸毛</p>
-                                                <p>品種：聖伯納犬</p>
-                                                <p>年紀：2歲</p>
-                                                <p class="mb-0">性別：公</p>
+                                            <div class="d-flex justify-content-center">
+                                                <button type="submit"
+                                                    class="btn btn-primary w-75 py-14 text-white">送出</button>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary px-24">編輯</button>
-                                        <button type="button"
-                                            class="btn btn-primary px-24 text-white info-store">儲存</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- 毛孩資訊modal-2 -->
-                        <div class="modal fade" id="petInfoModal2" tabindex="-1" aria-labelledby="petInfoModal2"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="petInfoModal2">毛孩資訊 - 編輯</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row flex-column align-items-center">
-                                            <div class="col-4">
-                                                <div
-                                                    class="text-center mb-16 img-modify position-relative rounded-circle overflow-hidden">
-                                                    <img src="../assets/images/mimi.jpeg" alt="狗狗照片"
-                                                        class="img-fluid member-modal-img rounded-circle border border-black-60">
-                                                    <div class="cam-bg position-absolute w-100">
-                                                        <i class="bi bi-camera fs-5 text-white"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto mx-auto">
-                                                <p>姓名：米米</p>
-                                                <p>品種：米克斯</p>
-                                                <p>年紀：3歲</p>
-                                                <p class="mb-0">性別：母</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary px-24">編輯</button>
-                                        <button type="button"
-                                            class="btn btn-primary px-24 text-white info-store">儲存</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 毛孩資訊modal-3 -->
-                        <div class="modal fade" id="petInfoModal3" tabindex="-1" aria-labelledby="petInfoModal3"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="petInfoModal3">毛孩資訊 - 編輯</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row flex-column align-items-center">
-                                            <div class="col-4">
-                                                <div
-                                                    class="text-center mb-16 img-modify position-relative rounded-circle overflow-hidden">
-                                                    <img src="../assets/images/member-img.png" alt="狗狗空白照片"
-                                                        class="img-fluid member-modal-img">
-                                                    <div class="cam-bg position-absolute w-100">
-                                                        <i class="bi bi-camera fs-5 text-white"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto mx-auto">
-                                                <p>姓名：</p>
-                                                <p>品種：</p>
-                                                <p>年紀：</p>
-                                                <p class="mb-0">性別：</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary px-24">編輯</button>
-                                        <button type="button"
-                                            class="btn btn-primary px-24 text-white info-store">儲存</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- 毛孩資訊卡個別modal -->
+                        <div class="js-modalWrapper"></div>
 
                         <!-- 預約紀錄 -->
                         <h3 class="fw-bold mb-24"><i class="bi bi-cursor me-1"></i>您的預約</h3>
                         <p class="d-flex mb-8"><i
-                                class="bi bi-brightness-high-fill text-danger me-8"></i>若要修改預約日期，最慢請於原預約日的前三日修改</p>
+                                class="bi bi-brightness-high-fill text-danger me-8"></i>若要修改預約內容，最慢請於原預約日的前三日修改</p>
                         <p class="d-flex mb-8"><i
                                 class="bi bi-brightness-high-fill text-danger me-8"></i>若要取消訂單，最慢請於原預約日的前五日來電或用通訊軟體告知，並附上訂單編號
                         </p>
                         <p class="d-flex mb-24"><i
                                 class="bi bi-brightness-high-fill text-danger me-8"></i>若超過三次無法赴約卻未事先取消，嘿毛有權利拒絕您往後任何方式的預約
                         </p>
-                        <label class="mb-24">
-                            <input type="month" class="rounded-pill p-8">
-                        </label>
+                        <select class="px-12 py-5 rounded-1 mb-24 js-monthSelect">
+                            <option value="月份篩選" selected disabled hidden>月份篩選</option>
+                            <option value="">所有月份</option>
+                            <option value="1月">1月</option>
+                            <option value="2月">2月</option>
+                            <option value="3月">3月</option>
+                            <option value="4月">4月</option>
+                            <option value="5月">5月</option>
+                            <option value="6月">6月</option>
+                            <option value="7月">7月</option>
+                            <option value="8月">8月</option>
+                            <option value="9月">9月</option>
+                            <option value="10月">10月</option>
+                            <option value="11月">11月</option>
+                            <option value="12月">12月</option>
+                        </select>
                         <section class="mb-90 mb-md-160">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -308,113 +252,29 @@
                                                     <th scope="col">電話</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="text-center">
+                                            <tbody class="text-center js-dayCareRecord">
                                                 <tr>
-                                                    <th scope="row">
-                                                        <a href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#order1Modal">Z010790</a>
-                                                    </th>
-                                                    <td>炸毛</td>
-                                                    <td>2023/9/25</td>
-                                                    <td>否</td>
-                                                    <td>Moreene</td>
-                                                    <td>0987-878787</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">
-                                                        <a href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#order2Modal">Z010814</a>
-                                                    </th>
-                                                    <td>米米</td>
-                                                    <td>2023/10/10</td>
-                                                    <td>是</td>
-                                                    <td>Moreene</td>
-                                                    <td>0987-878787</td>
+                                                    <td colspan="7">您目前沒有安親服務的預約</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-                                <!-- Modal-1 -->
-                                <div class="modal fade" id="order1Modal" aria-labelledby="order1ModalLabel"
-                                    aria-hidden="true" tabindex="-1">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="order1ModalLabel">訂單編號：Z010790</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body py-24">
-                                                <ul class="d-md-flex justify-content-md-around">
-                                                    <li class="mb-16 mb-md-0">
-                                                        <p>毛孩姓名：炸毛</p>
-                                                        <p>安親日期：2023/9/25</p>
-                                                        <p>安親時間：9:30</p>
-                                                        <p>樂園服務：否</p>
-                                                        <p class="mb-0">其他備註：</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>緊急聯絡人：Moreene</p>
-                                                        <p class="mb-0">聯絡電話：0987-878787</p>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary w-25">編輯</button>
-                                                <button type="button"
-                                                    class="btn btn-primary text-white w-25 info-store">儲存</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal-2 -->
-                                <div class="modal fade" id="order2Modal" aria-labelledby="order2ModalLabel"
-                                    aria-hidden="true" tabindex="-1">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="order2ModalLabel">訂單編號：Z010814</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body py-24">
-                                                <ul class="d-md-flex justify-content-md-around">
-                                                    <li class="mb-16 mb-md-0">
-                                                        <p>毛孩姓名：米米</p>
-                                                        <p>安親日期：2023/10/10</p>
-                                                        <p>安親時間：12:00</p>
-                                                        <p>樂園服務：是</p>
-                                                        <p class="mb-0">其他備註：</p>
-                                                    </li>
-                                                    <li>
-                                                        <p>緊急聯絡人：Moreene</p>
-                                                        <p class="mb-0">聯絡電話：0987-878787</p>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary w-25">編輯</button>
-                                                <button type="button"
-                                                    class="btn btn-primary text-white w-25 info-store">儲存</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="tab-pane" id="cosmetic" role="tabpanel" aria-labelledby="cosmetic-tab">
                                     <div class="table-responsive">
-                                        <table class="table text-nowrap">
+                                        <table class="table text-nowrap mb-0">
                                             <thead class="text-center">
                                                 <tr>
                                                     <th scope="col">訂單編號</th>
                                                     <th scope="col">毛孩姓名</th>
                                                     <th scope="col">美容日期</th>
+                                                    <th scope="col">美容方案</th>
                                                     <th scope="col">樂園服務</th>
                                                     <th scope="col">緊急聯絡人</th>
                                                     <th scope="col">電話</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="text-center">
+                                            <tbody class="text-center js-cosmeticRecord">
                                                 <tr>
                                                     <td colspan="7">您目前沒有美容服務的預約</td>
                                                 </tr>
@@ -424,18 +284,19 @@
                                 </div>
                                 <div class="tab-pane" id="stay" role="tabpanel" aria-labelledby="stay-tab">
                                     <div class="table-responsive">
-                                        <table class="table text-nowrap">
+                                        <table class="table text-nowrap mb-0">
                                             <thead class="text-center">
                                                 <tr>
                                                     <th scope="col">訂單編號</th>
                                                     <th scope="col">毛孩姓名</th>
+                                                    <th scope="col">房型選擇</th>
                                                     <th scope="col">住宿日期</th>
-                                                    <th scope="col">樂園服務</th>
+                                                    <th scope="col">退房日期</th>
                                                     <th scope="col">緊急聯絡人</th>
                                                     <th scope="col">電話</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="text-center">
+                                            <tbody class="text-center js-stayRecord">
                                                 <tr>
                                                     <td colspan="7">您目前沒有住宿服務的預約</td>
                                                 </tr>
@@ -445,12 +306,367 @@
                                 </div>
                             </div>
                         </section>
+                        <!-- dayCare modal -->
+                        <div class="modal fade" id="dayCareModal" aria-labelledby="dayCareModalLabel" aria-hidden="true"
+                            tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="dayCareModalLabel">訂單編號：<span
+                                                class="js-dayCareOrderNum"></span></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body py-24">
+                                        <form class="d-lg-flex justify-content-lg-around needs-validation dayCareForm"
+                                            novalidate>
+                                            <div class="mb-16 mb-lg-0">
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label">
+                                                        <p class="mb-0">毛孩姓名</p>
+                                                        <select class="form-select js-dayCareDogName" required></select>
+                                                    </label>
+                                                </div>
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label"><span class="me-16">預約日期</span>
+                                                        <input type="text" name="date"
+                                                            class="form-control d-inline datepicker js-dayCareDate"
+                                                            required>
+                                                        <div class="invalid-feedback">
+                                                            <i class="bi bi-exclamation-circle me-4"></i>
+                                                            請點擊選擇預約日期
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label"><span class="me-16">預約時間</span>
+                                                        <input type="text" name="time"
+                                                            class="form-control d-inline timepicker js-dayCareTime"
+                                                            required>
+                                                        <div class="invalid-feedback">
+                                                            <i class="bi bi-exclamation-circle me-4"></i>
+                                                            請點擊選擇預約時間
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="py-24">樂園服務</div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="d-flex py-24 js-dayCareParadise">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="paradise" value="是" required>
+                                                                    是
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="paradise" value="否" required>
+                                                                    否
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-0">
+                                                    <label class="col-form-label">
+                                                        <div class="d-flex flex-column">
+                                                            <div class="d-inline me-20">其他備註</div>
+                                                            <textarea name="remark"
+                                                                class="form-control js-dayCareRemark"
+                                                                style="height: 158px;"></textarea>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-between">
+                                                <div class="mb-30 mb-lg-0">
+                                                    <div class="row mb-16">
+                                                        <label class="col-form-label"><span class="me-16">緊急聯絡</span>
+                                                            <input type="text" name="contactPeople"
+                                                                class="form-control d-inline js-dayCareContact"
+                                                                required>
+                                                            <div class="invalid-feedback">
+                                                                <i class="bi bi-exclamation-circle me-4"></i> 請輸入緊急聯絡人姓名
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="row mb-0">
+                                                        <label class="col-form-label"><span class="me-16">緊急手機</span>
+                                                            <input type="text" name="contactPhone"
+                                                                class="form-control d-inline js-dayCarePhone" required>
+                                                            <div class="invalid-feedback js-errorPhone">
+                                                                <i class="bi bi-exclamation-circle me-4"></i>
+                                                                請輸入緊急聯絡人手機號碼
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <button type="submit"
+                                                    class="btn btn-primary text-white w-100 py-14 mb-lg-7 js-editdayCare">儲存</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- cosmetic modal -->
+                        <div class="modal fade" id="cosmeticModal" aria-labelledby="cosmeticModalLabel"
+                            aria-hidden="true" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="cosmeticModalLabel">訂單編號：<span
+                                                class="js-cosmeticOrderNum"></span></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body py-24">
+                                        <form class="d-lg-flex justify-content-lg-around needs-validation cosmeticForm"
+                                            novalidate>
+                                            <div class="mb-16 mb-lg-0">
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label">
+                                                        <p class="mb-0">毛孩姓名</p>
+                                                        <select class="form-select js-cosmeticDogName"
+                                                            required></select>
+                                                    </label>
+                                                </div>
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label">
+                                                        <p class="mb-0">毛孩體型</p>
+                                                        <select class="form-select js-cosmeticDogSize" required>
+                                                            <option value="小於10kg">&lt;10kg</option>
+                                                            <option value="10-20kg">10-20kg</option>
+                                                            <option value="大於20kg">&gt;20kg</option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label">
+                                                        <p class="mb-0">美容服務</p>
+                                                        <select class="form-select js-cosmeticPlan" required>
+                                                            <option value="基礎洗香香">基礎洗香香</option>
+                                                            <option value="進階洗香香">進階洗香香</option>
+                                                            <option value="高級洗香香">高級洗香香</option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label"><span class="me-16">預約日期</span>
+                                                        <input type="text" name="date"
+                                                            class="form-control d-inline datepicker js-cosmeticDate"
+                                                            required>
+                                                        <div class="invalid-feedback">
+                                                            <i class="bi bi-exclamation-circle me-4"></i>
+                                                            請點擊選擇預約日期
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label"><span class="me-16">預約時間</span>
+                                                        <input type="text" name="time"
+                                                            class="form-control d-inline timepicker js-cosmeticTime"
+                                                            required>
+                                                        <div class="invalid-feedback">
+                                                            <i class="bi bi-exclamation-circle me-4"></i>
+                                                            請點擊選擇預約時間
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="py-24">樂園服務</div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="d-flex py-24 js-cosmeticParadise">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="paradise" value="是" required>
+                                                                    是
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="paradise" value="否" required>
+                                                                    否
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-between">
+                                                <div class="mb-30 mb-lg-0">
+                                                    <div class="row mb-16">
+                                                        <label class="col-form-label"><span class="me-16">緊急聯絡</span>
+                                                            <input type="text" name="contactPeople"
+                                                                class="form-control d-inline js-cosmeticContact"
+                                                                required>
+                                                            <div class="invalid-feedback">
+                                                                <i class="bi bi-exclamation-circle me-4"></i> 請輸入緊急聯絡人姓名
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="row mb-16">
+                                                        <label class="col-form-label"><span class="me-16">緊急手機</span>
+                                                            <input type="text" name="contactPhone"
+                                                                class="form-control d-inline js-cosmeticPhone" required>
+                                                            <div class="invalid-feedback js-errorPhone">
+                                                                <i class="bi bi-exclamation-circle me-4"></i>
+                                                                請輸入緊急聯絡人手機號碼
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="row mb-0">
+                                                        <label class="col-form-label">
+                                                            <div class="d-flex flex-column">
+                                                                <div class="d-inline me-20">其他備註</div>
+                                                                <textarea name="remark"
+                                                                    class="form-control js-cosmeticRemark"
+                                                                    style="height: 158px;"></textarea>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <button type="submit"
+                                                    class="btn btn-primary text-white w-100 py-14 mb-lg-7 js-editCosmetic">儲存</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- stay modal -->
+                        <div class="modal fade" id="stayModal" aria-labelledby="stayModalLabel" aria-hidden="true"
+                            tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="stayModalLabel">訂單編號：<span
+                                                class="js-stayOrderNum"></span></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body py-24">
+                                        <form class="d-lg-flex justify-content-lg-around needs-validation stayForm"
+                                            novalidate>
+                                            <div class="mb-16 mb-lg-0">
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label">
+                                                        <p class="mb-0">毛孩姓名</p>
+                                                        <select class="form-select js-stayDogName" required></select>
+                                                    </label>
+                                                </div>
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label">
+                                                        <p class="mb-0">住宿房型</p>
+                                                        <select class="form-select js-stayRoom" required>
+                                                            <option value="小狗香香房">小狗香香房</option>
+                                                            <option value="忠犬呼嚕房">忠犬呼嚕房</option>
+                                                            <option value="大狗好眠房">大狗好眠房</option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label"><span class="me-16">住宿日期</span>
+                                                        <input type="text" name="date"
+                                                            class="form-control d-inline startDate js-stayStartDate"
+                                                            required>
+                                                        <div class="invalid-feedback">
+                                                            <i class="bi bi-exclamation-circle me-4"></i>
+                                                            請點擊選擇入住日期
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label"><span class="me-16">退房日期</span>
+                                                        <input type="text" name="date"
+                                                            class="form-control d-inline endDate js-stayEndDate"
+                                                            required>
+                                                        <div class="invalid-feedback">
+                                                            <i class="bi bi-exclamation-circle me-4"></i>
+                                                            請點擊選擇退房日期
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="row mb-16">
+                                                    <label class="col-form-label"><span class="me-16">入住時間</span>
+                                                        <input type="text" name="time"
+                                                            class="form-control d-inline timepicker js-stayTime"
+                                                            required>
+                                                        <div class="invalid-feedback">
+                                                            <i class="bi bi-exclamation-circle me-4"></i>
+                                                            請點擊選擇入住時間
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-between">
+                                                <div class="mb-30 mb-lg-0">
+                                                    <div class="row mb-16">
+                                                        <label class="col-form-label"><span class="me-16">緊急聯絡</span>
+                                                            <input type="text" name="contactPeople"
+                                                                class="form-control d-inline js-stayContact" required>
+                                                            <div class="invalid-feedback">
+                                                                <i class="bi bi-exclamation-circle me-4"></i> 請輸入緊急聯絡人姓名
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="row mb-16">
+                                                        <label class="col-form-label"><span class="me-16">緊急手機</span>
+                                                            <input type="text" name="contactPhone"
+                                                                class="form-control d-inline js-stayPhone" required>
+                                                            <div class="invalid-feedback js-errorPhone">
+                                                                <i class="bi bi-exclamation-circle me-4"></i>
+                                                                請輸入緊急聯絡人手機號碼
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="row mb-0">
+                                                        <label class="col-form-label">
+                                                            <div class="d-flex flex-column">
+                                                                <div class="d-inline me-20">其他備註</div>
+                                                                <textarea name="remark"
+                                                                    class="form-control js-stayRemark"
+                                                                    style="height: 158px;"></textarea>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <button type="submit"
+                                                    class="btn btn-primary text-white w-100 py-14 mb-lg-7 js-editStay">儲存</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <!-- 歷史紀錄 -->
                         <h3 class="fw-bold mb-24"><i class="bi bi-cursor me-1"></i>歷史記錄</h3>
-                        <label class="mb-24">
-                            <input type="month" class="rounded-pill p-8">
-                        </label>
+                        <select class="px-12 py-5 rounded-1 mb-24 js-monthSelect">
+                            <option value="月份篩選" selected disabled hidden>月份篩選</option>
+                            <option value="">所有月份</option>
+                            <option value="1月">1月</option>
+                            <option value="2月">2月</option>
+                            <option value="3月">3月</option>
+                            <option value="4月">4月</option>
+                            <option value="5月">5月</option>
+                            <option value="6月">6月</option>
+                            <option value="7月">7月</option>
+                            <option value="8月">8月</option>
+                            <option value="9月">9月</option>
+                            <option value="10月">10月</option>
+                            <option value="11月">11月</option>
+                            <option value="12月">12月</option>
+                        </select>
                         <section>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -472,7 +688,7 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane active" id="history-dayCare" role="tabpanel"
                                     aria-labelledby="history-dayCare-tab">
-                                    <div class="table-group table-responsive">
+                                    <div class="table-responsive">
                                         <table class="table text-nowrap mb-0">
                                             <thead class="text-center position-sticky top-0">
                                                 <tr>
@@ -486,52 +702,7 @@
                                             </thead>
                                             <tbody class="text-center">
                                                 <tr>
-                                                    <th scope="row">Z008192</th>
-                                                    <td>炸毛</td>
-                                                    <td>2023/1/24</td>
-                                                    <td>是</td>
-                                                    <td>Moreene</td>
-                                                    <td>0987-878787</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Z008305</th>
-                                                    <td>炸毛</td>
-                                                    <td>2023/2/15</td>
-                                                    <td>是</td>
-                                                    <td>Moreene</td>
-                                                    <td>0987-878787</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Z008411</th>
-                                                    <td>米米</td>
-                                                    <td>2023/3/24</td>
-                                                    <td>否</td>
-                                                    <td>Kevin</td>
-                                                    <td>0931-123456</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Z008496</th>
-                                                    <td>炸毛</td>
-                                                    <td>2023/4/04</td>
-                                                    <td>否</td>
-                                                    <td>Moreene</td>
-                                                    <td>0987-878787</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Z008621</th>
-                                                    <td>炸毛</td>
-                                                    <td>2023/5/30</td>
-                                                    <td>否</td>
-                                                    <td>Kevin</td>
-                                                    <td>0931-123456</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Z08788</th>
-                                                    <td>米米</td>
-                                                    <td>2023/6/08</td>
-                                                    <td>是</td>
-                                                    <td>Kevin</td>
-                                                    <td>0931-123456</td>
+                                                    <td colspan="7">您目前沒有安親服務的歷史記錄</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -539,13 +710,14 @@
                                 </div>
                                 <div class="tab-pane" id="history-cosmetic" role="tabpanel"
                                     aria-labelledby="history-cosmetic-tab">
-                                    <div class="table-responsive rounded-bottom">
+                                    <div class="table-responsive">
                                         <table class="table text-nowrap mb-0">
                                             <thead class="text-center position-sticky top-0">
                                                 <tr>
                                                     <th scope="col">訂單編號</th>
                                                     <th scope="col">毛孩姓名</th>
                                                     <th scope="col">美容日期</th>
+                                                    <th scope="col">美容方案</th>
                                                     <th scope="col">樂園服務</th>
                                                     <th scope="col">緊急聯絡人</th>
                                                     <th scope="col">電話</th>
@@ -553,28 +725,7 @@
                                             </thead>
                                             <tbody class="text-center">
                                                 <tr>
-                                                    <th scope="row">Z008362</th>
-                                                    <td>炸毛</td>
-                                                    <td>2023/3/15</td>
-                                                    <td>否</td>
-                                                    <td>Moreene</td>
-                                                    <td>0987-878787</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Z008551</th>
-                                                    <td>炸毛</td>
-                                                    <td>2023/4/22</td>
-                                                    <td>否</td>
-                                                    <td>Moreene</td>
-                                                    <td>0987-878787</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Z008574</th>
-                                                    <td>炸毛</td>
-                                                    <td>2023/5/18</td>
-                                                    <td>否</td>
-                                                    <td>Kevin</td>
-                                                    <td>0931-123456</td>
+                                                    <td colspan="7">您目前沒有美容服務的歷史記錄</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -582,34 +733,22 @@
                                 </div>
                                 <div class="tab-pane" id="history-stay" role="tabpanel"
                                     aria-labelledby="history-stay-tab">
-                                    <div class="table-responsive rounded-bottom">
+                                    <div class="table-responsive">
                                         <table class="table text-nowrap mb-0">
                                             <thead class="text-center position-sticky top-0">
                                                 <tr>
                                                     <th scope="col">訂單編號</th>
                                                     <th scope="col">毛孩姓名</th>
+                                                    <th scope="col">房型選擇</th>
                                                     <th scope="col">住宿日期</th>
-                                                    <th scope="col">樂園服務</th>
+                                                    <th scope="col">退房日期</th>
                                                     <th scope="col">緊急聯絡人</th>
                                                     <th scope="col">電話</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="text-center">
                                                 <tr>
-                                                    <th scope="row">Z008205</th>
-                                                    <td>炸毛</td>
-                                                    <td>2023/1/31</td>
-                                                    <td>是</td>
-                                                    <td>Moreene</td>
-                                                    <td>0987-878787</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Z008344</th>
-                                                    <td>米米</td>
-                                                    <td>2023/2/27</td>
-                                                    <td>是</td>
-                                                    <td>Moreene</td>
-                                                    <td>0987-878787</td>
+                                                    <td colspan="7">您目前沒有住宿服務的歷史記錄</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -624,36 +763,16 @@
 
         <%- include('./layout/footer'); -%>
 
+            <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.1/jquery.timepicker.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script type="module" src="../main.js"></script>
-            <script>
-                const hamBtn = document.querySelector(".ham");
-                const mobileMenu = document.querySelector(".mobile-menu .menu");
-                const hamCloseBtn = document.querySelector(".closedHam");
-                const body = document.body;
-
-                function toggleMenu() {
-                    mobileMenu.classList.toggle('open');
-                    body.classList.toggle('hidden-y');
-                };
-
-                hamBtn.addEventListener('click', toggleMenu);
-                hamCloseBtn.addEventListener("click", toggleMenu);
-
-                // Sweetalert
-                const infoStore = document.querySelectorAll(".info-store");
-
-                infoStore.forEach(function (item) {
-                    item.addEventListener("click", function () {
-                        Swal.fire({
-                            icon: "success",
-                            title: "儲存成功!",
-                            timer: 2000,
-                            timerProgressBar: true
-                        });
-                    });
-                });
-            </script>
+            <script type="module" src="../assets/js/centerHeader.js"></script>
+            <script type="module" src="../assets/js/hamMenu.js"></script>
+            <script type="module" src="../assets/js/infoCard.js"></script>
+            <script type="module" src="../assets/js/reverseRecord.js"></script>
 </body>
 
 </html>

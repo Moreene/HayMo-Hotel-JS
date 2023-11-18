@@ -5,7 +5,7 @@
                 <div class="d-inline mb-16 mb-md-0">毛孩姓名 <span class="text-danger">*</span></div>
                 <div class="d-flex flex-column w-md-75">
                     <select class="form-select js-nameSelect" required>
-                        <option value="" selected disabled hidden>請選擇毛孩姓名</option>
+                        <option class="js-select" value="" selected disabled hidden>請選擇毛孩姓名</option>
                     </select>
                     <div class="invalid-feedback">
                         <i class="bi bi-exclamation-circle me-4"></i>請選擇一個毛孩姓名
@@ -13,30 +13,6 @@
                 </div>
             </div>
         </label>
-    </div>
-    <div class="row mb-48">
-        <div class="col-md-3">
-            <div class="mb-16 mb-md-0">樂園服務 <span class="text-danger">*</span></div>
-        </div>
-        <div class="col-md-9">
-            <div class="d-flex js-paradise">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="paradise" value="是" required>
-                        是（+200元）
-                        <div class="invalid-feedback ms-0">
-                            <i class="bi bi-exclamation-circle me-4"></i>請選擇是否加購
-                        </div>
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="paradise" value="否" required>
-                        否
-                    </label>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="row mb-48">
         <label class="col-form-label">
@@ -80,7 +56,7 @@
     <div class="row justify-content-md-end">
         <div class="col-md-9">
             <button type="submit"
-                class="d-flex justify-content-center align-items-center btn btn-primary reverse-btn link-slide-primary rounded-0 w-100">送出<i
+                class="d-flex justify-content-center align-items-center btn btn-primary reverse-btn link-slide-primary rounded-0 w-100 js-submitBtn">送出<i
                     class="bi bi-arrow-right d-block fs-4 ms-16"></i></button>
         </div>
     </div>

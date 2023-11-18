@@ -1,15 +1,17 @@
-.member-center {
-    @include pc-lg {
-        background-image: url("../images/paw-right.png");
-        background-position: 95% 25%;
-    }
-
-    input {
-        @extend %input-style;
-    }
-}
-
 .member {
+    &-center {
+        @include pc-lg {
+            background-image: url("../images/paw-right.png");
+            background-position: 95% 25%;
+        }
+
+        input,
+        select,
+        textarea {
+            @extend %input-style;
+        }
+    }
+
     &-img {
         width: 120px;
         height: 120px;
@@ -19,28 +21,18 @@
             height: 150px;
         }
     }
-
-    &-modal-img {
-        height: 92px;
-
-        @include pad {
-            height: 139px;
-        }
-    }
 }
 
-.img-modify {
+.logo-img {
+    width: 150px;
+    height: 150px;
+}
+
+.img-cursor {
     cursor: pointer;
 }
 
-.cam-bg {
-    bottom: 0;
-    left: 0;
-    height: 33%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.table-group {
-    height: 358px;
-    overflow-y: scroll;
+// 大頭預設照片
+.default-photo {
+    background-image: url("../images/member-img.png");
 }

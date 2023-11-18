@@ -34,44 +34,51 @@
                                     <div class="col-md-9 col-xl-8">
                                         <div class="pb-48 line-bottom">
                                             <h3 class="fw-bold mb-24">會員登入</h3>
-                                            <form class="row row-cols-1 gy-16">
-                                                <div class="col">
-                                                    <input type="email" class="form-control-plaintext rounded-0 py-16"
-                                                        placeholder="請輸入您的電子信箱">
+                                            <form class="login-form needs-validation" novalidate>
+                                                <div class="mb-16">
+                                                    <input type="email"
+                                                        class="form-control-plaintext rounded-0 py-16 js-loginEmail"
+                                                        placeholder="請輸入您的電子信箱" required>
+                                                    <div class="invalid-feedback js-emailWrong">
+                                                        <i class="bi bi-exclamation-circle me-4"></i> 請輸入您的電子信箱
+                                                    </div>
                                                 </div>
-                                                <div class="col">
-                                                    <input type="password"
-                                                        class="form-control-plaintext rounded-0 py-16"
-                                                        placeholder="請輸入您的密碼">
-                                                </div>
-                                                <div class="col">
-                                                    <div class="d-flex justify-content-end mb-48">
+                                                <div class="mb-16">
+                                                    <div class="position-relative">
+                                                        <input type="password"
+                                                            class="form-control-plaintext border-top-0 border-start-0 border-end-0 rounded-0 py-16 js-loginPassword"
+                                                            placeholder="請輸入您的密碼" required>
                                                         <a href="#"
-                                                            class="fs-7 border-bottom border-primary">忘記密碼了嗎?</a>
+                                                            class="position-absolute conceal end-0 link-dark fs-5">
+                                                            <i class="fa-regular fa-eye" id="conceal-icon"></i></a>
+                                                        <div class="invalid-feedback js-passwordError">
+                                                            <i class="bi bi-exclamation-circle me-4"></i> 請輸入您的密碼
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col">
-                                                    <div class="mb-24">
-                                                        <a href="memberCenter.html"
-                                                            class="d-flex align-items-center justify-content-center link-slide-primary w-100">登入會員<i
-                                                                class="bi bi-arrow-right d-block fs-4 ms-16"></i></a>
-                                                    </div>
-                                                    <p class="fs-7 text-black-80">
-                                                        歡迎登入會員專區，查詢最新預約情形！<br>如遇六、日或是國定連假要住宿，請記得提前預約唷~
-                                                    </p>
+                                                <div class="d-flex justify-content-end mb-64">
+                                                    <a href="#" class="fs-7 border-bottom border-primary"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#forgotPassword">忘記密碼了嗎?</a>
                                                 </div>
-                                                <div class="col">
-                                                    <p class="text-center mb-24">快速註冊/登入</p>
-                                                    <div class="d-flex justify-content-between text-center">
-                                                        <a href="#" class="login-quick fs-7 w-30 py-8 text-white">
-                                                            <i class="bi bi-line me-8"></i>Line</a>
-                                                        <a href="#" class="login-quick fs-7 w-30 py-8 text-white">
-                                                            <i class="bi bi-facebook me-8"></i>Facebook</a>
-                                                        <a href="#" class="login-quick fs-7 w-30 py-8 text-white">
-                                                            <i class="bi bi-google me-8"></i>Google</a>
-                                                    </div>
-                                                </div>
+                                                <button type="submit"
+                                                    class="d-flex align-items-center justify-content-center link-slide-primary w-100 mb-24">登入會員<i
+                                                        class="bi bi-arrow-right d-block fs-4 ms-16"></i></button>
+                                                <p class="fs-7 text-black-80 mb-32">
+                                                    歡迎登入會員專區，查詢最新預約情形！<br>如遇六、日或是國定連假要住宿，請記得提前預約唷~
+                                                </p>
                                             </form>
+                                            <div>
+                                                <p class="text-center mb-24">快速註冊/登入</p>
+                                                <div class="d-flex justify-content-between text-center">
+                                                    <a href="#" class="login-quick fs-7 w-30 py-8 text-white">
+                                                        <i class="bi bi-line me-8"></i>Line</a>
+                                                    <a href="#" class="login-quick fs-7 w-30 py-8 text-white">
+                                                        <i class="bi bi-facebook me-8"></i>Facebook</a>
+                                                    <a href="#" class="login-quick fs-7 w-30 py-8 text-white">
+                                                        <i class="bi bi-google me-8"></i>Google</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -96,43 +103,62 @@
                 </main>
             </div>
 
+            <!-- Modal -->
+            <div class="modal fade" id="forgotPassword" aria-labelledby="forgotPasswordLabel" aria-hidden="true"
+                tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header border-bottom-0">
+                            <h3 class="modal-title fw-bold text-center" id="forgotPassword">忘記密碼</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form class="modal-body py-24 modal-form needs-validation" novalidate>
+                            <h2 class="fs-5 mb-16">請輸入您的Email，我們將寄出驗證信給您！<br>
+                                請透過收到的驗證信再重新設定新的密碼
+                            </h2>
+                            <div class="mb-32">
+                                <input type="email"
+                                    class="form-control-plaintext rounded-0 py-16 js-forgrtPasswordEmail"
+                                    placeholder="請輸入您的電子信箱" required>
+                                <div class="invalid-feedback js-emailError">
+                                    <i class="bi bi-exclamation-circle me-4"></i> 請輸入您的電子信箱
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-success text-white px-48 me-8">送出</button>
+                                <button type="button" class="btn btn-danger text-white px-48 js-canaelBtn" data-bs-dismiss="modal"
+                                    aria-label="Close">取消</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <%- include('./layout/footer'); -%>
 
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                 <script type="module" src="../main.js"></script>
+                <script type="module" src="../assets/js/hamMenu.js"></script>
+                <script type="module" src="../assets/js/toTopBtn.js"></script>
+                <script type="module" src="../assets/js/userLogin.js"></script>
+                <script type="module" src="../assets/js/forgotPassword.js"></script>
                 <script>
-                    // back to top
-                    $(function () {
-                        $(function () {
-                            $(window).scroll(function () {
-                                if ($(window).scrollTop() > 100) {
-                                    $("#back-to-top").fadeIn(1000);
-                                }
-                                else {
-                                    $("#back-to-top").fadeOut(1000);
-                                }
+                    (function () {
+                        'use strict'
+                        var forms = document.querySelectorAll('.needs-validation')
+                        Array.prototype.slice.call(forms)
+                            .forEach(function (form) {
+                                form.addEventListener('submit', function (event) {
+                                    if (!form.checkValidity()) {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                    };
+                                    form.classList.add('was-validated')
+                                }, false)
                             });
-                            $("#back-to-top").click(function () {
-                                $('body,html').animate({ scrollTop: 0 }, 500);
-                                return false;
-                            });
-                        });
-                    });
-
-                    // 漢堡選單
-                    const hamBtn = document.querySelector(".ham");
-                    const mobileMenu = document.querySelector(".mobile-menu .menu");
-                    const hamCloseBtn = document.querySelector(".closedHam");
-                    const body = document.body;
-
-                    function toggleMenu() {
-                        mobileMenu.classList.toggle('open');
-                        body.classList.toggle('hidden-y');
-                    };
-
-                    hamBtn.addEventListener('click', toggleMenu);
-                    hamCloseBtn.addEventListener("click", toggleMenu);
+                    })();
                 </script>
 </body>
 

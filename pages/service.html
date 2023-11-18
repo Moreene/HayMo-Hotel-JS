@@ -576,39 +576,8 @@
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
                 <script type="module" src="../main.js"></script>
-                <script>
-                    // back to top
-                    $(function () {
-                        $(function () {
-                            $(window).scroll(function () {
-                                if ($(window).scrollTop() > 100) {
-                                    $("#back-to-top").fadeIn(1000);
-                                }
-                                else {
-                                    $("#back-to-top").fadeOut(1000);
-                                }
-                            });
-                            $("#back-to-top").click(function () {
-                                $('body,html').animate({ scrollTop: 0 }, 500);
-                                return false;
-                            });
-                        });
-                    });
-                    
-                    // 漢堡選單
-                    const hamBtn = document.querySelector(".ham");
-                    const mobileMenu = document.querySelector(".mobile-menu .menu");
-                    const hamCloseBtn = document.querySelector(".closedHam");
-                    const body = document.body;
-
-                    function toggleMenu() {
-                        mobileMenu.classList.toggle('open');
-                        body.classList.toggle('hidden-y');
-                    };
-
-                    hamBtn.addEventListener('click', toggleMenu);
-                    hamCloseBtn.addEventListener("click", toggleMenu);
-                </script>
+                <script type="module" src="../assets/js/hamMenu.js"></script>
+                <script type="module" src="../assets/js/toTopBtn.js"></script>
 
 </body>
 

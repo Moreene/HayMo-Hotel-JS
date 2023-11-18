@@ -2,7 +2,7 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 //Service Swiper
-let swiper = new Swiper(".mySwiper", {
+const swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
     loop: true,
@@ -30,7 +30,7 @@ let swiper = new Swiper(".mySwiper", {
 });
 
 //memberCenter Swiper
-let dogInfoSwiper = new Swiper(".dogInfoSwiper", {
+export const dogInfoSwiper = new Swiper(".dogInfoSwiper", {
     spaceBetween: 30,
     pagination: {
         el: ".swiper-pagination",

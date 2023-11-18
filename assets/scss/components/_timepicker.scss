@@ -1,10 +1,17 @@
-.ui-timepicker-container {
-    padding: 0;
-    border-radius: 0;
-    border: 0;
-}
+.ui-timepicker {
+    &-wrapper {
+        width: 220px;
+        height: 180px;
+    }
 
-.ui-menu-item a:hover {
-    background-color:$secondary;
-    border: 0;
+    &-list {
+        li {
+            padding-left: 38%;
+
+            &:hover {
+                background-color: $secondary;
+                color: $black;
+            }
+        }
+    }
 }

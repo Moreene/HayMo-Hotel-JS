@@ -1,0 +1,95 @@
+{
+    "admins": [
+        {
+            "id": 1,
+            "account": "HayMo-Admin",
+            "password": "666666"
+        }
+    ],
+    "users": [],
+    "forgotPasswords": [],
+    "dogs": [],
+    "reverse": [],
+    "blackLists": [
+        {
+            "id": 1,
+            "name": "阿呆",
+            "email": "dede@gmail.com",
+            "phone": "0951534098",
+            "date": "2022-04-07",
+            "reason": "在店裡時，因意見相佐，使用鼻涕攻擊店裡夥伴"
+        },
+        {
+            "id": 2,
+            "name": "雯雯",
+            "email": "wen_wen@yahoo.com.tw",
+            "phone": "0923746539",
+            "date": "2022-06-25",
+            "reason": "預約未到/未通知超過三次"
+        },
+        {
+            "id": 3,
+            "name": "小亮",
+            "email": "yellowyo@gmail.com",
+            "phone": "0935552362",
+            "date": "2022-07-11",
+            "reason": "未如實告知狗有攻擊性，造成夥伴受傷，且不願負責"
+        },
+        {
+            "id": 4,
+            "name": "紅蔥",
+            "email": "yummy5525@yahoo.com",
+            "phone": "0947747474",
+            "date": "2022-08-30",
+            "reason": "多次在店裡揍自己的狗，屢勸不聽，狗身上常有小傷口"
+        },
+        {
+            "id": 5,
+            "name": "阿好",
+            "email": "56789qq@yahoo.com.tw",
+            "phone": "0925102203",
+            "date": "2022-10-09",
+            "reason": "預約未到/未通知超過三次"
+        },
+        {
+            "id": 6,
+            "name": "史蒂芬",
+            "email": "Steven0011@hotmail.com",
+            "phone": "0948166961",
+            "date": "2023-4-23",
+            "reason": "預約未到/未通知超過三次"
+        },
+        {
+            "id": 7,
+            "name": "大摳",
+            "email": "yo_Man888@gmail.com",
+            "phone": "0937263787",
+            "date": "2023-9-26",
+            "reason": "使用言語攻擊/威脅店裡夥伴"
+        },
+        {
+            "name": "派大星",
+            "email": "patrick_star@yahoo.com.tw",
+            "phone": "0912365402",
+            "date": "2023-11-15",
+            "reason": "一直在店裡說要抓水母干擾其他客人",
+            "id": 8
+        },
+        {
+            "name": "米腸",
+            "email": "iamhungry88@gmail.com",
+            "phone": "0958371920",
+            "date": "2023-12-02",
+            "reason": "預約未到/未通知超過三次",
+            "id": 9
+        },
+        {
+            "name": "大頭",
+            "email": "hhhhead@hotmail.com",
+            "phone": "0966123913",
+            "date": "2023-12-16",
+            "reason": "預約未到/未通知超過三次",
+            "id": 10
+        }
+    ]
+}

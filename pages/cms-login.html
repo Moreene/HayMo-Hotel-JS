@@ -17,29 +17,35 @@
             <div class="container">
                 <h2 class="title-font text-center mb-48">後台管理系統</h2>
                 <div class="col-md-8 col-lg-5 mx-auto">
-                    <form class="bg-light border border-black-60 rounded-4 px-24 px-md-48 py-48 mb-48">
+                    <form class="login-form bg-light border border-black-60 rounded-4 px-24 px-md-48 py-48 mb-48 needs-validation" novalidate>
                         <div class="text-center mb-16 mb-md-24">
                             <img src="../assets/images/manager.png" alt="後台管理員" class="img-fluid">
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-sm-9">
                                 <div class="position-relative mb-24">
-                                    <input type="text" class="form-control ps-48" placeholder="使用者代號">
-                                    <i class="bi bi-person position-absolute cms-login-icon fs-5"></i>
+                                    <input type="text" class="form-control ps-48 js-adminAccount " placeholder="使用者代號"
+                                        required>
+                                    <i class="bi bi-person position-absolute cms-icon fs-5"></i>
+                                    <div class="invalid-feedback js-loginError">
+                                        <i class="bi bi-exclamation-circle me-4"></i> 請輸入使用者代號
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-9">
                                 <div class="position-relative">
-                                    <input type="password" class="form-control ps-48" placeholder="使用者密碼">
-                                    <i class="bi bi-lock position-absolute cms-login-icon fs-5"></i>
+                                    <input type="password" class="form-control ps-48 js-adminPassword"
+                                        placeholder="使用者密碼" required>
+                                    <i class="bi bi-lock position-absolute cms-icon fs-5"></i>
+                                    <div class="invalid-feedback js-passwordError">
+                                        <i class="bi bi-exclamation-circle me-4"></i> 請輸入使用者密碼
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-center">
-                            <a href="cms.html"
-                                class="d-flex align-items-center justify-content-center link-slide-primary w-100 w-md-75 mt-48">登入<i
-                                    class="bi bi-arrow-right d-block fs-4 ms-16"></i></a>
-                        </div>
+                        <button type="submit"
+                            class="mx-auto d-flex align-items-center justify-content-center link-slide-primary w-100 w-md-75 mt-48">登入<i
+                                class="bi bi-arrow-right d-block fs-4 ms-16"></i></button>
                     </form>
                     <div>
                         <p class="d-flex mb-8"><i
@@ -54,20 +60,25 @@
             </div>
         </main>
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="module" src="../main.js"></script>
+        <script type="module" src="../assets/js/hamMenu.js"></script>
+        <script type="module" src="../assets/js/adminLogin.js"></script>
         <script>
-            const hamBtn = document.querySelector(".ham");
-            const mobileMenu = document.querySelector(".mobile-menu .menu");
-            const hamCloseBtn = document.querySelector(".closedHam");
-            const body = document.body;
-
-            function toggleMenu() {
-                mobileMenu.classList.toggle('open');
-                body.classList.toggle('hidden-y');
-            };
-
-            hamBtn.addEventListener('click', toggleMenu);
-            hamCloseBtn.addEventListener("click", toggleMenu);
+            (function () {
+                'use strict'
+                var forms = document.querySelectorAll('.needs-validation')
+                Array.prototype.slice.call(forms)
+                    .forEach(function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            };
+                            form.classList.add('was-validated')
+                        }, false)
+                    });
+            })();
         </script>
 </body>
 

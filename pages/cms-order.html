@@ -8,6 +8,8 @@
     <title>嘿毛寵物旅館 | 訂單管理</title>
     <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.1/jquery.timepicker.css">
 </head>
 
 <body>
@@ -41,7 +43,7 @@
                         <li class="nav-item">
                             <a class="nav-link rounded-pill" href="#" id="blacklist-tab" data-bs-toggle="tab"
                                 data-bs-target="#blacklist">黑名單<span
-                                    class="bg-light text-dark rounded-pill px-4 ms-4">8</span></a>
+                                    class="bg-light text-dark rounded-pill px-4 ms-4 js-blackListNum"></span></a>
                         </li>
                     </ul>
                     <div>
@@ -692,8 +694,8 @@
                             <a href="#" class="cms-btn lh-1" data-bs-toggle="modal" data-bs-target="#blackListModal"><i
                                     class="bi bi-person-plus fs-3 me-8"></i>新增黑名單</a>
                         </div>
-                        <div class="table-responsive">
-                            <table class="table text-nowrap table-hover align-middle mb-0">
+                        <div class="table-responsive mb-48">
+                            <table class="table text-nowrap table-hover align-middle">
                                 <thead class="text-center border-bottom border-dark">
                                     <tr>
                                         <th scope="col">會員姓名</th>
@@ -702,110 +704,71 @@
                                         <th scope="col">停權日期</th>
                                         <th scope="col">停權事由</th>
                                 </thead>
-                                <tbody class="text-center">
-                                    <tr>
-                                        <th scope="row" class="fw-normal">阿呆</th>
-                                        <td>dede@gmail.com</td>
-                                        <td>0951-534098</td>
-                                        <td>2022/4/7</td>
-                                        <td>在店裡時，因意見相佐，使用鼻涕攻擊店裡夥伴</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">雯雯</th>
-                                        <td>wen_wen@yahoo.com.tw</td>
-                                        <td>0923-746539</td>
-                                        <td>2022/6/25</td>
-                                        <td>預約未到/未通知超過三次</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">小亮</th>
-                                        <td>yellowyo@gmail.com</td>
-                                        <td>0935-552362</td>
-                                        <td>2022/7/11</td>
-                                        <td>未如實告知狗有攻擊性，造成夥伴受傷，且不願負責</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">紅蔥</th>
-                                        <td>yummy5525@yahoo.com</td>
-                                        <td>0947-747474</td>
-                                        <td>2022/8/30</td>
-                                        <td>多次在店裡揍自己的狗，屢勸不聽，狗身上常有小傷口</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">阿好</th>
-                                        <td>56789qq@yahoo.com.tw</td>
-                                        <td>0925-102203</td>
-                                        <td>2022/10/9</td>
-                                        <td>預約未到/未通知超過三次</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">史蒂芬</th>
-                                        <td>Steven0011@hotmail.com</td>
-                                        <td>0948-166961</td>
-                                        <td>2022/11/23</td>
-                                        <td>預約未到/未通知超過三次</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">大摳</th>
-                                        <td>yo_Man888@gmail.com</td>
-                                        <td>0937-263787</td>
-                                        <td>2022/12/26</td>
-                                        <td>使用言語攻擊/威脅店裡夥伴</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="fw-normal">Nico</th>
-                                        <td>nico_3721@yahoo.com</td>
-                                        <td>0985-599699</td>
-                                        <td>2023/3/19</td>
-                                        <td>預約未到/未通知超過三次</td>
-                                    </tr>
-                                </tbody>
+                                <tbody class="text-center js-blacklist"></tbody>
                             </table>
                         </div>
-                        <!-- 黑名單_Modal -->
-                        <div class="modal fade" id="blackListModal" aria-labelledby="blackListModalLabel"
-                            aria-hidden="true" tabindex="-1">
-                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                <div class="modal-content">
-                                    <div class="modal-header border-bottom-0">
-                                        <h3 class="modal-title fw-bold" id="blackListModal">新增黑名單</h3>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body py-24">
-                                        <h2 class="fs-5 fw-bold mb-16">會員資料</h2>
-                                        <div class="mb-16">
-                                            <label for="name" class="form-label">會員姓名</label>
-                                            <input type="text" id="name" class="form-control rounded-0">
+                        <%- include('./layout/pagination'); -%>
+                        
+                            <!-- 黑名單_Modal -->
+                            <div class="modal fade" id="blackListModal" aria-labelledby="blackListModalLabel"
+                                aria-hidden="true" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-bottom-0">
+                                            <h3 class="modal-title fw-bold" id="blackListModal">新增黑名單</h3>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
                                         </div>
-                                        <div class="mb-16">
-                                            <label for="email" class="form-label">會員Email</label>
-                                            <input type="email" id="email" class="form-control rounded-0">
-                                        </div>
-                                        <div class="pb-24 border-bottom border-black-40">
-                                            <label for="phone" class="form-label">會員電話</label>
-                                            <input type="tel" id="phone" class="form-control rounded-0">
-                                        </div>
-                                        <h2 class="fs-5 fw-bold pt-24 mb-16">停權資訊</h2>
-                                        <div class="mb-16">
-                                            <label for="blackDate" class="form-label">停權日期</label>
-                                            <input type="text" id="blackDate" class="form-control datepicker rounded-0">
-                                        </div>
-                                        <div class="mb-24">
-                                            <label for="blackReson" class="form-label">詳細事由</label>
-                                            <textarea name="blackReson" id="blackReson" class="form-control rounded-0"
-                                                style="height: 100px"></textarea>
-                                        </div>
-                                        <div class="text-end">
-                                            <button type="button"
-                                                class="btn btn-success text-white px-48 me-8 add-info">新增</button>
-                                            <button type="button"
-                                                class="btn btn-danger text-white px-48 cancel-info">取消</button>
-                                        </div>
+                                        <form class="modal-body py-24 needs-validation blackForm" novalidate>
+                                            <h2 class="fs-5 fw-bold mb-16">會員資料</h2>
+                                            <label class="form-label w-100 mb-16">會員姓名
+                                                <input type="text" class="form-control rounded-0 js-blockName"
+                                                    placeholder="王小明" required>
+                                                <div class="invalid-feedback">
+                                                    <i class="bi bi-exclamation-circle me-4"></i> 請輸入會員姓名
+                                                </div>
+                                            </label>
+                                            <label class="form-label w-100 mb-16">會員Email
+                                                <input type="email" class="form-control rounded-0 js-blockEmail"
+                                                    placeholder="example@mail.com.tw" required>
+                                                <div class="invalid-feedback js-errorEmail">
+                                                    <i class="bi bi-exclamation-circle me-4"></i> 請輸入會員Email
+                                                </div>
+                                            </label>
+                                            <label class="form-label w-100 pb-24 border-bottom border-black-40">會員電話
+                                                <input type="tel" class="form-control rounded-0 js-blockPhone"
+                                                    placeholder="0912345678" required>
+                                                <div class="invalid-feedback js-errorPhone">
+                                                    <i class="bi bi-exclamation-circle me-4"></i> 請輸入會員手機號碼
+                                                </div>
+                                            </label>
+                                            <h2 class="fs-5 fw-bold pt-24 mb-16">停權資訊</h2>
+                                            <label class="form-label w-100 mb-16">停權日期
+                                                <input type="text"
+                                                    class="form-control datepicker rounded-0 js-blockDate"
+                                                    placeholder="點擊選擇日曆日期" required>
+                                                <div class="invalid-feedback">
+                                                    <i class="bi bi-exclamation-circle me-4"></i> 請點擊選擇停權日期
+                                                </div>
+                                            </label>
+                                            <label class="form-label w-100 mb-24">詳細事由
+                                                <textarea name="blackReson"
+                                                    class="form-control rounded-0 js-blockReason" style="height: 100px"
+                                                    placeholder="請填寫原因" required></textarea>
+                                                <div class="invalid-feedback">
+                                                    <i class="bi bi-exclamation-circle me-4"></i> 請輸入停權事由
+                                                </div>
+                                            </label>
+                                            <div class="text-end">
+                                                <button type="submit"
+                                                    class="btn btn-success text-white px-48 me-8">新增</button>
+                                                <button type="button"
+                                                    class="btn btn-danger text-white px-48 js-clearFormBtn">清空</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -813,76 +776,16 @@
 
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.1/jquery.timepicker.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="module" src="../main.js"></script>
+        <script type="module" src="../assets/js/cms-order.js"></script>
         <script>
             const toggleMenuBtn = document.querySelector('#toggle-btn');
             const body = document.querySelector('body');
             toggleMenuBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 body.classList.toggle('sidebar-toggled');
-            });
-
-            // 日期選擇
-            $(function () {
-                //設定中文語系
-                $.datepicker.regional['zh-TW'] = {
-                    dayNames: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
-                    dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"],
-                    monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
-                    monthNamesShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
-                    prevText: "上月",
-                    nextText: "次月",
-                    weekHeader: "週"
-                };
-                //將預設語系設定為中文
-                $.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
-                $(function () {
-                    $(".datepicker").datepicker({
-                        beforeShow: function (input, inst) {
-                            inst.dpDiv.addClass("custom-datepicker");
-                        },
-                        dateFormat: "yy-mm-dd",
-                        minDate: 0,
-                    });
-                });
-            });
-
-            // Sweetalert
-            const infoStore = document.querySelectorAll(".info-store");
-            const addInfo = document.querySelectorAll(".add-info");
-            const cancelInfo = document.querySelectorAll(".cancel-info");
-
-            infoStore.forEach(function (item) {
-                item.addEventListener("click", function () {
-                    Swal.fire({
-                        icon: "success",
-                        title: "儲存成功!",
-                        timer: 2000,
-                        timerProgressBar: true
-                    });
-                });
-            });
-            addInfo.forEach(function (item) {
-                item.addEventListener("click", function () {
-                    Swal.fire({
-                        icon: "success",
-                        title: "新增成功!",
-                        timer: 2000,
-                        timerProgressBar: true
-                    });
-                });
-            });
-            cancelInfo.forEach(function (item) {
-                item.addEventListener("click", function () {
-                    Swal.fire({
-                        icon: "success",
-                        title: "取消成功!",
-                        timer: 2000,
-                        timerProgressBar: true
-                    });
-                });
             });
         </script>
 </body>

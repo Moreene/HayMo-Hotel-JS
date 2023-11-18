@@ -24,11 +24,6 @@
     }
 }
 
-.form-check-input:checked~.option-link {
-    color: $white;
-    background-color: $primary;
-}
-
 .title-line::after {
     position: absolute;
     content: '';
@@ -46,4 +41,29 @@
         background-position: 90% 11%, 7% 75%;
         background-repeat: no-repeat;
     }
+}
+
+.was-validated {
+
+    .form-control:invalid:focus,
+    .form-control:valid:focus,
+    .form-select:invalid:focus,
+    .form-select:valid:focus,
+    .form-check-input:invalid:focus,
+    .form-check-input:valid:focus {
+        box-shadow: none;
+    }
+
+    .form-check-input:valid:checked {
+        background-color: $primary;
+    }
+
+    .form-check-input:valid~.form-check-label {
+        color: $primary;
+    }
+}
+
+.reverse .form-check-input:checked~.option-link {
+    color: $white;
+    background-color: $primary;
 }

@@ -97,18 +97,6 @@
         <%- include('./layout/footer'); -%>
 
             <script type="module" src="../main.js"></script>
-            <script>
-                const hamBtn = document.querySelector(".ham");
-                const mobileMenu = document.querySelector(".mobile-menu .menu");
-                const hamCloseBtn = document.querySelector(".closedHam");
-                const body = document.body;
-
-                function toggleMenu() {
-                    mobileMenu.classList.toggle('open');
-                    body.classList.toggle('hidden-y');
-                };
-
-                hamBtn.addEventListener('click', toggleMenu);
-                hamCloseBtn.addEventListener("click", toggleMenu);
-            </script>
+            <script type="module" src="../assets/js/centerHeader.js"></script>
+            <script type="module" src="../assets/js/hamMenu.js"></script>
 </body>
