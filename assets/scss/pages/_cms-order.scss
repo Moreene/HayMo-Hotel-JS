@@ -1,19 +1,13 @@
 .order {
-    .checkbox {
-        width: 18px;
-        height: 18px;
-    }
 
-    .nav-link:hover {
+    &-link:hover {
         color: $white;
         background-color: $primary;
     }
-}
 
-.blacklist {
-    input,
-    textarea {
-        @extend %input-style;
+    .js-inputSearch:focus {
+        border-bottom-color: $dark;
+        box-shadow: none;
     }
 }
 

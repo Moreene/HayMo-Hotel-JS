@@ -54,10 +54,6 @@
     &::placeholder {
         color: $black-40;
     }
-
-    &:focus {
-        border-bottom: 1px solid $primary;
-    }
 }
 
 .conceal {

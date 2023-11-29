@@ -1,32 +1,11 @@
-/*-------------------------共同樣式-------------------------*/
 .section-label {
-    border: 3px solid $black;
     border-radius: 0 20px 20px 20px;
 }
 
-/*--------------------------Banner--------------------------*/
+// Banner
 .carousel {
 
-    // 設定carousel-inner高度
-    // 讓caption的文字在手機板時可以定位在圖片下方
-    &-inner {
-        height: 820px;
-
-        @include pc {
-            height: 620px;
-        }
-
-        @include pc-lg {
-            height: 870px;
-        }
-
-        @include pc-xl {
-            height: 1080px;
-        }
-    }
-
     &-item {
-        height: 620px;
         border-radius: 0 0 120px 120px;
 
         &.first {
@@ -43,14 +22,10 @@
             background-image: url("../images/banner-3.png");
             background-position: 75% center;
         }
+    }
 
-        @include pc-lg {
-            height: 870px;
-        }
-
-        @include pc-xl {
-            height: 1080px;
-        }
+    i{
+        color: $white;
     }
 }
 
@@ -120,53 +95,8 @@
     border-radius: 0 100px 100px 0;
 }
 
-/*-------------------------我們擁有-------------------------*/
-.weHave {
-    height: 800px;
-
-    @include mobile {
-        height: 687px;
-    }
-
-    @include pc-lg {
-        height: 624px;
-    }
-}
-
-.weHave-content li {
-
-    // 手機-第二張圖間距設定
-    &:nth-child(2) {
-        margin-right: 24px;
-
-        @include pad {
-            margin-right: 40px;
-        }
-    }
-
-    // 768px-所有圖片的間距
-    @include pad {
-        &:not(:last-child) {
-            margin-right: 40px;
-        }
-    }
-
-    // 1200px-第一張圖及content-txt間距設定
-    @include pc-lg {
-        &:nth-child(1) {
-            margin-left: 144px;
-        }
-
-        &:nth-child(3) {
-            padding: 0 26px;
-        }
-    }
-}
-
+// 我們擁有
 .have-img {
-    width: 257px;
-    height: 386px;
-
     &.first {
         background-image: url("../images/Rectangle-1.png");
     }
@@ -182,34 +112,19 @@
     &.fourth {
         background-image: url("../images/Rectangle-4.png");
     }
-
-    @media (min-width:1200px) {
-        width: 416px;
-        height: 624px;
-    }
 }
 
 .content-txt {
     top: 92%;
     left: 3.5%;
-    // z-index: 2;
 
     @include pad {
         left: 100%;
         transform: translateX(-100%);
     }
-
-    // 1200px以上的content-txt寬度
-    &-xl {
-        width: 351px;
-
-        @include pc {
-            width: 417px;
-        }
-    }
 }
 
-/*-------------------------服務項目-------------------------*/
+// 服務項目
 .serviceItem::after {
     position: absolute;
     content: "";
@@ -301,14 +216,12 @@
     }
 }
 
-/*-------------------------業界第一-------------------------*/
+// 業界第一
 .best-img {
-    height: 375px;
     background-image: url("../images/happy-dog.png");
     background-position: right center;
 
     @include pad {
-        height: 100%;
         background-position: 80% center;
         border-bottom-left-radius: 120px;
     }
@@ -319,15 +232,10 @@
 }
 
 .best-content {
-    padding: 80px 24px 120px;
     border-bottom-left-radius: 120px;
 
     @include pad {
         border-radius: 0;
-    }
-
-    @include pc-lg {
-        padding: 143px 134px;
     }
 }
 
@@ -335,11 +243,6 @@
     border-radius: 100px;
     color: #000;
     background-color: #fff100;
-
-    .arr {
-        width: 40px;
-        height: 40px;
-    }
 
     &:hover,
     &:active {

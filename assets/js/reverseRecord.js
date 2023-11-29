@@ -168,7 +168,7 @@ function renderRecord(data) {
     let cosmetic = '';
     let stay = '';
     data.forEach(item => {
-        if (item.service === '狗狗安親') {
+        if (item.service === '安親') {
             const latestDayCare =
                 `
             <tr>
@@ -185,7 +185,7 @@ function renderRecord(data) {
         `;
             dayCare = latestDayCare + dayCare;
             dayCareRecord.innerHTML = dayCare;
-        } else if (item.service === '狗狗美容') {
+        } else if (item.service === '美容') {
             const latestCosmetic =
                 `
                 <tr>
@@ -203,7 +203,7 @@ function renderRecord(data) {
             `;
             cosmetic = latestCosmetic + cosmetic;
             cosmeticRecord.innerHTML = cosmetic;
-        } else if (item.service === '狗狗住宿') {
+        } else if (item.service === '住宿') {
             const latestStay =
                 `
                 <tr>
@@ -240,11 +240,11 @@ function showModal(e) {
         })
             .then(res => {
                 let data = res.data;
-                if (data.service === '狗狗安親') {
+                if (data.service === '安親') {
                     renderDayCareModal(data);
-                } else if (data.service === '狗狗美容') {
+                } else if (data.service === '美容') {
                     renderCosmeticModal(data);
-                } else if (data.service === '狗狗住宿') {
+                } else if (data.service === '住宿') {
                     renderSatyModal(data);
                 }
             })
@@ -265,6 +265,7 @@ const dayCareRemark = document.querySelector('.js-dayCareRemark');
 const dayCareContact = document.querySelector('.js-dayCareContact');
 const dayCarePhone = document.querySelector('.js-dayCarePhone');
 const dayCareBtn = document.querySelector('.js-editdayCare');
+const dayCareTotal = document.querySelector('.js-dayCareTotal');
 
 function renderDayCareModal(data) {
     dayCareOrderNum.textContent = data.orderNum;
@@ -283,6 +284,7 @@ function renderDayCareModal(data) {
     dayCareContact.value = data.contact;
     dayCarePhone.value = data.phone;
     dayCareRemark.textContent = data.remark;
+    dayCareTotal.value = data.total;
     dayCareForm.setAttribute('data-id', data.id);
     checkDate(data);
 };
@@ -333,28 +335,32 @@ function renewDayCare(e) {
                 dayCareForm.querySelector('.js-errorPhone').innerHTML = `<i class="bi bi-exclamation-circle me-4"></i>手機號碼格式錯誤`;
                 dayCarePhone.value = '';
                 return;
-            } else {
-                axios.patch(`${jsonURL}/660/reverse/${data.id}`, {
-                    "dogName": dayCareDogName.value,
-                    "date": dayCareDate.value,
-                    "time": dayCareTime.value,
-                    "paradise": selectedParadise.value,
-                    "contact": dayCareContact.value,
-                    "phone": dayCarePhone.value,
-                    "remark": dayCareRemark.value,
-                }, {
-                    headers: {
-                        authorization: `Bearer ${localStorage.getItem('userToken')}`
-                    }
-                })
-                    .then(res => {
-                        successHint('成功更新預約內容！', '', 3000);
-                        initReverseRecord();
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
             };
+            let dayCareTotalValue = parseInt(dayCareTotal.value);
+            selectedParadise.value === '是' ? (dayCareTotalValue += 200) : (dayCareTotalValue -= 200);
+
+            axios.patch(`${jsonURL}/660/reverse/${data.id}`, {
+                "dogName": dayCareDogName.value,
+                "date": dayCareDate.value,
+                "time": dayCareTime.value,
+                "paradise": selectedParadise.value,
+                "contact": dayCareContact.value,
+                "phone": dayCarePhone.value,
+                "remark": dayCareRemark.value,
+                "total": dayCareTotalValue
+            }, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('userToken')}`
+                }
+            })
+                .then(res => {
+                    successHint('成功更新預約內容！', '', 3000);
+                    initReverseRecord();
+                    $('#dayCareModal').modal('hide');
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         })
         .catch(err => {
             console.log(err);
@@ -377,21 +383,13 @@ function checkDate(data) {
     const todayDate = new Date(today);
     const reverseDate = new Date(data.date);
     const dateDiff = Math.ceil((reverseDate - todayDate) / (1000 * 60 * 60 * 24));
-    const inputElemet = [dayCareDogName, dayCareDate, dayCareTime, dayCareRemark, dayCareContact, dayCarePhone, dayCareBtn, cosmeticDogName, cosmeticDogSize, cosmeticPlan, cosmeticDate, cosmeticTime, cosmeticRemark, cosmeticContact, cosmeticPhone, cosmeticBtn];
+    const inputElemet = [dayCareDogName, dayCareDate, dayCareTime, dayCareRemark, dayCareContact, dayCarePhone, dayCareBtn, cosmeticDogName, cosmeticDogSize, cosmeticPlan, cosmeticDate, cosmeticTime, cosmeticRemark, cosmeticContact, cosmeticPhone, cosmeticBtn, stayOrderNum, stayDogName, stayRoom, stayStartDate, stayEndDate, stayTime, stayContact, stayPhone, stayRemark, stayBtn];
     const radioElement = [...dayCareParadise.querySelectorAll('.form-check-input'), ...cosmeticParadise.querySelectorAll('.form-check-input')];
-
-    const reverseStayDate = new Date(data.startDate);
-    const stayDateDiff = Math.ceil((reverseStayDate - todayDate) / (1000 * 60 * 60 * 24));
-    const stayinputElemet = [stayOrderNum, stayDogName, stayRoom, stayStartDate, stayEndDate, stayTime, stayContact, stayPhone, stayRemark, stayBtn];
-
-    if (dateDiff <= 3 || stayDateDiff <= 3) {
+    if (dateDiff <= 3) {
         inputElemet.forEach(item => {
             item.setAttribute('disabled', '');
         });
         radioElement.forEach(item => {
-            item.setAttribute('disabled', '');
-        });
-        stayinputElemet.forEach(item => {
             item.setAttribute('disabled', '');
         });
     } else {
@@ -399,9 +397,6 @@ function checkDate(data) {
             item.removeAttribute('disabled', '');
         });
         radioElement.forEach(item => {
-            item.removeAttribute('disabled', '');
-        });
-        stayinputElemet.forEach(item => {
             item.removeAttribute('disabled', '');
         });
     };
@@ -420,6 +415,7 @@ const cosmeticRemark = document.querySelector('.js-cosmeticRemark');
 const cosmeticContact = document.querySelector('.js-cosmeticContact');
 const cosmeticPhone = document.querySelector('.js-cosmeticPhone');
 const cosmeticBtn = document.querySelector('.js-editCosmetic');
+const cosmeticTotal = document.querySelector('.js-cosmeticTotal');
 
 cosmeticRecord.addEventListener('click', showModal);
 
@@ -438,6 +434,7 @@ function renderCosmeticModal(data) {
     cosmeticContact.value = data.contact;
     cosmeticPhone.value = data.phone;
     cosmeticRemark.textContent = data.remark;
+    cosmeticTotal.value = data.total;
     cosmeticForm.setAttribute('data-id', data.id);
     checkDate(data);
 };
@@ -465,30 +462,51 @@ function renewCosmetic(e) {
                 cosmeticForm.querySelector('.js-errorPhone').innerHTML = `<i class="bi bi-exclamation-circle me-4"></i>手機號碼格式錯誤`;
                 cosmeticPhone.value = '';
                 return;
-            } else {
-                axios.patch(`${jsonURL}/660/reverse/${data.id}`, {
-                    "dogName": cosmeticDogName.value,
-                    "size": cosmeticDogSize.value,
-                    "plan": cosmeticPlan.value,
-                    "date": cosmeticDate.value,
-                    "time": cosmeticTime.value,
-                    "paradise": selectedParadise.value,
-                    "contact": cosmeticContact.value,
-                    "phone": cosmeticPhone.value,
-                    "remark": cosmeticRemark.value,
-                }, {
-                    headers: {
-                        authorization: `Bearer ${localStorage.getItem('userToken')}`
-                    }
-                })
-                    .then(res => {
-                        successHint('成功更新預約內容！', '', 3000);
-                        initReverseRecord();
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
             };
+
+            let sizePrice;
+            let planPrice;
+            let coesmeticTotalValue = parseInt(cosmeticTotal.value);
+            if (cosmeticDogSize.value === '小於10kg') {
+                sizePrice = 200;
+            } else if (cosmeticDogSize.value === '10-20kg') {
+                sizePrice = 300;
+            } else if (cosmeticDogSize.value === '大於20kg') {
+                sizePrice = 450;
+            };
+            if (cosmeticPlan.value === '基礎洗香香') {
+                planPrice = 550;
+            } else if (cosmeticPlan.value === '進階洗香香') {
+                planPrice = 800;
+            } else if (cosmeticPlan.value === '高級洗香香') {
+                planPrice = 1000;
+            };
+            coesmeticTotalValue = sizePrice + planPrice + (selectedParadise.value === '是' ? 200 : 0);
+
+            axios.patch(`${jsonURL}/660/reverse/${data.id}`, {
+                "dogName": cosmeticDogName.value,
+                "size": cosmeticDogSize.value,
+                "plan": cosmeticPlan.value,
+                "date": cosmeticDate.value,
+                "time": cosmeticTime.value,
+                "paradise": selectedParadise.value,
+                "contact": cosmeticContact.value,
+                "phone": cosmeticPhone.value,
+                "remark": cosmeticRemark.value,
+                "total": coesmeticTotalValue
+            }, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('userToken')}`
+                }
+            })
+                .then(res => {
+                    successHint('成功更新預約內容！', '', 3000);
+                    initReverseRecord();
+                    $('#cosmeticModal').modal('hide');
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         })
         .catch(err => {
             console.log(err);
@@ -507,6 +525,7 @@ const stayRemark = document.querySelector('.js-stayRemark');
 const stayContact = document.querySelector('.js-stayContact');
 const stayPhone = document.querySelector('.js-stayPhone');
 const stayBtn = document.querySelector('.js-editStay');
+const stayTotal = document.querySelector('.js-stayTotal');
 
 stayRecord.addEventListener('click', showModal);
 
@@ -520,6 +539,7 @@ function renderSatyModal(data) {
     stayContact.value = data.contact;
     stayPhone.value = data.phone;
     stayRemark.textContent = data.remark;
+    stayTotal.value = data.total;
     stayForm.setAttribute('data-id', data.id);
     checkDate(data);
 };
@@ -546,29 +566,43 @@ function renewStay(e) {
                 stayForm.querySelector('.js-errorPhone').innerHTML = `<i class="bi bi-exclamation-circle me-4"></i>手機號碼格式錯誤`;
                 stayPhone.value = '';
                 return;
-            } else {
-                axios.patch(`${jsonURL}/660/reverse/${data.id}`, {
-                    "dogName": stayDogName.value,
-                    "room": stayRoom.value,
-                    "startDate": stayStartDate.value,
-                    "endDate": stayEndDate.value,
-                    "time": stayTime.value,
-                    "contact": stayContact.value,
-                    "phone": stayPhone.value,
-                    "remark": stayRemark.value,
-                }, {
-                    headers: {
-                        authorization: `Bearer ${localStorage.getItem('userToken')}`
-                    }
-                })
-                    .then(res => {
-                        successHint('成功更新預約內容！', '', 3000);
-                        initReverseRecord();
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
             };
+
+            let stayTotalVaue = parseInt(stayTotal.value);
+            const startDate = new Date(stayStartDate.value);
+            const endDate = new Date(stayEndDate.value);
+            const dateDiff = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+            if (stayRoom.value === '小狗香香房') {
+                stayTotalVaue = 1000 * dateDiff;
+            } else if (stayRoom.value === '忠犬呼嚕房') {
+                stayTotalVaue = 1350 * dateDiff;
+            } else if (stayRoom.value === '大狗好眠房') {
+                stayTotalVaue = 1600 * dateDiff;
+            };
+
+            axios.patch(`${jsonURL}/660/reverse/${data.id}`, {
+                "dogName": stayDogName.value,
+                "room": stayRoom.value,
+                "startDate": stayStartDate.value,
+                "endDate": stayEndDate.value,
+                "time": stayTime.value,
+                "contact": stayContact.value,
+                "phone": stayPhone.value,
+                "remark": stayRemark.value,
+                "total": stayTotalVaue
+            }, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('userToken')}`
+                }
+            })
+                .then(res => {
+                    successHint('成功更新預約內容！', '', 3000);
+                    initReverseRecord();
+                    $('#stayModal').modal('hide');
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         })
         .catch(err => {
             console.log(err);
@@ -578,24 +612,26 @@ function renewStay(e) {
 // 服務預約資料達6筆，增加scrollbar且固定高度
 const tableWrapper = document.querySelectorAll('.table-responsive');
 
-window.addEventListener('scroll', () => {
+document.querySelectorAll('.nav-link').forEach(item => {
+    item.addEventListener('click', scrollEvent);
+});
+
+function scrollEvent() {
     tableWrapper.forEach(item => {
-        // scrollHeight取得容器高度，回傳一個整數(px)
         if (item.scrollHeight > 385) {
             item.style.maxHeight = '385px';
             item.classList.add('overflow-y-scroll');
         } else {
             item.style.maxHeight = 'none';
             item.classList.remove('overflow-y-scroll');
-        };
+        }
     });
-});
+};
 
 // 在各個tab中選取月份，render對應月份的預約資訊
 let currentTab = 'dayCare-tab';
 const monthSelect = document.querySelector('.js-monthSelect');
 let filterData;
-let filterStayData;
 
 document.querySelectorAll('.nav-link').forEach(item => {
     item.addEventListener('click', () => {
@@ -618,7 +654,6 @@ monthSelect.addEventListener('change', (e) => {
 // 對應的tab + 月份select渲染資料
 function renderMonthReverse(month) {
     filterData = [];
-    filterStayData = [];
     axios.get(`${jsonURL}/660/reverse?userId=${id}`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem('userToken')}`
@@ -627,23 +662,18 @@ function renderMonthReverse(month) {
         .then(res => {
             let data = res.data;
             if (currentTab === 'dayCare-tab') {
-                filterData = data.filter(item => item.service === '狗狗安親');
+                filterData = data.filter(item => item.service === '安親');
             };
             if (currentTab === 'cosmetic-tab') {
-                filterData = data.filter(item => item.service === '狗狗美容');
+                filterData = data.filter(item => item.service === '美容');
             };
             if (currentTab === 'stay-tab') {
-                filterStayData = data.filter(item => item.service === '狗狗住宿');
+                filterData = data.filter(item => item.service === '住宿');
             };
             const matchingData = filterData.filter(item => {
                 let itemMonth = parseInt(item.date.split('-')[1]);
                 return itemMonth === parseInt(month);
             });
-            const matchingStayData = filterStayData.filter(item => {
-                let itemMonth = parseInt(item.startDate.split('-')[1]);
-                return itemMonth === parseInt(month);
-            });
-
             function renderNoDataMessage(record, service) {
                 let str =
                     `
@@ -658,16 +688,11 @@ function renderMonthReverse(month) {
                     renderNoDataMessage(dayCareRecord, '安親');
                 } else if (currentTab === 'cosmetic-tab') {
                     renderNoDataMessage(cosmeticRecord, '美容');
-                }
-            } else {
-                renderRecord(matchingData);
-            };
-            if (matchingStayData.length === 0) {
-                if (currentTab === 'stay-tab') {
+                } else if (currentTab === 'stay-tab') {
                     renderNoDataMessage(stayRecord, '住宿');
                 };
             } else {
-                renderRecord(matchingStayData);
+                renderRecord(matchingData);
             };
         })
         .catch(err => {

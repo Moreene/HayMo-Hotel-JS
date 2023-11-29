@@ -1,13 +1,23 @@
-.sidebar-toggled {
-    .main {
-        width: 100%;
-        margin-left: 0px;
-        transition: margin-left .2s;
-    }
-}
-
-.sidebar{
+.sidebar {
     width: 280px;
+
+    &-toggled {
+        .main {
+            width: 100%;
+            margin-left: 0px;
+            transition: margin-left .2s;
+        }
+    }
+
+    &-link {
+        color: $white;
+
+        &:hover,
+        &:active,
+        &.active {
+            color: $secondary;
+        }
+    }
 }
 
 .main {
@@ -17,15 +27,5 @@
 
     @include pc {
         width: calc(100% - 280px);
-    }
-}
-
-.sidebar-link {
-    color: $white;
-
-    &:hover,
-    &:active,
-    &.active {
-        color: $secondary;
     }
 }

@@ -1,11 +1,6 @@
 .cms {
     &-login {
-        padding: 122px 0 80px 0;
         background-image: linear-gradient(to bottom, $primary-l, $secondary-l);
-
-        input {
-            @extend %input-style;
-        }
     }
 
     &-icon {

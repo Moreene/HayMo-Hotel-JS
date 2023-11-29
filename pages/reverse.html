@@ -14,7 +14,7 @@
 <body class="bg-secondary-l">
     <%- include('./layout/memberCenter-header', { currentPage: 'reserve' }); -%>
 
-        <div class="bg-two-paws">
+        <div class="bg-two-paws bg-repeat-no">
             <div class="container">
                 <main class="reverse row justify-content-center py-160">
                     <div class="col-lg-10 col-xl-8">
@@ -27,17 +27,17 @@
                             <ul class="nav justify-content-between py-48 px-md-35" id="pills-tab" role="tablist">
                                 <li class="nav-item w-30 w-xl-25">
                                     <button
-                                        class="option-link w-100 p-16 py-md-24 border border-primary rounded-pill active"
+                                        class="reverse-option-link w-100 p-16 py-md-24 border border-primary rounded-pill active"
                                         id="dayCare-tab" data-bs-toggle="pill" data-bs-target="#dayCare" type="button"
                                         role="tab" aria-controls="dayCare" aria-selected="true">狗狗安親</button>
                                 </li>
                                 <li class="nav-item w-30 w-xl-25">
-                                    <button class="option-link w-100 p-16 py-md-24 border border-primary rounded-pill"
+                                    <button class="reverse-option-link w-100 p-16 py-md-24 border border-primary rounded-pill"
                                         id="cosmetic-tab" data-bs-toggle="pill" data-bs-target="#cosmetic" type="button"
                                         role="tab" aria-controls="cosmetic" aria-selected="false">狗狗美容</button>
                                 </li>
                                 <li class="nav-item w-30 w-xl-25">
-                                    <button class="option-link w-100 p-16 py-md-24 border border-primary rounded-pill"
+                                    <button class="reverse-option-link w-100 p-16 py-md-24 border border-primary rounded-pill"
                                         id="stay-tab" data-bs-toggle="pill" data-bs-target="#stay" type="button"
                                         role="tab" aria-controls="stay" aria-selected="false">狗狗住宿</button>
                                 </li>
@@ -47,7 +47,7 @@
                             <!-- 安親 -->
                             <div class="tab-pane show active" id="dayCare" role="tabpanel"
                                 aria-labelledby="dayCare-tab">
-                                <form class="form-inline pb-48 px-8 px-md-48 bg-white rounded-1 dayCareForm needs-validation"
+                                <form class="form-inline pb-48 px-8 px-md-48 bg-white rounded-1  js-reverseForm needs-validation dayCareForm"
                                     novalidate>
                                     <h3 class="title-line position-relative mb-16"><span
                                             class="fs-1 fw-bold me-8">2</span>選擇方案</h3>
@@ -71,7 +71,7 @@
                             </div>
                             <!-- 美容 -->
                             <div class="tab-pane" id="cosmetic" role="tabpanel" aria-labelledby="cosmetic-tab">
-                                <form class="form-inline pb-48 px-8 px-md-48 bg-white rounded-1 cosmeticForm needs-validation"
+                                <form class="form-inline pb-48 px-8 px-md-48 bg-white rounded-1  js-reverseForm needs-validation cosmeticForm"
                                     novalidate>
                                     <h3 class="title-line position-relative mb-16"><span
                                             class="fs-1 fw-bold me-8">2</span>選擇體型</h3>
@@ -80,21 +80,21 @@
                                             <input class="form-check-input d-none" type="radio" name="size" id="small"
                                                 value="小於10kg" required>
                                             <label
-                                                class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
+                                                class="form-check-label reverse-option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
                                                 for="small"> &lt;10kg</label>
                                         </li>
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="size" id="medium"
                                                 value="10-20kg" required>
                                             <label
-                                                class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
+                                                class="form-check-label reverse-option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
                                                 for="medium">10-20kg</label>
                                         </li>
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="size" id="large"
                                                 value="大於20kg" required>
                                             <label
-                                                class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
+                                                class="form-check-label reverse-option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
                                                 for="large">&gt;20kg</label>
                                         </li>
                                     </ul>
@@ -105,21 +105,21 @@
                                             <input class="form-check-input d-none" type="radio" name="level" id="basic"
                                                 value="基礎洗香香" required>
                                             <label
-                                                class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
+                                                class="form-check-label reverse-option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
                                                 for="basic">基礎<span class="d-block d-md-inline">洗香香</span></label>
                                         </li>
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="level" id="middle"
                                                 value="進階洗香香" required>
                                             <label
-                                                class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
+                                                class="form-check-label reverse-option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
                                                 for="middle">進階<span class="d-block d-md-inline">洗香香</span></label>
                                         </li>
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="level"
                                                 id="advanced" value="高級洗香香" required>
                                             <label
-                                                class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
+                                                class="form-check-label reverse-option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
                                                 for="advanced">高級<span class="d-block d-md-inline">洗香香</span></label>
                                         </li>
                                     </ul>
@@ -133,7 +133,7 @@
                             </div>
                             <!-- 住宿 -->
                             <div class="tab-pane" id="stay" role="tabpanel" aria-labelledby="stay-tab">
-                                <form class="form-inline pb-48 px-16 px-md-48 bg-white rounded-1 stayForm needs-validation"
+                                <form class="form-inline pb-48 px-16 px-md-48 bg-white rounded-1  js-reverseForm needs-validation stayForm"
                                     novalidate>
                                     <h3 class="title-line position-relative mb-16"><span
                                             class="fs-1 fw-bold me-8">2</span>選擇房型</h3>
@@ -142,21 +142,21 @@
                                             <input class="form-check-input d-none" type="radio" name="room"
                                                 id="smallDog" value="小狗香香房" required>
                                             <label
-                                                class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
+                                                class="form-check-label reverse-option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
                                                 for="smallDog">小狗<span class="d-block d-md-inline">香香房</span></label>
                                         </li>
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="room"
                                                 id="mediumDog" value="忠犬呼嚕房" required>
                                             <label
-                                                class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
+                                                class="form-check-label reverse-option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
                                                 for="mediumDog">忠犬<span class="d-block d-md-inline">呼嚕房</span></label>
                                         </li>
                                         <li class="form-check form-check-inline w-30 w-xl-25 p-0 m-0">
                                             <input class="form-check-input d-none" type="radio" name="room"
                                                 id="largeDog" value="大狗好眠房" required>
                                             <label
-                                                class="form-check-label option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
+                                                class="form-check-label reverse-option-link text-center border border-primary rounded-pill p-16 py-md-24 w-100"
                                                 for="largeDog">大狗<span class="d-block d-md-inline">好眠房</span></label>
                                         </li>
                                     </ul>

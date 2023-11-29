@@ -174,7 +174,7 @@ function displayImg(base64Data) {
         headImgView.removeChild(headImgView.firstChild);
     };
     const img = document.createElement('img');
-    img.className = 'member-img rounded-circle img-fluid';
+    img.className = 'w-120px h-120px w-lg-150px h-lg-150px rounded-circle img-fluid';
     img.alt = '會員照片';
     img.src = base64Data;
     headImgView.appendChild(img);
@@ -184,7 +184,7 @@ function displayImg(base64Data) {
         headImg.removeChild(headImg.firstChild);
     };
     const imgBig = document.createElement('img');
-    imgBig.className = 'member-img rounded-circle img-fluid';
+    imgBig.className = 'w-120px h-120px w-lg-150px h-lg-150px rounded-circle img-fluid';
     imgBig.alt = '會員首頁照片';
     imgBig.src = base64Data;
     headImg.appendChild(imgBig);
@@ -293,7 +293,7 @@ function dogSlideTemplate(data) {
             <ul class="row flex-column align-items-center flex-xl-row gy-24 gy-xl-0 my-auto w-100">
                 <li class="col-md-6 col-xl-5">
                     <div class="text-center">
-                        <div class="member-img mx-auto bg-size-cover bg-repeat-no default-photo js-dogImg${data.id}"></div>
+                        <div class="w-120px h-120px w-lg-150px h-lg-150px mx-auto bg-size-cover bg-repeat-no default-photo js-dogImg${data.id}"></div>
                     </div>
                 </li>
                 <li class="col-auto">
@@ -326,11 +326,11 @@ function dogModalTemplate(data) {
                             <div>
                                 <div class="overflow-hidden">
                                     <input type="file" id="dogImg_uploads${data.id}"
-                                        class="position-absolute img-cursor rounded-circle member-img opacity-0 js-uploadImg"
+                                        class="position-absolute img-cursor rounded-circle w-120px h-120px w-lg-150px h-lg-150px opacity-0 js-uploadImg"
                                         name="image_uploads" accept=".jpg, .jpeg, .png" data-id="${data.id}">
                                 </div>
                                 <div
-                                    class="member-img d-flex justify-content-center align-items-center bg-black-40 rounded-circle mb-8 js-dogImgView${data.id}">
+                                    class="w-120px h-120px w-lg-150px h-lg-150px d-flex justify-content-center align-items-center bg-black-40 rounded-circle mb-8 js-dogImgView${data.id}">
                                     <p class="mb-0">請選擇照片</p>
                                 </div>
                                 <div class="text-center mb-32">
@@ -514,8 +514,8 @@ function renderDogSlide(slide, newData) {
                 class="row flex-column align-items-center flex-xl-row gy-24 gy-xl-0 my-auto w-100">
                 <li class="col-md-6 col-xl-5">
                     <div class="text-center">
-                        <div class="member-img mx-auto bg-size-cover bg-repeat-no default-photo js-dogImg${newData.id}">
-                            <img class="member-img rounded-circle img-fluid" src="${url || "../assets/images/member-img.png"}" alt="毛孩首頁照片">
+                        <div class="w-120px h-120px w-lg-150px h-lg-150px mx-auto bg-size-cover bg-repeat-no default-photo js-dogImg${newData.id}">
+                            <img class="w-120px h-120px w-lg-150px h-lg-150px rounded-circle img-fluid" src="${url || "../assets/images/member-img.png"}" alt="毛孩首頁照片">
                         </div>
                     </div>
                 </li>
@@ -618,7 +618,7 @@ function displayDogImg(base64Data, id) {
             dogImgView.removeChild(dogImgView.firstChild);
         }
         const img = document.createElement('img');
-        img.className = 'member-img rounded-circle img-fluid';
+        img.className = 'w-120px h-120px w-lg-150px h-lg-150px rounded-circle img-fluid';
         img.alt = '毛孩照片';
         img.src = base64Data;
         dogImgView.appendChild(img);
@@ -627,7 +627,7 @@ function displayDogImg(base64Data, id) {
             dogImg.removeChild(dogImg.firstChild);
         }
         const imgBig = document.createElement('img');
-        imgBig.className = 'member-img rounded-circle img-fluid';
+        imgBig.className = 'w-120px h-120px w-lg-150px h-lg-150px rounded-circle img-fluid';
         imgBig.alt = '毛孩首頁照片';
         imgBig.src = base64Data;
         dogImg.appendChild(imgBig);
@@ -647,8 +647,8 @@ function renderDogsDataP(data) {
                 class="row flex-column align-items-center flex-xl-row gy-24 gy-xl-0 my-auto w-100">
                 <li class="col-md-6 col-xl-5">
                     <div class="text-center">
-                        <div class="member-img mx-auto bg-size-cover bg-repeat-no default-photo js-dogImg${item.id}">
-                            <img class="member-img rounded-circle img-fluid" src="${url || "../assets/images/member-img.png"}" alt="毛孩首頁照片">
+                        <div class="w-120px h-120px w-lg-150px h-lg-150px mx-auto bg-size-cover bg-repeat-no default-photo js-dogImg${item.id}">
+                            <img class="w-120px h-120px w-lg-150px h-lg-150px rounded-circle img-fluid" src="${url || "../assets/images/member-img.png"}" alt="毛孩首頁照片">
                         </div>
                     </div>
                 </li>
@@ -691,12 +691,12 @@ function renderDogsModalP(data) {
                                 <div>
                                     <div class="overflow-hidden">
                                         <input type="file" id="dogImg_uploads${item.id}"
-                                            class="position-absolute img-cursor rounded-circle member-img opacity-0 js-uploadImg"
+                                            class="position-absolute img-cursor rounded-circle w-120px h-120px w-lg-150px h-lg-150px opacity-0 js-uploadImg"
                                             name="image_uploads" accept=".jpg, .jpeg, .png" data-id="${item.id}">
                                     </div>
                                     <div
-                                        class="member-img d-flex justify-content-center align-items-center bg-black-40 rounded-circle mb-8 js-dogImgView${item.id}">
-                                        <img class="member-img rounded-circle img-fluid" src="${url || "../assets/images/choose-img.png"}" alt="毛孩照片">
+                                        class="w-120px h-120px w-lg-150px h-lg-150px d-flex justify-content-center align-items-center bg-black-40 rounded-circle mb-8 js-dogImgView${item.id}">
+                                        <img class="w-120px h-120px w-lg-150px h-lg-150px rounded-circle img-fluid" src="${url || "../assets/images/choose-img.png"}" alt="毛孩照片">
                                     </div>
                                     <div class="text-center mb-32">
                                         <a href="#" class="link-danger js-clearDogImg" data-id="${item.id}">移除照片</a>

@@ -23,7 +23,7 @@ footer::after {
   }
 }
 
-.footer-icon {
+.footer-link{
   color: $white;
 
   &:hover {
@@ -31,24 +31,8 @@ footer::after {
   }
 }
 
-.contact-info {
-  color: $white;
-  display: block;
-
-  @include mobile {
-    display: inline-block;
-    margin-left: 24px;
-  }
-
-  &.link:hover {
-    color: $secondary;
-  }
-}
-
 .cms-link {
   color: $white;
-  margin-right: 26px;
-  position: relative;
 
   &::after {
     content: "";
@@ -64,20 +48,5 @@ footer::after {
     &::after {
       background-color: $white;
     }
-  }
-
-  @include pc {
-    margin-right: 72px;
-  }
-}
-
-.footer-logo {
-  width: 160px;
-  height: 160px;
-  margin-bottom: 40px;
-
-  @include pc-lg {
-    width: 180px;
-    height: 180px;
   }
 }

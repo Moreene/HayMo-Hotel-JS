@@ -1,9 +1,4 @@
 .service {
-    padding: 0px 0 188px 0;
-
-    @include pad {
-        padding: 42px 0 160px 0;
-    }
 
     &-banner {
         @include banner("https://images.unsplash.com/photo-1516293315-cfe8602f0750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80", 50%, 50%);
@@ -19,7 +14,6 @@
         }
 
         .nav-link {
-
             &:hover,
             &:active,
             &.active {
@@ -60,10 +54,6 @@
     list-style: decimal;
 }
 
-.h-400 {
-    height: 400px;
-}
-
 .feed-img {
     background-image: url('https://images.unsplash.com/photo-1597843786271-1027c561c6ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
 }
@@ -78,29 +68,11 @@
     background-position: 60% 65%;
 }
 
-.stay-img {
-    height: 320px;
-
-    @include pc {
-        height: 400px;
-    }
-}
-
 .pool-img {
-    height: 320px;
     background-image: url('https://images.unsplash.com/photo-1498747946579-bde604cb8f44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80');
-
-    @include pc {
-        height: 400px;
-    }
 }
 
 .grass-img {
-    height: 320px;
     background-image: url('https://images.unsplash.com/photo-1597595735637-05a49627ee29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80');
     background-position: 20% 50%;
-
-    @include pc {
-        height: 400px;
-    }
 }

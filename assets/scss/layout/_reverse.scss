@@ -1,26 +1,19 @@
 .reverse {
-
-    input,
-    textarea,
-    .form-select {
-        @extend %input-style;
+    &-option-link {
+        color: $primary;
+        background-color: $white;
+        cursor: pointer;
+    
+        &:hover,
+        &:active,
+        &.active {
+            color: $white;
+            background-color: $primary;
+        }
     }
 
     &-btn:first-child:active {
         color: $primary;
-    }
-}
-
-.option-link {
-    color: $primary;
-    background-color: $white;
-    cursor: pointer;
-
-    &:hover,
-    &:active,
-    &.active {
-        color: $white;
-        background-color: $primary;
     }
 }
 
@@ -39,7 +32,6 @@
     @include pc-lg {
         background-image: url("../images/big-paw-right.png"), url("../images/big-paw-left.png");
         background-position: 90% 11%, 7% 75%;
-        background-repeat: no-repeat;
     }
 }
 
@@ -63,7 +55,7 @@
     }
 }
 
-.reverse .form-check-input:checked~.option-link {
+.reverse .form-check-input:checked~.reverse-option-link {
     color: $white;
     background-color: $primary;
 }

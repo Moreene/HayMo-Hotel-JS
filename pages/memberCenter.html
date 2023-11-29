@@ -33,7 +33,7 @@
                                         <li class="col-md-6 col-xl-5">
                                             <div class="d-flex">
                                                 <div
-                                                    class="member-img mx-auto bg-size-cover bg-repeat-no default-photo js-headImg">
+                                                    class="w-120px h-120px w-lg-150px h-lg-150px mx-auto bg-size-cover bg-repeat-no default-photo js-headImg">
                                                 </div>
                                             </div>
                                         </li>
@@ -77,11 +77,11 @@
                                                 <div>
                                                     <div class="overflow-hidden">
                                                         <input type="file" id="img_uploads"
-                                                            class="position-absolute img-cursor rounded-circle member-img opacity-0"
+                                                            class="position-absolute img-cursor rounded-circle w-120px h-120px w-lg-150px h-lg-150px opacity-0"
                                                             name="image_uploads" accept=".jpg, .jpeg, .png">
                                                     </div>
                                                     <div
-                                                        class="member-img d-flex justify-content-center align-items-center bg-black-40 rounded-circle mb-8 js-headImgView">
+                                                        class="w-120px h-120px w-lg-150px h-lg-150px d-flex justify-content-center align-items-center bg-black-40 rounded-circle mb-8 js-headImgView">
                                                         <p class="mb-0">請選擇照片</p>
                                                     </div>
                                                     <div class="text-center mb-32">
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="text-center mb-32">
-                                            <img src="../assets/images/Logo.png" alt="logo" class="logo-img">
+                                            <img src="../assets/images/Logo.png" alt="logo" class="w-150px h-150px">
                                         </div>
                                         <form class="needs-validation addDogForm" novalidate>
                                             <div class="d-flex flex-column align-items-center">
@@ -243,7 +243,7 @@
                                     <div class="table-responsive">
                                         <table class="table text-nowrap mb-0">
                                             <thead class="text-center">
-                                                <tr>
+                                                <tr class="position-sticky top-0">
                                                     <th scope="col">訂單編號</th>
                                                     <th scope="col">毛孩姓名</th>
                                                     <th scope="col">安親日期</th>
@@ -264,7 +264,7 @@
                                     <div class="table-responsive">
                                         <table class="table text-nowrap mb-0">
                                             <thead class="text-center">
-                                                <tr>
+                                                <tr class="position-sticky top-0">
                                                     <th scope="col">訂單編號</th>
                                                     <th scope="col">毛孩姓名</th>
                                                     <th scope="col">美容日期</th>
@@ -286,7 +286,7 @@
                                     <div class="table-responsive">
                                         <table class="table text-nowrap mb-0">
                                             <thead class="text-center">
-                                                <tr>
+                                                <tr class="position-sticky top-0">
                                                     <th scope="col">訂單編號</th>
                                                     <th scope="col">毛孩姓名</th>
                                                     <th scope="col">房型選擇</th>
@@ -395,7 +395,7 @@
                                                             </div>
                                                         </label>
                                                     </div>
-                                                    <div class="row mb-0">
+                                                    <div class="row mb-16">
                                                         <label class="col-form-label"><span class="me-16">緊急手機</span>
                                                             <input type="text" name="contactPhone"
                                                                 class="form-control d-inline js-dayCarePhone" required>
@@ -403,6 +403,13 @@
                                                                 <i class="bi bi-exclamation-circle me-4"></i>
                                                                 請輸入緊急聯絡人手機號碼
                                                             </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="row mb-0">
+                                                        <label class="col-form-label"><span class="me-16">預計金額</span>
+                                                            <input type="text" name="total"
+                                                                class="form-control d-inline js-dayCareTotal" value=""
+                                                                disabled>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -478,7 +485,7 @@
                                                         </div>
                                                     </label>
                                                 </div>
-                                                <div class="row align-items-center">
+                                                <div class="row align-items-center mb-0">
                                                     <div class="col-auto">
                                                         <div class="py-24">樂園服務</div>
                                                     </div>
@@ -500,6 +507,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
+                                                <div class="row mb-0">
+                                                    <label class="col-form-label">
+                                                        <div class="d-flex flex-column">
+                                                            <div class="d-inline me-20">其他備註</div>
+                                                            <textarea name="remark"
+                                                                class="form-control js-cosmeticRemark"
+                                                                style="height: 158px;"></textarea>
+                                                        </div>
+                                                    </label>
                                                 </div>
                                             </div>
                                             <div class="d-flex flex-column justify-content-between">
@@ -525,13 +542,10 @@
                                                         </label>
                                                     </div>
                                                     <div class="row mb-0">
-                                                        <label class="col-form-label">
-                                                            <div class="d-flex flex-column">
-                                                                <div class="d-inline me-20">其他備註</div>
-                                                                <textarea name="remark"
-                                                                    class="form-control js-cosmeticRemark"
-                                                                    style="height: 158px;"></textarea>
-                                                            </div>
+                                                        <label class="col-form-label"><span class="me-16">預計金額</span>
+                                                            <input type="text" name="total"
+                                                                class="form-control d-inline js-cosmeticTotal" value=""
+                                                                disabled>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -607,6 +621,16 @@
                                                         </div>
                                                     </label>
                                                 </div>
+                                                <div class="row mb-0">
+                                                    <label class="col-form-label">
+                                                        <div class="d-flex flex-column">
+                                                            <div class="d-inline me-20">其他備註</div>
+                                                            <textarea name="remark"
+                                                                class="form-control js-stayRemark"
+                                                                style="height: 158px;"></textarea>
+                                                        </div>
+                                                    </label>
+                                                </div>
                                             </div>
                                             <div class="d-flex flex-column justify-content-between">
                                                 <div class="mb-30 mb-lg-0">
@@ -630,13 +654,9 @@
                                                         </label>
                                                     </div>
                                                     <div class="row mb-0">
-                                                        <label class="col-form-label">
-                                                            <div class="d-flex flex-column">
-                                                                <div class="d-inline me-20">其他備註</div>
-                                                                <textarea name="remark"
-                                                                    class="form-control js-stayRemark"
-                                                                    style="height: 158px;"></textarea>
-                                                            </div>
+                                                        <label class="col-form-label"><span class="me-16">預計金額</span>
+                                                            <input type="text" name="total"
+                                                                class="form-control d-inline js-stayTotal" value="" disabled>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -691,7 +711,7 @@
                                     <div class="table-responsive">
                                         <table class="table text-nowrap mb-0">
                                             <thead class="text-center position-sticky top-0">
-                                                <tr>
+                                                <tr class="position-sticky top-0">
                                                     <th scope="col">訂單編號</th>
                                                     <th scope="col">毛孩姓名</th>
                                                     <th scope="col">安親日期</th>
@@ -713,7 +733,7 @@
                                     <div class="table-responsive">
                                         <table class="table text-nowrap mb-0">
                                             <thead class="text-center position-sticky top-0">
-                                                <tr>
+                                                <tr class="position-sticky top-0">
                                                     <th scope="col">訂單編號</th>
                                                     <th scope="col">毛孩姓名</th>
                                                     <th scope="col">美容日期</th>
@@ -736,7 +756,7 @@
                                     <div class="table-responsive">
                                         <table class="table text-nowrap mb-0">
                                             <thead class="text-center position-sticky top-0">
-                                                <tr>
+                                                <tr class="position-sticky top-0">
                                                     <th scope="col">訂單編號</th>
                                                     <th scope="col">毛孩姓名</th>
                                                     <th scope="col">房型選擇</th>

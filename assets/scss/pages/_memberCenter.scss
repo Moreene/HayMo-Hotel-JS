@@ -4,28 +4,7 @@
             background-image: url("../images/paw-right.png");
             background-position: 95% 25%;
         }
-
-        input,
-        select,
-        textarea {
-            @extend %input-style;
-        }
     }
-
-    &-img {
-        width: 120px;
-        height: 120px;
-
-        @include pc {
-            width: 150px;
-            height: 150px;
-        }
-    }
-}
-
-.logo-img {
-    width: 150px;
-    height: 150px;
 }
 
 .img-cursor {

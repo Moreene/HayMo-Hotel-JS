@@ -65,6 +65,7 @@ $(function () {
                     data.startDate = dateText;
                 };
                 console.log(data);
+                calcStayNight(data);
             }
         });
         $('.endDate').datepicker({
@@ -93,6 +94,7 @@ $(function () {
                     data.endDate = dateText;
                 }
                 console.log(data);
+                calcStayNight(data);
             }
         });
     });
@@ -120,6 +122,7 @@ $('.startDate').on('change', function (e) {
             data.startDate = changeStartDate;
         }
         console.log(data);
+        calcStayNight(data);
     }
 });
 $('.endDate').on('change', function (e) {
@@ -143,6 +146,7 @@ $('.endDate').on('change', function (e) {
             data.endDate = changeEndDate;
         };
         console.log(data);
+        calcStayNight(data);
     };
 });
 
@@ -180,20 +184,62 @@ $(document).ready(function () {
 
 const id = location.href.split('=')[1];
 // 預設service為'狗狗安親' ，因為線上預約預設頁面為'狗狗安親' 
-const data = { service: '狗狗安親' };
+let data = { service: '安親', total: 900, isParadiseYes: false, remark: '' };
 
-// 選擇服務
 const serviceOption = document.querySelector('.js-service');
+const reverseform = document.querySelectorAll(".js-reverseForm");
+const nameSelect = document.querySelectorAll('.js-nameSelect');
+const paradise = document.querySelectorAll('.js-paradise');
+const emergencyContact = document.querySelectorAll('#emergencyContact');
+const emergencyPhone = document.querySelectorAll('#emergencyPhone');
+const contactIuput = document.querySelectorAll('.js-contact');
+const contactPhone = document.querySelectorAll('.js-phone');
+const remark = document.querySelectorAll('#remark');
+const size = document.querySelector('.js-size');
+const plan = document.querySelector('.js-plan');
+let sizePrice = 0;
+let planPrice = 0;
+const room = document.querySelector('.js-room');
 
+// 選擇服務 + 樂園服務確認
 serviceOption.addEventListener('click', function (e) {
+    data.isParadiseYes = false;
+
     if (e.target.textContent === '狗狗安親') {
-        data.service = '狗狗安親';
+        reverseform.forEach(item => item.reset());
+        data = { service: '安親', total: 900, isYesClicked: false, remark: '' };
+        sizePrice = 0;
+        planPrice = 0;
     } else if (e.target.textContent === '狗狗美容') {
-        data.service = '狗狗美容';
+        reverseform.forEach(item => item.reset());
+        data = { service: '美容', total: 0, isYesClicked: false, remark: '' };
+        sizePrice = 0;
+        planPrice = 0;
     } else if (e.target.textContent === '狗狗住宿') {
-        data.service = '狗狗住宿';
+        reverseform.forEach(item => item.reset());
+        data = { service: '住宿', total: 0, isYesClicked: false, remark: '' };
+        sizePrice = 0;
+        planPrice = 0;
     };
     console.log(data);
+});
+
+paradise.forEach(item => {
+    item.addEventListener('click', function (e) {
+        if (e.target.classList.contains('form-check-input')) {
+            data.paradise = e.target.value;
+            if (e.target.value === '是' && !data.isParadiseYes) {
+                data.total += 200;
+                data.isParadiseYes = true;
+            } else if (e.target.value === '否' && data.isYesClicked) {
+                // if (data.isParadiseYes) {
+                    data.total -= 200;
+                    data.isParadiseYes = false;
+                // };
+            };
+            console.log(data);
+        };
+    });
 });
 
 // 毛孩姓名
@@ -216,7 +262,6 @@ function getDogName() {
 };
 getDogName();
 
-const nameSelect = document.querySelectorAll('.js-nameSelect');
 function renderDogName(data) {
     let option = '';
     data.forEach(item => {
@@ -235,21 +280,7 @@ nameSelect.forEach(function (nameSelect) {
     });
 });
 
-// 樂園服務
-const paradise = document.querySelectorAll('.js-paradise');
-paradise.forEach(paradise => {
-    paradise.addEventListener('click', function (e) {
-        if (e.target.classList.contains('form-check-input')) {
-            data.paradise = e.target.value;
-            console.log(data);
-        };
-    });
-});
-
 // 渲染 - HTML緊急聯絡人/電話
-const emergencyContact = document.querySelectorAll('#emergencyContact');
-const emergencyPhone = document.querySelectorAll('#emergencyPhone');
-
 function getUserInfo() {
     axios.get(`${jsonURL}/660/users/${id}`, {
         headers: {
@@ -286,10 +317,6 @@ function renderPhone(data) {
 };
 
 // 選取 - 緊急聯絡人/電話/備註  
-const contactIuput = document.querySelectorAll('.js-contact');
-const contactPhone = document.querySelectorAll('.js-phone');
-const remark = document.querySelectorAll('#remark');
-
 contactIuput.forEach(contactIuput => {
     contactIuput.addEventListener('input', function (e) {
         if (e.target.value !== '') {
@@ -311,42 +338,44 @@ remark.forEach(remark => {
         data.remark = e.target.value.trim();
         console.log(data);
     });
-    // 目的：即使用戶未輸入相關備註，data.remark的值可以保留為空字串
-    // 這行code會創建一個新的input事件，並將其分派（dispatch）给指定的<textarea>元素，用於觸發事件，確保 data.remark 始终包含一個值，即使文本框為空也是空字串 ''
-    remark.dispatchEvent(new Event('input'));
 });
 
 // 狗狗美容
-const size = document.querySelector('.js-size');
 size.addEventListener('click', function (e) {
     if (e.target.value === undefined) {
         return;
     } else if (e.target.value === '小於10kg') {
         data.dogSize = '小於10kg';
+        sizePrice = 200;
     } else if (e.target.value === '10-20kg') {
         data.dogSize = '10-20kg';
+        sizePrice = 300;
     } else if (e.target.value === '大於20kg') {
         data.dogSize = '大於20kg';
+        sizePrice = 450;
     };
+    data.total = sizePrice + planPrice + (data.paradise === '是' ? 200 : 0);
     console.log(data);
 });
 
-const plan = document.querySelector('.js-plan');
 plan.addEventListener('click', function (e) {
     if (e.target.value === undefined) {
         return;
     } else if (e.target.value === '基礎洗香香') {
         data.plan = '基礎洗香香';
+        planPrice = 550;
     } else if (e.target.value === '進階洗香香') {
         data.plan = '進階洗香香';
+        planPrice = 800;
     } else if (e.target.value === '高級洗香香') {
         data.plan = '高級洗香香';
+        planPrice = 1000;
     };
+    data.total = sizePrice + planPrice + (data.paradise === '是' ? 200 : 0);
     console.log(data);
 });
 
 // 狗狗住宿
-const room = document.querySelector('.js-room');
 room.addEventListener('click', function (e) {
     if (e.target.value === undefined) {
         return;
@@ -358,10 +387,26 @@ room.addEventListener('click', function (e) {
         data.room = '大狗好眠房';
     };
     console.log(data);
+    calcStayNight(data);
 });
 
-// 如表單無任何問題，post data
-const reverseform = document.querySelectorAll("form");
+// 計算 - 住宿天數*房價
+function calcStayNight(data) {
+    if (!data.room || !data.startDate || !data.endDate) {
+        return;
+    };
+    const startDate = new Date(data.startDate);
+    const endDate = new Date(data.endDate);
+    const dateDiff = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+    if (data.room === '小狗香香房') {
+        data.total = 1000 * dateDiff;
+    } else if (data.room === '忠犬呼嚕房') {
+        data.total = 1350 * dateDiff;
+    } else if (data.room === '大狗好眠房') {
+        data.total = 1600 * dateDiff;
+    };
+    console.log(data);
+};
 
 // 判斷sibmit事件是否綁定
 let isSubmitBound = false;
@@ -388,10 +433,11 @@ function submitData(e) {
             form.querySelector('.js-phone').value = '';
         } else {
             let postData = {};
-            if (data.service === '狗狗安親') {
+            if (data.service === '安親') {
                 const orderNum = createOrderNum();
                 postData = {
                     "userId": id,
+                    "orderNum": orderNum,
                     "dogName": data.dogName,
                     "service": data.service,
                     "date": data.date,
@@ -400,12 +446,14 @@ function submitData(e) {
                     "contact": data.contact,
                     "phone": data.phone,
                     "remark": data.remark,
-                    "orderNum": orderNum
+                    "total": data.total,
+                    "isChecked": false
                 };
-            } else if (data.service === '狗狗美容') {
+            } else if (data.service === '美容') {
                 const orderNum = createOrderNum();
                 postData = {
                     "userId": id,
+                    "orderNum": orderNum,
                     "dogName": data.dogName,
                     "service": data.service,
                     "size": data.dogSize,
@@ -416,22 +464,27 @@ function submitData(e) {
                     "contact": data.contact,
                     "phone": data.phone,
                     "remark": data.remark,
-                    "orderNum": orderNum
+                    "total": data.total,
+                    "isChecked": false
                 };
-            } else if (data.service === '狗狗住宿') {
+            } else if (data.service === '住宿') {
                 const orderNum = createOrderNum();
                 postData = {
                     "userId": id,
+                    "orderNum": orderNum,
                     "dogName": data.dogName,
                     "service": data.service,
                     "room": data.room,
+                    "date": data.startDate,
                     "startDate": data.startDate,
                     "endDate": data.endDate,
                     "time": data.time,
+                    "paradise": '已包含',
                     "contact": data.contact,
                     "phone": data.phone,
                     "remark": data.remark,
-                    "orderNum": orderNum
+                    "total": data.total,
+                    "isChecked": false
                 };
             };
             axios.post(`${jsonURL}/660/reverse`, postData, {
@@ -443,6 +496,16 @@ function submitData(e) {
                     successHint('預約成功！', '', 3000);
                     form.reset();
                     form.classList.remove('was-validated');
+                    sizePrice = 0;
+                    planPrice = 0;
+                    if (data.service === '安親') {
+                        data = { service: '安親', total: 900, isYesClicked: false, remark: '' };
+
+                    } else if (data.service === '美容') {
+                        data = { service: '美容', total: 0, isYesClicked: false, remark: '' };
+                    } else if (data.service === '住宿') {
+                        data = { service: '住宿', total: 0, isYesClicked: false, remark: '' };
+                    };
                 })
                 .catch(err => {
                     console.log(err);
@@ -452,7 +515,7 @@ function submitData(e) {
 };
 
 // 產生Z0+5位數字的不重複隨機編碼
-const checkNum = [];
+const checkNum = ['Z035212', 'Z021059', 'Z008541', 'Z011423', 'Z045519', 'Z035010', 'Z015945', 'Z051203', 'Z032981', 'Z000152', 'Z015498', 'Z072090', 'Z031268', 'Z000110', 'Z082016', 'Z000019', 'Z011334', 'Z061546', 'Z090001', 'Z005213', 'Z077277', 'Z010024', 'Z053128', 'Z044160', 'Z091203', 'Z033927', 'Z066369', 'Z011125', 'Z058103', 'Z000761', 'Z015638', 'Z029983', 'Z022419', 'Z088642', 'Z000066', 'Z041297', 'Z041297','Z061950','Z016563'];
 function createOrderNum() {
     let num;
     // do...while:該循環會一直運行，直到生成的編碼在checkNum集合中不存在(確保唯一性)/反覆執行直到指定條件的求值結果為 false 為止

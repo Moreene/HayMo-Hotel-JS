@@ -27,15 +27,6 @@
             color: $primary;
 
             &::after {
-                position: absolute;
-                content: "";
-                display: block;
-                bottom: -16px;
-                left: 50%;
-                transform: translatex(-50%);
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
                 background-color: $primary;
             }
         }
