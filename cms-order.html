@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.1/jquery.timepicker.css">
-  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/cms-order-74339a54.js"></script>
-  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/bootstrap-3dca8c45.js">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/cms-order-05edaa8e.js"></script>
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/bootstrap-cc139003.js">
   <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/config-e6f0afb8.js">
-  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-a605a855.css">
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-7c7a1893.css">
 </head>
 
 <body>
@@ -45,28 +45,27 @@
                 <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center mb-24">
                     <ul class="nav nav-pills mb-24 mb-md-0">
                         <li class="nav-item me-lg-8">
-                            <a class="nav-link rounded-pill active" href="#" id="allOrder-tab" data-bs-toggle="tab"
-                                data-bs-target="#allOrder" role="tab">所有訂單<span
+                            <a class="nav-link order-link rounded-pill js-allCasePill active" href="#" id="allCase-tab"
+                                data-bs-toggle="tab" data-bs-target="#allCase" role="tab">所有訂單<span
                                     class="bg-light text-dark rounded-pill px-4 ms-4">999+</span></a>
                         </li>
                         <li class="nav-item me-lg-8">
-                            <a class="nav-link rounded-pill" href="#" id="openCase-tab" data-bs-toggle="tab"
-                                data-bs-target="#openCase" role="tab">未結案<span
-                                    class="bg-light text-dark rounded-pill px-4 ms-4">215</span></a>
+                            <a class="nav-link order-link rounded-pill js-openCasePill" href="#" id="openCase-tab"
+                                data-bs-toggle="tab" data-bs-target="#openCase" role="tab">未結案<span
+                                    class="bg-light text-dark rounded-pill px-4 ms-4 js-openCaseNum"></span></a>
                         </li>
                         <li class="nav-item me-lg-8">
-                            <a class="nav-link rounded-pill" href="#" id="cancelCase-tab" data-bs-toggle="tab"
-                                data-bs-target="#cancelCase">已取消<span
-                                    class="bg-light text-dark rounded-pill px-4 ms-4">102</span></a>
+                            <a class="nav-link order-link rounded-pill js-canacelPill" href="#" id="cancelCase-tab"
+                                data-bs-toggle="tab" data-bs-target="#cancelCase">已取消<span
+                                    class="bg-light text-dark rounded-pill px-4 ms-4 js-cancelCaseNum"></span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link rounded-pill" href="#" id="blacklist-tab" data-bs-toggle="tab"
-                                data-bs-target="#blacklist">黑名單<span
+                            <a class="nav-link order-link rounded-pill js-blacklistPill" href="#" id="blacklist-tab"
+                                data-bs-toggle="tab" data-bs-target="#blacklist">黑名單<span
                                     class="bg-light text-dark rounded-pill px-4 ms-4 js-blackListNum"></span></a>
                         </li>
                     </ul>
                     <div>
-                        <a href="#" class="px-8 cms-btn me-8"><i class="bi bi-search fs-5"></i></a>
                         <a href="#" class="px-8 cms-btn position-relative"><i class="bi bi-bell-fill fs-5"></i>
                             <span
                                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">32</span>
@@ -75,10 +74,20 @@
                 </div>
                 <div class="tab-content" id="tabContent">
                     <!-- 所有訂單 -->
-                    <div class="tab-pane active" id="allOrder" role="tabpanel" aria-labelledby="allOrder-tab">
-                        <div class="d-flex justify-content-end mb-16">
-    <select class="px-16 rounded-1" aria-label="select">
-        <option selected>全部</option>
+                    <div class="tab-pane allCase active" id="allCase" role="tabpanel" aria-labelledby="allCase-tab">
+                        <div class="d-flex align-items-center justify-content-between mb-16">
+    <div class="d-flex js-searchGroup">
+        <div>
+            <label for="order-num" class="visually-hidden">訂單編號</label>
+            <input type="text"
+                class="form-control rounded-0 border-top-0 border-start-0 border-end-0 js-inputSearch"
+                id="order-num" placeholder="請輸入訂單編號" style="width: 150px;">
+        </div>
+        <a href="#" class=""><i class="bi bi-search fs-5 cms-btn"></i></a>
+    </div>
+    <select class="px-8 rounded-1 js-serviceSelect" aria-label="select">
+        <option value="服務篩選" selected disabled hidden>服務項目</option>
+        <option value="">全部</option>
         <option value="安親">安親</option>
         <option value="美容">美容</option>
         <option value="住宿">住宿</option>
@@ -95,142 +104,9 @@
                                             <th scope="col">毛孩姓名</th>
                                             <th scope="col">樂園服務</th>
                                             <th scope="col">完成</th>
-                                            <th scope="col">取消</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-center">
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#order1Modal">Z000001</a>
-                                            </th>
-                                            <td>2022/1/3</td>
-                                            <td>美容</td>
-                                            <td>小安</td>
-                                            <td>0921-222222</td>
-                                            <td>甜甜</td>
-                                            <td>否</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000002</a>
-                                            </th>
-                                            <td>2022/1/3</td>
-                                            <td>住宿</td>
-                                            <td>老謝</td>
-                                            <td>0912-000001</td>
-                                            <td>麥麥</td>
-                                            <td>是</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000003</a>
-                                            </th>
-                                            <td>2022/1/4</td>
-                                            <td>住宿</td>
-                                            <td>花妹</td>
-                                            <td>0932-323232</td>
-                                            <td>大頭</td>
-                                            <td>是</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000004</a>
-                                            </th>
-                                            <td>2022/1/5</td>
-                                            <td>安親</td>
-                                            <td>小林</td>
-                                            <td>0955-555555</td>
-                                            <td>煎餅</td>
-                                            <td>否</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000005</a>
-                                            </th>
-                                            <td>2022/1/8</td>
-                                            <td>美容</td>
-                                            <td>阿華</td>
-                                            <td>0977-777777</td>
-                                            <td>阿華田</td>
-                                            <td>是</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000006</a>
-                                            </th>
-                                            <td>2023/1/9</td>
-                                            <td>安親</td>
-                                            <td>阿蓉</td>
-                                            <td>0941-123456</td>
-                                            <td>蒜蓉</td>
-                                            <td>是</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000007</a>
-                                            </th>
-                                            <td>2022/1/11</td>
-                                            <td>安親</td>
-                                            <td>小明</td>
-                                            <td>0930-232323</td>
-                                            <td>阿肥</td>
-                                            <td>是</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000008</a>
-                                            </th>
-                                            <td>2022/1/12</td>
-                                            <td>美容</td>
-                                            <td>老吳</td>
-                                            <td>0965-862484</td>
-                                            <td>熊寶</td>
-                                            <td>否</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000009</a>
-                                            </th>
-                                            <td>2022/1/12</td>
-                                            <td>住宿</td>
-                                            <td>小美</td>
-                                            <td>0933-333333</td>
-                                            <td>豆瓣</td>
-                                            <td>否</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000010</a>
-                                            </th>
-                                            <td>2022/1/14</td>
-                                            <td>安親</td>
-                                            <td>輝輝</td>
-                                            <td>0905-753357</td>
-                                            <td>大冀</td>
-                                            <td>是</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                            <td>-</td>
-                                        </tr>
-                                    </tbody>
+                                    <tbody class="text-center js-allCaseContent"></tbody>
                                 </table>
                             </div>
                             <div class="d-flex justify-content-end">
@@ -238,43 +114,129 @@
         <ul class="pagination" id="pagination-container"></ul>
     </nav>
 </div>                    </div>
-                    <!-- 所有訂單_Modal -->
-                    <div class="modal fade" id="order1Modal" aria-labelledby="order1ModalLabel" aria-hidden="true"
-                        tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered">
+                    <!-- 所有訂單 - 安親Modal -->
+                    <div class="modal fade" id="allCaseDayCareModal" aria-labelledby="allCaseDayCareModalLabel"
+                        aria-hidden="true" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="order1ModalLabel">訂單編號：Z000001</h5>
+                                    <h5 class="modal-title" id="allCaseDayCareModalLabel">訂單編號：<span
+                                            class="modalOrderNum"></span></h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body py-24">
-                                    <ul class="d-md-flex justify-content-md-around">
-                                        <li class="mb-16 mb-md-0">
-                                            <p>訂單日期：2022/1/3</p>
-                                            <p>預約服務：美容</p>
-                                            <p>會員姓名：小安</p>
-                                            <p>會員電話：0921-222222</p>
-                                            <p>毛孩姓名：甜甜</p>
-                                            <p>樂園服務：否</p>
-                                            <p class="mb-0">其他備註：甜甜個性偏緊張</p>
-                                        </li>
-                                        <li>
-                                            <p>緊急聯絡人：小安</p>
-                                            <p>聯絡電話：0921-222222</p>
-                                            <p class="fw-bold mb-0"><span
-                                                    class="border-bottom border-black">總金額：NT$850</span></p>
-                                        </li>
-                                    </ul>
+                                <div class="modal-body py-48">
+                                    <form action="#">
+                                        <div class="d-lg-flex justify-content-lg-around">
+                                            <div class="mb-16 mb-md-0">
+                                                <p>訂單日期：<span class="modalDate"></span></p>
+                                                <p>預約服務：<span class="modalService"></span></p>
+                                                <p>會員姓名：<span class="modalName"></span></p>
+                                                <p>會員電話：<span class="modalPhone"></span></p>
+                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                                <p>樂園服務：<span class="modalParadise"></span></p>
+                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
+                                            </div>
+                                            <div class="mb-32">
+                                                <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                                <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                                <p>訂單金額：<span class="modalTotal"></span></p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 所有訂單 - 美容Modal -->
+                    <div class="modal fade" id="allCaseCosmeticModal" aria-labelledby="allCaseCosmeticModalLabel"
+                        aria-hidden="true" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="allCaseCosmeticModal">訂單編號：<span
+                                            class="modalOrderNum"></span>
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body py-48">
+                                    <form action="#">
+                                        <div class="d-lg-flex justify-content-lg-around">
+                                            <div class="mb-16 mb-md-0">
+                                                <p>訂單日期：<span class="modalDate"></span></p>
+                                                <p>預約服務：<span class="modalService"></span></p>
+                                                <p>毛孩體型：<span class="modalSize"></span></p>
+                                                <p>美容方案：<span class="modalPlan"></span></p>
+                                                <p>會員姓名：<span class="modalName"></span></p>
+                                                <p>會員電話：<span class="modalPhone"></span></p>
+                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                                <p>樂園服務：<span class="modalParadise"></span></p>
+                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
+                                            </div>
+                                            <div class="mb-32">
+                                                <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                                <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                                <p>訂單金額：<span class="modalTotal"></span></p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 所有訂單 - 住宿Modal -->
+                    <div class="modal fade" id="allCaseStayModal" aria-labelledby="allCaseStayModalLabel"
+                        aria-hidden="true" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="allCaseStayModal">訂單編號：<span
+                                            class="modalOrderNum"></span></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body py-48">
+                                    <form action="#">
+                                        <div class="d-lg-flex justify-content-lg-around">
+                                            <div class="mb-16 mb-md-0">
+                                                <p>訂單日期：<span class="modalDate"></span></p>
+                                                <p>預約服務：<span class="modalService"></span></p>
+                                                <p>房型選擇：<span class="modalRoom"></span></p>
+                                                <p>入住日期：<span class="modalStarDate"></span></p>
+                                                <p>退房日期：<span class="modalEndDate"></span></p>
+                                                <p>會員姓名：<span class="modalName"></span></p>
+                                                <p>會員電話：<span class="modalPhone"></span></p>
+                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                                <p>樂園服務：<span class="modalParadise"></span></p>
+                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
+                                            </div>
+                                            <div class="mb-32">
+                                                <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                                <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                                <p>訂單金額：<span class="modalTotal"></span></p>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- 未結案 -->
-                    <div class="tab-pane" id="openCase" role="tabpanel" aria-labelledby="openCase-tab">
-                        <div class="d-flex justify-content-end mb-16">
-    <select class="px-16 rounded-1" aria-label="select">
-        <option selected>全部</option>
+                    <div class="tab-pane openCase" id="openCase" role="tabpanel" aria-labelledby="openCase-tab">
+                        <div class="d-flex align-items-center justify-content-between mb-16">
+    <div class="d-flex js-searchGroup">
+        <div>
+            <label for="order-num" class="visually-hidden">訂單編號</label>
+            <input type="text"
+                class="form-control rounded-0 border-top-0 border-start-0 border-end-0 js-inputSearch"
+                id="order-num" placeholder="請輸入訂單編號" style="width: 150px;">
+        </div>
+        <a href="#" class=""><i class="bi bi-search fs-5 cms-btn"></i></a>
+    </div>
+    <select class="px-8 rounded-1 js-serviceSelect" aria-label="select">
+        <option value="服務篩選" selected disabled hidden>服務項目</option>
+        <option value="">全部</option>
         <option value="安親">安親</option>
         <option value="美容">美容</option>
         <option value="住宿">住宿</option>
@@ -294,190 +256,7 @@
                                             <th scope="col">取消</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-center">
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#openModal">Z010518</a>
-                                            </th>
-                                            <td>2023/9/15</td>
-                                            <td>住宿</td>
-                                            <td>風間</td>
-                                            <td>0915-565656</td>
-                                            <td>黃豆</td>
-                                            <td>是</td>
-                                            <td>
-                                                <div class="d-flex justify-content-center"><input type="checkbox"
-                                                        class="checkbox"></div>
-                                            </td>
-                                            <td><a href="#" class="link-black-60" data-bs-toggle="modal"
-                                                    data-bs-target="#cancelBtnModal"><i
-                                                        class="bi bi-trash3-fill fs-5"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z010553</a>
-                                            </th>
-                                            <td>2023/9/15</td>
-                                            <td>住宿</td>
-                                            <td>本田</td>
-                                            <td>0977-777777</td>
-                                            <td>Honda</td>
-                                            <td>是</td>
-                                            <td>
-                                                <div class="d-flex justify-content-center"><input type="checkbox"
-                                                        class="checkbox"></div>
-                                            </td>
-                                            <td><a href="#" class="link-black-60"><i
-                                                        class="bi bi-trash3-fill fs-5"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z010649</a>
-                                            </th>
-                                            <td>2023/9/16</td>
-                                            <td>安親</td>
-                                            <td>阿兩</td>
-                                            <td>0966-606060</td>
-                                            <td>錢錢</td>
-                                            <td>否</td>
-                                            <td>
-                                                <div class="d-flex justify-content-center"><input type="checkbox"
-                                                        class="checkbox"></div>
-                                            </td>
-                                            <td><a href="#" class="link-black-60"><i
-                                                        class="bi bi-trash3-fill fs-5"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z010662</a>
-                                            </th>
-                                            <td>2023/9/18</td>
-                                            <td>美容</td>
-                                            <td>哈特利</td>
-                                            <td>0911-111111</td>
-                                            <td>獅子丸</td>
-                                            <td>否</td>
-                                            <td>
-                                                <div class="d-flex justify-content-center"><input type="checkbox"
-                                                        class="checkbox"></div>
-                                            </td>
-                                            <td><a href="#" class="link-black-60"><i
-                                                        class="bi bi-trash3-fill fs-5"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z010685</a>
-                                            </th>
-                                            <td>2023/9/19</td>
-                                            <td>住宿</td>
-                                            <td>妮妮</td>
-                                            <td>0938-333888</td>
-                                            <td>小兔</td>
-                                            <td>是</td>
-                                            <td>
-                                                <div class="d-flex justify-content-center"><input type="checkbox"
-                                                        class="checkbox"></div>
-                                            </td>
-                                            <td><a href="#" class="link-black-60"><i
-                                                        class="bi bi-trash3-fill fs-5"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z010691</a>
-                                            </th>
-                                            <td>2023/9/20</td>
-                                            <td>住宿</td>
-                                            <td>大雄</td>
-                                            <td>0988-808080</td>
-                                            <td>A夢</td>
-                                            <td>否</td>
-                                            <td>
-                                                <div class="d-flex justify-content-center"><input type="checkbox"
-                                                        class="checkbox"></div>
-                                            </td>
-                                            <td><a href="#" class="link-black-60"><i
-                                                        class="bi bi-trash3-fill fs-5"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z010698</a>
-                                            </th>
-                                            <td>2023/9/20</td>
-                                            <td>安親</td>
-                                            <td>小次郎</td>
-                                            <td>0967-851367</td>
-                                            <td>火箭</td>
-                                            <td>是</td>
-                                            <td>
-                                                <div class="d-flex justify-content-center"><input type="checkbox"
-                                                        class="checkbox"></div>
-                                            </td>
-                                            <td><a href="#" class="link-black-60"><i
-                                                        class="bi bi-trash3-fill fs-5"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z010704</a>
-                                            </th>
-                                            <td>2023/9/21</td>
-                                            <td>住宿</td>
-                                            <td>赤井</td>
-                                            <td>0903-078951</td>
-                                            <td>阿藤</td>
-                                            <td>是</td>
-                                            <td>
-                                                <div class="d-flex justify-content-center"><input type="checkbox"
-                                                        class="checkbox"></div>
-                                            </td>
-                                            <td><a href="#" class="link-black-60"><i
-                                                        class="bi bi-trash3-fill fs-5"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z010742</a>
-                                            </th>
-                                            <td>2023/9/23</td>
-                                            <td>安親</td>
-                                            <td>魯夫</td>
-                                            <td>0924-754457</td>
-                                            <td>橡膠</td>
-                                            <td>否</td>
-                                            <td>
-                                                <div class="d-flex justify-content-center"><input type="checkbox"
-                                                        class="checkbox"></div>
-                                            </td>
-                                            <td><a href="#" class="link-black-60"><i
-                                                        class="bi bi-trash3-fill fs-5"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z010759</a>
-                                            </th>
-                                            <td>2023/9/23</td>
-                                            <td>美容</td>
-                                            <td>索龍</td>
-                                            <td>0999-991991</td>
-                                            <td>劍龍</td>
-                                            <td>是</td>
-                                            <td>
-                                                <div class="d-flex justify-content-center"><input type="checkbox"
-                                                        class="checkbox"></div>
-                                            </td>
-                                            <td><a href="#" class="link-black-60"><i
-                                                        class="bi bi-trash3-fill fs-5"></i></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                    <tbody class="text-center js-openCaseContent"></tbody>
                                 </table>
                             </div>
                             <div class="d-flex justify-content-end">
@@ -485,66 +264,199 @@
         <ul class="pagination" id="pagination-container"></ul>
     </nav>
 </div>                    </div>
-                    <!-- 未結案_Modal -->
-                    <div class="modal fade" id="openModal" aria-labelledby="openModalLabel" aria-hidden="true"
+                    <!-- 未結案- dayCareModal -->
+                    <div class="modal fade" id="dayCareModal" aria-labelledby="dayCareModalLabel" aria-hidden="true"
+                        tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="dayCareModal">訂單編號：<span class="modalOrderNum"></span>
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body py-48">
+                                    <form action="#">
+                                        <div class="d-lg-flex justify-content-lg-around">
+                                            <div class="mb-16 mb-md-0">
+                                                <p>訂單日期：<span class="modalDate"></span></p>
+                                                <p>預約服務：<span class="modalService"></span></p>
+                                                <p>會員姓名：<span class="modalName"></span></p>
+                                                <p>會員電話：<span class="modalPhone"></span></p>
+                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                                <p>樂園服務：<span class="modalParadise"></span></p>
+                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-between">
+                                                <div class="mb-32">
+                                                    <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                                    <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                                    <div class="d-flex align-items-center">
+                                                        <label for="total" class="form-label me-16 mb-0">訂單金額</label>
+                                                        <div>
+                                                            <input type="text" class="form-control modalTotal"
+                                                                id="total">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button"
+                                                    class="btn btn-primary text-white w-100 w-md-50 w-lg-100 mx-auto">儲存</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 未結案- cosmeticModal -->
+                    <div class="modal fade" id="cosmeticModal" aria-labelledby="cosmeticModalLabel" aria-hidden="true"
+                        tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="cosmeticModal">訂單編號：<span class="modalOrderNum"></span>
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body py-48">
+                                    <form action="#">
+                                        <div class="d-lg-flex justify-content-lg-around">
+                                            <div class="mb-16 mb-md-0">
+                                                <p>訂單日期：<span class="modalDate"></span></p>
+                                                <p>預約服務：<span class="modalService"></span></p>
+                                                <p>毛孩體型：<span class="modalSize"></span></p>
+                                                <p>美容方案：<span class="modalPlan"></span></p>
+                                                <p>會員姓名：<span class="modalName"></span></p>
+                                                <p>會員電話：<span class="modalPhone"></span></p>
+                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                                <p>樂園服務：<span class="modalParadise"></span></p>
+                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-between">
+                                                <div class="mb-32">
+                                                    <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                                    <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                                    <div class="d-flex align-items-center">
+                                                        <label for="total" class="form-label me-16 mb-0">訂單金額</label>
+                                                        <div>
+                                                            <input type="text" class="form-control modalTotal"
+                                                                id="total">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button"
+                                                    class="btn btn-primary text-white w-100 w-md-50 w-lg-100 mx-auto">儲存</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 未結案- stayModal -->
+                    <div class="modal fade" id="stayModal" aria-labelledby="stayModalLabel" aria-hidden="true"
+                        tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="stayModal">訂單編號：<span class="modalOrderNum"></span></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body py-48">
+                                    <form action="#">
+                                        <div class="d-lg-flex justify-content-lg-around">
+                                            <div class="mb-16 mb-md-0">
+                                                <p>訂單日期：<span class="modalDate"></span></p>
+                                                <p>預約服務：<span class="modalService"></span></p>
+                                                <p>房型選擇：<span class="modalRoom"></span></p>
+                                                <p>入住日期：<span class="modalStarDate"></span></p>
+                                                <p>退房日期：<span class="modalEndDate"></span></p>
+                                                <p>會員姓名：<span class="modalName"></span></p>
+                                                <p>會員電話：<span class="modalPhone"></span></p>
+                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                                <p>樂園服務：<span class="modalParadise"></span></p>
+                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-between">
+                                                <div class="mb-32">
+                                                    <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                                    <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                                    <div class="d-flex align-items-center">
+                                                        <label for="total" class="form-label me-16 mb-0">訂單金額</label>
+                                                        <div>
+                                                            <input type="text" class="form-control modalTotal"
+                                                                id="total">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button"
+                                                    class="btn btn-primary text-white w-100 w-md-50 w-lg-100 mx-auto">儲存</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 未結案-checkbox_Modal -->
+                    <div class="modal fade" id="checkModal" aria-labelledby="checkModalLabel" aria-hidden="true"
                         tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="openModal">訂單編號：Z010518</h5>
+                                    <h5 class="modal-title" id="checkModal">訂單編號：<span
+                                            class="js-checkModalNum"></span></h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body py-24">
-                                    <ul class="d-md-flex justify-content-md-around">
-                                        <li class="mb-16 mb-md-0">
-                                            <p>訂單日期：2023/9/15</p>
-                                            <p>預約服務：住宿</p>
-                                            <p>會員姓名：風間</p>
-                                            <p>會員電話：0915-565656</p>
-                                            <p>毛孩姓名：黃豆</p>
-                                            <p>樂園服務：是</p>
-                                            <p class="mb-0">其他備註：</p>
-                                        </li>
-                                        <li>
-                                            <p>緊急聯絡人：風間</p>
-                                            <p>聯絡電話：0915-565656</p>
-                                            <p class="fw-bold mb-0"><span
-                                                    class="border-bottom border-black">總金額：NT$</span></p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary w-25">編輯</button>
-                                    <button type="button" class="btn btn-primary text-white w-25 info-store">儲存</button>
+                                <div class="modal-body mx-auto fw-normal">
+                                    <p class="fs-4 text-center mb-24">是否要將訂單結案？</p>
+                                    <button type="button"
+                                        class="btn btn-success text-white px-48 me-16 js-checkBtn">是</button>
+                                    <button type="button"
+                                        class="btn btn-danger text-white px-48 js-nocheckBtn">否</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- 未結案-取消按鈕_Modal -->
-                    <div class="modal fade" id="cancelBtnModal" aria-labelledby="cancelBtnModalLabel" aria-hidden="true"
+                    <div class="modal fade" id="cancelModal" aria-labelledby="cancelModalLabel" aria-hidden="true"
                         tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="cancelBtnModal">訂單編號：Z010518</h5>
+                                    <h5 class="modal-title" id="cancelModal">訂單編號：<span
+                                            class="js-cancelModalNum"></span></h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body mx-auto fw-normal">
                                     <p class="fs-4 text-center mb-24">是否要取消此訂單?</p>
                                     <button type="button"
-                                        class="btn btn-success text-white px-48 cancel-info">是</button>
-                                    <button type="button" class="btn btn-danger text-white px-48">否</button>
+                                        class="btn btn-success text-white px-48 me-16 js-cancelBtn">是</button>
+                                    <button type="button"
+                                        class="btn btn-danger text-white px-48 js-noCancelBtn">否</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- 已取消 -->
-                    <div class="tab-pane" id="cancelCase" role="tabpanel" aria-labelledby="cancelCase-tab">
-                        <div class="d-flex justify-content-end mb-16">
-    <select class="px-16 rounded-1" aria-label="select">
-        <option selected>全部</option>
+                    <div class="tab-pane cancelCase" id="cancelCase" role="tabpanel" aria-labelledby="cancelCase-tab">
+                        <div class="d-flex align-items-center justify-content-between mb-16">
+    <div class="d-flex js-searchGroup">
+        <div>
+            <label for="order-num" class="visually-hidden">訂單編號</label>
+            <input type="text"
+                class="form-control rounded-0 border-top-0 border-start-0 border-end-0 js-inputSearch"
+                id="order-num" placeholder="請輸入訂單編號" style="width: 150px;">
+        </div>
+        <a href="#" class=""><i class="bi bi-search fs-5 cms-btn"></i></a>
+    </div>
+    <select class="px-8 rounded-1 js-serviceSelect" aria-label="select">
+        <option value="服務篩選" selected disabled hidden>服務項目</option>
+        <option value="">全部</option>
         <option value="安親">安親</option>
         <option value="美容">美容</option>
         <option value="住宿">住宿</option>
@@ -560,143 +472,9 @@
                                             <th scope="col">會員電話</th>
                                             <th scope="col">毛孩姓名</th>
                                             <th scope="col">樂園服務</th>
-                                            <th scope="col">完成</th>
-                                            <th scope="col">取消</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-center">
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#cancelModal">Z000024</a>
-                                            </th>
-                                            <td>2022/1/17</td>
-                                            <td>安親</td>
-                                            <td>小波</td>
-                                            <td>0970-234654</td>
-                                            <td>哈密瓜</td>
-                                            <td>否</td>
-                                            <td>-</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000031</a>
-                                            </th>
-                                            <td>2022/1/30</td>
-                                            <td>美容</td>
-                                            <td>娜美</td>
-                                            <td>0952-525252</td>
-                                            <td>小巴</td>
-                                            <td>否</td>
-                                            <td>-</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000059</a>
-                                            </th>
-                                            <td>2022/2/10</td>
-                                            <td>美容</td>
-                                            <td>小喬</td>
-                                            <td>0913-131313</td>
-                                            <td>大橋</td>
-                                            <td>否</td>
-                                            <td>-</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000068</a>
-                                            </th>
-                                            <td>2022/2/19</td>
-                                            <td>美容</td>
-                                            <td>阿宏</td>
-                                            <td>0937-731252</td>
-                                            <td>蛋餅</td>
-                                            <td>是</td>
-                                            <td>-</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000100</a>
-                                            </th>
-                                            <td>2022/2/28</td>
-                                            <td>住宿</td>
-                                            <td>小王</td>
-                                            <td>0982-539101</td>
-                                            <td>拉拉</td>
-                                            <td>否</td>
-                                            <td>-</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000125</a>
-                                            </th>
-                                            <td>2022/3/4</td>
-                                            <td>安親</td>
-                                            <td>香吉士</td>
-                                            <td>0956-556888</td>
-                                            <td>Orange</td>
-                                            <td>是</td>
-                                            <td>-</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000201</a>
-                                            </th>
-                                            <td>2022/3/16</td>
-                                            <td>安親</td>
-                                            <td>阿寶</td>
-                                            <td>0949-493603</td>
-                                            <td>哈魯</td>
-                                            <td>否</td>
-                                            <td>-</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000237</a>
-                                            </th>
-                                            <td>2022/3/24</td>
-                                            <td>住宿</td>
-                                            <td>柯西</td>
-                                            <td>0918-481934</td>
-                                            <td>柯南</td>
-                                            <td>是</td>
-                                            <td>-</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000299</a>
-                                            </th>
-                                            <td>2022/4/4</td>
-                                            <td>安親</td>
-                                            <td>毛利</td>
-                                            <td>0939-819918</td>
-                                            <td>五郎</td>
-                                            <td>是</td>
-                                            <td>-</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">Z000332</a>
-                                            </th>
-                                            <td>2022/4/12</td>
-                                            <td>美容</td>
-                                            <td>奇犽</td>
-                                            <td>0901-125421</td>
-                                            <td>Kiwi</td>
-                                            <td>否</td>
-                                            <td>-</td>
-                                            <td><i class="bi bi-check-lg fs-5"></i></td>
-                                        </tr>
-                                    </tbody>
+                                    <tbody class="text-center js-cancelCaseContent"></tbody>
                                 </table>
                             </div>
                             <div class="d-flex justify-content-end">
@@ -705,29 +483,31 @@
     </nav>
 </div>                    </div>
                     <!-- 已取消_Modal -->
-                    <div class="modal fade" id="cancelModal" aria-labelledby="cancelModalLabel" aria-hidden="true"
-                        tabindex="-1">
+                    <div class="modal fade" id="cancelCaseModal" aria-labelledby="cancelCaseModalLabel"
+                        aria-hidden="true" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="cancelModal">訂單編號：Z000024</h5>
+                                    <h5 class="modal-title" id="cancelCaseModal">訂單編號：<span
+                                            class="modalOrderNum"></span>
+                                    </h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body py-24">
                                     <ul class="d-md-flex justify-content-md-around">
                                         <li class="mb-16 mb-md-0">
-                                            <p>訂單日期：2022/1/17</p>
-                                            <p>預約服務：安親</p>
-                                            <p>會員姓名：小波</p>
-                                            <p>會員電話：0970-234654</p>
-                                            <p>毛孩姓名：哈密瓜</p>
-                                            <p>樂園服務：否</p>
-                                            <p class="mb-0">其他備註：</p>
+                                            <p>訂單日期：<span class="modalDate"></span></p>
+                                            <p>預約服務：<span class="modalService"></span></p>
+                                            <p>會員姓名：<span class="modalName"></span></p>
+                                            <p>會員電話：<span class="modalPhone"></span></p>
+                                            <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                            <p>樂園服務：<span class="modalParadise"></span></p>
+                                            <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
                                         </li>
                                         <li>
-                                            <p>緊急聯絡人：迪西</p>
-                                            <p class="mb-0">聯絡電話：0952-364308</p>
+                                            <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                            <p class="mb-0">聯絡電話：<span class="modalEmergencyPhone"></span></p>
                                         </li>
                                     </ul>
                                 </div>
@@ -757,7 +537,7 @@
     <nav aria-label="Page navigation">
         <ul class="pagination" id="pagination-container"></ul>
     </nav>
-</div>                        
+</div>
                             <!-- 黑名單_Modal -->
                             <div class="modal fade" id="blackListModal" aria-labelledby="blackListModalLabel"
                                 aria-hidden="true" tabindex="-1">
@@ -768,7 +548,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <form class="modal-body py-24 needs-validation blackForm" novalidate>
+                                        <form class="modal-body p-24 needs-validation blackForm" novalidate>
                                             <h2 class="fs-5 fw-bold mb-16">會員資料</h2>
                                             <label class="form-label w-100 mb-16">會員姓名
                                                 <input type="text" class="form-control rounded-0 js-blockName"
