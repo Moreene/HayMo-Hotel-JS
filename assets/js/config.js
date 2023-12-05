@@ -51,7 +51,11 @@ function checkPermission() {
         window.location.href = 'login.html';
     } else {
         let memberCenterContent = document.querySelector('.js-memberCenter');
+        let articleContent = document.querySelector('.js-article');
+        let reverseContent = document.querySelector('.js-reverse');
         showContent(memberCenterContent);
+        showContent(articleContent);
+        showContent(reverseContent);
     };
 };
 
