@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>嘿毛寵物旅館 | 房間查詢</title>
     <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
-  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/bootstrap-cc139003.js"></script>
-  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-7c7a1893.css">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/config-f1404084.js"></script>
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/adminLogOut-261065ee.js"></script>
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/config-7c7a1893.css">
 </head>
 
-<body>
+<body class="js-cmsRoom d-none">
 
     <nav class="offcanvas offcanvas-start show bg-dark" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
@@ -27,7 +28,7 @@
                 </li>
             </ul>
         </div>
-        <a href="cms-login.html" class="sidebar-link fs-4 mb-24"><i class="bi bi-power me-8"></i>登出</a>
+        <a href="#" class="sidebar-link fs-4 mb-24 js-adminLogOut"><i class="bi bi-power me-8"></i>登出</a>
     </div>
 </nav>        <main class="main">
             <div class="bg-white border-black-60 border-bottom sticky-top">
@@ -130,4 +131,5 @@
                 body.classList.toggle('sidebar-toggled');
             });
         </script>
+        
 </body>

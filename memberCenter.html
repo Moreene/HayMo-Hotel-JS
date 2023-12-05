@@ -9,15 +9,14 @@
     <link rel="icon" href="/HayMo-Hotel-JS/assets/logo-09125146.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.1/jquery.timepicker.css">
-  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/memberCenter-39f38e22.js"></script>
-  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/bootstrap-cc139003.js">
-  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/centerHeader-436f0069.js">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/memberCenter-69c72107.js"></script>
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/config-f1404084.js">
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/userLogOut-0448ca26.js">
   <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/hamMenu-6b7faa69.js">
-  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/config-e6f0afb8.js">
-  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-7c7a1893.css">
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/config-7c7a1893.css">
 </head>
 
-<body class="bg-secondary-l">
+<body class="bg-secondary-l js-memberCenter d-none">
 
     <div class="d-flex justify-content-center">
     <header class="topbar w-94 w-lg-75 w-xl-50 w-xxl-45 py-8 px-30 py-md-20 px-md-40 rounded-pill position-fixed z-2">
@@ -39,7 +38,7 @@
             </div>
             <ul class="d-flex align-items-center">
                 <li>
-                    <a href="login.html" class="login-out-link d-flex align-items-center justify-content-center me-md-0">
+                    <a href="#" class="login-out-link d-flex align-items-center justify-content-center me-md-0 js-logOut">
                         <p class="link-circle-txt mb-0">登出</p>
                     </a>
                 </li>
@@ -61,16 +60,16 @@
                 </div>
             </li>
             <li class="ms-12 mt-24 mb-32">
-                <a href="memberCenter.html" class="menu-link text-white fw-bold">會員中心</a>
+                <a href="memberCenter.html" class="menu-link text-white fw-bold js-center">會員中心</a>
             </li>
             <li class="ms-12 mb-32">
-                <a href="article.html" class="menu-link text-white fw-bold">毛孩專欄</a>
+                <a href="article.html" class="menu-link text-white fw-bold js-article">毛孩專欄</a>
             </li>
             <li class="ms-12 mb-32">
-                <a href="reverse.html" class="menu-link text-white fw-bold">線上預約</a>
+                <a href="reverse.html" class="menu-link text-white fw-bold js-reverse">線上預約</a>
             </li>
             <li class="ms-12">
-                <a href="login.html" class="menu-link text-white fw-bold">登出</a>
+                <a href="#" class="menu-link text-white fw-bold js-logOut">登出</a>
             </li>
         </ul>
     </div>
@@ -731,7 +730,7 @@
 
                         <!-- 歷史紀錄 -->
                         <h3 class="fw-bold mb-24"><i class="bi bi-cursor me-1"></i>歷史記錄</h3>
-                        <select class="px-12 py-5 rounded-1 mb-24 js-monthSelect">
+                        <select class="px-12 py-5 rounded-1 mb-24 js-historyMonthSelect">
                             <option value="月份篩選" selected disabled hidden>月份篩選</option>
                             <option value="">所有月份</option>
                             <option value="1月">1月</option>
@@ -780,7 +779,7 @@
                                                     <th scope="col">電話</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="text-center">
+                                            <tbody class="text-center js-historyDayCare">
                                                 <tr>
                                                     <td colspan="7">您目前沒有安親服務的歷史記錄</td>
                                                 </tr>
@@ -803,7 +802,7 @@
                                                     <th scope="col">電話</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="text-center">
+                                            <tbody class="text-center js-historyCosmetic">
                                                 <tr>
                                                     <td colspan="7">您目前沒有美容服務的歷史記錄</td>
                                                 </tr>
@@ -826,7 +825,7 @@
                                                     <th scope="col">電話</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="text-center">
+                                            <tbody class="text-center js-historyStay">
                                                 <tr>
                                                     <td colspan="7">您目前沒有住宿服務的歷史記錄</td>
                                                 </tr>
@@ -878,6 +877,7 @@
             <script
                 src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.1/jquery.timepicker.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            
             
             
             

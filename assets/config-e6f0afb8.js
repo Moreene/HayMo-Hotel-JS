@@ -1,1 +1,0 @@
-const s="http://localhost:3000";function n(e){return/^09\d{8}$/.test(e)}function o(e){return/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(e)}function a(e,t,i){Swal.fire({icon:"success",title:e,text:t,timer:i})}function c(e,t){Swal.fire({icon:"error",title:e,text:t})}export{o as a,c as e,n as i,s as j,a as s};

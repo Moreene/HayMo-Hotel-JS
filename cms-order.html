@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.1/jquery.timepicker.css">
-  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/cms-order-05edaa8e.js"></script>
-  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/bootstrap-cc139003.js">
-  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/config-e6f0afb8.js">
-  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/bootstrap-7c7a1893.css">
+  <script type="module" crossorigin src="/HayMo-Hotel-JS/assets/cms-order-b8f637d6.js"></script>
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/config-f1404084.js">
+  <link rel="modulepreload" crossorigin href="/HayMo-Hotel-JS/assets/adminLogOut-261065ee.js">
+  <link rel="stylesheet" href="/HayMo-Hotel-JS/assets/config-7c7a1893.css">
 </head>
 
-<body>
+<body class="js-cmsOrder d-none">
 
     <nav class="offcanvas offcanvas-start show bg-dark" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
@@ -32,7 +32,7 @@
                 </li>
             </ul>
         </div>
-        <a href="cms-login.html" class="sidebar-link fs-4 mb-24"><i class="bi bi-power me-8"></i>登出</a>
+        <a href="#" class="sidebar-link fs-4 mb-24 js-adminLogOut"><i class="bi bi-power me-8"></i>登出</a>
     </div>
 </nav>        <main class="main order">
             <div class="bg-white border-black-60 border-bottom sticky-top">
@@ -126,24 +126,22 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body py-48">
-                                    <form action="#">
-                                        <div class="d-lg-flex justify-content-lg-around">
-                                            <div class="mb-16 mb-md-0">
-                                                <p>訂單日期：<span class="modalDate"></span></p>
-                                                <p>預約服務：<span class="modalService"></span></p>
-                                                <p>會員姓名：<span class="modalName"></span></p>
-                                                <p>會員電話：<span class="modalPhone"></span></p>
-                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
-                                                <p>樂園服務：<span class="modalParadise"></span></p>
-                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
-                                            </div>
-                                            <div class="mb-32">
-                                                <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
-                                                <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
-                                                <p>訂單金額：<span class="modalTotal"></span></p>
-                                            </div>
+                                    <div class="d-lg-flex justify-content-lg-around">
+                                        <div class="mb-16 mb-md-0">
+                                            <p>訂單日期：<span class="modalDate"></span></p>
+                                            <p>預約服務：<span class="modalService"></span></p>
+                                            <p>會員姓名：<span class="modalName"></span></p>
+                                            <p>會員電話：<span class="modalPhone"></span></p>
+                                            <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                            <p>樂園服務：<span class="modalParadise"></span></p>
+                                            <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
                                         </div>
-                                    </form>
+                                        <div class="mb-32">
+                                            <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                            <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                            <p>訂單金額：<span class="modalTotal"></span></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -161,26 +159,24 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body py-48">
-                                    <form action="#">
-                                        <div class="d-lg-flex justify-content-lg-around">
-                                            <div class="mb-16 mb-md-0">
-                                                <p>訂單日期：<span class="modalDate"></span></p>
-                                                <p>預約服務：<span class="modalService"></span></p>
-                                                <p>毛孩體型：<span class="modalSize"></span></p>
-                                                <p>美容方案：<span class="modalPlan"></span></p>
-                                                <p>會員姓名：<span class="modalName"></span></p>
-                                                <p>會員電話：<span class="modalPhone"></span></p>
-                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
-                                                <p>樂園服務：<span class="modalParadise"></span></p>
-                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
-                                            </div>
-                                            <div class="mb-32">
-                                                <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
-                                                <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
-                                                <p>訂單金額：<span class="modalTotal"></span></p>
-                                            </div>
+                                    <div class="d-lg-flex justify-content-lg-around">
+                                        <div class="mb-16 mb-md-0">
+                                            <p>訂單日期：<span class="modalDate"></span></p>
+                                            <p>預約服務：<span class="modalService"></span></p>
+                                            <p>毛孩體型：<span class="modalSize"></span></p>
+                                            <p>美容方案：<span class="modalPlan"></span></p>
+                                            <p>會員姓名：<span class="modalName"></span></p>
+                                            <p>會員電話：<span class="modalPhone"></span></p>
+                                            <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                            <p>樂園服務：<span class="modalParadise"></span></p>
+                                            <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
                                         </div>
-                                    </form>
+                                        <div class="mb-32">
+                                            <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                            <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                            <p>訂單金額：<span class="modalTotal"></span></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -197,27 +193,25 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body py-48">
-                                    <form action="#">
-                                        <div class="d-lg-flex justify-content-lg-around">
-                                            <div class="mb-16 mb-md-0">
-                                                <p>訂單日期：<span class="modalDate"></span></p>
-                                                <p>預約服務：<span class="modalService"></span></p>
-                                                <p>房型選擇：<span class="modalRoom"></span></p>
-                                                <p>入住日期：<span class="modalStarDate"></span></p>
-                                                <p>退房日期：<span class="modalEndDate"></span></p>
-                                                <p>會員姓名：<span class="modalName"></span></p>
-                                                <p>會員電話：<span class="modalPhone"></span></p>
-                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
-                                                <p>樂園服務：<span class="modalParadise"></span></p>
-                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
-                                            </div>
-                                            <div class="mb-32">
-                                                <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
-                                                <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
-                                                <p>訂單金額：<span class="modalTotal"></span></p>
-                                            </div>
+                                    <div class="d-lg-flex justify-content-lg-around">
+                                        <div class="mb-16 mb-md-0">
+                                            <p>訂單日期：<span class="modalDate"></span></p>
+                                            <p>預約服務：<span class="modalService"></span></p>
+                                            <p>房型選擇：<span class="modalRoom"></span></p>
+                                            <p>入住日期：<span class="modalStarDate"></span></p>
+                                            <p>退房日期：<span class="modalEndDate"></span></p>
+                                            <p>會員姓名：<span class="modalName"></span></p>
+                                            <p>會員電話：<span class="modalPhone"></span></p>
+                                            <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                            <p>樂園服務：<span class="modalParadise"></span></p>
+                                            <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
                                         </div>
-                                    </form>
+                                        <div class="mb-32">
+                                            <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                            <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                            <p>訂單金額：<span class="modalTotal"></span></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -276,34 +270,31 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body py-48">
-                                    <form action="#">
-                                        <div class="d-lg-flex justify-content-lg-around">
-                                            <div class="mb-16 mb-md-0">
-                                                <p>訂單日期：<span class="modalDate"></span></p>
-                                                <p>預約服務：<span class="modalService"></span></p>
-                                                <p>會員姓名：<span class="modalName"></span></p>
-                                                <p>會員電話：<span class="modalPhone"></span></p>
-                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
-                                                <p>樂園服務：<span class="modalParadise"></span></p>
-                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-between">
-                                                <div class="mb-32">
-                                                    <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
-                                                    <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
-                                                    <div class="d-flex align-items-center">
-                                                        <label for="total" class="form-label me-16 mb-0">訂單金額</label>
-                                                        <div>
-                                                            <input type="text" class="form-control modalTotal"
-                                                                id="total">
-                                                        </div>
+                                    <div class="d-lg-flex justify-content-lg-around">
+                                        <div class="mb-16 mb-md-0">
+                                            <p>訂單日期：<span class="modalDate"></span></p>
+                                            <p>預約服務：<span class="modalService"></span></p>
+                                            <p>會員姓名：<span class="modalName"></span></p>
+                                            <p>會員電話：<span class="modalPhone"></span></p>
+                                            <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                            <p>樂園服務：<span class="modalParadise"></span></p>
+                                            <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-between">
+                                            <div class="mb-32">
+                                                <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                                <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                                <div class="d-flex align-items-center">
+                                                    <label for="total" class="form-label me-16 mb-0">訂單金額</label>
+                                                    <div>
+                                                        <input type="text" class="form-control modalTotal" id="total">
                                                     </div>
                                                 </div>
-                                                <button type="button"
-                                                    class="btn btn-primary text-white w-100 w-md-50 w-lg-100 mx-auto">儲存</button>
                                             </div>
+                                            <button type="button"
+                                                class="btn btn-primary text-white w-100 w-md-50 w-lg-100 mx-auto js-storeBtn">儲存</button>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -320,36 +311,33 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body py-48">
-                                    <form action="#">
-                                        <div class="d-lg-flex justify-content-lg-around">
-                                            <div class="mb-16 mb-md-0">
-                                                <p>訂單日期：<span class="modalDate"></span></p>
-                                                <p>預約服務：<span class="modalService"></span></p>
-                                                <p>毛孩體型：<span class="modalSize"></span></p>
-                                                <p>美容方案：<span class="modalPlan"></span></p>
-                                                <p>會員姓名：<span class="modalName"></span></p>
-                                                <p>會員電話：<span class="modalPhone"></span></p>
-                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
-                                                <p>樂園服務：<span class="modalParadise"></span></p>
-                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-between">
-                                                <div class="mb-32">
-                                                    <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
-                                                    <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
-                                                    <div class="d-flex align-items-center">
-                                                        <label for="total" class="form-label me-16 mb-0">訂單金額</label>
-                                                        <div>
-                                                            <input type="text" class="form-control modalTotal"
-                                                                id="total">
-                                                        </div>
+                                    <div class="d-lg-flex justify-content-lg-around">
+                                        <div class="mb-16 mb-md-0">
+                                            <p>訂單日期：<span class="modalDate"></span></p>
+                                            <p>預約服務：<span class="modalService"></span></p>
+                                            <p>毛孩體型：<span class="modalSize"></span></p>
+                                            <p>美容方案：<span class="modalPlan"></span></p>
+                                            <p>會員姓名：<span class="modalName"></span></p>
+                                            <p>會員電話：<span class="modalPhone"></span></p>
+                                            <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                            <p>樂園服務：<span class="modalParadise"></span></p>
+                                            <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-between">
+                                            <div class="mb-32">
+                                                <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                                <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                                <div class="d-flex align-items-center">
+                                                    <label for="total" class="form-label me-16 mb-0">訂單金額</label>
+                                                    <div>
+                                                        <input type="text" class="form-control modalTotal" id="total">
                                                     </div>
                                                 </div>
-                                                <button type="button"
-                                                    class="btn btn-primary text-white w-100 w-md-50 w-lg-100 mx-auto">儲存</button>
                                             </div>
+                                            <button type="button"
+                                                class="btn btn-primary text-white w-100 w-md-50 w-lg-100 mx-auto js-storeBtn">儲存</button>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -365,37 +353,34 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body py-48">
-                                    <form action="#">
-                                        <div class="d-lg-flex justify-content-lg-around">
-                                            <div class="mb-16 mb-md-0">
-                                                <p>訂單日期：<span class="modalDate"></span></p>
-                                                <p>預約服務：<span class="modalService"></span></p>
-                                                <p>房型選擇：<span class="modalRoom"></span></p>
-                                                <p>入住日期：<span class="modalStarDate"></span></p>
-                                                <p>退房日期：<span class="modalEndDate"></span></p>
-                                                <p>會員姓名：<span class="modalName"></span></p>
-                                                <p>會員電話：<span class="modalPhone"></span></p>
-                                                <p>毛孩姓名：<span class="modalDogName"></span></p>
-                                                <p>樂園服務：<span class="modalParadise"></span></p>
-                                                <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-between">
-                                                <div class="mb-32">
-                                                    <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
-                                                    <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
-                                                    <div class="d-flex align-items-center">
-                                                        <label for="total" class="form-label me-16 mb-0">訂單金額</label>
-                                                        <div>
-                                                            <input type="text" class="form-control modalTotal"
-                                                                id="total">
-                                                        </div>
+                                    <div class="d-lg-flex justify-content-lg-around">
+                                        <div class="mb-16 mb-md-0">
+                                            <p>訂單日期：<span class="modalDate"></span></p>
+                                            <p>預約服務：<span class="modalService"></span></p>
+                                            <p>房型選擇：<span class="modalRoom"></span></p>
+                                            <p>入住日期：<span class="modalStarDate"></span></p>
+                                            <p>退房日期：<span class="modalEndDate"></span></p>
+                                            <p>會員姓名：<span class="modalName"></span></p>
+                                            <p>會員電話：<span class="modalPhone"></span></p>
+                                            <p>毛孩姓名：<span class="modalDogName"></span></p>
+                                            <p>樂園服務：<span class="modalParadise"></span></p>
+                                            <p class="mb-0">其他備註：<span class="modalRemark"></span></p>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-between">
+                                            <div class="mb-32">
+                                                <p>緊急聯絡：<span class="modalEmergencyContact"></span></p>
+                                                <p>聯絡電話：<span class="modalEmergencyPhone"></span></p>
+                                                <div class="d-flex align-items-center">
+                                                    <label for="total" class="form-label me-16 mb-0">訂單金額</label>
+                                                    <div>
+                                                        <input type="text" class="form-control modalTotal" id="total">
                                                     </div>
                                                 </div>
-                                                <button type="button"
-                                                    class="btn btn-primary text-white w-100 w-md-50 w-lg-100 mx-auto">儲存</button>
                                             </div>
+                                            <button type="button"
+                                                class="btn btn-primary text-white w-100 w-md-50 w-lg-100 mx-auto js-storeBtn">儲存</button>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -406,8 +391,8 @@
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="checkModal">訂單編號：<span
-                                            class="js-checkModalNum"></span></h5>
+                                    <h5 class="modal-title" id="checkModal">訂單編號：<span class="js-checkModalNum"></span>
+                                    </h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -617,4 +602,5 @@
                 body.classList.toggle('sidebar-toggled');
             });
         </script>
+        
 </body>
