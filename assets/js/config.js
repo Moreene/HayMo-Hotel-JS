@@ -31,3 +31,58 @@ export function errorHint(title, txt) {
         text: txt,
     });
 };
+
+// Swal.fire-Warning
+export function warningHint(title, txt, sec) {
+    Swal.fire({
+        icon: 'warning',
+        title: title,
+        text: txt,
+        timer: sec,
+    });
+};
+
+// 前台 - 登出後檢查權限
+function checkPermission() {
+    // 檢查 localStorage 或其他權限相關的資訊
+    let isLoggedIn = Boolean(localStorage.getItem('userToken'));
+    if (!isLoggedIn) {
+        alert('您沒有權限進入!');
+        window.location.href = 'login.html';
+    } else {
+        let memberCenterContent = document.querySelector('.js-memberCenter');
+        showContent(memberCenterContent);
+    };
+};
+
+// 在 memberCenter.html 頁面載入時檢查權限
+if (window.location.pathname.includes('/memberCenter.html') || window.location.pathname.includes('/article.html') || window.location.pathname.includes('/reverse.html')) {
+    checkPermission();
+};
+
+// 後台 - 登出後檢查權限
+function checkAdminPermission() {
+    let isLoggedIn = Boolean(localStorage.getItem('isAdmin'));
+    if (!isLoggedIn) {
+        alert('您沒有權限進入!');
+        window.location.href = 'cms-login.html';
+    } else {
+        let cmsContent = document.querySelector('.js-cms');
+        let cmsOrderContent = document.querySelector('.js-cmsOrder');
+        let cmsRoomContent = document.querySelector('.js-cmsRoom');
+        showContent(cmsContent);
+        showContent(cmsOrderContent);
+        showContent(cmsRoomContent);
+    };
+};
+
+if (window.location.pathname.includes('/cms.html') || window.location.pathname.includes('/cms-order.html') || window.location.pathname.includes('/cms-room.html')) {
+    checkAdminPermission();
+};
+
+function showContent(content) {
+    if (content) {
+        content.classList.remove('d-none');
+        content.classList.add('d-block');
+    };
+};

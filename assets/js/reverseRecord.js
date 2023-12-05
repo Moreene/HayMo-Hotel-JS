@@ -144,6 +144,9 @@ const id = location.href.split('=')[1];
 const dayCareRecord = document.querySelector('.js-dayCareRecord');
 const cosmeticRecord = document.querySelector('.js-cosmeticRecord');
 const stayRecord = document.querySelector('.js-stayRecord');
+const historyDayCareRecord = document.querySelector('.js-historyDayCare');
+const historyCosmeticRecord = document.querySelector('.js-historyCosmetic');
+const historyStayRecord = document.querySelector('.js-historyStay');
 
 function initReverseRecord() {
     axios.get(`${jsonURL}/660/reverse?userId=${id}`, {
@@ -154,7 +157,10 @@ function initReverseRecord() {
         .then(res => {
             if (res) {
                 let data = res.data;
-                renderRecord(data);
+                let unCheckedData = data.filter(item => item.isChecked === false);
+                let checkedData = data.filter(item => item.isChecked === true);
+                renderRecord(unCheckedData);
+                renderHistoryRecord(checkedData);
             };
         })
         .catch(err => {
@@ -221,6 +227,59 @@ function renderRecord(data) {
             `
             stay = latestStay + stay;
             stayRecord.innerHTML = stay;
+        };
+    });
+};
+
+function renderHistoryRecord(data) {
+    let dayCare = '';
+    let cosmetic = '';
+    let stay = '';
+    data.forEach(item => {
+        if (item.service === '安親') {
+            const latestDayCare =
+                `
+            <tr>
+                <th scope="row">${item.orderNum}</th>
+                <td>${item.dogName}</td>
+                <td>${item.date}</td>
+                <td>${item.paradise}</td>
+                <td>${item.contact}</td>
+                <td>${item.phone}</td>
+            </tr>
+        `;
+            dayCare = latestDayCare + dayCare;
+            historyDayCareRecord.innerHTML = dayCare;
+        } else if (item.service === '美容') {
+            const latestCosmetic =
+                `
+                <tr>
+                    <th scope="row">${item.orderNum}</th>
+                    <td>${item.dogName}</td>
+                    <td>${item.date}</td>
+                    <td>${item.plan}</td>
+                    <td>${item.paradise}</td>
+                    <td>${item.contact}</td>
+                    <td>${item.phone}</td>
+                </tr>
+            `;
+            cosmetic = latestCosmetic + cosmetic;
+            historyCosmeticRecord.innerHTML = cosmetic;
+        } else if (item.service === '住宿') {
+            const latestStay =
+                `
+                <tr>
+                    <th scope="row">${item.orderNum}</th>
+                    <td>${item.dogName}</td>
+                    <td>${item.room}</td>
+                    <td>${item.startDate}</td>
+                    <td>${item.endDate}</td>
+                    <td>${item.contact}</td>
+                    <td>${item.phone}</td>
+                </tr>
+            `
+            stay = latestStay + stay;
+            historyStayRecord.innerHTML = stay;
         };
     });
 };
@@ -629,15 +688,22 @@ function scrollEvent() {
 };
 
 // 在各個tab中選取月份，render對應月份的預約資訊
+// 預約記錄
 let currentTab = 'dayCare-tab';
 const monthSelect = document.querySelector('.js-monthSelect');
 let filterData;
 
+// 歷史記錄
+let historyCurrentTab = 'history-dayCare-tab';
+const historyMonthSelect = document.querySelector('.js-historyMonthSelect');
+
 document.querySelectorAll('.nav-link').forEach(item => {
     item.addEventListener('click', () => {
         currentTab = item.getAttribute('id');
+        historyCurrentTab = item.getAttribute('id');
         // 若點擊其他tab就init預約資訊，避免受月份篩選影響資料渲染
         monthSelect.value = '';
+        historyMonthSelect.value = '';
         initReverseRecord();
     });
 });
@@ -651,6 +717,15 @@ monthSelect.addEventListener('change', (e) => {
     };
 });
 
+historyMonthSelect.addEventListener('change', (e) => {
+    if (e.target.value === '') {
+        initReverseRecord();
+    } else {
+        const selectedMonth = e.target.value.split('月')[0];
+        renderHistoryMonthReverse(selectedMonth);
+    };
+});
+
 // 對應的tab + 月份select渲染資料
 function renderMonthReverse(month) {
     filterData = [];
@@ -661,14 +736,15 @@ function renderMonthReverse(month) {
     })
         .then(res => {
             let data = res.data;
+            let unCheckedData = data.filter(item => item.isChecked === false);
             if (currentTab === 'dayCare-tab') {
-                filterData = data.filter(item => item.service === '安親');
+                filterData = unCheckedData.filter(item => item.service === '安親');
             };
             if (currentTab === 'cosmetic-tab') {
-                filterData = data.filter(item => item.service === '美容');
+                filterData = unCheckedData.filter(item => item.service === '美容');
             };
             if (currentTab === 'stay-tab') {
-                filterData = data.filter(item => item.service === '住宿');
+                filterData = unCheckedData.filter(item => item.service === '住宿');
             };
             const matchingData = filterData.filter(item => {
                 let itemMonth = parseInt(item.date.split('-')[1]);
@@ -693,6 +769,55 @@ function renderMonthReverse(month) {
                 };
             } else {
                 renderRecord(matchingData);
+            };
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
+
+function renderHistoryMonthReverse(month) {
+    filterData = [];
+    axios.get(`${jsonURL}/660/reverse?userId=${id}`, {
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('userToken')}`
+        }
+    })
+        .then(res => {
+            let data = res.data;
+            let checkedData = data.filter(item => item.isChecked === true);
+            if (historyCurrentTab === 'history-dayCare-tab') {
+                filterData = checkedData.filter(item => item.service === '安親');
+            };
+            if (historyCurrentTab === 'history-cosmetic-tab') {
+                filterData = checkedData.filter(item => item.service === '美容');
+            };
+            if (historyCurrentTab === 'history-stay-tab') {
+                filterData = checkedData.filter(item => item.service === '住宿');
+            };
+            const matchingData = filterData.filter(item => {
+                let itemMonth = parseInt(item.date.split('-')[1]);
+                return itemMonth === parseInt(month);
+            });
+            function renderNoDataMessage(record, service) {
+                let str =
+                    `
+                    <tr>
+                        <td colspan="7">您沒有這個月的${service}服務預約</td>
+                    </tr>
+                `;
+                record.innerHTML = str;
+            };
+            if (matchingData.length === 0) {
+                if (historyCurrentTab === 'history-dayCare-tab') {
+                    renderNoDataMessage(historyDayCareRecord, '安親');
+                } else if (historyCurrentTab === 'history-cosmetic-tab') {
+                    renderNoDataMessage(historyCosmeticRecord, '美容');
+                } else if (historyCurrentTab === 'history-stay-tab') {
+                    renderNoDataMessage(historyStayRecord, '住宿');
+                };
+            } else {
+                renderHistoryRecord(matchingData);
             };
         })
         .catch(err => {

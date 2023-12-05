@@ -234,13 +234,6 @@
       "name": "賽門",
       "phone": "0945557991",
       "id": 38
-    },
-    {
-      "email": "qq@mail.com",
-      "password": "$2a$10$G8jnUEtlaeekBCddKd54XewX3pC53HU008mYg.HgXOAIrN7aQ/ErO",
-      "name": "qq",
-      "phone": "0912345678",
-      "id": 39
     }
   ],
   "forgotPasswords": [],

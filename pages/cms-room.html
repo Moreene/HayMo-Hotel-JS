@@ -9,7 +9,7 @@
     <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
 </head>
 
-<body>
+<body class="js-cmsRoom d-none">
 
     <%- include('./layout/cms-sidebar', { currentPage: 'cms-room' }); -%>
         <main class="main">
@@ -113,4 +113,5 @@
                 body.classList.toggle('sidebar-toggled');
             });
         </script>
+        <script type="module" src="../assets/js/adminLogOut.js"></script>
 </body>

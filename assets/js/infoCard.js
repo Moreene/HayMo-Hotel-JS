@@ -537,25 +537,27 @@ function renderDogSlide(slide, newData) {
 // 點擊 - dogSlide的<a>，打開modal並重新渲染毛孩資訊(避免invalid-feedback留在畫面上)
 document.querySelector('.swiper-wrapper').addEventListener('click', e => {
     const modalTarget = e.target.closest('a');
-    if (modalTarget.getAttribute('data-bs-target') === '#dogInfoModal') {
-        return;
-    } else {
-        const id = modalTarget.getAttribute('data-bs-target').split('l')[1];
-        const modalElement = document.querySelector(`#dogInfoModal${id}`);
-        axios.get(`${jsonURL}/660/dogs/${id}`, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('userToken')}`
-            }
-        })
-            .then(res => {
-                let data = res.data;
-                modalElement.querySelector(`.js-editDogName${id}`).value = data.name;
-                modalElement.querySelector(`.js-editDogBreed${id}`).value = data.breed;
-                modalElement.querySelector(`.js-editDogAge${id}`).value = data.age;
+    if (modalTarget) {
+        if (modalTarget.getAttribute('data-bs-target') === '#dogInfoModal') {
+            return;
+        } else {
+            const id = modalTarget.getAttribute('data-bs-target').split('l')[1];
+            const modalElement = document.querySelector(`#dogInfoModal${id}`);
+            axios.get(`${jsonURL}/660/dogs/${id}`, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('userToken')}`
+                }
             })
-            .catch(err => {
-                console.log(err);
-            });
+                .then(res => {
+                    let data = res.data;
+                    modalElement.querySelector(`.js-editDogName${id}`).value = data.name;
+                    modalElement.querySelector(`.js-editDogBreed${id}`).value = data.breed;
+                    modalElement.querySelector(`.js-editDogAge${id}`).value = data.age;
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        };
     };
 });
 

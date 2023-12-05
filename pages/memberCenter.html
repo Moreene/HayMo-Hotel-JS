@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.1/jquery.timepicker.css">
 </head>
 
-<body class="bg-secondary-l">
+<body class="bg-secondary-l js-memberCenter d-none">
 
     <%- include('./layout/memberCenter-header', { currentPage: 'memberCenter' }); -%>
 
@@ -671,7 +671,7 @@
 
                         <!-- 歷史紀錄 -->
                         <h3 class="fw-bold mb-24"><i class="bi bi-cursor me-1"></i>歷史記錄</h3>
-                        <select class="px-12 py-5 rounded-1 mb-24 js-monthSelect">
+                        <select class="px-12 py-5 rounded-1 mb-24 js-historyMonthSelect">
                             <option value="月份篩選" selected disabled hidden>月份篩選</option>
                             <option value="">所有月份</option>
                             <option value="1月">1月</option>
@@ -720,7 +720,7 @@
                                                     <th scope="col">電話</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="text-center">
+                                            <tbody class="text-center js-historyDayCare">
                                                 <tr>
                                                     <td colspan="7">您目前沒有安親服務的歷史記錄</td>
                                                 </tr>
@@ -743,7 +743,7 @@
                                                     <th scope="col">電話</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="text-center">
+                                            <tbody class="text-center js-historyCosmetic">
                                                 <tr>
                                                     <td colspan="7">您目前沒有美容服務的歷史記錄</td>
                                                 </tr>
@@ -766,7 +766,7 @@
                                                     <th scope="col">電話</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="text-center">
+                                            <tbody class="text-center js-historyStay">
                                                 <tr>
                                                     <td colspan="7">您目前沒有住宿服務的歷史記錄</td>
                                                 </tr>
@@ -793,6 +793,7 @@
             <script type="module" src="../assets/js/hamMenu.js"></script>
             <script type="module" src="../assets/js/infoCard.js"></script>
             <script type="module" src="../assets/js/reverseRecord.js"></script>
+            <script type="module" src="../assets/js/userLogOut.js"></script>
 </body>
 
 </html>

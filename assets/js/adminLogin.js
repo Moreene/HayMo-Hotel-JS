@@ -25,6 +25,7 @@ function adminLoginCheck(e) {
                     adminPassword.value = '';
                     return;
                 } else {
+                    localStorage.setItem('isAdmin','true');
                     successHint('嘿毛，歡迎登入', '即將轉向後台頁面', 3000);
                     adminLoginForm.reset();
                     adminLoginForm.classList.remove('was-validated');

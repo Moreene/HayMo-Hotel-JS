@@ -9,7 +9,7 @@
     <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
 </head>
 
-<body>
+<body class="js-cms d-none">
 
     <%- include('./layout/cms-sidebar', { currentPage: 'cms' }); -%>
         <main class="main">
@@ -219,6 +219,7 @@
                 }
             });
         </script>
+        <script type="module" src="../assets/js/adminLogOut.js"></script>
 </body>
 
 </html>

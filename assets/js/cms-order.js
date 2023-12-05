@@ -602,6 +602,7 @@ document.querySelector('.js-checkBtn').addEventListener('click', async e => {
         checkedData.isChecked = true;
         await axios.patch(`${jsonURL}/reverse/${id}`, checkedData);
         successHint('已結案！', '', 3000);
+        initopenCaseCount();
         fetchAndRenderData('reverse', 'openCase');
         $('#checkModal').modal('hide');
     } catch (err) {
@@ -697,6 +698,7 @@ async function renderModalData(modal, data, specificData) {
         modal.querySelectorAll('.modalRemark').forEach(item => item.textContent = data.remark);
         modal.querySelectorAll('.modalEmergencyContact').forEach(item => item.textContent = data.contact);
         modal.querySelectorAll('.modalEmergencyPhone').forEach(item => item.textContent = data.phone);
+        modal.querySelectorAll('.js-storeBtn').forEach(item => item.setAttribute('data-id', data.id));
         if (specificData) {
             specificData(modal, data);
         };
@@ -726,6 +728,31 @@ async function renderStayModal(data) {
         modal.querySelector('.modalEndDate').textContent = data.endDate;
         modal.querySelector('.modalTotal').value = data.total;
     });
+};
+
+// 未結案 - 金額更新
+document.querySelectorAll('.js-storeBtn').forEach(item => {
+    item.addEventListener('click', updateCaseTotal);
+});
+
+function updateCaseTotal(e) {
+    let id = e.target.getAttribute('data-id');
+    let totalInput = e.target.closest('.modal').querySelector('.modalTotal');
+
+    if (totalInput.value === '') {
+        errorHint('請輸入訂單金額！');
+        return;
+    };
+
+    axios.patch(`http://localhost:3000/reverse/${id}`, {
+        "total": totalInput.value
+    })
+        .then(res => {
+            successHint('儲存成功！', '', 3000);
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 // 所有訂單

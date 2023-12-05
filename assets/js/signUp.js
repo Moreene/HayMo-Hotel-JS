@@ -45,22 +45,28 @@ function signUp() {
         "name": userName.value,
         "phone": userPhoneNum.value,
         "email": userEmail.value,
-        "password": userPassword.value
+        "password": userPassword.value,
+        "userToken": ''
     })
         .then(res => {
-            console.log(res);
-            localStorage.setItem('userName', res.data.user.name);
-            localStorage.setItem('userPhoneNum', res.data.user.phone);
-            localStorage.setItem('userEmail', res.data.user.email);
-            localStorage.setItem('userToken', res.data.accessToken);
-            localStorage.setItem('userId', res.data.user.id);
-            successHint('恭喜，註冊成功！', '', 3000);
-            setTimeout(() => window.location.href = "login.html", 3000);
+            const userId = res.data.user.id;
+            axios.patch(`${jsonURL}/users/${userId}`, {
+                "userToken": res.data.accessToken,
+            })
+                .then(res => {
+                    successHint('恭喜，註冊成功！', '', 3000);
+                    setTimeout(() => window.location.href = "login.html", 3000);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
         })
         .catch(err => {
             console.log(err);
             if (err.message === 'Network Error') {
                 errorHint('網路異常，無法註冊！', '');
+            } else if (err.response.data === 'Email already exists') {
+                errorHint('該Email帳號已被註冊過！', '請選擇其它帳號註冊');
             } else {
                 errorHint(err, '');
             };

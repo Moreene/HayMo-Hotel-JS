@@ -12,16 +12,22 @@ function loginCheck(e) {
     if (!loginForm.checkValidity()) {
         e.stopPropagation();
         return;
-    } else if (loginEmail.value.trim() !== `${localStorage.getItem('userEmail')}`) {
-        document.querySelector('.js-emailWrong').innerHTML = `<i class="bi bi-exclamation-circle me-4"></i> 帳號錯誤，請重新確認`;
-        loginEmail.value = '';
-        return;
-    } else if (loginPassword.value.trim().length < 6) {
-        document.querySelector('.js-passwordError').innerHTML = `<i class="bi bi-exclamation-circle me-4"></i> 密碼錯誤，請重新確認`;
-        loginPassword.value = '';
-        return;
     };
-    login();
+    axios.get(`${jsonURL}/users`)
+        .then(res => {
+            const users = res.data;
+            const userWithEmail = users.find(item => item.email === loginEmail.value.trim());
+            if (!userWithEmail) {
+                document.querySelector('.js-emailWrong').innerHTML = `<i class="bi bi-exclamation-circle me-4"></i> 帳號錯誤，請重新確認`;
+                loginEmail.value = '';
+                return;
+            };
+            login();
+        })
+        .catch(err => {
+            console.log(err);
+            errorHint('網路異常，無法登入！', '');
+        });
 };
 
 function login() {
@@ -30,18 +36,20 @@ function login() {
         "password": loginPassword.value
     })
         .then(res => {
+            localStorage.setItem('userName', res.data.user.name);
+            localStorage.setItem('userPhoneNum', res.data.user.phone);
+            localStorage.setItem('userEmail', res.data.user.email);
+            localStorage.setItem('userToken', res.data.accessToken);
+            localStorage.setItem('userId', res.data.user.id);
             successHint('登入成功！', '', 3000);
             loginForm.reset();
             loginForm.classList.remove('was-validated');
             setTimeout(() => { window.location.href = `memberCenter.html?id=${localStorage.getItem('userId')}` }, 3000);
         })
         .catch(err => {
-            if (err.response) {
-                console.log(err.response.data);
-                if (err.response.data === 'Incorrect password') {
-                    loginPassword.value = '';
-                    document.querySelector('.js-passwordError').innerHTML = `<i class="bi bi-exclamation-circle me-4"></i> 密碼錯誤，請重新確認`;
-                };
+            if (err.response.data === 'Incorrect password') {
+                loginPassword.value = '';
+                document.querySelector('.js-passwordError').innerHTML = `<i class="bi bi-exclamation-circle me-4"></i> 密碼錯誤，請重新確認`;
             } else if (err.message === 'Network Error') {
                 console.log(err);
                 errorHint('網路異常，無法登入！', '');
