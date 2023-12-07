@@ -50,9 +50,9 @@ function checkPermission() {
         alert('您沒有權限進入!');
         window.location.href = 'login.html';
     } else {
-        let memberCenterContent = document.querySelector('.js-memberCenter');
-        let articleContent = document.querySelector('.js-article');
-        let reverseContent = document.querySelector('.js-reverse');
+        let memberCenterContent = document.querySelector('.js-memberCenterContent');
+        let articleContent = document.querySelector('.js-articleContent');
+        let reverseContent = document.querySelector('.js-reverseContent');
         showContent(memberCenterContent);
         showContent(articleContent);
         showContent(reverseContent);

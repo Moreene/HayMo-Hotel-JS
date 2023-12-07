@@ -36,7 +36,7 @@ async function init() {
         renderData(data);
     } catch (err) {
         throw new Error(err);
-    }
+    };
 };
 init()
     .catch(err => {
@@ -142,12 +142,25 @@ const headImg = document.querySelector('.js-headImg');
 const headImgInput = document.querySelector('#img_uploads');
 const headImgView = document.querySelector('.js-headImgView');
 
-// 檢查 - localStorage中是否有會員照片URL
+// 檢查 - db.json中是否有會員照片URL
 function initHeadImg() {
-    const storedImage = localStorage.getItem('headImg');
-    if (storedImage) {
-        displayImg(storedImage);
-    };
+    axios.get(`${jsonURL}/660/users/${id}`, {
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('userToken')}`
+        }
+    })
+        .then(res => {
+            let data = res.data;
+            if (data.hasOwnProperty('headImg')) {
+                const headImgUrl = data.headImg;
+                if (headImgUrl !== '') {
+                    displayImg(headImgUrl);
+                };
+            };
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
 initHeadImg();
 
@@ -160,8 +173,19 @@ function changeHeadImg(e) {
         const reader = new FileReader();
         reader.onload = function (e) {
             const base64Data = e.target.result;
-            localStorage.setItem('headImg', base64Data);
-            displayImg(base64Data);
+            axios.patch(`${jsonURL}/660/users/${id}`, {
+                "headImg": base64Data
+            }, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('userToken')}`
+                }
+            })
+                .then(res => {
+                    displayImg(base64Data);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         };
         reader.readAsDataURL(file);
     };
@@ -210,6 +234,20 @@ function clearImg(e) {
     while (headImg.firstChild) {
         headImg.removeChild(headImg.firstChild);
     };
+
+    axios.patch(`${jsonURL}/660/users/${id}`, {
+        "headImg": ''
+    }, {
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('userToken')}`
+        }
+    })
+        .then(res => {
+            console.log('成功')
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 // 毛孩資訊卡
@@ -224,25 +262,28 @@ const modalWrapper = document.querySelector('.js-modalWrapper');
 // 如果localStorge有dogImg，就渲染有<img>的html模板;若無，則使用原本模板
 async function initDogSlide() {
     try {
-        let hasDogImg = false;
-        for (let i = 1; i <= 20; i++) {
-            if (localStorage.getItem(`dogImg${i}`)) {
-                hasDogImg = true;
-                break;
-            };
-        };
         let res = await axios.get(`${jsonURL}/660/dogs?userId=${id}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('userToken')}`
             }
         });
+        let data = res.data;
+        data.forEach(item => {
+            const hasDogImg = item.hasOwnProperty('dogImg') && item.dogImg !== '';
+            if (hasDogImg) {
+                localStorage.setItem(`dogImg${item.id}`, item.dogImg);
+            };
+        });
+
+        // some():有一個條件滿足即返回true
+        const hasDogImg = data.some(item => localStorage.getItem(`dogImg${item.id}`));
         if (hasDogImg) {
-            renderDogsDataP(res.data);
-            renderDogsModalP(res.data);
+            renderDogsDataP(data);
+            renderDogsModalP(data);
         } else {
-            renderDogsData(res.data);
-            renderDogsModal(res.data);
-        }
+            renderDogsData(data);
+            renderDogsModal(data);
+        };
     } catch (err) {
         console.log(err);
         throw new Error(err);
@@ -446,6 +487,20 @@ function dogModalClick(e) {
         while (dogImg.firstChild) {
             dogImg.removeChild(dogImg.firstChild);
         };
+
+        axios.patch(`${jsonURL}/660/dogs/${id}`, {
+            "dogImg": ''
+        }, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('userToken')}`
+            }
+        })
+            .then(res => {
+                console.log('成功')
+            })
+            .catch(err => {
+                console.log(err);
+            });
     };
 };
 
@@ -603,8 +658,19 @@ function dogImgChange(dogImgInput, id) {
         const reader = new FileReader();
         reader.onload = function (e) {
             const base64Data = e.target.result;
-            localStorage.setItem(`dogImg${id}`, base64Data);
-            displayDogImg(base64Data, id);
+            axios.patch(`${jsonURL}/660/dogs/${id}`, {
+                "dogImg": base64Data
+            }, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('userToken')}`
+                }
+            })
+                .then(res => {
+                    displayDogImg(base64Data, id);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         };
         reader.readAsDataURL(file);
     };
