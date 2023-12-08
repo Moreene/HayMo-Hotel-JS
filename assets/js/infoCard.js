@@ -243,7 +243,8 @@ function clearImg(e) {
         }
     })
         .then(res => {
-            console.log('成功')
+            // console.log('成功')
+            let data = res.data;
         })
         .catch(err => {
             console.log(err);
@@ -496,7 +497,8 @@ function dogModalClick(e) {
             }
         })
             .then(res => {
-                console.log('成功')
+                // console.log('成功');
+                let data = res.data;
             })
             .catch(err => {
                 console.log(err);

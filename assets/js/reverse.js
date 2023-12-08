@@ -25,7 +25,7 @@ $(function () {
             maxDate: '+3M',
             onSelect: function (dateText, inst) {
                 data.date = dateText;
-                console.log(data);
+                // console.log(data);
             }
         });
         // 選取歷史日期取值
@@ -33,7 +33,7 @@ $(function () {
             const changeDate = e.target.value;
             if (changeDate) {
                 data.date = changeDate;
-                console.log(data);
+                // console.log(data);
             };
         });
         // 狗狗住宿
@@ -64,7 +64,7 @@ $(function () {
                 } else {
                     data.startDate = dateText;
                 };
-                console.log(data);
+                // console.log(data);
                 calcStayNight(data);
             }
         });
@@ -93,7 +93,7 @@ $(function () {
                 } else {
                     data.endDate = dateText;
                 }
-                console.log(data);
+                // console.log(data);
                 calcStayNight(data);
             }
         });
@@ -121,7 +121,7 @@ $('.startDate').on('change', function (e) {
         } else {
             data.startDate = changeStartDate;
         }
-        console.log(data);
+        // console.log(data);
         calcStayNight(data);
     }
 });
@@ -145,7 +145,7 @@ $('.endDate').on('change', function (e) {
         } else {
             data.endDate = changeEndDate;
         };
-        console.log(data);
+        // console.log(data);
         calcStayNight(data);
     };
 });
@@ -162,7 +162,7 @@ $(document).ready(function () {
     });
     $('.timepicker').on('changeTime', function () {
         data.time = $(this).val();
-        console.log(data);
+        // console.log(data);
     });
 });
 
@@ -221,7 +221,7 @@ serviceOption.addEventListener('click', function (e) {
         sizePrice = 0;
         planPrice = 0;
     };
-    console.log(data);
+    // console.log(data);
 });
 
 paradise.forEach(item => {
@@ -237,7 +237,7 @@ paradise.forEach(item => {
                     data.isParadiseYes = false;
                 // };
             };
-            console.log(data);
+            // console.log(data);
         };
     });
 });
@@ -276,7 +276,7 @@ function renderDogName(data) {
 nameSelect.forEach(function (nameSelect) {
     nameSelect.addEventListener('change', function (e) {
         data.dogName = e.target.value;
-        console.log(data);
+        // console.log(data);
     });
 });
 
@@ -321,7 +321,7 @@ contactIuput.forEach(contactIuput => {
     contactIuput.addEventListener('input', function (e) {
         if (e.target.value !== '') {
             data.contact = e.target.value.trim();
-            console.log(data);
+            // console.log(data);
         };
     });
 });
@@ -329,14 +329,14 @@ contactIuput.forEach(contactIuput => {
 contactPhone.forEach(contactPhone => {
     contactPhone.addEventListener('change', function (e) {
         data.phone = e.target.value.trim();
-        console.log(data);
+        // console.log(data);
     });
 });
 
 remark.forEach(remark => {
     remark.addEventListener('input', function (e) {
         data.remark = e.target.value.trim();
-        console.log(data);
+        // console.log(data);
     });
 });
 
@@ -355,7 +355,7 @@ size.addEventListener('click', function (e) {
         sizePrice = 450;
     };
     data.total = sizePrice + planPrice + (data.paradise === '是' ? 200 : 0);
-    console.log(data);
+    // console.log(data);
 });
 
 plan.addEventListener('click', function (e) {
@@ -372,7 +372,7 @@ plan.addEventListener('click', function (e) {
         planPrice = 1000;
     };
     data.total = sizePrice + planPrice + (data.paradise === '是' ? 200 : 0);
-    console.log(data);
+    // console.log(data);
 });
 
 // 狗狗住宿
@@ -386,7 +386,7 @@ room.addEventListener('click', function (e) {
     } else if (e.target.value === '大狗好眠房') {
         data.room = '大狗好眠房';
     };
-    console.log(data);
+    // console.log(data);
     calcStayNight(data);
 });
 
@@ -405,7 +405,7 @@ function calcStayNight(data) {
     } else if (data.room === '大狗好眠房') {
         data.total = 1600 * dateDiff;
     };
-    console.log(data);
+    // console.log(data);
 };
 
 // 判斷sibmit事件是否綁定

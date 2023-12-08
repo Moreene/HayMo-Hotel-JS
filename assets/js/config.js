@@ -1,5 +1,5 @@
 // json url
-export const jsonURL ='http://localhost:3000'; 
+export const jsonURL ='https://haymo-api.onrender.com'; 
 
 // 驗證手機格式
 export function isValidPhone(num) {
