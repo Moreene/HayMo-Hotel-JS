@@ -47,7 +47,7 @@ function login() {
             setTimeout(() => { window.location.href = `memberCenter.html?id=${localStorage.getItem('userId')}` }, 3000);
         })
         .catch(err => {
-            if (err.response.data === 'Incorrect password') {
+            if (err.response.data === 'Incorrect password' || err.response.data === 'Password is too short') {
                 loginPassword.value = '';
                 document.querySelector('.js-passwordError').innerHTML = `<i class="bi bi-exclamation-circle me-4"></i> 密碼錯誤，請重新確認`;
             } else if (err.message === 'Network Error') {
