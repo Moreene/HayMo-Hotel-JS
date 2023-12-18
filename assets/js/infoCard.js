@@ -172,7 +172,7 @@ function changeHeadImg(e) {
     if (file) {
         const reader = new FileReader();
         reader.onload = function (e) {
-            const base64Data = e.target.result;
+            let base64Data = e.target.result;
             axios.patch(`${jsonURL}/660/users/${id}`, {
                 "headImg": base64Data
             }, {
@@ -228,7 +228,9 @@ function clearImg(e) {
     p.textContent = '請選擇照片';
     p.className = 'mb-0';
     headImgView.appendChild(p);
-    localStorage.removeItem('headImg');
+
+    // 清空檔案選擇，避免選擇了同一個檔案，change事件可能不會被觸發
+    headImgInput.value = '';
 
     // 會員首頁-大頭照
     while (headImg.firstChild) {
@@ -243,7 +245,6 @@ function clearImg(e) {
         }
     })
         .then(res => {
-            // console.log('成功')
             let data = res.data;
         })
         .catch(err => {
@@ -483,6 +484,7 @@ function dogModalClick(e) {
         p.className = 'mb-0';
         dogImgView.appendChild(p);
         localStorage.removeItem(`dogImg${id}`);
+        document.querySelector(`#dogImg_uploads${id}`).value = '';
 
         // 狗狗首頁-大頭照
         while (dogImg.firstChild) {
@@ -497,7 +499,6 @@ function dogModalClick(e) {
             }
         })
             .then(res => {
-                // console.log('成功');
                 let data = res.data;
             })
             .catch(err => {
