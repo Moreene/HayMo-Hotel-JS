@@ -71,7 +71,6 @@
 * Swiper v10.2.0
 * Sweetalert2 v11
 * Chart.js v4.4.1
-* Aos v2.3.1
 * Axios v1.5.1
 * Json-server-auth v2.1.0
 
