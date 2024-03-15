@@ -46,8 +46,6 @@
 * `npm run dev` - 執行開發模式  
   * 若沒有自動開啟瀏覽器，可嘗試手動在瀏覽器上輸入 `http://localhost:5173/HayMo-Hotel-JS/pages/index.html`<br><br>
 
-*若使用登入或是註冊功能，因api部屬在render服務器，服務喚醒需要時間（最長30秒），請耐心等候*
-
 ## 資料夾說明
 * assests - 靜態資源放置處
   * images - 圖片放置處
